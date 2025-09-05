@@ -1,0 +1,72 @@
+-
+    const defaultFormProps = {
+        classes: '',
+        title: '',
+        text: '',
+        btnText: '',
+        submitSize: 'full',
+        innerThanks: true,
+        privacyText: 'Согласен на обработку моих персональных данных в соответствии с <a href="#" target="_blank">Политикой в отношении обработки персональных данных</a>',
+        successTitle: 'Ваш вопрос отправлен.',
+        successText: 'С Вами свяжется ответственный сотрудник по&nbsp;указанным контактным данным.',
+        successBtn: false
+    }
+
+mixin form(props = defaultFormProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultFormProps.classes,
+            title: props.title ? props.title : defaultFormProps.title,
+            text: props.text ? props.text : defaultFormProps.text,
+            btnText: props.btnText ? props.btnText : defaultFormProps.btnText,
+            submitSize: props.submitSize ? props.submitSize : defaultFormProps.submitSize,
+            innerThanks: props.innerThanks ? props.innerThanks : defaultFormProps.innerThanks,
+            privacyText: props.privacyText ? props.privacyText : defaultFormProps.privacyText,
+            successTitle: props.successTitle ? props.successTitle : defaultFormProps.successTitle,
+            successText: props.successText ? props.successText : defaultFormProps.successText,
+            successBtn: props.successBtn ? props.successBtn : defaultFormProps.successBtn,
+        }
+
+    form.form(action="#" class= checkProps.classes data-validate novalidate)&attributes(attributes)
+        .form__content(data-js='form-content')
+            - if(checkProps.title.length > 0)
+                .form__title.title.title--24!= checkProps.title 
+            - if(checkProps.text.length > 0)
+                .form__text!= checkProps.text
+
+            .form__horizontal
+                .form__fields
+                    block
+                +btn({
+                    classes: 'form__submit',
+                    type: 'button',
+                    buttonType: 'submit',
+                    name: checkProps.btnText,
+                    cMode: 'accent',
+                    sMode: checkProps.submitSize
+                })
+
+            .form__privacy.form-privacy(data-js="formField")
+                .form-privacy__flex
+                    label
+                        input(type="checkbox" data-v-name='checkbox' required)
+                        span.form-privacy__fake
+                            svg
+                                use(xlink:href=`img/sprites/sprite.svg#check`)
+                    span.form-privacy__text!= checkProps.privacyText
+                span.field__error(data-js='fieldError')
+
+        - if(checkProps.innerThanks === true)
+            .form__thanks(data-js='form-thanks')
+                .title.title--24.form__title!= checkProps.successTitle
+                .form__image-success
+                    svg
+                        use(xlink:href=`img/sprites/sprite.svg#check_circle`)
+                .form__text!= checkProps.successText
+                - if(checkProps.successBtn == true)
+                    +btn({
+                        classes: 'form__btn',
+                        name: 'На главную',
+                        cMode: 'accent',
+                        sMode: 'full'
+                    })

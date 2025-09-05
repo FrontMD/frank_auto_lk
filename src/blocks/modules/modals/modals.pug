@@ -1,0 +1,298 @@
+noindex
+    div
+        //- код модалок сюда
+
+        //- Заказать звонок в шапке
+        +modal({modalId:"callbackModal", modalTitle:"", classes:"form-modal"})
+            +form({
+                classes: 'form--modal',
+                title: 'Заказать звонок',
+                text: '',
+                btnText: 'Отправить',
+                successTitle: 'Ваша заявка отправлена',
+                successText: 'Менеджер свяжется с&nbsp;вами в&nbsp;ближайшее время',
+                successBtn: true
+            })
+                +field({
+                    placeholder: 'Имя',
+                    inputAttr: {
+                        'required': '',
+                        'data-type': 'letters'
+                    },
+                })
+                +field({
+                    placeholder: 'Номер телефона',
+                    inputAttr: {
+                        'required': '',
+                        'data-v-name': 'phone',
+                        'data-type': 'phoneNumber'
+                    },
+                })
+                +field({
+                    placeholder: 'Электронная почта',
+                    inputAttr: {
+                        'required': '',
+                        'data-v-name': 'email'
+                    },
+                })
+
+        //- Забронировать автомобиль
+        +modal({modalId:"reserveModal", modalTitle:"", classes:"form-modal"})
+            +form({
+                classes: 'form--modal',
+                title: 'Забронировать автомобиль LIXIANG L6 MAX',
+                text: '',
+                btnText: 'Отправить',
+                successTitle: 'Подписка оформлена',
+                successTitle: 'Ваша заявка отправлена',
+                successText: 'Менеджер свяжется с&nbsp;вами в&nbsp;ближайшее время',
+                successBtn: true
+            })
+                +field({
+                    placeholder: 'Имя',
+                    inputAttr: {
+                        'required': '',
+                        'data-type': 'letters'
+                    },
+                })
+                +field({
+                    placeholder: 'Номер телефона',
+                    inputAttr: {
+                        'required': '',
+                        'data-v-name': 'phone',
+                        'data-type': 'phoneNumber'
+                    },
+                })
+                +field({
+                    placeholder: 'Электронная почта',
+                    inputAttr: {
+                        'required': '',
+                        'data-v-name': 'email'
+                    },
+                })
+                +field({
+                    classes: '',
+                    tag: 'select',
+                    placeholder: 'Адрес салона',
+                    inputAttr: {
+                    'required': '',
+                    },
+                    selectOptions: [
+                        "",
+                        "Москва, Новорижское шоссе, 17-й км., строение 3",
+                        "Москва, МКАД, 85-й километр, вл3с2",
+                        "Москва, Можайское шоссе, вл. 165 Б",
+                    ],
+                })
+                +field({
+                    classes: '',
+                    placeholder: 'Дата визита в салон',
+                    inputAttr: {
+                        'required': '',
+                        'data-v-name': 'date',
+                        'data-type': 'date',
+                    },
+                })
+
+        //- Получить консультацию
+        +modal({modalId:"consultationModal", modalTitle:"", classes:"form-modal"})
+            +form({
+                classes: 'form--modal',
+                title: 'Получить консультацию',
+                text: '',
+                btnText: 'Отправить',
+                successTitle: 'Ваша заявка отправлена',
+                successText: 'Менеджер свяжется с&nbsp;вами в&nbsp;ближайшее время',
+                successBtn: true
+            })
+                +field({
+                    placeholder: 'Имя',
+                    inputAttr: {
+                        'required': '',
+                        'data-type': 'letters'
+                    },
+                })
+                +field({
+                    placeholder: 'Номер телефона',
+                    inputAttr: {
+                        'required': '',
+                        'data-v-name': 'phone',
+                        'data-type': 'phoneNumber'
+                    },
+                })
+                +field({
+                    placeholder: 'Электронная почта',
+                    inputAttr: {
+                        'required': '',
+                        'data-v-name': 'email'
+                    },
+                })
+
+        //- Записаться на ТО
+        +modal({modalId:"maintenanceModal", modalTitle:"", classes:"form-modal"})
+            +form({
+                classes: 'form--modal',
+                title: 'Записаться на ТО',
+                text: '',
+                btnText: 'Отправить',
+                successTitle: 'Ваша заявка отправлена',
+                successText: 'Менеджер свяжется с&nbsp;вами в&nbsp;ближайшее время',
+                successBtn: true
+            })
+                +field({
+                    placeholder: 'Название услуги',
+                    inputAttr: {
+                        'disabled': '',
+                    },
+                })
+                +field({
+                    placeholder: 'Имя',
+                    inputAttr: {
+                        'required': '',
+                        'data-type': 'letters'
+                    },
+                })
+                +field({
+                    placeholder: 'Номер телефона',
+                    inputAttr: {
+                        'required': '',
+                        'data-v-name': 'phone',
+                        'data-type': 'phoneNumber'
+                    },
+                })
+                +field({
+                    placeholder: 'Электронная почта',
+                    inputAttr: {
+                        'required': '',
+                        'data-v-name': 'email'
+                    },
+                })
+                +field({
+                    classes: '',
+                    tag: 'select',
+                    placeholder: 'Марка',
+                    selectOptions: [
+                        "",
+                        "LiXiang",
+                        "Voyah",
+                        "AITO",
+                        "Chery",
+                        "Zeekr",
+                        "Audi",
+                        "Tank",
+                        "Rox Motor Tech",
+                    ],
+                    inputAttr: {
+                        'required': '',
+                    },
+                })
+                +field({
+                    tag: 'select',
+                    placeholder: 'Модель',
+                    selectOptions: [
+                        "",
+                        "LiXiang L6",
+                        "LiXiang L7",
+                        "LiXiang L9",
+                        "LiXiang L9",
+                        "LiXiang Mega",
+                        "LiXiang One"
+                    ],
+                    inputAttr: {
+                        'required': '',
+                    },
+
+                })
+
+        //- Заявка на сотрудничество
+        +modal({modalId:"cooperationModal", modalTitle:"", classes:"form-modal"})
+            +form({
+                classes: 'form--modal',
+                title: 'Заявка на сотрудничество',
+                text: '',
+                btnText: 'Отправить',
+                successTitle: 'Ваша заявка отправлена',
+                successText: 'Менеджер свяжется с&nbsp;вами в&nbsp;ближайшее время',
+                successBtn: true
+            })
+                +field({
+                    placeholder: 'Имя',
+                    inputAttr: {
+                        'required': '',
+                        'data-type': 'letters'
+                    },
+                })
+                +field({
+                    placeholder: 'Номер телефона',
+                    inputAttr: {
+                        'required': '',
+                        'data-v-name': 'phone',
+                        'data-type': 'phoneNumber'
+                    },
+                })
+                +field({
+                    placeholder: 'Электронная почта',
+                    inputAttr: {
+                        'required': '',
+                        'data-v-name': 'email'
+                    },
+                })
+                +field({
+                    placeholder: 'Название компании',
+                    inputAttr: {
+                        'required': '',
+                    },
+                })
+                +field({
+                    placeholder: 'ИНН',
+                    inputAttr: {
+                        'required': '',
+                        'data-type': 'number',
+                        'data-v-name': 'inn'
+                    },
+                })
+                +field({
+                    placeholder: 'КПП',
+                    inputAttr: {
+                        'required': '',
+                        'data-type': 'number',
+                        'data-v-name': 'kpp'
+                    },
+                })
+
+        //- Подписка на рассылку
+        +modal({modalId:"subscribeModal", modalTitle:"", classes:"form-modal"})
+            +form({
+                classes: 'form--modal',
+                title: 'Подписаться на рассылку',
+                text: '',
+                btnText: 'Отправить',
+                privacyText: 'Согласен на получение рекламной рассылки',
+                successTitle: 'Подписка оформлена',
+                successText: '',
+                successBtn: true
+            })
+                +field({
+                    placeholder: 'Электронная почта',
+                    inputAttr: {
+                        'required': '',
+                        'data-v-name': 'email'
+                    },
+                })
+
+        //- Окно благодарности
+        +modal({modalId:"thanksModal", modalTitle:"", classes:"form-modal"})
+            .thanks-message
+                .form__thanks
+                    .title.title--24.form__title Ваша заявка отправлена
+                    .form__image-success
+                        svg
+                            use(xlink:href=`img/sprites/sprite.svg#check_circle`)
+                    .form__text С Вами свяжется ответственный сотрудник по&nbsp;указанным контактным данным.
+                    +btn({
+                        classes: 'form__btn',
+                        name: 'На главную',
+                        link: '/',
+                        cMode: 'accent',
+                        sMode: 'full'
+                    })

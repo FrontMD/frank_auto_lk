@@ -1,0 +1,82 @@
+.modal.hystmodal {
+    z-index: 70;
+
+    .hystmodal__window {
+        transition: all 0.3s linear;
+        transform: scale(0);
+        opacity: 0;
+        width: auto;
+        background-color: transparent;
+    }
+}
+
+.modal.hystmodal--active {
+    .hystmodal__window {
+        margin: 0;
+        transition: all 0.3s linear;
+        transform: scale(1);
+        opacity: 1;
+
+        @include max(tablet) {
+            margin: 0;
+        }
+    }
+}
+
+.hystmodal__shadow.hystmodal__shadow--show {
+    background-color: $c-text;
+    opacity: 0.6;
+    z-index: 55;
+}
+
+.modal {
+    box-sizing: border-box;
+
+    &__close {
+        position: absolute;
+        right: 16px;
+        top: 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: auto;
+        min-width: auto;
+        cursor: pointer;
+        z-index: 20;
+        color: $c-text-light;
+        transition: color $tr-time;
+        width: 24px;
+        height: 24px;
+
+        &:hover {
+            color: $c-accent-hover;
+        }
+
+        svg {
+            width: 24px;
+            height: 24px;
+        }
+    }
+
+    &__content {
+        position: relative;
+        background: $c-white;
+        width: 100%;
+        max-width: 410px;
+        min-width: 410px;
+        z-index: 70;
+        padding: 20px 16px;
+        border-radius: 16px;
+        max-height: 95vh;
+        overflow-y: auto;
+
+        @include max(tablet) {
+            width: 100vw;
+            min-width: 100vw;
+            margin: 0 auto;
+            max-height: 100vh;
+            height: 100vh;
+            height: 100dvh;
+        }
+    }
+}

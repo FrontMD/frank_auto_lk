@@ -1,0 +1,56 @@
+-
+    const defaultFormFilterProps = {
+        classes: '',
+        title: '',
+        text: '',
+        btnText: '',
+        submitSize: 'full',
+        hasResetBtn: false 
+    }
+
+mixin form-filter(props = defaultFormFilterProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultFormFilterProps.classes,
+            title: props.title ? props.title : defaultFormFilterProps.title,
+            text: props.text ? props.text : defaultFormFilterProps.text,
+            btnText: props.btnText ? props.btnText : defaultFormFilterProps.btnText,
+            submitSize: props.submitSize ? props.submitSize : defaultFormFilterProps.submitSize,
+            hasResetBtn: props.hasResetBtn ? props.hasResetBtn : defaultFormFilterProps.hasResetBtn,
+        }
+
+    form.form-filter(action="#" class= checkProps.classes data-js="formFilter")&attributes(attributes)
+        .form-filter__content
+            - if(checkProps.title.length > 0)
+                .form-filter__title.title.title--36!= checkProps.title 
+            - if(checkProps.text.length > 0)
+                .form-filter__text!= checkProps.text
+            .form-filter__fields
+                block
+            - if(checkProps.hasResetBtn === true)
+                .form-filter__flex
+                    +btn({
+                        classes: 'form-filter__reset',
+                        type: 'button',
+                        buttonType: 'button',
+                        name: 'Сбросить',
+                        cMode: 'light-accent',
+                        sMode: 'full'
+                    })(data-js="formResetBtn")
+                    +btn({
+                        classes: 'form-filter__submit',
+                        type: 'button',
+                        buttonType: 'submit',
+                        name: checkProps.btnText,
+                        cMode: 'accent',
+                        sMode: 'full'
+                    })
+            - else
+                +btn({
+                    classes: 'form-filter__submit',
+                    type: 'button',
+                    buttonType: 'submit',
+                    name: checkProps.btnText,
+                    cMode: 'accent',
+                    sMode: checkProps.submitSize
+                })

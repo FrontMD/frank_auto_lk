@@ -1,0 +1,99 @@
+.spoiler {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    display: block;
+    padding: 15px 0;
+    background-color: $c-white;
+    border-bottom: 1px solid $c-border;
+
+    @include max(mobile) {
+        padding: 5px 0;
+    }
+
+    &__intro {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px;
+        cursor: pointer;
+        padding: 15px 0;
+
+        @include max(mobile) {
+            gap: 10px;
+        }
+
+    }
+
+    &__title {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        color: $c-text;
+        font-family: $ff-rooftop;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 130%;
+        letter-spacing: 0;
+
+        @include max(mobile) {
+            font-size: 16px;
+        }
+
+        svg {
+            width: 16px;
+            height: 22px;
+            color: $c-accent-2;
+
+            @include max(mobile) {
+                width: 12px;
+                height: 16px;
+            }
+
+        }
+    }
+
+    &__icon {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #1B1B1B;
+        flex-shrink: 0;
+        flex-grow: 0;
+        transition: all $tr-time;
+
+        svg {
+            width: 24px;
+            height: 24px;
+            transition: all $tr-time;
+        }
+    }
+
+    &.active &__icon svg {
+        transform: rotate(-45deg);
+    }
+
+    &__content {
+        display: none;
+        overflow: hidden;
+        padding: 0 54px 15px 0;
+
+        @include max(mobile) {
+            padding: 0 34px 15px 0;
+        }
+
+    }
+}
+
+.accordion {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    &__list {
+        margin-top: 30px;
+        border-top: 1px solid $c-border;
+    }
+}

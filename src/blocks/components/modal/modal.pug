@@ -1,0 +1,26 @@
+-
+    const defaultModalProps = {
+        modalId: "myModal",
+        modalTitle: "",
+        classes: ''
+    }
+
+mixin modal(props = defaultTitleProps)
+    -
+        const checkProps = {
+            modalId: props.modalId ? props.modalId : defaultModalProps.modalId,
+            modalTitle: props.modalTitle ? props.modalTitle : defaultModalProps.modalTitle, 
+            classes: props.classes ? props.classes : defaultModalProps.classes
+        }
+
+    .modal.hystmodal(id=checkProps.modalId class=checkProps.classes aria-hidden="true")&attributes(attributes)
+        .hystmodal__wrap
+            .hystmodal__window(role="dialog" aria-modal="true")
+                .modal__content.scrollbar.scrollbar--small
+                    - if(checkProps.modalTitle.length > 0)
+                        .modal__title.title--32!= checkProps.modalTitle 
+                    .modal__close(data-hystclose)
+                        svg 
+                            use(xlink:href=`./img/sprites/sprite.svg#close`)
+                    .modal__inner(data-js="modalInner")
+                        block

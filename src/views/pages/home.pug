@@ -1,0 +1,18 @@
+extends ../layouts/default
+
+block variables
+	- const title = "Поставщикам"
+	- const footerType = 'supplier'
+	- const headerType = 'unauth'
+
+block content
+	.page-layout(data-js="pageLayout")
+
+		section.section
+			.section__container
+				.section-block.section-block--dark
+					.section-block__bg
+						picture
+							source(srcset="img/" media="(max-width: 767px)")
+							img(src="img/")
+					.section-block__content

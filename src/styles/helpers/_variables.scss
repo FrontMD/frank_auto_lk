@@ -1,0 +1,58 @@
+:root {
+    --c-accent: #2453E1;
+    --c-text: #0F0908;
+}
+
+// шрифты
+$ff-inter: 'Inter', Arial, Helvetica, sans-serif;
+$ff-rooftop: 'Rooftop', Arial, Helvetica, sans-serif;
+//$ff-roboto: 'Roboto', Arial, Helvetica, sans-serif;
+
+// media
+$media-list: (
+    'xs': 500,
+    'mobile': 767,
+    'tablet-small': 899,
+    'tablet': 1023,
+    'laptop-small': 1279,
+    'laptop': 1420,
+    'large': 1800,
+    'full': 2000,
+);
+
+// Цвета
+$c-white: #fff;
+$c-black: #000;
+$c-accent: var(--c-accent);
+$c-accent-hover: #2427e1;
+$c-notifications: #EF4444;
+
+
+$c-accent-2: #FC00FF;
+$c-text: var(--c-text);
+$c-text-editor: #3F3A39;
+$c-text-breadcrumbs: #878E9C;
+$c-text-light: #9299A7;
+$c-text-light-1: #EDF0F6;
+$c-bg-main: #EDF0F6;
+$c-bg-main-hover: #EAF0FC;
+$c-bg-dark: #0F0908;
+$c-bg-input: #EDF0F6;
+$c-bg-compare: #F4F7F9;
+$c-grey: #202020;
+$c-controls-grey: #9DA2AD;
+$c-input-grey: #B3B7C0;
+$c-border: #E1E6EC;
+$c-error: #D31717;
+
+// Радиусы
+$br-section: 16px;
+$br-section-mob: 10px;
+$br-header-small: 20px;
+$br-header-big: 24px;
+$br-footer: 40px;
+$br-btn-input: 14px;
+
+// переходы
+$tr-time: .3s;
+$tr-time-long: .5s;

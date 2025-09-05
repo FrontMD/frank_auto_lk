@@ -1,0 +1,22 @@
+-
+    const defaultSocialsProps = {
+        classes: '',
+        mode: ''
+    }
+
+mixin socials(props= defaultSocialsProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultSocialsProps.classes,
+            mode: props.mode ? props.mode : defaultSocialsProps.mode,
+        }
+
+    - let modeClass = checkProps.mode.length > 0 ? ` socials--${checkProps.mode}` : ''
+
+    .socials(class= checkProps.classes + modeClass)&attributes(attributes)
+        a.socials__item(href="javascript:void(0);")
+            svg 
+                use(xlink:href=`img/sprites/sprite.svg#telegram`)
+        a.socials__item(href="javascript:void(0);")
+            svg 
+                use(xlink:href=`img/sprites/sprite.svg#vk`)

@@ -1,0 +1,137 @@
+.img-intro {
+    &__bg::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(270deg, rgba(0, 0, 0, 0) 29.25%, rgba(0, 0, 0, 0.5) 71.7%),
+            linear-gradient(0deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15));
+    }
+
+    &__block {
+        padding: 70px 60px;
+
+        @include max(laptop-small) {
+            padding: 40px 30px;
+        }
+
+        @include max(tablet) {
+            padding: 20px;
+        }
+
+        @include max(mobile) {
+            padding: 20px 10px 80px;
+        }
+    }
+
+    &__content {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    &__left {
+        flex: 0 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        min-height: 430px;
+        max-width: 72%;
+        margin-right: 11%;
+
+        @include max(laptop-small) {
+            max-width: 100%;
+            margin-right: 0;
+        }
+
+        @include max(mobile) {
+            gap: 10px;
+            min-height: auto;
+        }
+
+        &--centered {
+            justify-content: center;
+            max-width: 60%;
+        }
+    }
+
+    &__right {
+        @include max(laptop-small) {
+            display: none;
+        }
+    }
+
+    &__title {
+        position: relative;
+
+        @include max(mobile) {
+            display: contents;
+        }
+
+        &--right {
+            text-align: right;
+        }
+    }
+
+    &__text {
+        font-family: $ff-rooftop;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 1.45em;
+        letter-spacing: 0;
+        color: $c-white;
+
+        @include max(tablet) {
+            font-size: 18px;
+        }
+
+        @include max(mobile) {
+            font-size: 14px;
+            line-height: 1.57em;
+        }
+
+        p+p {
+            margin-top: 1em;
+        }
+
+        &--right {
+            text-align: right;
+        }
+    }
+
+    &__sticker {
+        margin-top: 70px;
+        padding: 20px 40px;
+        transform: rotate(-15deg);
+        transform-origin: left top;
+
+        @include max(mobile) {
+            position: relative;
+            top: -16px;
+            padding: 20px 32px;
+        }
+
+        span {
+            color: $c-white;
+        }
+
+        &--title {
+            width: max-content;
+            position: absolute;
+            left: calc(100% + 47px);
+            top: 0;
+            margin-top: 0;
+            transform-origin: left bottom;
+
+            @include max(mobile) {
+                order: 2;
+                left: 0;
+                top: 0;
+                margin-top: 55px;
+                transform-origin: left top;
+            }
+        }
+    }
+}

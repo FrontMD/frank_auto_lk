@@ -1,0 +1,30 @@
+.socials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    &__item {
+        width: 53px;
+        height: 53px;
+        border-radius: 100%;
+        color: $c-white;
+        border: 1px solid #3F3A39;
+        background-color: #3F3A39;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        transition: all $tr-time linear;
+
+        &:hover {
+            border-color: $c-accent-hover;
+            background-color: $c-accent-hover;
+        }
+
+        svg {
+            width: 20px;
+            height: 14px;
+        }
+
+    }
+}

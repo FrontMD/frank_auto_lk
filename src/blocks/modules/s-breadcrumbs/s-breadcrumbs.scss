@@ -1,0 +1,10 @@
+.s-breadcrumbs {
+    padding-top: 10px;
+    padding-bottom: 30px;
+
+    @include max(mobile) {
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 20px;
+    }
+}

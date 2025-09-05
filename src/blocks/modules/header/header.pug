@@ -1,0 +1,192 @@
+-
+    const defaultHeaderProps = {
+        classes: '',
+        type: 'suppliers',
+
+    }
+
+mixin header(props = defaultHeaderProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultHeaderProps.classes,
+            type: props.type ? props.type : defaultHeaderProps.type,
+        }
+
+    header.site-header(data-js="siteHeader")
+        .section.site-header__section(data-js="siteHeaderSection")
+            .section__container.site-header__container
+                .site-header__row
+                    .section-block.site-header__block.site-header__left
+                        a(href="javascript:void(0);").site-header__logo
+                            picture
+                                source(media="(max-width: 992px)" srcset="img/logo/logo_header.svg")
+                                img(src="img/logo/logo_header.svg" alt="")
+
+                    .section-block.site-header__block.site-header__menu
+                        nav.header-menu
+                            .header-menu__item
+                                .header-menu__header
+                                    a(href="javascript:void(0);").header-menu__link Личный кабинет
+
+                            .header-menu__item
+                                .header-menu__header
+                                    a(href="javascript:void(0);").header-menu__link Добавление авто
+                                    .header-menu__icon
+                                        svg
+                                            use(xlink:href=`img/sprites/sprite.svg#arrow_angle_down`)
+                                .header-menu__submenu
+                                    .header-menu__list
+                                        a(href="javascript:void(0);").header-menu__link Пункт 1
+                                        a(href="javascript:void(0);").header-menu__link Пункт 2
+                                        a(href="javascript:void(0);").header-menu__link Пункт 3
+                                        a(href="javascript:void(0);").header-menu__link Пункт 4
+
+                            .header-menu__item
+                                .header-menu__header
+                                    a(href="javascript:void(0);").header-menu__link Каталог
+                                    .header-menu__icon
+                                        svg
+                                            use(xlink:href=`img/sprites/sprite.svg#arrow_angle_down`)
+                                .header-menu__submenu
+                                    .header-menu__list
+                                        a(href="javascript:void(0);").header-menu__link Мои автомобили
+                                        a(href="javascript:void(0);").header-menu__link Проблемные авто
+                                        a(href="javascript:void(0);").header-menu__link Архивные автомобили
+                                        a(href="javascript:void(0);").header-menu__link Проданные автомобили
+
+                            .header-menu__item
+                                .header-menu__header
+                                    a(href="javascript:void(0);").header-menu__link Аналитика
+
+                            .header-menu__item
+                                .header-menu__header
+                                    a(href="javascript:void(0);").header-menu__link Запросы на покупку
+
+                            .header-menu__item
+                                .header-menu__header
+                                    a(href="javascript:void(0);").header-menu__link Заявки на регистрацию
+
+                    .section-block.site-header__block.site-header__notifications
+                        a(href="javascript:void(0);").header-notifications
+                            svg
+                                use(xlink:href=`img/sprites/sprite.svg#notifications`)
+                            span.header-notifications__count 22
+
+                    .site-header__lk.lk-btn
+                        .lk-btn__header
+                            .lk-btn__icon
+                                svg
+                                    use(xlink:href=`img/sprites/sprite.svg#lk`)
+                            .lk-btn__text Мищенко Сергей
+                            .lk-btn__chevron
+                                svg
+                                    use(xlink:href=`img/sprites/sprite.svg#arrow_angle_down`)
+
+                    .header-burger(data-js="headerBurger")
+                        .header-burger__toggle(data-js="headerBurgerToggle")
+                            .header-burger__open.header-burger__icon
+                                svg
+                                    use(xlink:href=`img/sprites/sprite.svg#burger`)
+                            .header-burger__close.header-burger__icon
+                                svg
+                                    use(xlink:href=`img/sprites/sprite.svg#close`)
+
+                        .header-burger__content.scrollbar.scrollbar--small(data-js="headerBurgerContent")
+                            .header-burger__block
+                                .header-menu.header-menu--burger
+                                    .header-menu__item.header-menu__item--mob(data-js="headerMenuItem")
+                                        .header-menu__header
+                                            a(href="javascript:void(0);").header-menu__link Автомобили
+                                            .header-menu__icon.header-menu__icon--open(data-js="headerMenuItemOpen")
+                                                svg
+                                                    use(xlink:href=`img/sprites/sprite.svg#burger_chevron`)
+                                            .header-menu__icon.header-menu__icon--close(data-js="headerMenuItemClose")
+                                                svg
+                                                    use(xlink:href=`img/sprites/sprite.svg#burger_close`)
+                                        .header-menu__submenu(data-js="headerMenuItemSubmenu")
+                                            .header-menu__list
+                                                a(href="javascript:void(0);").header-menu__link Пункт 1
+                                                a(href="javascript:void(0);").header-menu__link Пункт 2
+                                                a(href="javascript:void(0);").header-menu__link Пункт 3
+                                                a(href="javascript:void(0);").header-menu__link Пункт 4
+
+                                    .header-menu__item.header-menu__item--mob(data-js="headerMenuItem")
+                                        .header-menu__header
+                                            a(href="javascript:void(0);").header-menu__link Услуги
+                                            .header-menu__icon.header-menu__icon--open(data-js="headerMenuItemOpen")
+                                                svg
+                                                    use(xlink:href=`img/sprites/sprite.svg#burger_chevron`)
+                                            .header-menu__icon.header-menu__icon--close(data-js="headerMenuItemClose")
+                                                svg
+                                                    use(xlink:href=`img/sprites/sprite.svg#burger_close`)
+                                        .header-menu__submenu(data-js="headerMenuItemSubmenu")
+                                            .header-menu__list
+                                                a(href="javascript:void(0);").header-menu__link Пункт 1
+                                                a(href="javascript:void(0);").header-menu__link Пункт 2
+                                                a(href="javascript:void(0);").header-menu__link Пункт 3
+                                                a(href="javascript:void(0);").header-menu__link Пункт 4
+
+                                    .header-menu__item.header-menu__item--mob
+                                        .header-menu__header
+                                            a(href="javascript:void(0);").header-menu__link Сервис
+
+                                    .header-menu__item.header-menu__item--mob
+                                        .header-menu__header
+                                            a(href="javascript:void(0);").header-menu__link Акции
+
+                                    .header-menu__item.header-menu__item--mob(data-js="headerMenuItem")
+                                        .header-menu__header
+                                            a(href="javascript:void(0);").header-menu__link О компании
+                                            .header-menu__icon.header-menu__icon--open(data-js="headerMenuItemOpen")
+                                                svg
+                                                    use(xlink:href=`img/sprites/sprite.svg#burger_chevron`)
+                                            .header-menu__icon.header-menu__icon--close(data-js="headerMenuItemClose")
+                                                svg
+                                                    use(xlink:href=`img/sprites/sprite.svg#burger_close`)
+                                        .header-menu__submenu(data-js="headerMenuItemSubmenu")
+                                            .header-menu__list
+                                                a(href="javascript:void(0);").header-menu__link Пункт 1
+                                                a(href="javascript:void(0);").header-menu__link Пункт 2
+                                                a(href="javascript:void(0);").header-menu__link Пункт 3
+                                                a(href="javascript:void(0);").header-menu__link Пункт 4
+
+                                    .header-menu__item
+                                        .header-menu__header
+                                            a(href="javascript:void(0);").header-menu__link Блог
+
+                                    .header-menu__item
+                                        .header-menu__header
+                                            a(href="javascript:void(0);").header-menu__link Контакты
+
+                            .header-burger__block
+                                a(href="javascript:void(0);").header-compare.header-compare--burger
+                                    span.header-compare__text Сравнение товаров
+                                    span.header-compare__count 12
+
+                            .header-burger__block
+                                .header-phones
+                                    .header-phones__item Новорижское ш., 17й км, с3 <a href="tel:+74991165065">+7 (499) 116-50-65</a>
+                                    .header-phones__item Ярославское ш., д.42 <a href="tel:+74991165065">+7 (499) 116-50-65</a>
+
+                            .header-burger__block.header-burger__block--flex
+                                .header-schedule
+                                    .header-schedule__icon
+                                        svg
+                                            use(xlink:href=`img/sprites/sprite.svg#timer`)
+                                    .header-schedule__text Время работы: <br>c 08:00 до 21:00
+
+                                .header-soc
+                                    .header-soc__title Наши соц сети:
+                                    .header-soc__links
+                                        a(href="javascript:void(0);").header-soc__link
+                                            svg
+                                                use(xlink:href=`img/sprites/sprite.svg#youtube`)
+                                        a(href="javascript:void(0);").header-soc__link
+                                            svg
+                                                use(xlink:href=`img/sprites/sprite.svg#telegram`)
+                                        a(href="javascript:void(0);").header-soc__link
+                                            svg
+                                                use(xlink:href=`img/sprites/sprite.svg#whatsapp`)
+                                        a(href="javascript:void(0);").header-soc__link
+                                            svg
+                                                use(xlink:href=`img/sprites/sprite.svg#dzen`)

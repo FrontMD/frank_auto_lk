@@ -1,0 +1,124 @@
+-
+	const defaultFooterProps = {
+		classes: '',
+		type: 'supplier',
+
+	}
+
+mixin footer(props = defaultFooterProps)
+	-
+		const checkProps = {
+			classes: props.classes ? props.classes : defaultFooterProps.classes,
+			type: props.type ? props.type : defaultFooterProps.type,
+		}
+
+	footer.site-footer(class=`site-footer--${checkProps.type}`)
+		.section.site-footer__section
+			.section__container
+				.site-footer__block
+					.site-footer__row.site-footer__top
+						.site-footer__logo
+							img(src="img/logo/logo_footer.svg" alt="")
+						.site-footer__rating
+							<div style="width:100%;height:100%;overflow:hidden;position:relative;"><iframe style="width:100%;height:100%;border:1px solid #e6e6e6;border-radius:8px;box-sizing:border-box" src="https://yandex.ru/maps-reviews-widget/49212829293?size=m"></iframe></div>
+						.site-footer__nav
+							+btn({
+								name: 'Личный кабинет',
+								sMode: 'footer',
+								cMode: 'grey'
+							})
+							+btn({
+								name: 'Мои автомобили',
+								sMode: 'footer',
+								cMode: 'grey'
+							})
+							+btn({
+								name: 'Аналитика',
+								sMode: 'footer',
+								cMode: 'grey'
+							})
+							+btn({
+								name: 'Запросы на покупку',
+								sMode: 'footer',
+								cMode: 'grey'
+							})
+
+					.site-footer__row.site-footer__middle
+						- if(checkProps.type === 'supplier')
+							.site-footer__list.site-footer__list--contacts
+								.site-footer__title Контакты
+								.site-footer__contacts
+									.site-footer__contact.footer-contact
+										.footer-contact__icon
+											svg
+												use(xlink:href=`img/sprites/sprite.svg#handset`)
+										.footer-contact__desc
+											a(href="tel:+74994606219").footer-contact__title +7 (499) 460-62-19
+											.footer-contact__text Россия, Москва, <br>Новорижское ш.,17й км,с3
+
+									.site-footer__contact.footer-contact
+										.footer-contact__icon
+											svg
+												use(xlink:href=`img/sprites/sprite.svg#handset`)
+										.footer-contact__desc
+											a(href="tel:+74991165065").footer-contact__title +7 (499) 116-50-65
+											.footer-contact__text Россия, Москва, <br>Ярославское ш., д.42
+
+									.site-footer__contact.footer-contact
+										.footer-contact__icon
+											svg
+												use(xlink:href=`img/sprites/sprite.svg#timer`)
+										.footer-contact__desc
+											.footer-contact__title Ежедневно <br>с 08:00 до 21:00
+
+								+socials({
+									classes: 'site-footer__socials'
+								})
+
+						- else if(checkProps.type === 'employee')
+							.site-footer__list.site-footer__list--lk
+								.site-footer__title Личный кабинет
+								.site-footer__links
+									a.site-footer__link(href="javascript:void(0);") Заявки на выкуп автомобиля
+									a.site-footer__link(href="javascript:void(0);") Каталог автомобилей
+									a.site-footer__link(href="javascript:void(0);") Заявки на регистрацию аккаунта
+									a.site-footer__link(href="javascript:void(0);") База поставщиков
+
+								+socials({
+									classes: 'site-footer__socials'
+								})
+							.site-footer__list.site-footer__list--contacts
+								.site-footer__title Контакты
+								.site-footer__contacts
+									.site-footer__contact.footer-contact
+										.footer-contact__icon
+											svg
+												use(xlink:href=`img/sprites/sprite.svg#handset`)
+										.footer-contact__desc
+											a(href="tel:+74994606219").footer-contact__title +7 (499) 460-62-19
+											.footer-contact__text Россия, Москва, <br>Новорижское ш.,17й км,с3
+
+									.site-footer__contact.footer-contact
+										.footer-contact__icon
+											svg
+												use(xlink:href=`img/sprites/sprite.svg#handset`)
+										.footer-contact__desc
+											a(href="tel:+74991165065").footer-contact__title +7 (499) 116-50-65
+											.footer-contact__text Россия, Москва, <br>Ярославское ш., д.42
+
+									.site-footer__contact.footer-contact
+										.footer-contact__icon
+											svg
+												use(xlink:href=`img/sprites/sprite.svg#timer`)
+										.footer-contact__desc
+											.footer-contact__title Ежедневно <br>с 08:00 до 21:00
+
+					.site-footer__row.site-footer__bottom
+						.site-footer__info
+							.site-footer__copyright ©2025 Автосалон FRANK AUTO
+							a(href="javascript:void(0);").site-footer__doc Политика конфиденциальности
+							a(href="javascript:void(0);").site-footer__doc Пользовательское соглашение
+							.site-footer__disclaimer Обращаем Ваше внимание на то, что данный интернет-сайт носит исключительно информационный характер и ни при каких условиях не является публичной офертой, определяемой положениями Статьи 437 Гражданского кодекса Российской Федерации.
+						a(href="https://itspace.group/").site-footer__developer
+							span Разработка сайта
+							img(src="img/logo/its_logo.svg" alt="it space group")

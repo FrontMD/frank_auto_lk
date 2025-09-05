@@ -1,0 +1,36 @@
+-
+	const defaultSpoilerProps = {
+		classes: '',
+		title: '',
+		text: '',
+	}
+
+mixin spoiler(props = defaultSpoilerProps)
+	-
+		const checkProps = {
+			classes: props.classes ? props.classes : defaultSpoilerProps.classes,
+			title: props.title ? props.title : defaultSpoilerProps.title,
+			text: props.text ? props.text : defaultSpoilerProps.text,
+		}
+
+	.spoiler(class= checkProps.classes data-js="spoiler")&attributes(attributes)
+		.spoiler__intro
+			.spoiler__title
+				svg
+					use(xlink:href=`img/sprites/sprite.svg#exc`)
+				!= checkProps.title
+			.spoiler__icon
+				svg
+					use(xlink:href=`img/sprites/sprite.svg#plus`)
+		.spoiler__content(data-js="spoilerContent")
+			.text-editor
+				p Принципы работы автоцентра Frank Auto:
+				ul
+					li Диагностика с помощью современного  оборудования.
+					li Все виды ремонтных работ.
+					li Автосервис официально документирует все договоренности с клиентом.
+					li Гарантийный срок на результат работы.
+					li Прозрачный расчет стоимости работ.
+					li В ремонте используются оригинальные комплектующие.
+
+				+price-list

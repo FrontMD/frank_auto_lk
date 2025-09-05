@@ -1,0 +1,30 @@
+-
+    const defaultSBreadCrumbsProps = {
+        classes: '',
+        cMode: 'dark', //dark - на светлом фоне, light - на тёмном фоне
+        items: [
+            {
+                name: 'FrankAuto',
+                link: 'javascript:void(0);'
+            },
+            {
+                name: '404',
+                link: 'javascript:void(0);'
+            }
+        ],
+    }
+
+mixin s-breadcrumbs(props = defaultSBreadCrumbsProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultSBreadCrumbsProps.classes,
+            cMode: props.cMode ? props.cMode : defaultSBreadCrumbsProps.cMode,
+            items: props.items ? props.items : defaultSBreadCrumbsProps.items,
+        }
+
+    section.section.s-breadcrumbs(class=checkProps.classes)
+        .section__container
+            +breadcrumbs({
+                cMode: checkProps.cMode,
+                items: checkProps.items
+            })
