@@ -23,6 +23,45 @@
     }
 }
 
+.modal.hystmodal.right-modal {
+    .hystmodal__window {
+        position: relative;
+        transition: all .3s linear;
+        transform: scale(1);
+        opacity: 0;
+        top: 0;
+        right: -500px;
+        width: auto;
+        background-color: transparent;
+        margin: 0;
+    }
+
+    .hystmodal__wrap {
+        align-items: flex-end;
+        justify-content: flex-start;
+    }
+
+    .modal__content {
+        height: 100vh;
+        max-height: 100vh;
+        height: 100dvh;
+        max-height: 100dvh;
+        border-radius: 8px 0 0 8px;
+        padding: 40px 32px;
+        width: 100%;
+        max-width: 590px;
+        min-width: 590px;
+    }
+}
+
+.modal.hystmodal--active.right-modal {
+    .hystmodal__window {
+        right: 0;
+        opacity: 1;
+        top: 0;
+    }
+}
+
 .hystmodal__shadow.hystmodal__shadow--show {
     background-color: $c-text;
     opacity: 0.6;

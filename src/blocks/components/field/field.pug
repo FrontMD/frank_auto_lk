@@ -6,6 +6,7 @@
         title: '',
         textareaRows: '8',
         placeholder: '',
+        isTab: false,
         radioCheckboxImg: '',
         radioCheckboxImg2: '',
         radioCheckboxColor: '',
@@ -30,6 +31,7 @@ mixin field(props = defaultFieldProps)
             title: props.title ? props.title : defaultFieldProps.title,
             textareaRows: props.textareaRows ? props.textareaRows : defaultFieldProps.textareaRows,
             placeholder: props.placeholder ? props.placeholder : defaultFieldProps.placeholder,
+            isTab: props.isTab ? props.isTab : defaultFieldProps.isTab,
             radioCheckboxImg: props.radioCheckboxImg ? props.radioCheckboxImg : defaultFieldProps.radioCheckboxImg,
             radioCheckboxImg2: props.radioCheckboxImg2 ? props.radioCheckboxImg2 : defaultFieldProps.radioCheckboxImg2,
             radioCheckboxColor: props.radioCheckboxColor ? props.radioCheckboxColor : defaultFieldProps.radioCheckboxColor,
@@ -45,31 +47,18 @@ mixin field(props = defaultFieldProps)
 
     .field(class= `${checkProps.classes} 
     ${checkProps.isDouble ? "field--double" : ""} 
-    ${checkProps.type === 'radio' ? 'field--radio' : ''} 
+    ${checkProps.type === 'radio' && checkProps.isTab === true ? 'field--tab' : checkProps.type === 'radio' ? 'field--radio' : ''} 
     ${checkProps.type === 'checkbox' ? 'field--checkbox' : ''}` 
     data-js='formField')&attributes(attributes)
         label
             - if(checkProps.tag === 'input')
-                input.field__input(type=checkProps.type placeholder=checkProps.placeholder)&attributes(checkProps.inputAttr)
-                - if(checkProps.type === 'radio')
-                    - let isImg = checkProps.radioCheckboxImg.length > 0 ? true : false
-                    - let isImg2 = checkProps.radioCheckboxImg2.length > 0 ? true : false
-                    - let isColor = checkProps.radioCheckboxColor.length > 0 ? true : false
+                input.field__input(type=checkProps.type placeholder='')&attributes(checkProps.inputAttr)
 
-                    - if(isColor === true)
-                        span.fake-radio.fake-radio--color(style=checkProps.radioCheckboxColor)
-                            svg
-                                use(xlink:href=`img/sprites/sprite.svg#check`)
-                    - else if(isImg === true)
-                        span.fake-radio.fake-radio--img
-                            img(src=checkProps.radioCheckboxImg, alt="")
-                            span.fake-radio__check
-                    - else if(isImg2 === true)
-                        span.fake-radio.fake-radio--img2
-                            img(src=checkProps.radioCheckboxImg2, alt="")
-                            span.fake-radio__check
-                                svg
-                                    use(xlink:href=`img/sprites/sprite.svg#check`)
+                - if(checkProps.type === 'radio')
+                    - let isTab = checkProps.isTab
+
+                    - if(isTab === true)
+                        span.fake-radio!= checkProps.radioCheckboxText
                     - else
                         span.fake-radio
 
@@ -87,6 +76,7 @@ mixin field(props = defaultFieldProps)
                     span.field__error(data-js='fieldError')
 
                 - else
+                    span.field__placeholder!= checkProps.placeholder
                     span.field__error(data-js='fieldError')
 
             - if(checkProps.tag === 'textarea')

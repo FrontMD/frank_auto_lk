@@ -2,42 +2,88 @@ noindex
     div
         //- код модалок сюда
 
-        //- Заказать звонок в шапке
-        +modal({modalId:"callbackModal", modalTitle:"", classes:"form-modal"})
-            +form({
-                classes: 'form--modal',
-                title: 'Заказать звонок',
-                text: '',
-                btnText: 'Отправить',
-                successTitle: 'Ваша заявка отправлена',
-                successText: 'Менеджер свяжется с&nbsp;вами в&nbsp;ближайшее время',
-                successBtn: true
-            })
-                +field({
-                    placeholder: 'Имя',
-                    inputAttr: {
-                        'required': '',
-                        'data-type': 'letters'
-                    },
-                })
-                +field({
-                    placeholder: 'Номер телефона',
-                    inputAttr: {
-                        'required': '',
-                        'data-v-name': 'phone',
-                        'data-type': 'phoneNumber'
-                    },
-                })
-                +field({
-                    placeholder: 'Электронная почта',
-                    inputAttr: {
-                        'required': '',
-                        'data-v-name': 'email'
-                    },
-                })
+        //- Войти
+        +modal({modalId:"loginModal", modalTitle:"", classes:"right-modal"})
+            form.form.form--modal(action="#" data-validate novalidate)
+                .form__content(data-js='form-content')
+                    .checkboxes-flex
+                        +field({
+                            type: 'radio',
+                            isTab: true,
+                            radioCheckboxText: 'Войти как поставщик',
+                            inputAttr: {
+                                checked: ''
+                            }
+                        })
+                        +field({
+                            type: 'radio',
+                            isTab: true,
+                            radioCheckboxText: 'Войти как сотрудник Frank Auto'
+                        })
+
+                    .form__title.title.title--30 Авторизация
+
+                    .form__fields
+                        +field({
+                            placeholder: 'Логин',
+                            inputAttr: {
+                                required: ''
+                            },
+                        })
+                        +field({
+                            placeholder: 'Пароль',
+                            type: 'password',
+                            inputAttr: {
+                                required: ''
+                            },
+                        })
+
+                    +btn({
+                        classes: 'form__submit',
+                        type: 'button',
+                        buttonType: 'submit',
+                        name: 'Войти',
+                        cMode: 'accent',
+                        sMode: 'full'
+                    })
+
+                    .form__privacy.form-privacy(data-js="formField")
+                        .form-privacy__flex
+                            label
+                                input(type="checkbox" data-v-name='checkbox' required)
+                                span.form-privacy__fake
+                                    svg
+                                        use(xlink:href=`img/sprites/sprite.svg#check`)
+                            span.form-privacy__text Согласен на обработку моих персональных данных в соответствии с <a href="#" target="_blank">Политикой в отношении обработки персональных данных</a>
+                        span.field__error(data-js='fieldError')
+
+                    .form__subtitle.title.title--24 Нет аккаунта?
+
+                    +btn({
+                        classes: 'form__submit',
+                        type: 'button',
+                        buttonType: 'submit',
+                        name: 'Подать заявку на регистрацию',
+                        cMode: 'light-accent',
+                        sMode: 'full'
+                    })(data-modal="")
+
+                //-.form__thanks(data-js='form-thanks')
+                    .form__image-success
+                        svg
+                            use(xlink:href=`img/sprites/sprite.svg#form_success`)
+                    .title.title--24.form__title Заявка отправлена
+                    .form__text <b>В течении 1-3 рабочих дней</b> <br>на указанный адрес почты будут отправлены учетные данные для входа на цифровую платформу
+                    +btn({
+                        classes: 'form__btn',
+                        name: 'test@yandex.ru',
+                        link: 'mailto:test@yandex.ru'
+                        cMode: 'accent',
+                        sMode: 'full'
+                    })
 
         //- Забронировать автомобиль
-        +modal({modalId:"reserveModal", modalTitle:"", classes:"form-modal"})
+        //-+modal({modalId:"reserveModal", modalTitle:"", classes:"form-modal"})
             +form({
                 classes: 'form--modal',
                 title: 'Забронировать автомобиль LIXIANG L6 MAX',
@@ -95,7 +141,7 @@ noindex
                 })
 
         //- Получить консультацию
-        +modal({modalId:"consultationModal", modalTitle:"", classes:"form-modal"})
+        //-+modal({modalId:"consultationModal", modalTitle:"", classes:"form-modal"})
             +form({
                 classes: 'form--modal',
                 title: 'Получить консультацию',
@@ -129,7 +175,7 @@ noindex
                 })
 
         //- Записаться на ТО
-        +modal({modalId:"maintenanceModal", modalTitle:"", classes:"form-modal"})
+        //-+modal({modalId:"maintenanceModal", modalTitle:"", classes:"form-modal"})
             +form({
                 classes: 'form--modal',
                 title: 'Записаться на ТО',
@@ -205,7 +251,7 @@ noindex
                 })
 
         //- Заявка на сотрудничество
-        +modal({modalId:"cooperationModal", modalTitle:"", classes:"form-modal"})
+        //-+modal({modalId:"cooperationModal", modalTitle:"", classes:"form-modal"})
             +form({
                 classes: 'form--modal',
                 title: 'Заявка на сотрудничество',
@@ -261,7 +307,7 @@ noindex
                 })
 
         //- Подписка на рассылку
-        +modal({modalId:"subscribeModal", modalTitle:"", classes:"form-modal"})
+        //-+modal({modalId:"subscribeModal", modalTitle:"", classes:"form-modal"})
             +form({
                 classes: 'form--modal',
                 title: 'Подписаться на рассылку',
@@ -281,7 +327,7 @@ noindex
                 })
 
         //- Окно благодарности
-        +modal({modalId:"thanksModal", modalTitle:"", classes:"form-modal"})
+        //-+modal({modalId:"thanksModal", modalTitle:"", classes:"form-modal"})
             .thanks-message
                 .form__thanks
                     .title.title--24.form__title Ваша заявка отправлена

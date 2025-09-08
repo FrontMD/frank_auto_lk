@@ -7,10 +7,10 @@
     label {
         display: flex;
         flex-direction: column;
-        gap: 8px;
         width: 100%;
         padding: 0;
         border: none;
+        position: relative;
 
         @include max(tablet) {
             gap: 4px;
@@ -30,30 +30,46 @@
         color: $c-text;
     }
 
+    &__input:focus~&__placeholder,
+    &__input:not(:placeholder-shown)~&__placeholder {
+        font-size: 12px;
+        top: 7px;
+        transform: translateY(0);
+    }
+
+    &__placeholder {
+        position: absolute;
+        top: 50%;
+        left: 17px;
+        transform: translateY(-50%);
+        font-family: $ff-inter;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        letter-spacing: 0;
+        color: $c-input-grey;
+        transition: all 0.2s linear;
+    }
+
+    &__input:focus,
+    &__input:not(:placeholder-shown) {
+        padding-top: 25px;
+        padding-bottom: 7px;
+    }
+
     &__input,
     &__textarea {
         width: 100%;
-        padding: 22.5px 20px;
+        padding: 16px;
         font-family: $ff-inter;
         font-size: 16px;
-        line-height: 1.1875em;
+        line-height: 1.5em;
         font-weight: 600;
         outline: none;
         color: $c-text;
         background-color: $c-bg-input;
         border-radius: $br-btn-input;
-
-        @include max(mobile) {
-            padding: 13px 20px;
-            font-size: 16px;
-            border-radius: 10px;
-            min-height: 45px;
-        }
-
-        &::placeholder {
-            color: $c-text-breadcrumbs;
-            opacity: 1;
-        }
+        transition: all $tr-time linear;
     }
 
     &--invalid &__input,
