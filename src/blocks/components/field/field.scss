@@ -34,7 +34,7 @@
     &__textarea {
         width: 100%;
         padding: 22.5px 20px;
-        font-family: $ff-rooftop;
+        font-family: $ff-inter;
         font-size: 16px;
         line-height: 1.1875em;
         font-weight: 600;
@@ -186,7 +186,7 @@
         }
 
         &--text .fake-checkbox__text {
-            font-family: $ff-rooftop;
+            font-family: $ff-inter;
             font-weight: 400;
             font-size: 16px;
             line-height: 22px;
@@ -575,7 +575,7 @@
 
             .select2-selection__rendered,
             .select2-selection__placeholder {
-                font-family: $ff-rooftop;
+                font-family: $ff-inter;
                 font-weight: 600;
                 font-size: 16px;
                 line-height: 1.1875em;
@@ -695,7 +695,7 @@
 
             &__option {
                 color: $c-text-breadcrumbs;
-                font-family: $ff-rooftop;
+                font-family: $ff-inter;
                 font-weight: 500;
                 font-size: 15px;
                 line-height: 1.2em;

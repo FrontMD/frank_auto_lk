@@ -4,7 +4,7 @@ function headerController() {
     if(!header) return
 
     // высота по скроллу
-    let lastScroll = window.scrollY ? window.scrollY : 0
+   let lastScroll = window.scrollY ? window.scrollY : 0
 
     if(lastScroll > 10) {
         header.classList.add('small')
@@ -37,9 +37,7 @@ function headerController() {
                 unlockBody()
             } else {
                 burger.classList.add('active')
-                if(ww < 768) {
-                    lockBody()
-                }
+                lockBody()
             }
         })
 
@@ -72,7 +70,7 @@ function headerController() {
     }
 
     // открытие выпадашки с телефонами
-    const phonesDropdown = document.querySelector('[data-js="phonesDropdown"]')
+    /*const phonesDropdown = document.querySelector('[data-js="phonesDropdown"]')
 
     if(phonesDropdown) {
         const phonesDropdownToggle = phonesDropdown.querySelector('[data-js="phonesDropdownToggle"]')
@@ -80,5 +78,5 @@ function headerController() {
         phonesDropdownToggle.addEventListener('click', () => {
             $(phonesDropdown).toggleClass('active')
         })
-    }
+    }*/
 }

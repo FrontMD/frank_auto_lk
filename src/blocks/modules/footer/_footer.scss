@@ -85,7 +85,7 @@
     &__nav {
         flex: 1 1 auto;
         display: flex;
-        align-items: center;
+        align-items: stretch;
         justify-content: flex-end;
         gap: 10px;
 
@@ -110,9 +110,9 @@
         @include max(tablet) {
             padding-top: 25px;
             padding-bottom: 25px;
-            flex-wrap: wrap;
-            gap: 50px;
+            flex-direction: column;
             justify-content: flex-start;
+            gap: 20px;
         }
     }
 
@@ -124,11 +124,25 @@
             display: flex;
             flex-direction: column;
             align-items: flex-start;
+
+            @include max(tablet) {
+                display: contents;
+
+                .site-footer__title {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        &--contacts {
+            @include max(laptop-small) {
+                flex-wrap: wrap;
+            }
         }
     }
 
     &__title {
-        font-family: $ff-rooftop;
+        font-family: $ff-inter;
         margin-bottom: 20px;
         font-weight: 500;
         font-size: 18px;
@@ -147,10 +161,19 @@
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 14px 80px;
+
+        @include max(laptop-small) {
+            gap: 14px 28px;
+        }
+
+        @include max(mobile) {
+            grid-template-columns: minmax(0, 1fr);
+            gap: 10px;
+        }
     }
 
     &__link {
-        font-family: $ff-rooftop;
+        font-family: $ff-inter;
         display: block;
         font-weight: 500;
         font-size: 16px;
@@ -161,6 +184,12 @@
 
         &:hover {
             color: $c-accent-hover;
+        }
+    }
+
+    &__socials {
+        @include max(tablet) {
+            order: 2;
         }
     }
 
@@ -251,18 +280,39 @@
     &--supplier &__list--contacts {
         display: flex;
         align-items: flex-start;
-        gap: 32px;
+        gap: 0 32px;
         width: 100%;
+
+        @include max(tablet) {
+            flex-direction: column;
+        }
     }
 
     &--supplier &__socials {
         margin-left: auto;
         align-self: center;
         align-items: flex-end;
+
+        @include max(tablet) {
+            margin-left: 0;
+            align-self: flex-start;
+            margin-top: 20px;
+        }
     }
 
     &--supplier &__contacts {
         gap: 32px;
+
+        @include max(tablet) {
+            flex-direction: column;
+            gap: 18px;
+        }
+    }
+
+    &--supplier &__title {
+        @include max(laptop-small) {
+            flex-basis: 100%;
+        }
     }
 }
 
@@ -283,7 +333,7 @@
 }
 
 .footer-contact {
-    font-family: $ff-rooftop;
+    font-family: $ff-inter;
     display: flex;
     align-items: flex-start;
     gap: 12px;

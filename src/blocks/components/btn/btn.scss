@@ -4,14 +4,21 @@
     justify-content: center;
     text-align: center;
     width: fit-content;
+    font-family: $ff-inter;
     font-size: 16px;
     font-weight: 600;
     line-height: 1em;
     letter-spacing: 0;
-    padding: 22.5px 52px;
+    padding: 16px 52px;
     gap: 10px;
     border-radius: $br-btn-input;
     cursor: pointer;
+
+    @include max(mobile) {
+        padding: 11px 26px;
+        font-size: 14px;
+        border-radius: $br-section-mob;
+    }
 
     svg,
     img {
@@ -207,7 +214,7 @@
     }*/
 
     &--footer {
-        font-family: $ff-rooftop;
+        font-family: $ff-inter;
         width: fit-content;
         padding: 14px 23px 10px;
         font-weight: 500;
@@ -216,45 +223,6 @@
         @include max(mobile) {
             font-size: 12px;
         }
-    }
-
-    &--header {
-        width: fit-content;
-        padding: 9.5px;
-        white-space: nowrap;
-        border-radius: 24px;
-
-        svg {
-            width: 28px;
-            height: 28px;
-            display: none;
-
-            @include max(laptop-small) {
-                display: block;
-            }
-        }
-
-        @include max(laptop-small) {
-            padding: 18px;
-
-            .btn__text {
-                display: none;
-            }
-        }
-
-        @include max(mobile) {
-            padding: 10px;
-            font-size: 13px;
-
-            .btn__text {
-                display: block;
-            }
-
-            svg {
-                display: none;
-            }
-        }
-
     }
 
     /*&--toggle {

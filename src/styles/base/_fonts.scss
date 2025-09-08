@@ -36,6 +36,15 @@
 
 @font-face {
     font-family: 'Rooftop';
+    src: url('../fonts/rooftop/Rooftop-Regular.woff2') format('woff2'),
+        url('../fonts/rooftop/Rooftop-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rooftop';
     src: url('../fonts/rooftop/Rooftop-Medium.woff2') format('woff2'),
         url('../fonts/rooftop/Rooftop-Medium.woff') format('woff');
     font-weight: 500;

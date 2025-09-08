@@ -91,6 +91,13 @@
                       </svg>
                     </div>
                   </div>
+                  <div class="lk-btn__content"><a class="lk-btn__link" href="javascript:void(0);">
+                      <svg>
+                        <use xlink:href="img/sprites/sprite.svg#settings"></use>
+                      </svg>Личные данные</a><a class="lk-btn__link" href="javascript:void(0);">
+                      <svg>
+                        <use xlink:href="img/sprites/sprite.svg#entry"></use>
+                      </svg>Выйти</a></div>
                 </div>
                 <div class="header-burger" data-js="headerBurger">
                   <div class="header-burger__toggle" data-js="headerBurgerToggle">
@@ -108,8 +115,11 @@
                   <div class="header-burger__content scrollbar scrollbar--small" data-js="headerBurgerContent">
                     <div class="header-burger__block">
                       <div class="header-menu header-menu--burger">
+                        <div class="header-menu__item header-menu__item--mob">
+                          <div class="header-menu__header"><a class="header-menu__link" href="javascript:void(0);">Личный кабинет</a></div>
+                        </div>
                         <div class="header-menu__item header-menu__item--mob" data-js="headerMenuItem">
-                          <div class="header-menu__header"><a class="header-menu__link" href="javascript:void(0);">Автомобили</a>
+                          <div class="header-menu__header"><a class="header-menu__link" href="javascript:void(0);">Добавление авто</a>
                             <div class="header-menu__icon header-menu__icon--open" data-js="headerMenuItemOpen">
                               <svg>
                                 <use xlink:href="img/sprites/sprite.svg#burger_chevron"></use>
@@ -126,7 +136,7 @@
                           </div>
                         </div>
                         <div class="header-menu__item header-menu__item--mob" data-js="headerMenuItem">
-                          <div class="header-menu__header"><a class="header-menu__link" href="javascript:void(0);">Услуги</a>
+                          <div class="header-menu__header"><a class="header-menu__link" href="javascript:void(0);">Каталог</a>
                             <div class="header-menu__icon header-menu__icon--open" data-js="headerMenuItemOpen">
                               <svg>
                                 <use xlink:href="img/sprites/sprite.svg#burger_chevron"></use>
@@ -139,72 +149,34 @@
                             </div>
                           </div>
                           <div class="header-menu__submenu" data-js="headerMenuItemSubmenu">
-                            <div class="header-menu__list"><a class="header-menu__link" href="javascript:void(0);">Пункт 1</a><a class="header-menu__link" href="javascript:void(0);">Пункт 2</a><a class="header-menu__link" href="javascript:void(0);">Пункт 3</a><a class="header-menu__link" href="javascript:void(0);">Пункт 4</a></div>
+                            <div class="header-menu__list"><a class="header-menu__link" href="javascript:void(0);">Мои автомобили</a><a class="header-menu__link" href="javascript:void(0);">Проблемные авто</a><a class="header-menu__link" href="javascript:void(0);">Архивные автомобили</a><a class="header-menu__link" href="javascript:void(0);">Проданные автомобили</a></div>
                           </div>
                         </div>
                         <div class="header-menu__item header-menu__item--mob">
-                          <div class="header-menu__header"><a class="header-menu__link" href="javascript:void(0);">Сервис</a></div>
+                          <div class="header-menu__header"><a class="header-menu__link" href="javascript:void(0);">Аналитика</a></div>
                         </div>
                         <div class="header-menu__item header-menu__item--mob">
-                          <div class="header-menu__header"><a class="header-menu__link" href="javascript:void(0);">Акции</a></div>
+                          <div class="header-menu__header"><a class="header-menu__link" href="javascript:void(0);">Запросы на покупку</a></div>
                         </div>
                         <div class="header-menu__item header-menu__item--mob" data-js="headerMenuItem">
-                          <div class="header-menu__header"><a class="header-menu__link" href="javascript:void(0);">О компании</a>
-                            <div class="header-menu__icon header-menu__icon--open" data-js="headerMenuItemOpen">
-                              <svg>
-                                <use xlink:href="img/sprites/sprite.svg#burger_chevron"></use>
-                              </svg>
-                            </div>
-                            <div class="header-menu__icon header-menu__icon--close" data-js="headerMenuItemClose">
-                              <svg>
-                                <use xlink:href="img/sprites/sprite.svg#burger_close"></use>
-                              </svg>
-                            </div>
-                          </div>
-                          <div class="header-menu__submenu" data-js="headerMenuItemSubmenu">
-                            <div class="header-menu__list"><a class="header-menu__link" href="javascript:void(0);">Пункт 1</a><a class="header-menu__link" href="javascript:void(0);">Пункт 2</a><a class="header-menu__link" href="javascript:void(0);">Пункт 3</a><a class="header-menu__link" href="javascript:void(0);">Пункт 4</a></div>
-                          </div>
-                        </div>
-                        <div class="header-menu__item">
-                          <div class="header-menu__header"><a class="header-menu__link" href="javascript:void(0);">Блог</a></div>
-                        </div>
-                        <div class="header-menu__item">
-                          <div class="header-menu__header"><a class="header-menu__link" href="javascript:void(0);">Контакты</a></div>
+                          <div class="header-menu__header"><a class="header-menu__link" href="javascript:void(0);">Заявки на регистрацию</a></div>
                         </div>
                       </div>
                     </div>
-                    <div class="header-burger__block"><a class="header-compare header-compare--burger" href="javascript:void(0);"><span class="header-compare__text">Сравнение товаров</span><span class="header-compare__count">12</span></a></div>
                     <div class="header-burger__block">
-                      <div class="header-phones">
-                        <div class="header-phones__item">Новорижское ш., 17й км, с3 <a href="tel:+74991165065">+7 (499) 116-50-65</a></div>
-                        <div class="header-phones__item">Ярославское ш., д.42 <a href="tel:+74991165065">+7 (499) 116-50-65</a></div>
-                      </div>
-                    </div>
-                    <div class="header-burger__block header-burger__block--flex">
-                      <div class="header-schedule">
-                        <div class="header-schedule__icon">
+                      <div class="header-burger__links"><a class="header-burger__link" href="javascript:void(0);">
                           <svg>
-                            <use xlink:href="img/sprites/sprite.svg#timer"></use>
-                          </svg>
-                        </div>
-                        <div class="header-schedule__text">Время работы: <br>c 08:00 до 21:00</div>
-                      </div>
-                      <div class="header-soc">
-                        <div class="header-soc__title">Наши соц сети:</div>
-                        <div class="header-soc__links"><a class="header-soc__link" href="javascript:void(0);">
-                            <svg>
-                              <use xlink:href="img/sprites/sprite.svg#youtube"></use>
-                            </svg></a><a class="header-soc__link" href="javascript:void(0);">
-                            <svg>
-                              <use xlink:href="img/sprites/sprite.svg#telegram"></use>
-                            </svg></a><a class="header-soc__link" href="javascript:void(0);">
-                            <svg>
-                              <use xlink:href="img/sprites/sprite.svg#whatsapp"></use>
-                            </svg></a><a class="header-soc__link" href="javascript:void(0);">
-                            <svg>
-                              <use xlink:href="img/sprites/sprite.svg#dzen"></use>
-                            </svg></a></div>
-                      </div>
+                            <use xlink:href="img/sprites/sprite.svg#settings"></use>
+                          </svg>Личные данные</a><a class="header-burger__link" href="javascript:void(0);">
+                          <svg>
+                            <use xlink:href="img/sprites/sprite.svg#notifications"></use>
+                          </svg>Уведомления <span>22</span></a></div>
+                    </div>
+                    <div class="header-burger__block">
+                      <div class="header-burger__links"><a class="header-burger__link" href="javascript:void(0);">
+                          <svg>
+                            <use xlink:href="img/sprites/sprite.svg#entry"></use>
+                          </svg>Выйти</a></div>
                     </div>
                   </div>
                 </div>

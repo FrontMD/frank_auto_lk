@@ -1,53 +1,54 @@
 -
     const defaultImgIntroProps = {
         classes: '',
-        img: 'img/intros/delivery_intro.webp',
-        imgMob: 'img/intros/delivery_intro_mob.webp',
-        title: 'Доставка автомобиля',
-        text: `<p>Frank Auto доставит, организует таможенное оформление и сертификацию в РФ Вашего автомобиля.</p>
-        <p>Если Вы приобрели или хотите приобрести понравившийся автомобиль в другой стране, мы можем доставить Вам его в любой город РФ, со всеми необходимыми документами для постановки на учет в ГИБДД.</p>`,
-        sticker: {
-            inTitle: false,
-            small: 'минимальный срок',
-            big: '30 дней'
-        },
-        rightTitle: '',
-        rightText: ''
     }
 
 mixin img-intro(props= defaultImgIntroProps)
     -
         const checkProps = {
             classes: props.classes ? props.classes : defaultImgIntroProps.classes,
-            img: props.img ? props.img : defaultImgIntroProps.img,
-            imgMob: props.imgMob ? props.imgMob : defaultImgIntroProps.imgMob,
-            title: props.title ? props.title : defaultImgIntroProps.title,
-            text: props.text ? props.text : defaultImgIntroProps.text,
-            sticker: props.sticker ? props.sticker : defaultImgIntroProps.sticker,
-            rightTitle: props.rightTitle ? props.rightTitle : defaultImgIntroProps.rightTitle,
-            rightText: props.rightText ? props.rightText : defaultImgIntroProps.rightText,
         }
 
     section.section.img-intro
         .section__container
-            .section-block.img-intro__block
+            .section-block.section-block--dark.img-intro__block
                 .section-block__bg.img-intro__bg
                     picture
-                        source(srcset=checkProps.imgMob media="(max-width: 767px)")
-                        img(src=checkProps.img alt="")
-                .section-block__content.img-intro__content
-                    .img-intro__left(class=checkProps.sticker.inTitle === true ? 'img-intro__left--centered' : '')
-                        .img-intro__title.title.title--50.title--light
-                            h1!= checkProps.title
-                            -if(checkProps.sticker.inTitle === true)
-                                .img-intro__sticker.img-intro__sticker--title.title-sticker!= checkProps.sticker.small
-                                    span!= checkProps.sticker.big
-                        .img-intro__text!= checkProps.text
-                        -if(checkProps.sticker.inTitle === false)
-                            .img-intro__sticker.title-sticker!= checkProps.sticker.small
-                                span!= checkProps.sticker.big
+                        source(srcset='img/home/home_intro.webp' media="(max-width: 767px)")
+                        img(src='img/home/home_intro.webp' alt="")
 
-                    -if(checkProps.rightTitle.length > 0 || checkProps.rightText.length > 0)
-                        .img-intro__right
-                            .img-intro__title.img-intro__title--right.title.title--50.title--light!= checkProps.rightTitle
-                            .img-intro__text.img-intro__text--right!= checkProps.rightText
+                .section-block__content.img-intro__content
+                    .img-intro__suptitle Личный кабинет поставщика
+                    .img-intro__title.title.title--64.title--light
+                        h1 <span>Цифровая платформа</span> для автопартнёров
+
+                    .img-intro__flex
+                        .img-intro__subtitle Предлагаете к продаже <span>новый автомобиль</span> или&nbsp;<span>автомобиль с&nbsp;пробегом</span>?
+                        .img-intro__subtitle Разместите его здесь и&nbsp;о&nbsp;нём&nbsp;узнают специалисты <span>FRANK AUTO</span>
+
+                    .img-intro__tags
+                        .img-intro__tag 
+                            svg
+                                use(xlink:href=`img/sprites/sprite.svg#check_tag`)
+                            | Продаем автомобили с пробегом
+                        .img-intro__tag 
+                            svg
+                                use(xlink:href=`img/sprites/sprite.svg#check_tag`)
+                            | Выплаты сразу в личном кабинете
+                        .img-intro__tag 
+                            svg
+                                use(xlink:href=`img/sprites/sprite.svg#check_tag`)
+                            | Продаем новые автомобили
+                        .img-intro__tag 
+                            svg
+                                use(xlink:href=`img/sprites/sprite.svg#check_tag`)
+                            | Прозраные бизнес-процессы
+
+                    .img-intro__registration
+                        +btn({
+                            classes: 'img-intro__btn',
+                            name: 'Зарегистрироваться',
+                            cMode: 'accent',
+                            sMode: 'content'
+                        })
+                        .img-intro__text Нет аккаунта? Подайте заявку на&nbsp;регистрацию
