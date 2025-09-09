@@ -153,16 +153,12 @@ html.hystmodal__opened {
 		background-color: #fff;
 	}
 
-	@include max(laptop) {
-		padding: 96px 0 0;
-	}
-
-	@include max(tablet) {
-		padding: 96px 0 0;
+	@include max(laptop-small) {
+		padding: 80px 0 0;
 	}
 
 	@include max(mobile) {
-		padding: 96px 0 0;
+		padding: 64px 0 0;
 	}
 
 }
@@ -199,8 +195,16 @@ html.hystmodal__opened {
 	position: relative;
 	background-color: $c-white;
 	border-radius: $br-section;
-	padding: 20px;
+	padding: 32px;
 	overflow: hidden;
+
+	@include max(laptop-small) {
+		padding: 24px;
+	}
+
+	@include max(tablet-small) {
+		padding: 20px 15px;
+	}
 
 	@include max(mobile) {
 		border-radius: $br-section-mob;
@@ -385,83 +389,36 @@ html.hystmodal__opened {
 
 }
 
-/*.title-sticker {
-	font-family: $ff-inter;
-	padding: 20px 25px;
-	color: $c-white;
-	background-color: $c-accent;
-	border-radius: 25px;
-	font-weight: 800;
-	font-size: 16px;
-	line-height: 1.2em;
-	letter-spacing: 0;
-
-	@include max(tablet) {
-		border-radius: 10px;
+.scrollbar {
+	&::-webkit-scrollbar {
+		-webkit-appearance: none;
+		width: 6px;
+		height: 6px;
 	}
 
-	span {
-		display: block;
-		padding-top: 6px;
-		font-family: $ff-inter;
-		font-weight: 800;
-		font-size: 30px;
-		line-height: 1em;
-		letter-spacing: 0;
-
-		@include max(tablet) {
-			font-size: 24px;
-		}
+	&::-webkit-scrollbar-track {
+		background-color: $c-bg-main;
+		border-radius: 2px;
 	}
 
-}
-
-.bullet-progress.swiper-pagination-bullets {
-	@include max(mobile) {
-		display: flex;
-		justify-content: center;
+	&::-webkit-scrollbar-thumb {
+		background-color: $c-text-light;
+		border-radius: 2px;
 	}
 
-	.swiper-pagination-bullet {
-		background-color: rgba(255, 255, 255, 0.4);
-		width: 30px;
-		height: 10px;
-		border-radius: 12px;
-		position: relative;
-		overflow: hidden;
-		opacity: 1;
-		transition: width 0.1s linear;
-	}
-
-	.bullet-progress__overlay {
-		position: absolute;
-		left: 0;
-		top: 0;
-		height: 100%;
-		width: 0%;
-		background-color: $c-white;
-	}
-
-	.swiper-pagination-bullet-active {
-		width: 354px;
-		background-color: rgba(255, 255, 255, 0.4);
-		opacity: 1;
-
+	&--small {
 		@include max(mobile) {
-			width: 110px;
+			padding-bottom: 4px;
 		}
-	}
 
-	.swiper-pagination-bullet .bullet-progress__overlay {
-		display: none;
-	}
-
-	.swiper-pagination-bullet-active .bullet-progress__overlay {
-		display: block;
+		&::-webkit-scrollbar {
+			width: 3px;
+			height: 3px;
+		}
 	}
 }
 
-.text-editor {
+/*.text-editor {
 	color: $c-text-editor;
 	font-weight: 400;
 	font-size: 16px;
@@ -629,35 +586,6 @@ html.hystmodal__opened {
 		margin-top: 50px;
 	}
 
-}
-
-.scrollbar {
-	&::-webkit-scrollbar {
-		-webkit-appearance: none;
-		width: 6px;
-		height: 6px;
-	}
-
-	&::-webkit-scrollbar-track {
-		background-color: $c-bg-main;
-		border-radius: 2px;
-	}
-
-	&::-webkit-scrollbar-thumb {
-		background-color: $c-text-light;
-		border-radius: 2px;
-	}
-
-	&--small {
-		@include max(mobile) {
-			padding-bottom: 4px;
-		}
-
-		&::-webkit-scrollbar {
-			width: 3px;
-			height: 3px;
-		}
-	}
 }
 
 .custom-scrollbar {
@@ -911,7 +839,7 @@ html.hystmodal__opened {
 	}
 }*/
 
-/*.air-datepicker {
+.air-datepicker {
 	-moz-user-select: none;
 	-webkit-user-select: none;
 	-ms-user-select: none;
@@ -978,4 +906,4 @@ html.hystmodal__opened {
 
 .air-datepicker-global-container {
 	z-index: 80;
-}*/
+}

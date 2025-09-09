@@ -12,13 +12,17 @@ noindex
                             isTab: true,
                             radioCheckboxText: 'Войти как поставщик',
                             inputAttr: {
-                                checked: ''
+                                checked: '',
+                                name: 'user-role'
                             }
                         })
                         +field({
                             type: 'radio',
                             isTab: true,
-                            radioCheckboxText: 'Войти как сотрудник Frank Auto'
+                            radioCheckboxText: 'Войти как сотрудник Frank Auto',
+                            inputAttr: {
+                                name: 'user-role'
+                            }
                         })
 
                     .form__title.title.title--30 Авторизация
@@ -66,21 +70,265 @@ noindex
                         name: 'Подать заявку на регистрацию',
                         cMode: 'light-accent',
                         sMode: 'full'
-                    })(data-modal="")
+                    })(data-modal="#signInModal")
 
-                //-.form__thanks(data-js='form-thanks')
-                    .form__image-success
-                        svg
-                            use(xlink:href=`img/sprites/sprite.svg#form_success`)
-                    .title.title--24.form__title Заявка отправлена
-                    .form__text <b>В течении 1-3 рабочих дней</b> <br>на указанный адрес почты будут отправлены учетные данные для входа на цифровую платформу
+        //- Зарегистрироваться
+        +modal({modalId:"signInModal", modalTitle:"", classes:"right-modal"})
+            .modal-slides(data-js='modalSlides')
+                .checkboxes-flex
                     +btn({
-                        classes: 'form__btn',
-                        name: 'test@yandex.ru',
-                        link: 'mailto:test@yandex.ru'
+                        name: 'Войти',
+                        sMode: 'content',
+                        cMode: 'light'
+                    })(data-modal="#loginModal")
+
+                    +btn({
+                        name: 'Подать заявку на регистрацию',
                         cMode: 'accent',
-                        sMode: 'full'
+                        sMode: 'content',
+                        type: 'fake'
                     })
+                .modal-slides__item.active(data-js="modalSlide" data-index='0')
+                    form.form.form--modal(action="#" data-validate novalidate)
+                        .form__content(data-js='form-content')
+
+                            .form__title.title.title--30 Регистрация
+
+                            .radios-row
+                                .radios-row__title Тип клиента
+                                .radios-row__list
+                                    .modal-slides__tab(data-js='modalSlidesTab' data-id='0')
+                                        +field({
+                                            type: 'radio',
+                                            radioCheckboxText: 'Юр. лицо',
+                                            inputAttr: {
+                                                checked: '',
+                                                name: 'userType',
+                                            }
+                                        })
+                                    .modal-slides__tab(data-js='modalSlidesTab' data-id='1')
+                                        +field({
+                                            type: 'radio',
+                                            radioCheckboxText: 'Физ. лицо',
+                                            inputAttr: {
+                                                name: 'userType',
+                                            }
+                                        })
+
+                            .form__fields
+                                +field({
+                                    classes: '',
+                                    tag: 'select',
+                                    placeholder: 'Тип организации',
+                                    selectOptions: [
+                                        "",
+                                        "ИП",
+                                        "ООО",
+                                        "АО",
+                                    ],
+                                    inputAttr: {
+                                        'required': '',
+                                    },
+                                })
+                                +field({
+                                    placeholder: 'ИНН',
+                                    inputAttr: {
+                                        'required': '',
+                                        'data-type': 'number',
+                                        'data-v-name': 'inn'
+                                    },
+                                })
+                                +field({
+                                    placeholder: 'КПП',
+                                    inputAttr: {
+                                        'required': '',
+                                        'data-type': 'number',
+                                        'data-v-name': 'kpp'
+                                    },
+                                })
+                                +field({
+                                    placeholder: 'Название юр.лица',
+                                    inputAttr: {
+                                        'required': '',
+                                    },
+                                })
+                                +field({
+                                    placeholder: 'Компания',
+                                    inputAttr: {
+                                        'required': '',
+                                    },
+                                })
+                                +field({
+                                    placeholder: 'Контактное лицо',
+                                    inputAttr: {
+                                        'required': '',
+                                        'data-type': 'letters'
+                                    },
+                                })
+                                +field({
+                                    placeholder: 'Email для получения учетных данных',
+                                    inputAttr: {
+                                        'required': '',
+                                        'data-v-name': 'email'
+                                    },
+                                })
+                                +field({
+                                    placeholder: 'Номер телефона',
+                                    inputAttr: {
+                                        'required': '',
+                                        'data-v-name': 'phone',
+                                        'data-type': 'phoneNumber'
+                                    },
+                                })
+
+
+                            +btn({
+                                classes: 'form__submit',
+                                type: 'button',
+                                buttonType: 'submit',
+                                name: 'Отправить заявку на регистрацию',
+                                cMode: 'accent',
+                                sMode: 'full'
+                            })
+
+                            .form__privacy.form-privacy(data-js="formField")
+                                .form-privacy__flex
+                                    label
+                                        input(type="checkbox" data-v-name='checkbox' required)
+                                        span.form-privacy__fake
+                                            svg
+                                                use(xlink:href=`img/sprites/sprite.svg#check`)
+                                    span.form-privacy__text Согласен на обработку моих персональных данных в соответствии с <a href="#" target="_blank">Политикой в отношении обработки персональных данных</a>
+                                span.field__error(data-js='fieldError')
+
+                .modal-slides__item(data-js="modalSlide" data-index='1')
+                    form.form.form--modal(action="#" data-validate novalidate)
+                        .form__content(data-js='form-content')
+                            .form__title.title.title--30 Регистрация
+
+                            .radios-row
+                                .radios-row__title Тип клиента
+                                .radios-row__list 
+                                    .modal-slides__tab(data-js='modalSlidesTab' data-id='0')
+                                        +field({
+                                            type: 'radio',
+                                            radioCheckboxText: 'Юр. лицо',
+                                            inputAttr: {
+                                                name: 'userType'
+                                            }
+                                        })
+                                    .modal-slides__tab(data-js='modalSlidesTab' data-id='1')
+                                        +field({
+                                            type: 'radio',
+                                            radioCheckboxText: 'Физ. лицо',
+                                            inputAttr: {
+                                                checked: '',
+                                                name: 'userType'
+                                            }
+                                        })
+
+                            .form__fields
+                                +field({
+                                    placeholder: 'Фамилия',
+                                    inputAttr: {
+                                        'required': '',
+                                        'data-type': 'letters'
+                                    },
+                                })
+                                .form__flex
+                                    +field({
+                                        placeholder: 'Имя',
+                                        inputAttr: {
+                                            'required': '',
+                                            'data-type': 'letters'
+                                        },
+                                    })
+                                    +field({
+                                        placeholder: 'Отчество (при наличии)',
+                                        inputAttr: {
+                                            'data-type': 'letters'
+                                        },
+                                    })
+                                +field({
+                                    placeholder: 'Email для получения учетных данных',
+                                    inputAttr: {
+                                        'required': '',
+                                        'data-v-name': 'email'
+                                    },
+                                })
+                                +field({
+                                    placeholder: 'Номер телефона',
+                                    inputAttr: {
+                                        'required': '',
+                                        'data-v-name': 'phone',
+                                        'data-type': 'phoneNumber'
+                                    },
+                                })
+                                +field({
+                                    classes: '',
+                                    tag: 'select',
+                                    placeholder: 'Страна гражданства',
+                                    selectOptions: [
+                                        "",
+                                        "Россия",
+                                        "Беларусь",
+                                        "Казахстан",
+                                    ],
+                                    inputAttr: {
+                                        'required': '',
+                                    },
+                                })
+                                +field({
+                                    placeholder: 'Серия и номер паспорта',
+                                    inputAttr: {
+                                        'required': '',
+                                    },
+                                })
+                                .form__flex
+                                    +field({
+                                        placeholder: 'Дата выдачи',
+                                        icon: 'calendar',
+                                        inputAttr: {
+                                            'required': '',
+                                            'data-v-name': 'date',
+                                            'data-type': 'date',
+                                        },
+                                    })
+                                    +field({
+                                        placeholder: 'Код подразделения',
+                                        inputAttr: {
+                                            'required': '',
+                                        },
+                                    })
+                                +field({
+                                    placeholder: 'Дата рождения',
+                                    icon: 'calendar',
+                                    inputAttr: {
+                                        'required': '',
+                                        'data-v-name': 'date',
+                                        'data-type': 'date',
+                                    },
+                                })
+
+
+                            +btn({
+                                classes: 'form__submit',
+                                type: 'button',
+                                buttonType: 'submit',
+                                name: 'Отправить заявку на регистрацию',
+                                cMode: 'accent',
+                                sMode: 'full'
+                            })
+
+                            .form__privacy.form-privacy(data-js="formField")
+                                .form-privacy__flex
+                                    label
+                                        input(type="checkbox" data-v-name='checkbox' required)
+                                        span.form-privacy__fake
+                                            svg
+                                                use(xlink:href=`img/sprites/sprite.svg#check`)
+                                    span.form-privacy__text Согласен на обработку моих персональных данных в соответствии с <a href="#" target="_blank">Политикой в отношении обработки персональных данных</a>
+                                span.field__error(data-js='fieldError')
 
         //- Забронировать автомобиль
         //-+modal({modalId:"reserveModal", modalTitle:"", classes:"form-modal"})
@@ -140,205 +388,13 @@ noindex
                     },
                 })
 
-        //- Получить консультацию
-        //-+modal({modalId:"consultationModal", modalTitle:"", classes:"form-modal"})
-            +form({
-                classes: 'form--modal',
-                title: 'Получить консультацию',
-                text: '',
-                btnText: 'Отправить',
-                successTitle: 'Ваша заявка отправлена',
-                successText: 'Менеджер свяжется с&nbsp;вами в&nbsp;ближайшее время',
-                successBtn: true
-            })
-                +field({
-                    placeholder: 'Имя',
-                    inputAttr: {
-                        'required': '',
-                        'data-type': 'letters'
-                    },
-                })
-                +field({
-                    placeholder: 'Номер телефона',
-                    inputAttr: {
-                        'required': '',
-                        'data-v-name': 'phone',
-                        'data-type': 'phoneNumber'
-                    },
-                })
-                +field({
-                    placeholder: 'Электронная почта',
-                    inputAttr: {
-                        'required': '',
-                        'data-v-name': 'email'
-                    },
-                })
-
-        //- Записаться на ТО
-        //-+modal({modalId:"maintenanceModal", modalTitle:"", classes:"form-modal"})
-            +form({
-                classes: 'form--modal',
-                title: 'Записаться на ТО',
-                text: '',
-                btnText: 'Отправить',
-                successTitle: 'Ваша заявка отправлена',
-                successText: 'Менеджер свяжется с&nbsp;вами в&nbsp;ближайшее время',
-                successBtn: true
-            })
-                +field({
-                    placeholder: 'Название услуги',
-                    inputAttr: {
-                        'disabled': '',
-                    },
-                })
-                +field({
-                    placeholder: 'Имя',
-                    inputAttr: {
-                        'required': '',
-                        'data-type': 'letters'
-                    },
-                })
-                +field({
-                    placeholder: 'Номер телефона',
-                    inputAttr: {
-                        'required': '',
-                        'data-v-name': 'phone',
-                        'data-type': 'phoneNumber'
-                    },
-                })
-                +field({
-                    placeholder: 'Электронная почта',
-                    inputAttr: {
-                        'required': '',
-                        'data-v-name': 'email'
-                    },
-                })
-                +field({
-                    classes: '',
-                    tag: 'select',
-                    placeholder: 'Марка',
-                    selectOptions: [
-                        "",
-                        "LiXiang",
-                        "Voyah",
-                        "AITO",
-                        "Chery",
-                        "Zeekr",
-                        "Audi",
-                        "Tank",
-                        "Rox Motor Tech",
-                    ],
-                    inputAttr: {
-                        'required': '',
-                    },
-                })
-                +field({
-                    tag: 'select',
-                    placeholder: 'Модель',
-                    selectOptions: [
-                        "",
-                        "LiXiang L6",
-                        "LiXiang L7",
-                        "LiXiang L9",
-                        "LiXiang L9",
-                        "LiXiang Mega",
-                        "LiXiang One"
-                    ],
-                    inputAttr: {
-                        'required': '',
-                    },
-
-                })
-
-        //- Заявка на сотрудничество
-        //-+modal({modalId:"cooperationModal", modalTitle:"", classes:"form-modal"})
-            +form({
-                classes: 'form--modal',
-                title: 'Заявка на сотрудничество',
-                text: '',
-                btnText: 'Отправить',
-                successTitle: 'Ваша заявка отправлена',
-                successText: 'Менеджер свяжется с&nbsp;вами в&nbsp;ближайшее время',
-                successBtn: true
-            })
-                +field({
-                    placeholder: 'Имя',
-                    inputAttr: {
-                        'required': '',
-                        'data-type': 'letters'
-                    },
-                })
-                +field({
-                    placeholder: 'Номер телефона',
-                    inputAttr: {
-                        'required': '',
-                        'data-v-name': 'phone',
-                        'data-type': 'phoneNumber'
-                    },
-                })
-                +field({
-                    placeholder: 'Электронная почта',
-                    inputAttr: {
-                        'required': '',
-                        'data-v-name': 'email'
-                    },
-                })
-                +field({
-                    placeholder: 'Название компании',
-                    inputAttr: {
-                        'required': '',
-                    },
-                })
-                +field({
-                    placeholder: 'ИНН',
-                    inputAttr: {
-                        'required': '',
-                        'data-type': 'number',
-                        'data-v-name': 'inn'
-                    },
-                })
-                +field({
-                    placeholder: 'КПП',
-                    inputAttr: {
-                        'required': '',
-                        'data-type': 'number',
-                        'data-v-name': 'kpp'
-                    },
-                })
-
-        //- Подписка на рассылку
-        //-+modal({modalId:"subscribeModal", modalTitle:"", classes:"form-modal"})
-            +form({
-                classes: 'form--modal',
-                title: 'Подписаться на рассылку',
-                text: '',
-                btnText: 'Отправить',
-                privacyText: 'Согласен на получение рекламной рассылки',
-                successTitle: 'Подписка оформлена',
-                successText: '',
-                successBtn: true
-            })
-                +field({
-                    placeholder: 'Электронная почта',
-                    inputAttr: {
-                        'required': '',
-                        'data-v-name': 'email'
-                    },
-                })
-
         //- Окно благодарности
-        //-+modal({modalId:"thanksModal", modalTitle:"", classes:"form-modal"})
+        +modal({modalId:"thanksModal", modalTitle:"", classes:"right-modal"})
             .thanks-message
-                .form__thanks
-                    .title.title--24.form__title Ваша заявка отправлена
-                    .form__image-success
-                        svg
-                            use(xlink:href=`img/sprites/sprite.svg#check_circle`)
-                    .form__text С Вами свяжется ответственный сотрудник по&nbsp;указанным контактным данным.
-                    +btn({
-                        classes: 'form__btn',
-                        name: 'На главную',
-                        link: '/',
-                        cMode: 'accent',
-                        sMode: 'full'
-                    })
+                .thanks-message__image
+                    svg
+                        use(xlink:href=`img/sprites/sprite.svg#form_success`)
+                .title.title--30.thanks-message__title Заявка отправлена
+                .thanks-message__text <b>В течении 1-3 рабочих дней</b> <br>на указанный адрес почты будут отправлены учетные данные для входа на цифровую платформу
+                .thanks-message__email test@yandex.ru
+                .thanks-message__note Если по какой-то причине менеджер откажет в регистрации, то на указанную почту придет сообщение с указанием причины и списком дальнейших действий для устранения причин отказа

@@ -8,8 +8,56 @@ block variables
 block content
 	.page-layout(data-js="pageLayout")
 
-		section.section
-			.section__container
-				.section-block
-					.section-block__bg
-					.section-block__content
+		+common-list({
+			columns: '2',
+			cards: [
+				{
+					title: 'Каталог автомобилей',
+					img: 'img/link-cards/card_3.webp',
+					btns: [{
+						classes: 'common-list__btn',
+						name: 'Перейти',
+						cMode: 'light-accent',
+						sMode: "content",
+						hasArrow: true,
+						icon: ''
+					}]
+				},
+				{
+					title: 'База поставщиков',
+					img: 'img/link-cards/card_7.webp',
+					btns: [{
+						classes: 'common-list__btn',
+						name: 'Перейти',
+						cMode: 'light-accent',
+						sMode: "content",
+						hasArrow: true,
+						icon: ''
+					}]
+				},
+				{
+					title: 'Заявки на регистрацию аккаунта',
+					img: 'img/link-cards/card_10.webp',
+					btns: [{
+						classes: 'common-list__btn',
+						name: 'Перейти',
+						cMode: 'light-accent',
+						sMode: "content",
+						hasArrow: true,
+						icon: ''
+					}]
+				},
+				{
+					title: 'Заявки на выкуп автомобиля',
+					img: 'img/link-cards/card_5.webp',
+					btns: [{
+						classes: 'common-list__btn',
+						name: 'Перейти',
+						cMode: 'light-accent',
+						sMode: "content",
+						hasArrow: true,
+						icon: ''
+					}]
+				},
+			],
+		})

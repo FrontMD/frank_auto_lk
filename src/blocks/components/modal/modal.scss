@@ -51,6 +51,12 @@
         width: 100%;
         max-width: 590px;
         min-width: 590px;
+
+        @include max(mobile) {
+            min-width: auto;
+            padding: 30px 10px 20px;
+            border-radius: 0;
+        }
     }
 }
 
@@ -87,6 +93,13 @@
         width: 24px;
         height: 24px;
 
+        @include max(mobile) {
+            top: 10px;
+            right: 10px;
+            width: 20px;
+            height: 20px;
+        }
+
         &:hover {
             color: $c-accent-hover;
         }
@@ -94,6 +107,11 @@
         svg {
             width: 24px;
             height: 24px;
+
+            @include max(mobile) {
+                width: 20px;
+                height: 20px;
+            }
         }
     }
 

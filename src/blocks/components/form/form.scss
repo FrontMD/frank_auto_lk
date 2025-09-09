@@ -39,6 +39,11 @@
     &__subtitle {
         margin-top: 40px;
         margin-bottom: 20px;
+
+        @include max(mobile) {
+            margin-top: 24px;
+            margin-bottom: 16px;
+        }
     }
 
     /*&__list-title {
@@ -119,15 +124,11 @@
         gap: 16px;
         margin-bottom: 16px;
         width: 100%;
-
-        @include max(mobile) {
-            gap: 10px;
-        }
     }
 
     &__flex {
         display: flex;
-        gap: 12px;
+        gap: 16px;
 
         .field {
             flex: 0 0 calc((100% - 12px) / 2);
@@ -437,6 +438,16 @@
     }
 }
 
+.form {
+    &--modal .checkboxes-flex {
+        margin-bottom: 40px;
+
+        @include max(mobile) {
+            margin-bottom: 24px;
+        }
+    }
+}
+
 /*.logo-radios {
     display: flex;
     align-items: center;
@@ -463,35 +474,6 @@
     }
 }
 
-.radios-row {
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 10px;
-    width: 100%;
-
-    &__items {
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 10px;
-        max-width: 100%;
-    }
-
-    .field {
-        flex: 0 0 auto;
-    }
-
-    &__changed {
-        font-family: $ff-inter;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 100%;
-        letter-spacing: 0;
-        color: #737373;
-    }
-}
-
 .checkboxes-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -507,10 +489,50 @@
 
 }*/
 
+.radios-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 16px;
+
+    &__list {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        max-width: 100%;
+    }
+
+    .field {
+        flex: 0 0 auto;
+    }
+
+    &__title {
+        width: max-content;
+        max-width: 100%;
+        flex: 0 1 auto;
+        font-family: $ff-inter;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 150%;
+        letter-spacing: 0;
+        color: $c-text;
+    }
+}
+
 .checkboxes-flex {
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    @include max(mobile) {
+        gap: 6px;
+    }
 
     .field {
         flex: 0 1 auto;

@@ -1,7 +1,76 @@
 .thanks-message {
-    .form__thanks {
-        opacity: 1;
-        height: auto;
-        visibility: visible;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    &__image {
+        width: 64px;
+        height: 64px;
+
+        svg {
+            width: 64px;
+            height: 64px;
+        }
+    }
+
+    &__text {
+        margin-top: 20px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        letter-spacing: 0;
+    }
+
+    &__email {
+        width: fit-content;
+        margin: 20px auto 0;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 150%;
+        letter-spacing: 0;
+        padding: 8px;
+        width: 100%;
+        max-width: 400px;
+        background-color: #DBEAFE;
+        color: $c-accent;
+        border-radius: 16px;
+    }
+
+    &__note {
+        margin: 32px auto 0;
+        width: 100%;
+        max-width: 476px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        letter-spacing: 0;
+        color: $c-input-grey;
+    }
+}
+
+.modal-slides {
+    .checkboxes-flex {
+        margin-bottom: 40px;
+
+        @include max(mobile) {
+            margin-bottom: 24px;
+        }
+    }
+
+    &__tab {
+        cursor: pointer;
+
+        .field {
+            pointer-events: none;
+        }
+    }
+
+    &__item {
+        display: none;
+
+        &.active {
+            display: block;
+        }
     }
 }

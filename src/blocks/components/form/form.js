@@ -224,7 +224,8 @@ function inputMasksInit(form) {
 
             new AirDatepicker(date, {
                 dateFormat: 'dd.MM.yyyy',
-                minDate: today,
+                minDate: '',
+                position: 'top left'
             })
     
             Inputmask({

@@ -7,6 +7,7 @@
         textareaRows: '8',
         placeholder: '',
         isTab: false,
+        icon: '',
         radioCheckboxImg: '',
         radioCheckboxImg2: '',
         radioCheckboxColor: '',
@@ -32,6 +33,7 @@ mixin field(props = defaultFieldProps)
             textareaRows: props.textareaRows ? props.textareaRows : defaultFieldProps.textareaRows,
             placeholder: props.placeholder ? props.placeholder : defaultFieldProps.placeholder,
             isTab: props.isTab ? props.isTab : defaultFieldProps.isTab,
+            icon: props.icon ? props.icon : defaultFieldProps.icon,
             radioCheckboxImg: props.radioCheckboxImg ? props.radioCheckboxImg : defaultFieldProps.radioCheckboxImg,
             radioCheckboxImg2: props.radioCheckboxImg2 ? props.radioCheckboxImg2 : defaultFieldProps.radioCheckboxImg2,
             radioCheckboxColor: props.radioCheckboxColor ? props.radioCheckboxColor : defaultFieldProps.radioCheckboxColor,
@@ -58,9 +60,13 @@ mixin field(props = defaultFieldProps)
                     - let isTab = checkProps.isTab
 
                     - if(isTab === true)
-                        span.fake-radio!= checkProps.radioCheckboxText
+                        span.fake-radio
+                            span.fake-radio__text!= checkProps.radioCheckboxText
                     - else
                         span.fake-radio
+                            span.fake-radio__input
+                            - if(checkProps.radioCheckboxText.length > 0)
+                                span.fake-radio__text!= checkProps.radioCheckboxText
 
                 - else if(checkProps.type === 'checkbox')
                     - if (checkProps.radioCheckboxText.length > 0)
@@ -77,6 +83,10 @@ mixin field(props = defaultFieldProps)
 
                 - else
                     span.field__placeholder!= checkProps.placeholder
+                    - if(checkProps.icon.length > 0)
+                        .field__icon
+                            svg
+                                use(xlink:href=`img/sprites/sprite.svg#${checkProps.icon}`)
                     span.field__error(data-js='fieldError')
 
             - if(checkProps.tag === 'textarea')

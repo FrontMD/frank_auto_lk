@@ -1,0 +1,86 @@
+extends ../layouts/default
+
+block variables
+	- const title = "Загрузить базу автомобилей"
+	- const footerType = 'supplier'
+	- const headerType = 'supplier'
+
+block content
+	.page-layout(data-js="pageLayout")
+
+		+common-list({
+			title: 'Загрузить базу автомобилей (xml / xls)',
+			columns: '2',
+			cards: [
+				{
+					title: 'Перед загрузкой базы рекомендуем пройти проверку',
+					img: 'img/link-cards/card_3.webp',
+					btns: [{
+						classes: 'common-list__btn',
+						name: 'Проверить файл',
+						cMode: 'light-accent',
+						sMode: "content",
+						hasArrow: false,
+						icon: 'file_check'
+					}]
+				},
+				{
+					title: 'Примеры шаблонов для загрузки',
+					img: 'img/link-cards/card_7.webp',
+					btns: [
+						{
+							classes: 'common-list__btn',
+							name: 'XML',
+							cMode: 'light-accent',
+							sMode: "content",
+							hasArrow: false,
+							icon: 'download'
+						},
+						{
+							classes: 'common-list__btn',
+							name: 'XLS',
+							cMode: 'light-accent',
+							sMode: "content",
+							hasArrow: false,
+							icon: 'download'
+						}
+					]
+				},
+				{
+					title: 'Загрузить автомобили',
+					img: 'img/link-cards/card_10.webp',
+					btns: [{
+						classes: 'common-list__btn',
+						name: 'Загрузить XML/XLS',
+						cMode: 'light-accent',
+						sMode: "content",
+						hasArrow: false,
+						icon: 'upload'
+					}]
+				},
+				{
+					title: 'Требования к файлам и API',
+					img: 'img/link-cards/card_5.webp',
+					btns: [{
+						classes: 'common-list__btn',
+						name: 'Скачать',
+						cMode: 'light-accent',
+						sMode: "content",
+						hasArrow: false,
+						icon: 'download'
+					}]
+				},
+				{
+					title: 'Выгрузка стока в фид',
+					img: 'img/link-cards/card_5.webp',
+					btns: [{
+						classes: 'common-list__btn',
+						name: 'Загрузить XML/XLS',
+						cMode: 'light-accent',
+						sMode: "content",
+						hasArrow: false,
+						icon: 'upload'
+					}]
+				},
+			],
+		})

@@ -311,9 +311,9 @@
             <h1 class="title title--64 pages-list__title">Страницы</h1>
             <div class="pages-list__links"><a class="pages-list__link pages-list__link--check" href="home.html" target="_blank">Вход (на макете - "Поставщикам")</a></div>
             <div class="title title--36 pages-list__subtitle">Личный кабинет поставщика</div>
-            <div class="pages-list__links"><a class="pages-list__link pages-list__link--postponed" href="supplier.html" target="_blank">Поставщик разводящая</a></div>
+            <div class="pages-list__links"><a class="pages-list__link pages-list__link--check" href="supplier.html" target="_blank">Поставщик разводящая</a><a class="pages-list__link pages-list__link--work" href="unload-db.html" target="_blank">Загрузить базу автомобилей</a></div>
             <div class="title title--36 pages-list__subtitle">Личный кабинет сотрудника</div>
-            <div class="pages-list__links"><a class="pages-list__link pages-list__link--postponed" href="employee.html" target="_blank">Сотрудник разводящая</a></div>
+            <div class="pages-list__links"><a class="pages-list__link pages-list__link--check" href="employee.html" target="_blank">Сотрудник разводящая</a></div>
           </div>
         </section>
       </div>
@@ -402,7 +402,7 @@
     field--tab 
     " data-js="formField">
                                   <label>
-                                    <input class="field__input" type="radio" placeholder="" checked=""><span class="fake-radio">Войти как поставщик</span>
+                                    <input class="field__input" type="radio" placeholder="" checked="" name="user-role"><span class="fake-radio"><span class="fake-radio__text">Войти как поставщик</span></span>
                                   </label>
                                 </div>
                                 <div class="field  
@@ -410,7 +410,7 @@
     field--tab 
     " data-js="formField">
                                   <label>
-                                    <input class="field__input" type="radio" placeholder=""><span class="fake-radio">Войти как сотрудник Frank Auto</span>
+                                    <input class="field__input" type="radio" placeholder="" name="user-role"><span class="fake-radio"><span class="fake-radio__text">Войти как сотрудник Frank Auto</span></span>
                                   </label>
                                 </div>
                           </div>
@@ -446,10 +446,317 @@
                             </div><span class="field__error" data-js="fieldError"></span>
                           </div>
                           <div class="form__subtitle title title--24">Нет аккаунта?</div>
-                              <button class="btn form__submit btn--light-accent btn--full" type="submit" data-modal=""><span class="btn__text">Подать заявку на регистрацию</span>
+                              <button class="btn form__submit btn--light-accent btn--full" type="submit" data-modal="#signInModal"><span class="btn__text">Подать заявку на регистрацию</span>
                               </button>
                         </div>
                       </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal hystmodal right-modal" id="signInModal" aria-hidden="true">
+              <div class="hystmodal__wrap">
+                <div class="hystmodal__window" role="dialog" aria-modal="true">
+                  <div class="modal__content scrollbar scrollbar--small">
+                    <div class="modal__close" data-hystclose>
+                      <svg> 
+                        <use xlink:href="./img/sprites/sprite.svg#close"></use>
+                      </svg>
+                    </div>
+                    <div class="modal__inner" data-js="modalInner">
+                      <div class="modal-slides" data-js="modalSlides">
+                        <div class="checkboxes-flex"><a class="btn  btn--light btn--content" href="javascript:void(0)" data-modal="#loginModal"><span class="btn__text">Войти</span></a>
+                              <div class="btn btn--fake  btn--accent btn--content"><span class="btn__text">Подать заявку на регистрацию</span>
+                              </div>
+                        </div>
+                        <div class="modal-slides__item active" data-js="modalSlide" data-index="0">
+                          <form class="form form--modal" action="#" data-validate novalidate>
+                            <div class="form__content" data-js="form-content">
+                              <div class="form__title title title--30">Регистрация</div>
+                              <div class="radios-row">
+                                <div class="radios-row__title">Тип клиента</div>
+                                <div class="radios-row__list">
+                                  <div class="modal-slides__tab" data-js="modalSlidesTab" data-id="0">
+                                        <div class="field  
+     
+    field--radio 
+    " data-js="formField">
+                                          <label>
+                                            <input class="field__input" type="radio" placeholder="" checked="" name="userType"><span class="fake-radio"><span class="fake-radio__input"></span><span class="fake-radio__text">Юр. лицо</span></span>
+                                          </label>
+                                        </div>
+                                  </div>
+                                  <div class="modal-slides__tab" data-js="modalSlidesTab" data-id="1">
+                                        <div class="field  
+     
+    field--radio 
+    " data-js="formField">
+                                          <label>
+                                            <input class="field__input" type="radio" placeholder="" name="userType"><span class="fake-radio"><span class="fake-radio__input"></span><span class="fake-radio__text">Физ. лицо</span></span>
+                                          </label>
+                                        </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="form__fields">
+                                    <div class="field  
+     
+     
+    " data-js="formField">
+                                      <label>
+                                        <select class="field__select" data-placeholder="Тип организации" data-js="formSelect" required="">
+                                          <option label=" "></option>
+                                          <option value="ИП">ИП</option>
+                                          <option value="ООО">ООО</option>
+                                          <option value="АО">АО</option>
+                                        </select><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                    <div class="field  
+     
+     
+    " data-js="formField">
+                                      <label>
+                                        <input class="field__input" type="text" placeholder="" required="" data-type="number" data-v-name="inn"><span class="field__placeholder">ИНН</span><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                    <div class="field  
+     
+     
+    " data-js="formField">
+                                      <label>
+                                        <input class="field__input" type="text" placeholder="" required="" data-type="number" data-v-name="kpp"><span class="field__placeholder">КПП</span><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                    <div class="field  
+     
+     
+    " data-js="formField">
+                                      <label>
+                                        <input class="field__input" type="text" placeholder="" required=""><span class="field__placeholder">Название юр.лица</span><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                    <div class="field  
+     
+     
+    " data-js="formField">
+                                      <label>
+                                        <input class="field__input" type="text" placeholder="" required=""><span class="field__placeholder">Компания</span><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                    <div class="field  
+     
+     
+    " data-js="formField">
+                                      <label>
+                                        <input class="field__input" type="text" placeholder="" required="" data-type="letters"><span class="field__placeholder">Контактное лицо</span><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                    <div class="field  
+     
+     
+    " data-js="formField">
+                                      <label>
+                                        <input class="field__input" type="text" placeholder="" required="" data-v-name="email"><span class="field__placeholder">Email для получения учетных данных</span><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                    <div class="field  
+     
+     
+    " data-js="formField">
+                                      <label>
+                                        <input class="field__input" type="text" placeholder="" required="" data-v-name="phone" data-type="phoneNumber"><span class="field__placeholder">Номер телефона</span><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                              </div>
+                                  <button class="btn form__submit btn--accent btn--full" type="submit"><span class="btn__text">Отправить заявку на регистрацию</span>
+                                  </button>
+                              <div class="form__privacy form-privacy" data-js="formField">
+                                <div class="form-privacy__flex">
+                                  <label>
+                                    <input type="checkbox" data-v-name="checkbox" required><span class="form-privacy__fake">
+                                      <svg>
+                                        <use xlink:href="img/sprites/sprite.svg#check"></use>
+                                      </svg></span>
+                                  </label><span class="form-privacy__text">Согласен на обработку моих персональных данных в соответствии с <a href="#" target="_blank">Политикой в отношении обработки персональных данных</a></span>
+                                </div><span class="field__error" data-js="fieldError"></span>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                        <div class="modal-slides__item" data-js="modalSlide" data-index="1">
+                          <form class="form form--modal" action="#" data-validate novalidate>
+                            <div class="form__content" data-js="form-content">
+                              <div class="form__title title title--30">Регистрация</div>
+                              <div class="radios-row">
+                                <div class="radios-row__title">Тип клиента</div>
+                                <div class="radios-row__list"> 
+                                  <div class="modal-slides__tab" data-js="modalSlidesTab" data-id="0">
+                                        <div class="field  
+     
+    field--radio 
+    " data-js="formField">
+                                          <label>
+                                            <input class="field__input" type="radio" placeholder="" name="userType"><span class="fake-radio"><span class="fake-radio__input"></span><span class="fake-radio__text">Юр. лицо</span></span>
+                                          </label>
+                                        </div>
+                                  </div>
+                                  <div class="modal-slides__tab" data-js="modalSlidesTab" data-id="1">
+                                        <div class="field  
+     
+    field--radio 
+    " data-js="formField">
+                                          <label>
+                                            <input class="field__input" type="radio" placeholder="" checked="" name="userType"><span class="fake-radio"><span class="fake-radio__input"></span><span class="fake-radio__text">Физ. лицо</span></span>
+                                          </label>
+                                        </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="form__fields">
+                                    <div class="field  
+     
+     
+    " data-js="formField">
+                                      <label>
+                                        <input class="field__input" type="text" placeholder="" required="" data-type="letters"><span class="field__placeholder">Фамилия</span><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                <div class="form__flex">
+                                      <div class="field  
+     
+     
+    " data-js="formField">
+                                        <label>
+                                          <input class="field__input" type="text" placeholder="" required="" data-type="letters"><span class="field__placeholder">Имя</span><span class="field__error" data-js="fieldError"></span>
+                                        </label>
+                                      </div>
+                                      <div class="field  
+     
+     
+    " data-js="formField">
+                                        <label>
+                                          <input class="field__input" type="text" placeholder="" data-type="letters"><span class="field__placeholder">Отчество (при наличии)</span><span class="field__error" data-js="fieldError"></span>
+                                        </label>
+                                      </div>
+                                </div>
+                                    <div class="field  
+     
+     
+    " data-js="formField">
+                                      <label>
+                                        <input class="field__input" type="text" placeholder="" required="" data-v-name="email"><span class="field__placeholder">Email для получения учетных данных</span><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                    <div class="field  
+     
+     
+    " data-js="formField">
+                                      <label>
+                                        <input class="field__input" type="text" placeholder="" required="" data-v-name="phone" data-type="phoneNumber"><span class="field__placeholder">Номер телефона</span><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                    <div class="field  
+     
+     
+    " data-js="formField">
+                                      <label>
+                                        <select class="field__select" data-placeholder="Страна гражданства" data-js="formSelect" required="">
+                                          <option label=" "></option>
+                                          <option value="Россия">Россия</option>
+                                          <option value="Беларусь">Беларусь</option>
+                                          <option value="Казахстан">Казахстан</option>
+                                        </select><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                    <div class="field  
+     
+     
+    " data-js="formField">
+                                      <label>
+                                        <input class="field__input" type="text" placeholder="" required=""><span class="field__placeholder">Серия и номер паспорта</span><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                <div class="form__flex">
+                                      <div class="field  
+     
+     
+    " data-js="formField">
+                                        <label>
+                                          <input class="field__input" type="text" placeholder="" required="" data-v-name="date" data-type="date"><span class="field__placeholder">Дата выдачи</span>
+                                          <div class="field__icon">
+                                            <svg>
+                                              <use xlink:href="img/sprites/sprite.svg#calendar"></use>
+                                            </svg>
+                                          </div><span class="field__error" data-js="fieldError"></span>
+                                        </label>
+                                      </div>
+                                      <div class="field  
+     
+     
+    " data-js="formField">
+                                        <label>
+                                          <input class="field__input" type="text" placeholder="" required=""><span class="field__placeholder">Код подразделения</span><span class="field__error" data-js="fieldError"></span>
+                                        </label>
+                                      </div>
+                                </div>
+                                    <div class="field  
+     
+     
+    " data-js="formField">
+                                      <label>
+                                        <input class="field__input" type="text" placeholder="" required="" data-v-name="date" data-type="date"><span class="field__placeholder">Дата рождения</span>
+                                        <div class="field__icon">
+                                          <svg>
+                                            <use xlink:href="img/sprites/sprite.svg#calendar"></use>
+                                          </svg>
+                                        </div><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                              </div>
+                                  <button class="btn form__submit btn--accent btn--full" type="submit"><span class="btn__text">Отправить заявку на регистрацию</span>
+                                  </button>
+                              <div class="form__privacy form-privacy" data-js="formField">
+                                <div class="form-privacy__flex">
+                                  <label>
+                                    <input type="checkbox" data-v-name="checkbox" required><span class="form-privacy__fake">
+                                      <svg>
+                                        <use xlink:href="img/sprites/sprite.svg#check"></use>
+                                      </svg></span>
+                                  </label><span class="form-privacy__text">Согласен на обработку моих персональных данных в соответствии с <a href="#" target="_blank">Политикой в отношении обработки персональных данных</a></span>
+                                </div><span class="field__error" data-js="fieldError"></span>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal hystmodal right-modal" id="thanksModal" aria-hidden="true">
+              <div class="hystmodal__wrap">
+                <div class="hystmodal__window" role="dialog" aria-modal="true">
+                  <div class="modal__content scrollbar scrollbar--small">
+                    <div class="modal__close" data-hystclose>
+                      <svg> 
+                        <use xlink:href="./img/sprites/sprite.svg#close"></use>
+                      </svg>
+                    </div>
+                    <div class="modal__inner" data-js="modalInner">
+                      <div class="thanks-message">
+                        <div class="thanks-message__image">
+                          <svg>
+                            <use xlink:href="img/sprites/sprite.svg#form_success"></use>
+                          </svg>
+                        </div>
+                        <div class="title title--30 thanks-message__title">Заявка отправлена</div>
+                        <div class="thanks-message__text"><b>В течении 1-3 рабочих дней</b> <br>на указанный адрес почты будут отправлены учетные данные для входа на цифровую платформу</div>
+                        <div class="thanks-message__email">test@yandex.ru</div>
+                        <div class="thanks-message__note">Если по какой-то причине менеджер откажет в регистрации, то на указанную почту придет сообщение с указанием причины и списком дальнейших действий для устранения причин отказа</div>
+                      </div>
                     </div>
                   </div>
                 </div>

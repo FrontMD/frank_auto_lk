@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Загрузить базу автомобилей</title>
+    <meta name="theme-color" content="#fff">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="shortcut icon" href="img/favicons/favicon.ico" type="image/x-icon">
+    <link rel="icon" sizes="16x16" href="img/favicons/favicon-16x16.png" type="image/png">
+    <link rel="icon" sizes="32x32" href="img/favicons/favicon-32x32.png" type="image/png">
+    <link rel="apple-touch-icon-precomposed" href="img/favicons/apple-touch-icon-precomposed.png">
+    <link rel="apple-touch-icon" href="img/favicons/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png">
+    <link rel="stylesheet" href="styles/main.min.css">
+  </head>
+  <body>
+        <header class="site-header" data-js="siteHeader">
+          <div class="section site-header__section" data-js="siteHeaderSection">
+            <div class="section__container site-header__container">
+              <div class="site-header__row">
+                <div class="section-block site-header__block site-header__left"><a class="site-header__logo" href="javascript:void(0);">
+                    <picture>
+                      <source media="(max-width: 992px)" srcset="img/logo/logo_header.svg"><img src="img/logo/logo_header.svg" alt="">
+                    </picture></a></div>
+                <div class="section-block site-header__block site-header__menu">
+                  <nav class="header-menu">
+                    <div class="header-menu__item">
+                      <div class="header-menu__header"><a class="header-menu__link" href="javascript:void(0);">Личный кабинет</a></div>
+                    </div>
+                    <div class="header-menu__item">
+                      <div class="header-menu__header"><a class="header-menu__link" href="javascript:void(0);">Добавление авто</a>
+                        <div class="header-menu__icon">
+                          <svg>
+                            <use xlink:href="img/sprites/sprite.svg#arrow_angle_down"></use>
+                          </svg>
+                        </div>
+                      </div>
+                      <div class="header-menu__submenu">
+                        <div class="header-menu__list"><a class="header-menu__link" href="javascript:void(0);">Пункт 1</a><a class="header-menu__link" href="javascript:void(0);">Пункт 2</a><a class="header-menu__link" href="javascript:void(0);">Пункт 3</a><a class="header-menu__link" href="javascript:void(0);">Пункт 4</a></div>
+                      </div>
+                    </div>
+                    <div class="header-menu__item">
+                      <div class="header-menu__header"><a class="header-menu__link" href="javascript:void(0);">Каталог</a>
+                        <div class="header-menu__icon">
+                          <svg>
+                            <use xlink:href="img/sprites/sprite.svg#arrow_angle_down"></use>
+                          </svg>
+                        </div>
+                      </div>
+                      <div class="header-menu__submenu">
+                        <div class="header-menu__list"><a class="header-menu__link" href="javascript:void(0);">Мои автомобили</a><a class="header-menu__link" href="javascript:void(0);">Проблемные авто</a><a class="header-menu__link" href="javascript:void(0);">Архивные автомобили</a><a class="header-menu__link" href="javascript:void(0);">Проданные автомобили</a></div>
+                      </div>
+                    </div>
+                    <div class="header-menu__item">
+                      <div class="header-menu__header"><a class="header-menu__link" href="javascript:void(0);">Аналитика</a></div>
+                    </div>
+                    <div class="header-menu__item">
+                      <div class="header-menu__header"><a class="header-menu__link" href="javascript:void(0);">Запросы на покупку</a></div>
+                    </div>
+                    <div class="header-menu__item">
+                      <div class="header-menu__header"><a class="header-menu__link" href="javascript:void(0);">Заявки на регистрацию</a></div>
+                    </div>
+                  </nav>
+                </div>
+                <div class="section-block site-header__block site-header__notifications"><a class="header-notifications" href="javascript:void(0);">
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#notifications"></use>
+                    </svg><span class="header-notifications__count">22</span></a></div>
+                <div class="site-header__lk lk-btn">
+                  <div class="lk-btn__header">
+                    <div class="lk-btn__icon">
+                      <svg>
+                        <use xlink:href="img/sprites/sprite.svg#lk"></use>
+                      </svg>
+                    </div>
+                    <div class="lk-btn__text">Мищенко Сергей</div>
+                    <div class="lk-btn__chevron">
+                      <svg>
+                        <use xlink:href="img/sprites/sprite.svg#arrow_angle_down"></use>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="lk-btn__content"><a class="lk-btn__link" href="javascript:void(0);">
+                      <svg>
+                        <use xlink:href="img/sprites/sprite.svg#settings"></use>
+                      </svg>Личные данные</a><a class="lk-btn__link" href="javascript:void(0);">
+                      <svg>
+                        <use xlink:href="img/sprites/sprite.svg#entry"></use>
+                      </svg>Выйти</a></div>
+                </div>
+                <div class="header-burger" data-js="headerBurger">
+                  <div class="header-burger__toggle" data-js="headerBurgerToggle">
+                    <div class="header-burger__open header-burger__icon">
+                      <svg>
+                        <use xlink:href="img/sprites/sprite.svg#burger"></use>
+                      </svg>
+                    </div>
+                    <div class="header-burger__close header-burger__icon">
+                      <svg>
+                        <use xlink:href="img/sprites/sprite.svg#close"></use>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="header-burger__content scrollbar scrollbar--small" data-js="headerBurgerContent">
+                    <div class="header-burger__block">
+                      <div class="header-menu header-menu--burger">
+                        <div class="header-menu__item header-menu__item--mob">
+                          <div class="header-menu__header"><a class="header-menu__link" href="javascript:void(0);">Личный кабинет</a></div>
+                        </div>
+                        <div class="header-menu__item header-menu__item--mob" data-js="headerMenuItem">
+                          <div class="header-menu__header"><a class="header-menu__link" href="javascript:void(0);">Добавление авто</a>
+                            <div class="header-menu__icon header-menu__icon--open" data-js="headerMenuItemOpen">
+                              <svg>
+                                <use xlink:href="img/sprites/sprite.svg#burger_chevron"></use>
+                              </svg>
+                            </div>
+                            <div class="header-menu__icon header-menu__icon--close" data-js="headerMenuItemClose">
+                              <svg>
+                                <use xlink:href="img/sprites/sprite.svg#burger_close"></use>
+                              </svg>
+                            </div>
+                          </div>
+                          <div class="header-menu__submenu" data-js="headerMenuItemSubmenu">
+                            <div class="header-menu__list"><a class="header-menu__link" href="javascript:void(0);">Пункт 1</a><a class="header-menu__link" href="javascript:void(0);">Пункт 2</a><a class="header-menu__link" href="javascript:void(0);">Пункт 3</a><a class="header-menu__link" href="javascript:void(0);">Пункт 4</a></div>
+                          </div>
+                        </div>
+                        <div class="header-menu__item header-menu__item--mob" data-js="headerMenuItem">
+                          <div class="header-menu__header"><a class="header-menu__link" href="javascript:void(0);">Каталог</a>
+                            <div class="header-menu__icon header-menu__icon--open" data-js="headerMenuItemOpen">
+                              <svg>
+                                <use xlink:href="img/sprites/sprite.svg#burger_chevron"></use>
+                              </svg>
+                            </div>
+                            <div class="header-menu__icon header-menu__icon--close" data-js="headerMenuItemClose">
+                              <svg>
+                                <use xlink:href="img/sprites/sprite.svg#burger_close"></use>
+                              </svg>
+                            </div>
+                          </div>
+                          <div class="header-menu__submenu" data-js="headerMenuItemSubmenu">
+                            <div class="header-menu__list"><a class="header-menu__link" href="javascript:void(0);">Мои автомобили</a><a class="header-menu__link" href="javascript:void(0);">Проблемные авто</a><a class="header-menu__link" href="javascript:void(0);">Архивные автомобили</a><a class="header-menu__link" href="javascript:void(0);">Проданные автомобили</a></div>
+                          </div>
+                        </div>
+                        <div class="header-menu__item header-menu__item--mob">
+                          <div class="header-menu__header"><a class="header-menu__link" href="javascript:void(0);">Аналитика</a></div>
+                        </div>
+                        <div class="header-menu__item header-menu__item--mob">
+                          <div class="header-menu__header"><a class="header-menu__link" href="javascript:void(0);">Запросы на покупку</a></div>
+                        </div>
+                        <div class="header-menu__item header-menu__item--mob" data-js="headerMenuItem">
+                          <div class="header-menu__header"><a class="header-menu__link" href="javascript:void(0);">Заявки на регистрацию</a></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="header-burger__block">
+                      <div class="header-burger__links"><a class="header-burger__link" href="javascript:void(0);">
+                          <svg>
+                            <use xlink:href="img/sprites/sprite.svg#settings"></use>
+                          </svg>Личные данные</a><a class="header-burger__link" href="javascript:void(0);">
+                          <svg>
+                            <use xlink:href="img/sprites/sprite.svg#notifications"></use>
+                          </svg>Уведомления <span>22</span></a></div>
+                    </div>
+                    <div class="header-burger__block">
+                      <div class="header-burger__links"><a class="header-burger__link" href="javascript:void(0);">
+                          <svg>
+                            <use xlink:href="img/sprites/sprite.svg#entry"></use>
+                          </svg>Выйти</a></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+    <main class="site-main">
+      <div class="page-layout" data-js="pageLayout">
+            <section class="section common-list common-list--2">
+              <div class="section__container">
+                <div class="section-block common-list__block">
+                  <div class="title title--24 common-list__title">Загрузить базу автомобилей (xml / xls)</div>
+                  <div class="common-list__list">
+                    <div class="common-list__card">
+                      <div class="common-list__info">
+                        <div class="common-list__subtitle title">Перед загрузкой базы рекомендуем пройти проверку</div>
+                        <div class="common-list__btns"><a class="btn common-list__btn btn--light-accent btn--content" href="javascript:void(0)">
+                                <svg>
+                                  <use xlink:href="img/sprites/sprite.svg#file_check"></use>
+                                </svg><span class="btn__text">Проверить файл</span></a>
+                        </div>
+                      </div>
+                      <div class="common-list__img"><img src="img/link-cards/card_3.webp" alt=""></div>
+                    </div>
+                    <div class="common-list__card">
+                      <div class="common-list__info">
+                        <div class="common-list__subtitle title">Примеры шаблонов для загрузки</div>
+                        <div class="common-list__btns"><a class="btn common-list__btn btn--light-accent btn--content" href="javascript:void(0)">
+                                <svg>
+                                  <use xlink:href="img/sprites/sprite.svg#download"></use>
+                                </svg><span class="btn__text">XML</span></a><a class="btn common-list__btn btn--light-accent btn--content" href="javascript:void(0)">
+                                <svg>
+                                  <use xlink:href="img/sprites/sprite.svg#download"></use>
+                                </svg><span class="btn__text">XLS</span></a>
+                        </div>
+                      </div>
+                      <div class="common-list__img"><img src="img/link-cards/card_7.webp" alt=""></div>
+                    </div>
+                    <div class="common-list__card">
+                      <div class="common-list__info">
+                        <div class="common-list__subtitle title">Загрузить автомобили</div>
+                        <div class="common-list__btns"><a class="btn common-list__btn btn--light-accent btn--content" href="javascript:void(0)">
+                                <svg>
+                                  <use xlink:href="img/sprites/sprite.svg#upload"></use>
+                                </svg><span class="btn__text">Загрузить XML/XLS</span></a>
+                        </div>
+                      </div>
+                      <div class="common-list__img"><img src="img/link-cards/card_10.webp" alt=""></div>
+                    </div>
+                    <div class="common-list__card">
+                      <div class="common-list__info">
+                        <div class="common-list__subtitle title">Требования к файлам и API</div>
+                        <div class="common-list__btns"><a class="btn common-list__btn btn--light-accent btn--content" href="javascript:void(0)">
+                                <svg>
+                                  <use xlink:href="img/sprites/sprite.svg#download"></use>
+                                </svg><span class="btn__text">Скачать</span></a>
+                        </div>
+                      </div>
+                      <div class="common-list__img"><img src="img/link-cards/card_5.webp" alt=""></div>
+                    </div>
+                    <div class="common-list__card">
+                      <div class="common-list__info">
+                        <div class="common-list__subtitle title">Выгрузка стока в фид</div>
+                        <div class="common-list__btns"><a class="btn common-list__btn btn--light-accent btn--content" href="javascript:void(0)">
+                                <svg>
+                                  <use xlink:href="img/sprites/sprite.svg#upload"></use>
+                                </svg><span class="btn__text">Загрузить XML/XLS</span></a>
+                        </div>
+                      </div>
+                      <div class="common-list__img"><img src="img/link-cards/card_5.webp" alt=""></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+      </div>
+    </main>
+        <footer class="site-footer site-footer--supplier">
+          <div class="section site-footer__section">
+            <div class="section__container">
+              <div class="site-footer__block">
+                <div class="site-footer__row site-footer__top">
+                  <div class="site-footer__logo"><img src="img/logo/logo_footer.svg" alt=""></div>
+                  <div class="site-footer__rating"><div style="width:100%;height:100%;overflow:hidden;position:relative;"><iframe style="width:100%;height:100%;border:1px solid #e6e6e6;border-radius:8px;box-sizing:border-box" src="https://yandex.ru/maps-reviews-widget/49212829293?size=m"></iframe></div></div>
+                  <div class="site-footer__nav"><a class="btn  btn--grey btn--footer" href="javascript:void(0)"><span class="btn__text">Личный кабинет</span></a><a class="btn  btn--grey btn--footer" href="javascript:void(0)"><span class="btn__text">Мои автомобили</span></a><a class="btn  btn--grey btn--footer" href="javascript:void(0)"><span class="btn__text">Аналитика</span></a><a class="btn  btn--grey btn--footer" href="javascript:void(0)"><span class="btn__text">Запросы на покупку</span></a>
+                  </div>
+                </div>
+                <div class="site-footer__row site-footer__middle">
+                  <div class="site-footer__list site-footer__list--contacts">
+                    <div class="site-footer__title">Контакты</div>
+                    <div class="site-footer__contacts">
+                      <div class="site-footer__contact footer-contact">
+                        <div class="footer-contact__icon">
+                          <svg>
+                            <use xlink:href="img/sprites/sprite.svg#handset"></use>
+                          </svg>
+                        </div>
+                        <div class="footer-contact__desc"><a class="footer-contact__title" href="tel:+74994606219">+7 (499) 460-62-19</a>
+                          <div class="footer-contact__text">Россия, Москва, <br>Новорижское ш.,17й км,с3</div>
+                        </div>
+                      </div>
+                      <div class="site-footer__contact footer-contact">
+                        <div class="footer-contact__icon">
+                          <svg>
+                            <use xlink:href="img/sprites/sprite.svg#handset"></use>
+                          </svg>
+                        </div>
+                        <div class="footer-contact__desc"><a class="footer-contact__title" href="tel:+74991165065">+7 (499) 116-50-65</a>
+                          <div class="footer-contact__text">Россия, Москва, <br>Ярославское ш., д.42</div>
+                        </div>
+                      </div>
+                      <div class="site-footer__contact footer-contact">
+                        <div class="footer-contact__icon">
+                          <svg>
+                            <use xlink:href="img/sprites/sprite.svg#timer"></use>
+                          </svg>
+                        </div>
+                        <div class="footer-contact__desc">
+                          <div class="footer-contact__title">Ежедневно <br>с 08:00 до 21:00</div>
+                        </div>
+                      </div>
+                    </div>
+                        <div class="socials site-footer__socials"><a class="socials__item" href="javascript:void(0);">
+                            <svg> 
+                              <use xlink:href="img/sprites/sprite.svg#telegram"></use>
+                            </svg></a><a class="socials__item" href="javascript:void(0);">
+                            <svg> 
+                              <use xlink:href="img/sprites/sprite.svg#vk"></use>
+                            </svg></a></div>
+                  </div>
+                </div>
+                <div class="site-footer__row site-footer__bottom">
+                  <div class="site-footer__info">
+                    <div class="site-footer__copyright">©2025 Автосалон FRANK AUTO</div><a class="site-footer__doc" href="javascript:void(0);">Политика конфиденциальности</a><a class="site-footer__doc" href="javascript:void(0);">Пользовательское соглашение</a>
+                    <div class="site-footer__disclaimer">Обращаем Ваше внимание на то, что данный интернет-сайт носит исключительно информационный характер и ни при каких условиях не является публичной офертой, определяемой положениями Статьи 437 Гражданского кодекса Российской Федерации.</div>
+                  </div><a class="site-footer__developer" href="https://itspace.group/"><span>Разработка сайта</span><img src="img/logo/its_logo.svg" alt="it space group"></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+    <noindex>
+      <div>
+            <div class="modal hystmodal right-modal" id="loginModal" aria-hidden="true">
+              <div class="hystmodal__wrap">
+                <div class="hystmodal__window" role="dialog" aria-modal="true">
+                  <div class="modal__content scrollbar scrollbar--small">
+                    <div class="modal__close" data-hystclose>
+                      <svg> 
+                        <use xlink:href="./img/sprites/sprite.svg#close"></use>
+                      </svg>
+                    </div>
+                    <div class="modal__inner" data-js="modalInner">
+                      <form class="form form--modal" action="#" data-validate novalidate>
+                        <div class="form__content" data-js="form-content">
+                          <div class="checkboxes-flex">
+                                <div class="field  
+     
+    field--tab 
+    " data-js="formField">
+                                  <label>
+                                    <input class="field__input" type="radio" placeholder="" checked="" name="user-role"><span class="fake-radio"><span class="fake-radio__text">Войти как поставщик</span></span>
+                                  </label>
+                                </div>
+                                <div class="field  
+     
+    field--tab 
+    " data-js="formField">
+                                  <label>
+                                    <input class="field__input" type="radio" placeholder="" name="user-role"><span class="fake-radio"><span class="fake-radio__text">Войти как сотрудник Frank Auto</span></span>
+                                  </label>
+                                </div>
+                          </div>
+                          <div class="form__title title title--30">Авторизация</div>
+                          <div class="form__fields">
+                                <div class="field  
+     
+     
+    " data-js="formField">
+                                  <label>
+                                    <input class="field__input" type="text" placeholder="" required=""><span class="field__placeholder">Логин</span><span class="field__error" data-js="fieldError"></span>
+                                  </label>
+                                </div>
+                                <div class="field  
+     
+     
+    " data-js="formField">
+                                  <label>
+                                    <input class="field__input" type="password" placeholder="" required=""><span class="field__placeholder">Пароль</span><span class="field__error" data-js="fieldError"></span>
+                                  </label>
+                                </div>
+                          </div>
+                              <button class="btn form__submit btn--accent btn--full" type="submit"><span class="btn__text">Войти</span>
+                              </button>
+                          <div class="form__privacy form-privacy" data-js="formField">
+                            <div class="form-privacy__flex">
+                              <label>
+                                <input type="checkbox" data-v-name="checkbox" required><span class="form-privacy__fake">
+                                  <svg>
+                                    <use xlink:href="img/sprites/sprite.svg#check"></use>
+                                  </svg></span>
+                              </label><span class="form-privacy__text">Согласен на обработку моих персональных данных в соответствии с <a href="#" target="_blank">Политикой в отношении обработки персональных данных</a></span>
+                            </div><span class="field__error" data-js="fieldError"></span>
+                          </div>
+                          <div class="form__subtitle title title--24">Нет аккаунта?</div>
+                              <button class="btn form__submit btn--light-accent btn--full" type="submit" data-modal="#signInModal"><span class="btn__text">Подать заявку на регистрацию</span>
+                              </button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal hystmodal right-modal" id="signInModal" aria-hidden="true">
+              <div class="hystmodal__wrap">
+                <div class="hystmodal__window" role="dialog" aria-modal="true">
+                  <div class="modal__content scrollbar scrollbar--small">
+                    <div class="modal__close" data-hystclose>
+                      <svg> 
+                        <use xlink:href="./img/sprites/sprite.svg#close"></use>
+                      </svg>
+                    </div>
+                    <div class="modal__inner" data-js="modalInner">
+                      <div class="modal-slides" data-js="modalSlides">
+                        <div class="checkboxes-flex"><a class="btn  btn--light btn--content" href="javascript:void(0)" data-modal="#loginModal"><span class="btn__text">Войти</span></a>
+                              <div class="btn btn--fake  btn--accent btn--content"><span class="btn__text">Подать заявку на регистрацию</span>
+                              </div>
+                        </div>
+                        <div class="modal-slides__item active" data-js="modalSlide" data-index="0">
+                          <form class="form form--modal" action="#" data-validate novalidate>
+                            <div class="form__content" data-js="form-content">
+                              <div class="form__title title title--30">Регистрация</div>
+                              <div class="radios-row">
+                                <div class="radios-row__title">Тип клиента</div>
+                                <div class="radios-row__list">
+                                  <div class="modal-slides__tab" data-js="modalSlidesTab" data-id="0">
+                                        <div class="field  
+     
+    field--radio 
+    " data-js="formField">
+                                          <label>
+                                            <input class="field__input" type="radio" placeholder="" checked="" name="userType"><span class="fake-radio"><span class="fake-radio__input"></span><span class="fake-radio__text">Юр. лицо</span></span>
+                                          </label>
+                                        </div>
+                                  </div>
+                                  <div class="modal-slides__tab" data-js="modalSlidesTab" data-id="1">
+                                        <div class="field  
+     
+    field--radio 
+    " data-js="formField">
+                                          <label>
+                                            <input class="field__input" type="radio" placeholder="" name="userType"><span class="fake-radio"><span class="fake-radio__input"></span><span class="fake-radio__text">Физ. лицо</span></span>
+                                          </label>
+                                        </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="form__fields">
+                                    <div class="field  
+     
+     
+    " data-js="formField">
+                                      <label>
+                                        <select class="field__select" data-placeholder="Тип организации" data-js="formSelect" required="">
+                                          <option label=" "></option>
+                                          <option value="ИП">ИП</option>
+                                          <option value="ООО">ООО</option>
+                                          <option value="АО">АО</option>
+                                        </select><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                    <div class="field  
+     
+     
+    " data-js="formField">
+                                      <label>
+                                        <input class="field__input" type="text" placeholder="" required="" data-type="number" data-v-name="inn"><span class="field__placeholder">ИНН</span><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                    <div class="field  
+     
+     
+    " data-js="formField">
+                                      <label>
+                                        <input class="field__input" type="text" placeholder="" required="" data-type="number" data-v-name="kpp"><span class="field__placeholder">КПП</span><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                    <div class="field  
+     
+     
+    " data-js="formField">
+                                      <label>
+                                        <input class="field__input" type="text" placeholder="" required=""><span class="field__placeholder">Название юр.лица</span><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                    <div class="field  
+     
+     
+    " data-js="formField">
+                                      <label>
+                                        <input class="field__input" type="text" placeholder="" required=""><span class="field__placeholder">Компания</span><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                    <div class="field  
+     
+     
+    " data-js="formField">
+                                      <label>
+                                        <input class="field__input" type="text" placeholder="" required="" data-type="letters"><span class="field__placeholder">Контактное лицо</span><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                    <div class="field  
+     
+     
+    " data-js="formField">
+                                      <label>
+                                        <input class="field__input" type="text" placeholder="" required="" data-v-name="email"><span class="field__placeholder">Email для получения учетных данных</span><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                    <div class="field  
+     
+     
+    " data-js="formField">
+                                      <label>
+                                        <input class="field__input" type="text" placeholder="" required="" data-v-name="phone" data-type="phoneNumber"><span class="field__placeholder">Номер телефона</span><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                              </div>
+                                  <button class="btn form__submit btn--accent btn--full" type="submit"><span class="btn__text">Отправить заявку на регистрацию</span>
+                                  </button>
+                              <div class="form__privacy form-privacy" data-js="formField">
+                                <div class="form-privacy__flex">
+                                  <label>
+                                    <input type="checkbox" data-v-name="checkbox" required><span class="form-privacy__fake">
+                                      <svg>
+                                        <use xlink:href="img/sprites/sprite.svg#check"></use>
+                                      </svg></span>
+                                  </label><span class="form-privacy__text">Согласен на обработку моих персональных данных в соответствии с <a href="#" target="_blank">Политикой в отношении обработки персональных данных</a></span>
+                                </div><span class="field__error" data-js="fieldError"></span>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                        <div class="modal-slides__item" data-js="modalSlide" data-index="1">
+                          <form class="form form--modal" action="#" data-validate novalidate>
+                            <div class="form__content" data-js="form-content">
+                              <div class="form__title title title--30">Регистрация</div>
+                              <div class="radios-row">
+                                <div class="radios-row__title">Тип клиента</div>
+                                <div class="radios-row__list"> 
+                                  <div class="modal-slides__tab" data-js="modalSlidesTab" data-id="0">
+                                        <div class="field  
+     
+    field--radio 
+    " data-js="formField">
+                                          <label>
+                                            <input class="field__input" type="radio" placeholder="" name="userType"><span class="fake-radio"><span class="fake-radio__input"></span><span class="fake-radio__text">Юр. лицо</span></span>
+                                          </label>
+                                        </div>
+                                  </div>
+                                  <div class="modal-slides__tab" data-js="modalSlidesTab" data-id="1">
+                                        <div class="field  
+     
+    field--radio 
+    " data-js="formField">
+                                          <label>
+                                            <input class="field__input" type="radio" placeholder="" checked="" name="userType"><span class="fake-radio"><span class="fake-radio__input"></span><span class="fake-radio__text">Физ. лицо</span></span>
+                                          </label>
+                                        </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="form__fields">
+                                    <div class="field  
+     
+     
+    " data-js="formField">
+                                      <label>
+                                        <input class="field__input" type="text" placeholder="" required="" data-type="letters"><span class="field__placeholder">Фамилия</span><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                <div class="form__flex">
+                                      <div class="field  
+     
+     
+    " data-js="formField">
+                                        <label>
+                                          <input class="field__input" type="text" placeholder="" required="" data-type="letters"><span class="field__placeholder">Имя</span><span class="field__error" data-js="fieldError"></span>
+                                        </label>
+                                      </div>
+                                      <div class="field  
+     
+     
+    " data-js="formField">
+                                        <label>
+                                          <input class="field__input" type="text" placeholder="" data-type="letters"><span class="field__placeholder">Отчество (при наличии)</span><span class="field__error" data-js="fieldError"></span>
+                                        </label>
+                                      </div>
+                                </div>
+                                    <div class="field  
+     
+     
+    " data-js="formField">
+                                      <label>
+                                        <input class="field__input" type="text" placeholder="" required="" data-v-name="email"><span class="field__placeholder">Email для получения учетных данных</span><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                    <div class="field  
+     
+     
+    " data-js="formField">
+                                      <label>
+                                        <input class="field__input" type="text" placeholder="" required="" data-v-name="phone" data-type="phoneNumber"><span class="field__placeholder">Номер телефона</span><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                    <div class="field  
+     
+     
+    " data-js="formField">
+                                      <label>
+                                        <select class="field__select" data-placeholder="Страна гражданства" data-js="formSelect" required="">
+                                          <option label=" "></option>
+                                          <option value="Россия">Россия</option>
+                                          <option value="Беларусь">Беларусь</option>
+                                          <option value="Казахстан">Казахстан</option>
+                                        </select><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                    <div class="field  
+     
+     
+    " data-js="formField">
+                                      <label>
+                                        <input class="field__input" type="text" placeholder="" required=""><span class="field__placeholder">Серия и номер паспорта</span><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                <div class="form__flex">
+                                      <div class="field  
+     
+     
+    " data-js="formField">
+                                        <label>
+                                          <input class="field__input" type="text" placeholder="" required="" data-v-name="date" data-type="date"><span class="field__placeholder">Дата выдачи</span>
+                                          <div class="field__icon">
+                                            <svg>
+                                              <use xlink:href="img/sprites/sprite.svg#calendar"></use>
+                                            </svg>
+                                          </div><span class="field__error" data-js="fieldError"></span>
+                                        </label>
+                                      </div>
+                                      <div class="field  
+     
+     
+    " data-js="formField">
+                                        <label>
+                                          <input class="field__input" type="text" placeholder="" required=""><span class="field__placeholder">Код подразделения</span><span class="field__error" data-js="fieldError"></span>
+                                        </label>
+                                      </div>
+                                </div>
+                                    <div class="field  
+     
+     
+    " data-js="formField">
+                                      <label>
+                                        <input class="field__input" type="text" placeholder="" required="" data-v-name="date" data-type="date"><span class="field__placeholder">Дата рождения</span>
+                                        <div class="field__icon">
+                                          <svg>
+                                            <use xlink:href="img/sprites/sprite.svg#calendar"></use>
+                                          </svg>
+                                        </div><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                              </div>
+                                  <button class="btn form__submit btn--accent btn--full" type="submit"><span class="btn__text">Отправить заявку на регистрацию</span>
+                                  </button>
+                              <div class="form__privacy form-privacy" data-js="formField">
+                                <div class="form-privacy__flex">
+                                  <label>
+                                    <input type="checkbox" data-v-name="checkbox" required><span class="form-privacy__fake">
+                                      <svg>
+                                        <use xlink:href="img/sprites/sprite.svg#check"></use>
+                                      </svg></span>
+                                  </label><span class="form-privacy__text">Согласен на обработку моих персональных данных в соответствии с <a href="#" target="_blank">Политикой в отношении обработки персональных данных</a></span>
+                                </div><span class="field__error" data-js="fieldError"></span>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal hystmodal right-modal" id="thanksModal" aria-hidden="true">
+              <div class="hystmodal__wrap">
+                <div class="hystmodal__window" role="dialog" aria-modal="true">
+                  <div class="modal__content scrollbar scrollbar--small">
+                    <div class="modal__close" data-hystclose>
+                      <svg> 
+                        <use xlink:href="./img/sprites/sprite.svg#close"></use>
+                      </svg>
+                    </div>
+                    <div class="modal__inner" data-js="modalInner">
+                      <div class="thanks-message">
+                        <div class="thanks-message__image">
+                          <svg>
+                            <use xlink:href="img/sprites/sprite.svg#form_success"></use>
+                          </svg>
+                        </div>
+                        <div class="title title--30 thanks-message__title">Заявка отправлена</div>
+                        <div class="thanks-message__text"><b>В течении 1-3 рабочих дней</b> <br>на указанный адрес почты будут отправлены учетные данные для входа на цифровую платформу</div>
+                        <div class="thanks-message__email">test@yandex.ru</div>
+                        <div class="thanks-message__note">Если по какой-то причине менеджер откажет в регистрации, то на указанную почту придет сообщение с указанием причины и списком дальнейших действий для устранения причин отказа</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+      </div>
+    </noindex>
+    <script src="js/main.min.js"></script>
+  </body>
+</html>

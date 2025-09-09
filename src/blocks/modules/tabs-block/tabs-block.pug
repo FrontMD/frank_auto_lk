@@ -1,0 +1,39 @@
+-
+    const defaultTabsProps = {
+        classes: '',
+        tabs: [
+            {
+                name: 'Вкладка 1',
+                icon: ''
+            },
+            {
+                name: 'Вкладка 2',
+                icon: ''
+            },
+        ],
+    }
+
+mixin tabs-block(props= defaultTabsProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultTabsProps.classes,
+            tabs: props.tabs ? props.tabs : defaultTabsProps.tabs
+        }
+
+    .tabs-block(class= checkProps.classes data-js="tabsBlock")&attributes(attributes)
+        .tabs-block__tabs.scrollbar.scrollbar--small(data-js="tabsBlockList")
+            .tabs-block__list
+                - let count = 0 
+                - while (count < checkProps.tabs.length)
+                    .tabs-block__tab(class= count === 0 ? "active" : "" data-index= count data-js="tabsBlockTab")
+                        if(checkProps.tabs[count].icon.length > 0)
+                            svg
+                                use(xlink:href=`img/sprites/sprite.svg#${checkProps.tabs[count].icon}`)
+                        span!= checkProps.tabs[count].name
+
+                    - count += 1;
+
+        .tabs-block__slides
+            block
+
+

@@ -23,18 +23,23 @@
         }
     }
 
-    &__title {
+    /*&__title {
         font-weight: 400;
         font-size: 14px;
         line-height: 1em;
         color: $c-text;
-    }
+    }*/
 
     &__input:focus~&__placeholder,
     &__input:not(:placeholder-shown)~&__placeholder {
         font-size: 12px;
         top: 7px;
         transform: translateY(0);
+
+        @include max(mobile) {
+            font-size: 10px;
+            top: 4px;
+        }
     }
 
     &__placeholder {
@@ -49,12 +54,37 @@
         letter-spacing: 0;
         color: $c-input-grey;
         transition: all 0.2s linear;
+
+        @include max(mobile) {
+            font-size: 14px;
+            left: 12px;
+        }
+    }
+
+    &__icon {
+        position: absolute;
+        top: 50%;
+        right: 16px;
+        width: 20px;
+        height: 20px;
+        transform: translateY(-50%);
+        color: $c-input-grey;
+
+        svg {
+            width: 20px;
+            height: 20px;
+        }
     }
 
     &__input:focus,
     &__input:not(:placeholder-shown) {
         padding-top: 25px;
         padding-bottom: 7px;
+
+        @include max(mobile) {
+            padding-top: 20px;
+            padding-bottom: 4px;
+        }
     }
 
     &__input,
@@ -70,6 +100,10 @@
         background-color: $c-bg-input;
         border-radius: $br-btn-input;
         transition: all $tr-time linear;
+
+        @include max(mobile) {
+            padding: 12px;
+        }
     }
 
     &--invalid &__input,
@@ -249,40 +283,43 @@
     }
 
     &--radio .fake-radio {
+        display: flex;
+        align-items: center;
+        width: fit-content;
+        gap: 8px;
+    }
+
+    &--radio .fake-radio__input {
         display: block;
         position: relative;
-        width: 40px;
+        width: 26px;
         height: 26px;
-        background-color: $c-input-grey;
         flex-shrink: 0;
         flex-grow: 0;
-        transition: all $tr-time linear;
-        border-radius: 13px;
+        border-radius: 100%;
+        border: 1px solid #CCCCCC;
 
         &::after {
             content: '';
             position: absolute;
-            width: 22px;
-            height: 22px;
-            left: 2px;
+            left: 50%;
             top: 50%;
-            transform: translateY(-50%);
-            background-color: $c-white;
+            transform: translate(-50%, -50%);
+            width: 16px;
+            height: 16px;
+            background-color: $c-accent;
             border-radius: 100%;
             transition: all $tr-time linear;
+            opacity: 0;
         }
     }
 
 
-    &--radio input:checked+.fake-radio {
-        background-color: $c-accent;
+    &--radio input:checked+.fake-radio .fake-radio__input::after {
+        opacity: 1;
     }
 
-    &--radio input:checked+.fake-radio::after {
-        left: 16px;
-    }
-
-    &--radio .fake-radio {
+    /*&--radio .fake-radio {
         &--img {
             display: flex;
             align-items: center;
@@ -427,7 +464,7 @@
         svg {
             opacity: 1;
         }
-    }
+    }*/
 }
 
 .field {
@@ -453,49 +490,62 @@
         visibility: hidden;
     }
 
-    &--tab .fake-checkbox {
+    &--tab .fake-checkbox,
+    &--tab .fake-radio {
+        position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 15px 30px;
+        padding: 16px;
         gap: 10px;
-        background-color: $c-bg-input;
+        background-color: #E9EEFC;
         transition: all $tr-time linear;
         border-radius: 16px;
-        border: 1px solid $c-accent;
         color: $c-accent;
         font-weight: 600;
         font-size: 16px;
-        line-height: 1.1875em;
+        line-height: 1.5em;
         letter-spacing: 0;
-        min-height: 64px;
+        min-height: 56px;
 
-        @include max(tablet-small) {
-            padding: 8px 16px;
+        @include max(mobile) {
+            padding: 12px 16px;
             border-radius: 10px;
-            font-size: 12px;
-            min-height: 38px;
+            font-size: 14px;
+            min-height: 48px;
         }
 
-        svg {
+        /*svg {
             display: none;
             width: 24px;
             height: 24px;
-        }
+        }*/
+    }
+
+    &--tab .fake-checkbox__input,
+    &--tab .fake-radio__input {
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+        width: 0;
+        height: 0;
     }
 
     &--tab input:checked+.fake-checkbox,
-    &--tab label:hover .fake-checkbox {
+    &--tab label:hover .fake-checkbox,
+    &--tab input:checked+.fake-radio,
+    &--tab label:hover .fake-radio {
         background-color: $c-accent;
         color: $c-white;
     }
 
-    &--tab input:checked+.fake-checkbox svg {
+    /*&--tab input:checked+.fake-checkbox svg {
         display: block;
-    }
+    }*/
 }
 
-.field {
+/*.field {
     &--double {
         display: flex;
         align-items: stretch;
@@ -537,7 +587,7 @@
         padding: 22px 16px 22px 20px;
     }
 
-}
+}*/
 
 .select2 {
     display: flex;
@@ -565,7 +615,7 @@
 
         .select2-selection--single,
         .select2-selection--multiple {
-            padding: 22px 20px;
+            padding: 16px;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -577,28 +627,28 @@
             background: transparent;
             cursor: pointer;
             transition: all 0.3s;
-            min-height: 64px;
-
-
-            @include max(tablet) {
-                font-size: 14px;
-            }
+            min-height: 56px;
 
             @include max(mobile) {
-                padding: 13px 20px;
-                min-height: 45px;
+                font-size: 14px;
+                padding: 12px;
+                min-height: 48px;
             }
 
             .select2-selection__rendered,
             .select2-selection__placeholder {
                 font-family: $ff-inter;
-                font-weight: 600;
+                font-weight: 400;
                 font-size: 16px;
-                line-height: 1.1875em;
+                line-height: 1.5em;
                 letter-spacing: 0;
-                color: $c-text-breadcrumbs;
+                color: $c-input-grey;
                 width: 100%;
                 padding: 0;
+
+                @include max(mobile) {
+                    font-size: 14px;
+                }
             }
 
             .select2-selection__rendered {
@@ -646,7 +696,7 @@
                     width: 100%;
                     height: 100%;
                     display: block;
-                    background: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg opacity='0.4' clip-path='url(%23clip0_636_25816)'%3E%3Cpath d='M5.20799 7.76458C5.03623 7.76458 4.86449 7.69821 4.73353 7.56573L0.612623 3.39498C0.35048 3.12967 0.35048 2.69951 0.612623 2.43431C0.874661 2.1691 1.2996 2.1691 1.56176 2.43431L5.20799 6.12482L8.85425 2.43444C9.11639 2.16923 9.54129 2.16923 9.8033 2.43444C10.0656 2.69964 10.0656 3.1298 9.8033 3.39511L5.68246 7.56586C5.55144 7.69836 5.3797 7.76458 5.20799 7.76458Z' fill='%230F0908'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_636_25816'%3E%3Crect width='9.58401' height='9.69985' fill='white' transform='translate(0.416016 0.150078)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+                    background: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg opacity='0.4' clip-path='url(%23clip0_636_25816)'%3E%3Cpath d='M5.20799 7.76458C5.03623 7.76458 4.86449 7.69821 4.73353 7.56573L0.612623 3.39498C0.35048 3.12967 0.35048 2.69951 0.612623 2.43431C0.874661 2.1691 1.2996 2.1691 1.56176 2.43431L5.20799 6.12482L8.85425 2.43444C9.11639 2.16923 9.54129 2.16923 9.8033 2.43444C10.0656 2.69964 10.0656 3.1298 9.8033 3.39511L5.68246 7.56586C5.55144 7.69836 5.3797 7.76458 5.20799 7.76458Z' fill='%236B7280'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_636_25816'%3E%3Crect width='9.58401' height='9.69985' fill='white' transform='translate(0.416016 0.150078)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
                     background-size: 100%;
                     transition: all 0.3s;
                     transform: rotate(0deg);
@@ -674,6 +724,7 @@
     z-index: 40;
 
     .select2-dropdown {
+
         background-color: #fff;
         border: 1px solid $c-border;
         border-radius: $br-btn-input;
@@ -726,7 +777,7 @@
                 cursor: pointer;
                 transition: all $tr-time linear;
 
-                @include max(tablet) {
+                @include max(mobile) {
                     font-size: 14px;
                 }
 

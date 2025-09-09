@@ -1,0 +1,150 @@
+-
+    const defaultCommonListProps = {
+        classes: '',
+        title: '<h1>Личный кабинет</h1>',
+        columns: '3',
+        cards: [
+            {
+                title: 'Личные данные',
+                img: 'img/link-cards/card_1.webp',
+                btns: [{
+                    classes: 'common-list__btn',
+                    name: 'Перейти',
+                    cMode: 'light-accent',
+                    sMode: "content",
+                    hasArrow: true,
+                    icon: ''
+                }]
+            },
+            {
+                title: 'Ручное добавление автомобиля',
+                img: 'img/link-cards/card_2.webp',
+                btns: [{
+                    classes: 'common-list__btn',
+                    name: 'Перейти',
+                    cMode: 'light-accent',
+                    sMode: "content",
+                    hasArrow: true,
+                    icon: ''
+                }]
+            },
+            {
+                title: 'Загрузить базу автомобилей (xml / xls)',
+                img: 'img/link-cards/card_3.webp',
+                btns: [{
+                    classes: 'common-list__btn',
+                    name: 'Перейти',
+                    cMode: 'light-accent',
+                    sMode: "content",
+                    hasArrow: true,
+                    icon: ''
+                }]
+            },
+            {
+                title: 'Аналитика',
+                img: 'img/link-cards/card_4.webp',
+                btns: [{
+                    classes: 'common-list__btn',
+                    name: 'Перейти',
+                    cMode: 'light-accent',
+                    sMode: "content",
+                    hasArrow: true,
+                    icon: ''
+                }]
+            },
+            {
+                title: 'Запросы на покупку',
+                img: 'img/link-cards/card_5.webp',
+                btns: [{
+                    classes: 'common-list__btn',
+                    name: 'Перейти',
+                    cMode: 'light-accent',
+                    sMode: "content",
+                    hasArrow: true,
+                    icon: ''
+                }]
+            },
+            {
+                title: 'Проблемные автомобили',
+                img: 'img/link-cards/card_6.webp',
+                btns: [{
+                    classes: 'common-list__btn',
+                    name: 'Перейти',
+                    cMode: 'light-accent',
+                    sMode: "content",
+                    hasArrow: true,
+                    icon: ''
+                }]
+            },
+            {
+                title: 'Мои автомобили',
+                img: 'img/link-cards/card_7.webp',
+                btns: [{
+                    classes: 'common-list__btn',
+                    name: 'Перейти',
+                    cMode: 'light-accent',
+                    sMode: "content",
+                    hasArrow: true,
+                    icon: ''
+                }]
+            },
+            {
+                title: 'Архивные автомобили',
+                img: 'img/link-cards/card_8.webp',
+                btns: [{
+                    classes: 'common-list__btn',
+                    name: 'Перейти',
+                    cMode: 'light-accent',
+                    sMode: "content",
+                    hasArrow: true,
+                    icon: ''
+                }]
+            },
+            {
+                title: 'Проданные автомобили',
+                img: 'img/link-cards/card_9.webp',
+                btns: [
+                    {
+                    classes: 'common-list__btn',
+                    name: 'Перейти',
+                    cMode: 'light-accent',
+                    sMode: "content",
+                    hasArrow: true,
+                    icon: ''
+                }
+                ]
+            },
+        ],
+    }
+
+mixin common-list(props= defaultCommonListProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultCommonListProps.classes,
+            title: props.title ? props.title : defaultCommonListProps.title,
+            columns: props.columns ? props.columns : defaultCommonListProps.columns,
+            cards: props.cards ? props.cards : defaultCommonListProps.cards,
+        }
+
+    section.section.common-list(class= checkProps.classes + `common-list--${checkProps.columns}`)&attributes(attributes)
+        .section__container
+            .section-block.common-list__block
+                .title.title--24.common-list__title!= checkProps.title
+                .common-list__list
+                    - let cardsCount = 0
+                    -while(cardsCount < checkProps.cards.length)
+                        - let card = checkProps.cards[cardsCount]
+                        .common-list__card
+                            .common-list__info
+                                .common-list__subtitle.title!= card.title
+                                .common-list__btns
+                                    - btnCount = 0
+
+                                    - while(btnCount < card.btns.length)
+                                        +btn(card.btns[btnCount])
+
+                                        -btnCount++
+                            .common-list__img
+                                img(src=card.img alt="")
+
+                        - cardsCount++

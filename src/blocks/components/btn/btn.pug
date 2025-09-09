@@ -2,7 +2,7 @@
     const defaultBtnProps = {
         classes: '',
         name: 'Кнопка',
-        cMode: 'red',
+        cMode: 'accent',
         sMode: 'content',
         type: 'link',
         link: 'javascript:void(0)',
@@ -37,7 +37,7 @@ mixin btn(props = defaultBtnProps)
                 span.btn__text!= checkProps.name
             -if(checkProps.hasArrow === true)
                 svg.btn__arrow
-                    use(xlink:href=`img/sprites/sprite.svg#burger_chevron`)
+                    use(xlink:href=`img/sprites/sprite.svg#arrow_classic`)
     - else if(checkProps.type == 'button')
         button.btn(class=checkProps.classes + colorClass + sizeClass type= checkProps.buttonType)&attributes(attributes)
             -if(checkProps.icon.length > 0)
@@ -47,5 +47,12 @@ mixin btn(props = defaultBtnProps)
                 span.btn__text!= checkProps.name
             -if(checkProps.hasArrow === true)
                 svg.btn__arrow
-                    use(xlink:href=`img/sprites/sprite.svg#burger_chevron`)
+                    use(xlink:href=`img/sprites/sprite.svg#arrow_classic`)
+    - else if(checkProps.type == 'fake')
+        .btn.btn--fake(class=checkProps.classes + colorClass + sizeClass)&attributes(attributes)
+            -if(checkProps.icon.length > 0)
+                svg
+                    use(xlink:href=`img/sprites/sprite.svg#${checkProps.icon}`)
+            -if(checkProps.sMode !== 'icon')
+                span.btn__text!= checkProps.name
 

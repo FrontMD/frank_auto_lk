@@ -7,17 +7,18 @@
     font-family: $ff-inter;
     font-size: 16px;
     font-weight: 600;
-    line-height: 1em;
+    line-height: 1.5em;
     letter-spacing: 0;
-    padding: 16px 52px;
+    padding: 15px 52px;
     gap: 10px;
     border-radius: $br-btn-input;
     cursor: pointer;
 
     @include max(mobile) {
-        padding: 11px 26px;
+        padding: 12px 16px;
         font-size: 14px;
         border-radius: $br-section-mob;
+        min-height: 48px;
     }
 
     svg,
@@ -62,6 +63,27 @@
 
             svg {
                 color: $c-accent-hover;
+            }
+        }
+    }
+
+    &--light {
+        color: $c-accent;
+        background-color: #E9EEFC;
+        transition: all $tr-time;
+        border-radius: $br-btn-input;
+
+        svg {
+            color: $c-accent;
+            transition: all $tr-time;
+        }
+
+        &:hover {
+            color: $c-white;
+            background-color: $c-accent;
+
+            svg {
+                color: $c-white;
             }
         }
     }
@@ -182,22 +204,12 @@
     }
 
     
-    &--content {
-        width: fit-content;
-        }
-        
-        &--narrow {
-            width: fit-content;
-            padding-left: 20px;
-            padding-right: 20px;
-    }
-    
     &--small {
         padding: 10px 15px 10px 10px;
         font-size: 12px;
         gap: 5px;
         border-radius: 14px;
-
+        
         @include max(mobile) {
             border-radius: 10px;
             }
@@ -210,6 +222,16 @@
 
     &--full {
         width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    &--content {
+        width: fit-content;
+    }
+
+    &--narrow {
+        width: fit-content;
         padding-left: 20px;
         padding-right: 20px;
     }
@@ -245,4 +267,8 @@
             display: block;
         }
     }*/
+
+    &--fake {
+        pointer-events: none;
+    }
 }
