@@ -1,0 +1,122 @@
+-
+    const defaultAutoCardProps = {
+        classes: '',
+        employeePage: false,
+        title: 'Lixiang L7 Pro 449 л.с. Hybrid Turbo 4WD Белый',
+        params: [
+            {
+            param: 'Год выпуска:',
+            value: '2025'
+            },
+            {
+            param: 'Кузов:',
+            value: 'Минивэн'
+            },
+            {
+            param: 'Двигатель:',
+            value: '1.6 л. / 112 л.с. / Бензин'
+            },
+            {
+            param: 'Привод:',
+            value: 'Автоматический'
+            },
+            {
+            param: 'Цвет:',
+            value: 'Белый'
+            },
+            {
+            param: 'Адрес:',
+            value: 'Новорижское ш., 17й км, с3'
+            },
+            {
+            param: 'Срок доставки:',
+            value: '15 дней'
+            },
+            {
+            param: 'Дата доставки:',
+            value: '05.08.2025'
+            },
+        ]
+    }
+
+mixin auto-card(props= defaultAutoCardProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultAutoCardProps.classes,
+            usedPage: props.usedPage ? props.usedPage : defaultAutoCardProps.usedPage,
+            title: props.title ? props.title : defaultAutoCardProps.title,
+            params: props.params ? props.params : defaultAutoCardProps.params,
+        }
+
+        const pageClass = checkProps.usedPage === true ? ' cp-intro--used' : ''
+
+    section.section.auto-card(class= checkProps.classes + pageClass data-js="autoCard")&attributes(attributes)
+        .section__container
+            .section-block
+                .auto-card__block
+                    .auto-card__left
+                        .title.title--36.auto-card__title!= checkProps.title
+                        .auto-card__params.ac-table(data-js="acTable" data-rows='8')
+                            .ac-table__rows(data-js="acTableRows")
+                                -let paramsCounter = 0
+                                - while(paramsCounter < checkProps.params.length)
+                                    .ac-table__row(data-js="acTableRow")
+                                        .ac-table__param!= checkProps.params[paramsCounter].param
+                                        .ac-table__value!= checkProps.params[paramsCounter].value
+
+                                    - paramsCounter++
+
+                        .auto-card__btns
+                            +btn({
+                                name: 'Скачать ПТС',
+                                cMode: 'light-accent',
+                                sMode: 'full',
+                                hasRightTopArrow: true
+                            })
+                            +btn({
+                                name: 'Скачать документы в PDF',
+                                cMode: 'light-accent',
+                                sMode: 'full',
+                                hasRightTopArrow: true
+                            })
+
+                            - if(checkProps.employeePage === true)
+
+                    .auto-card__right
+                        .auto-card__slider(data-js="autoCardSlider")
+                            +slider-controls
+                            .swiper-wrapper
+                                .swiper-slide.auto-card__slide
+                                    a(href="img/catalog-product/cp_intro_1.webp" data-fancybox="autoCardSlider" data-thumb="img/catalog-product/cp_intro_1.webp")
+                                        img(src="img/catalog-product/cp_intro_1.webp" alt="")
+                                .swiper-slide.auto-card__slide
+                                    a(href="img/catalog-product/cp_intro_2.webp" data-fancybox="autoCardSlider" data-thumb="img/catalog-product/cp_intro_2.webp")
+                                        img(loading="lazy" src="img/catalog-product/cp_intro_2.webp" alt="")
+                                        .swiper-lazy-preloader
+                                .swiper-slide.auto-card__slide
+                                    a(href="img/catalog-product/cp_intro_3.webp" data-fancybox="autoCardSlider" data-thumb="img/catalog-product/cp_intro_3.webp")
+                                        img(loading="lazy" src="img/catalog-product/cp_intro_3.webp" alt="")
+                                        .swiper-lazy-preloader
+                                .swiper-slide.auto-card__slide
+                                    a(href="img/catalog-product/cp_intro_4.webp" data-fancybox="autoCardSlider" data-thumb="img/catalog-product/cp_intro_4.webp")
+                                        img(loading="lazy" src="img/catalog-product/cp_intro_4.webp" alt="")
+                                        .swiper-lazy-preloader
+                                .swiper-slide.auto-card__slide
+                                    a(href="img/catalog-product/cp_intro_5.webp" data-fancybox="autoCardSlider" data-thumb="img/catalog-product/cp_intro_5.webp")
+                                        img(loading="lazy" src="img/catalog-product/cp_intro_5.webp" alt="")
+                                        .swiper-lazy-preloader
+
+                        .auto-card__thumbs(data-js="autoCardThumbs")
+                            .swiper-wrapper
+                                .swiper-slide.auto-card__thumb
+                                    img(src="img/catalog-product/cp_intro_1.webp" alt="")
+                                .swiper-slide.auto-card__thumb
+                                    img(src="img/catalog-product/cp_intro_2.webp" alt="")
+                                .swiper-slide.auto-card__thumb
+                                    img(src="img/catalog-product/cp_intro_3.webp" alt="")
+                                .swiper-slide.auto-card__thumb
+                                    img(src="img/catalog-product/cp_intro_4.webp" alt="")
+                                .swiper-slide.auto-card__thumb
+                                    img(src="img/catalog-product/cp_intro_5.webp" alt="")
+
+                +chat

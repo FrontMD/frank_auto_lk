@@ -79,8 +79,8 @@
 
     &__close {
         position: absolute;
-        right: 16px;
-        top: 16px;
+        right: 20px;
+        top: 20px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -90,14 +90,12 @@
         z-index: 20;
         color: $c-text-light;
         transition: color $tr-time;
-        width: 24px;
-        height: 24px;
+        width: 20px;
+        height: 20px;
 
         @include max(mobile) {
             top: 10px;
             right: 10px;
-            width: 20px;
-            height: 20px;
         }
 
         &:hover {
@@ -105,13 +103,8 @@
         }
 
         svg {
-            width: 24px;
-            height: 24px;
-
-            @include max(mobile) {
-                width: 20px;
-                height: 20px;
-            }
+            width: 20px;
+            height: 20px;
         }
     }
 
@@ -119,21 +112,23 @@
         position: relative;
         background: $c-white;
         width: 100%;
-        max-width: 410px;
-        min-width: 410px;
+        max-width: 600px;
+        min-width: 600px;
         z-index: 70;
-        padding: 20px 16px;
+        padding: 40px;
         border-radius: 16px;
         max-height: 95vh;
         overflow-y: auto;
 
-        @include max(tablet) {
+        @include max(mobile) {
             width: 100vw;
             min-width: 100vw;
             margin: 0 auto;
             max-height: 100vh;
             height: 100vh;
             height: 100dvh;
+            border-radius: 0;
+            padding: 30px 10px 20px;
         }
     }
 }

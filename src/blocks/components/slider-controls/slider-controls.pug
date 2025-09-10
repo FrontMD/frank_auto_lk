@@ -1,0 +1,18 @@
+-
+    const defaultSliderControlsProps = {
+        classes: ''
+    }
+
+mixin slider-controls(props= defaultSliderControlsProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultSliderControlsProps.classes,
+        }
+
+    .slider-controls(class= checkProps.classes)&attributes(attributes)
+        button.slider-control.slider-control--prev(type="button" data-js='sliderPrev')
+            svg
+                use(xlink:href=`img/sprites/sprite.svg#arrow_slider_left`)
+        button.slider-control.slider-control--next(type="button" data-js='sliderNext')
+            svg
+                use(xlink:href=`img/sprites/sprite.svg#arrow_slider_right`)

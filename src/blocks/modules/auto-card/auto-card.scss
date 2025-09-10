@@ -1,0 +1,259 @@
+.auto-card {
+    &__block {
+        display: flex;
+        align-items: flex-start;
+        gap: 64px;
+
+        @include max(tablet) {
+            flex-direction: column;
+            gap: 0;
+        }
+
+        @include max(mobile) {
+            padding-top: 10px;
+        }
+    }
+
+    &__right {
+        flex: 0 0 50%;
+        width: 50%;
+
+        @include max(laptop-small) {
+            flex: 0 0 40%;
+            width: 40%;
+        }
+
+        @include max(tablet) {
+            display: contents;
+            width: 100%;
+            flex-basis: auto;
+        }
+
+    }
+
+    &__slider {
+        overflow: hidden;
+        position: relative;
+        max-width: 100%;
+
+        @include max(mobile) {
+            max-width: calc(100% + 10px);
+            margin-right: -10px;
+            padding-right: 10px;
+        }
+
+        .slider-controls {
+            @include max(mobile) {
+                display: none;
+            }
+        }
+
+        .slider-control {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 3;
+        }
+
+        .slider-control--prev {
+            left: 10px;
+        }
+
+        .slider-control--next {
+            right: 10px;
+        }
+    }
+
+    &__controls {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        z-index: 3;
+
+        @include max(mobile) {
+            display: none;
+        }
+    }
+
+    &__slide {
+        aspect-ratio: 1 / 0.5625;
+        border-radius: 15px 15px 0 0;
+        overflow: hidden;
+
+        @include max(mobile) {
+            border-radius: 10px;
+        }
+
+        a {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__thumbs {
+        overflow: hidden;
+        margin-top: 10px;
+        border-radius: 0 0 15px 15px;
+        max-width: 100%;
+
+        @include max(mobile) {
+            display: none;
+        }
+    }
+
+    &__thumb {
+        width: 150px;
+        aspect-ratio: 1 / 0.5625;
+        opacity: 0.5;
+        transition: opacity $tr-time linear;
+        cursor: pointer;
+
+        &.swiper-slide-thumb-active {
+            opacity: 1;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+    }
+
+    &__left {
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 auto;
+        align-self: stretch;
+
+        @include max(tablet) {
+            display: contents;
+        }
+    }
+
+    &__title {
+        color: $c-text;
+        font-weight: 700;
+    }
+
+    &__params {
+        margin-top: 20px;
+        width: fit-content;
+
+        @include max(mobile) {
+            margin-top: 15px;
+        }
+    }
+
+    &__btns {
+        margin-top: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+}
+
+.ac-table {
+    width: 100%;
+    margin-top: 30px;
+    max-width: 500px;
+
+    &__rows {
+        width: 100%;
+        transition: all $tr-time linear;
+        overflow: hidden;
+    }
+
+    &__row {
+        position: relative;
+        width: 100%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 40px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 100%;
+        letter-spacing: 0;
+
+        @include max(xs) {
+            gap: 20px;
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            bottom: 1px;
+            left: 0;
+            width: 100%;
+            border-bottom: dashed 1px $c-text-breadcrumbs;
+            z-index: 1;
+
+        }
+    }
+
+    &__row+&__row {
+        margin-top: 20px;
+    }
+
+    &__param {
+        position: relative;
+        color: #737373;
+        flex: 0 1 auto;
+        background-color: $c-white;
+        z-index: 3;
+    }
+
+    &__value {
+        position: relative;
+        font-weight: 500;
+        color: $c-text;
+        flex: 0 1 auto;
+        text-align: end;
+        background-color: $c-white;
+        z-index: 3;
+    }
+
+    &__all {
+        display: block;
+        width: fit-content;
+        margin-top: 20px;
+        color: $c-accent;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 150%;
+        letter-spacing: 0;
+        transition: all $tr-time linear;
+        cursor: pointer;
+
+        .show {
+            display: block;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        &.expanded {
+            .show {
+                display: none;
+            }
+
+            .hide {
+                display: block;
+            }
+        }
+
+        &:hover {
+            color: $c-accent-hover;
+        }
+    }
+}

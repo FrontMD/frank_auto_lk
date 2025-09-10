@@ -183,7 +183,7 @@ function validation() {
                 // тут отправляем данные
                 if (errors === 0) {
                     
-                    /* submitFunctionKey = form.getAttribute('data-submit-function');
+                    submitFunctionKey = form.getAttribute('data-submit-function');
                     if (typeof (submitFunctionKey) === 'string' && submitFunctionKey.length > 0) {
                         try {
                             window.formsProcessors[submitFunctionKey](form);
@@ -193,10 +193,10 @@ function validation() {
                         }
                     } else {
                         alert('Обработчик формы не указан');
-                    }*/
+                    }
 
-                    toggleLoading(form, true)
-                    defaultAfterSubmit(form, true)
+                    //toggleLoading(form, true)
+                    //defaultAfterSubmit(form, true)
                 }
             }
 

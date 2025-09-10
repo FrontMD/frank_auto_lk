@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Ручное добавление автомобиля</title>
+    <title>Карточка авто</title>
     <meta name="theme-color" content="#fff">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -196,321 +196,111 @@
                             <use xlink:href="img/sprites/sprite.svg#arrow_angle_right"></use>
                           </svg></span>
                       </li>
-                      <li class="breadcrumbs__item breadcrumbs__item--current"><span>Ручное добавление автомобиля</span>
+                      <li class="breadcrumbs__item"><a href="javascript:void(0);">Каталог</a><span class="breadcrumbs__separator">
+                          <svg>
+                            <use xlink:href="img/sprites/sprite.svg#arrow_angle_right"></use>
+                          </svg></span>
+                      </li>
+                      <li class="breadcrumbs__item breadcrumbs__item--current"><span>Карточка авто</span>
                       </li>
                     </ul>
                   </div>
                 </div>
           </div>
         </section>
-            <section class="section manual-adding">
+            <section class="section auto-card" data-js="autoCard">
               <div class="section__container">
-                <div class="section-block manual-adding__block">
-                  <div class="manual-adding__content">
-                    <div class="title manual-adding__title"> 
-                      <h1>Ручное добавление автомобиля</h1>
-                    </div>
-                    <div class="manual-adding__subtitle">Основная информация</div>
-                    <form class="form manual-adding__form" action="#" data-validate novalidate>
-                      <div class="form__content" data-js="form-content">
-                        <div class="form__fields">
-                          <div class="form__flex">
-                                <div class="field  
-     
-     
-    " data-js="formField">
-                                  <label>
-                                    <input class="field__input" type="text" placeholder="" required="" data-v-name="date" data-type="date"><span class="field__placeholder">Дата предложения</span>
-                                    <div class="field__icon">
-                                      <svg>
-                                        <use xlink:href="img/sprites/sprite.svg#calendar"></use>
-                                      </svg>
-                                    </div><span class="field__error" data-js="fieldError"></span>
-                                  </label>
-                                </div>
-                                <div class="field  
-     
-     
-    " data-js="formField">
-                                  <label>
-                                    <input class="field__input" type="text" placeholder="" required="" data-v-name="vin"><span class="field__placeholder">VIN</span><span class="field__error" data-js="fieldError"></span>
-                                  </label>
-                                </div>
+                <div class="section-block">
+                  <div class="auto-card__block">
+                    <div class="auto-card__left">
+                      <div class="title title--36 auto-card__title">Lixiang L7 Pro 449 л.с. Hybrid Turbo 4WD Белый</div>
+                      <div class="auto-card__params ac-table" data-js="acTable" data-rows="8">
+                        <div class="ac-table__rows" data-js="acTableRows">
+                          <div class="ac-table__row" data-js="acTableRow">
+                            <div class="ac-table__param">Год выпуска:</div>
+                            <div class="ac-table__value">2025</div>
                           </div>
-                          <div class="form__flex">
-                                <div class="field  
-     
-     
-    " data-js="formField">
-                                  <label>
-                                    <select class="field__select" data-placeholder="Бренд" data-js="formSelect" required="">
-                                      <option label=" "></option>
-                                      <option value="LiXiang">LiXiang</option>
-                                      <option value="Voyah">Voyah</option>
-                                      <option value="AITO">AITO</option>
-                                      <option value="Chery">Chery</option>
-                                      <option value="Zeekr">Zeekr</option>
-                                      <option value="Audi">Audi</option>
-                                      <option value="Tank">Tank</option>
-                                      <option value="Rox Motor Tech">Rox Motor Tech</option>
-                                    </select><span class="field__error" data-js="fieldError"></span>
-                                  </label>
-                                </div>
-                                <div class="field  
-     
-     
-    " data-js="formField">
-                                  <label>
-                                    <select class="field__select" data-placeholder="ДВС" data-js="formSelect" required="">
-                                      <option label=" "></option>
-                                      <option value="Бензиновый">Бензиновый</option>
-                                      <option value="Дизельный">Дизельный</option>
-                                    </select><span class="field__error" data-js="fieldError"></span>
-                                  </label>
-                                </div>
+                          <div class="ac-table__row" data-js="acTableRow">
+                            <div class="ac-table__param">Кузов:</div>
+                            <div class="ac-table__value">Минивэн</div>
                           </div>
-                          <div class="form__flex">
-                                <div class="field  
-     
-     
-    " data-js="formField">
-                                  <label>
-                                    <select class="field__select" data-placeholder="Модель" data-js="formSelect" required="">
-                                      <option label=" "></option>
-                                      <option value="LiXiang L6">LiXiang L6</option>
-                                      <option value="LiXiang L7">LiXiang L7</option>
-                                      <option value="LiXiang L9">LiXiang L9</option>
-                                      <option value="LiXiang L9">LiXiang L9</option>
-                                      <option value="LiXiang Mega">LiXiang Mega</option>
-                                      <option value="LiXiang One">LiXiang One</option>
-                                    </select><span class="field__error" data-js="fieldError"></span>
-                                  </label>
-                                </div>
-                                <div class="field  
-     
-     
-    " data-js="formField">
-                                  <label>
-                                    <select class="field__select" data-placeholder="КПП" data-js="formSelect" required="">
-                                      <option label=" "></option>
-                                      <option value="Механическая">Механическая</option>
-                                      <option value="Автоматическая">Автоматическая</option>
-                                      <option value="Вариатор">Вариатор</option>
-                                      <option value="Роботизированная">Роботизированная</option>
-                                    </select><span class="field__error" data-js="fieldError"></span>
-                                  </label>
-                                </div>
+                          <div class="ac-table__row" data-js="acTableRow">
+                            <div class="ac-table__param">Двигатель:</div>
+                            <div class="ac-table__value">1.6 л. / 112 л.с. / Бензин</div>
                           </div>
-                          <div class="form__flex">
-                                <div class="field  
-     
-     
-    " data-js="formField">
-                                  <label>
-                                    <select class="field__select" data-placeholder="Комплектация" data-js="formSelect" required="">
-                                      <option label=" "></option>
-                                      <option value="Base">Base</option>
-                                      <option value="Comfort">Comfort</option>
-                                      <option value="Sport">Sport</option>
-                                      <option value="Luxe">Luxe</option>
-                                    </select><span class="field__error" data-js="fieldError"></span>
-                                  </label>
-                                </div>
-                                <div class="field  
-     
-     
-    " data-js="formField">
-                                  <label>
-                                    <select class="field__select" data-placeholder="Привод" data-js="formSelect" required="">
-                                      <option label=" "></option>
-                                      <option value="Передний">Передний</option>
-                                      <option value="Задний">Задний</option>
-                                      <option value="Полный">Полный</option>
-                                    </select><span class="field__error" data-js="fieldError"></span>
-                                  </label>
-                                </div>
+                          <div class="ac-table__row" data-js="acTableRow">
+                            <div class="ac-table__param">Привод:</div>
+                            <div class="ac-table__value">Автоматический</div>
                           </div>
-                          <div class="form__flex">
-                                <div class="field  
-     
-     
-    " data-js="formField">
-                                  <label>
-                                    <select class="field__select" data-placeholder="Год выпуска" data-js="formSelect" required="">
-                                      <option label=" "></option>
-                                      <option value="2020">2020</option>
-                                      <option value="2021">2021</option>
-                                      <option value="2022">2022</option>
-                                      <option value="2023">2023</option>
-                                      <option value="2024">2024</option>
-                                      <option value="2025">2025</option>
-                                    </select><span class="field__error" data-js="fieldError"></span>
-                                  </label>
-                                </div>
-                                <div class="field  
-     
-     
-    " data-js="formField">
-                                  <label>
-                                    <select class="field__select" data-placeholder="Цвет кузова" data-js="formSelect" required="">
-                                      <option label=" "></option>
-                                      <option value="Чёрный">Чёрный</option>
-                                      <option value="Белый">Белый</option>
-                                    </select><span class="field__error" data-js="fieldError"></span>
-                                  </label>
-                                </div>
+                          <div class="ac-table__row" data-js="acTableRow">
+                            <div class="ac-table__param">Цвет:</div>
+                            <div class="ac-table__value">Белый</div>
                           </div>
-                          <div class="form__flex">
-                                <div class="field  
-     
-     
-    " data-js="formField">
-                                  <label>
-                                    <select class="field__select" data-placeholder="Объем ДВС в литрах" data-js="formSelect" required="">
-                                      <option label=" "></option>
-                                      <option value="1.5 л">1.5 л</option>
-                                      <option value="1.6 л">1.6 л</option>
-                                      <option value="1.8 л">1.8 л</option>
-                                      <option value="2.0 л">2.0 л</option>
-                                    </select><span class="field__error" data-js="fieldError"></span>
-                                  </label>
-                                </div>
-                                <div class="field  
-     
-     
-    " data-js="formField">
-                                  <label>
-                                    <select class="field__select" data-placeholder="Цвет салона" data-js="formSelect" required="">
-                                      <option label=" "></option>
-                                      <option value="Чёрный">Чёрный</option>
-                                      <option value="Белый">Белый</option>
-                                    </select><span class="field__error" data-js="fieldError"></span>
-                                  </label>
-                                </div>
+                          <div class="ac-table__row" data-js="acTableRow">
+                            <div class="ac-table__param">Адрес:</div>
+                            <div class="ac-table__value">Новорижское ш., 17й км, с3</div>
                           </div>
-                          <div class="form__flex">
-                                <div class="field  
-     
-     
-    " data-js="formField">
-                                  <label>
-                                    <input class="field__input" type="text" placeholder="" required=""><span class="field__placeholder">Лошадиные силы по ЭПТС</span><span class="field__error" data-js="fieldError"></span>
-                                  </label>
-                                </div>
-                                <div class="field  
-     
-     
-    " data-js="formField">
-                                  <label>
-                                    <select class="field__select" data-placeholder="Страна происхождения" data-js="formSelect" required="">
-                                      <option label=" "></option>
-                                      <option value="Германия">Германия</option>
-                                      <option value="Китай">Китай</option>
-                                      <option value="Россия">Россия</option>
-                                      <option value="США">США</option>
-                                      <option value="Франция">Франция</option>
-                                      <option value="Южная Корея">Южная Корея</option>
-                                      <option value="Япония">Япония</option>
-                                    </select><span class="field__error" data-js="fieldError"></span>
-                                  </label>
-                                </div>
+                          <div class="ac-table__row" data-js="acTableRow">
+                            <div class="ac-table__param">Срок доставки:</div>
+                            <div class="ac-table__value">15 дней</div>
                           </div>
-                          <div class="form__flex">
-                                <div class="field  
-     
-     
-    " data-js="formField">
-                                  <label>
-                                    <select class="field__select" data-placeholder="ЭПТС" data-js="formSelect" required="">
-                                      <option label=" "></option>
-                                      <option value="Пункт 1">Пункт 1</option>
-                                      <option value="Пункт 2">Пункт 2</option>
-                                      <option value="Пункт 3">Пункт 3</option>
-                                    </select><span class="field__error" data-js="fieldError"></span>
-                                  </label>
-                                </div>
-                                <div class="field  
-     
-     
-    " data-js="formField">
-                                  <label>
-                                    <input class="field__input" type="text" placeholder="" required="" data-type="number"><span class="field__placeholder">Срок поставки с учетом получения ЭПТС, дни</span><span class="field__error" data-js="fieldError"></span>
-                                  </label>
-                                </div>
-                          </div>
-                          <div class="form__flex">
-                                <div class="field  
-     
-     
-    " data-js="formField">
-                                  <label>
-                                    <input class="field__input" type="text" placeholder="" required=""><span class="field__placeholder">Пробег</span><span class="field__error" data-js="fieldError"></span>
-                                  </label>
-                                </div>
-                                <div class="field  
-     
-     
-    " data-js="formField">
-                                  <label>
-                                    <select class="field__select" data-placeholder="Учет ГИБДД" data-js="formSelect" required="">
-                                      <option label=" "></option>
-                                      <option value="есть">есть</option>
-                                      <option value="нет">нет</option>
-                                    </select><span class="field__error" data-js="fieldError"></span>
-                                  </label>
-                                </div>
-                          </div>
-                          <div class="form__flex">
-                                <div class="field  
-     
-     
-    " data-js="formField">
-                                  <label>
-                                    <input class="field__input" type="text" placeholder="" required="" data-type="number"><span class="field__placeholder">Предоплата, %</span><span class="field__error" data-js="fieldError"></span>
-                                  </label>
-                                </div>
-                                <div class="field  
-     
-     
-    " data-js="formField">
-                                  <label>
-                                    <select class="field__select" data-placeholder="НДС" data-js="formSelect" required="">
-                                      <option label=" "></option>
-                                      <option value="20%">20%</option>
-                                      <option value="10%">10%</option>
-                                      <option value="0%">0%</option>
-                                    </select><span class="field__error" data-js="fieldError"></span>
-                                  </label>
-                                </div>
-                          </div>
-                          <div class="form__flex">
-                                <div class="field  
-     
-     
-    " data-js="formField">
-                                  <label>
-                                    <select class="field__select" data-placeholder="Постоплата" data-js="formSelect" required="">
-                                      <option label=" "></option>
-                                      <option value="да">да</option>
-                                      <option value="нет">нет</option>
-                                    </select><span class="field__error" data-js="fieldError"></span>
-                                  </label>
-                                </div>
-                                <div class="field  
-     
-     
-    " data-js="formField">
-                                  <label>
-                                    <input class="field__input" type="text" placeholder="" required="" data-type="number"><span class="field__placeholder">Цена закупки под ключ в руб.</span><span class="field__error" data-js="fieldError"></span>
-                                  </label>
-                                </div>
+                          <div class="ac-table__row" data-js="acTableRow">
+                            <div class="ac-table__param">Дата доставки:</div>
+                            <div class="ac-table__value">05.08.2025</div>
                           </div>
                         </div>
-                            <button class="btn form__submit manual-adding__submit btn--accent btn--full" type="submit"><span class="btn__text">Сохранить</span>
-                            </button>
                       </div>
-                    </form>
+                      <div class="auto-card__btns"><a class="btn  btn--light-accent btn--full" href="javascript:void(0)"><span class="btn__text">Скачать ПТС</span></a><a class="btn  btn--light-accent btn--full" href="javascript:void(0)"><span class="btn__text">Скачать документы в PDF</span></a>        </div>
+                    </div>
+                    <div class="auto-card__right">
+                      <div class="auto-card__slider" data-js="autoCardSlider">
+                            <div class="slider-controls">
+                              <button class="slider-control slider-control--prev" type="button" data-js="sliderPrev">
+                                <svg>
+                                  <use xlink:href="img/sprites/sprite.svg#arrow_slider_left"></use>
+                                </svg>
+                              </button>
+                              <button class="slider-control slider-control--next" type="button" data-js="sliderNext">
+                                <svg>
+                                  <use xlink:href="img/sprites/sprite.svg#arrow_slider_right"></use>
+                                </svg>
+                              </button>
+                            </div>
+                        <div class="swiper-wrapper">
+                          <div class="swiper-slide auto-card__slide"><a href="img/catalog-product/cp_intro_1.webp" data-fancybox="autoCardSlider" data-thumb="img/catalog-product/cp_intro_1.webp"><img src="img/catalog-product/cp_intro_1.webp" alt=""></a></div>
+                          <div class="swiper-slide auto-card__slide"><a href="img/catalog-product/cp_intro_2.webp" data-fancybox="autoCardSlider" data-thumb="img/catalog-product/cp_intro_2.webp"><img loading="lazy" src="img/catalog-product/cp_intro_2.webp" alt="">
+                              <div class="swiper-lazy-preloader"></div></a></div>
+                          <div class="swiper-slide auto-card__slide"><a href="img/catalog-product/cp_intro_3.webp" data-fancybox="autoCardSlider" data-thumb="img/catalog-product/cp_intro_3.webp"><img loading="lazy" src="img/catalog-product/cp_intro_3.webp" alt="">
+                              <div class="swiper-lazy-preloader"></div></a></div>
+                          <div class="swiper-slide auto-card__slide"><a href="img/catalog-product/cp_intro_4.webp" data-fancybox="autoCardSlider" data-thumb="img/catalog-product/cp_intro_4.webp"><img loading="lazy" src="img/catalog-product/cp_intro_4.webp" alt="">
+                              <div class="swiper-lazy-preloader"></div></a></div>
+                          <div class="swiper-slide auto-card__slide"><a href="img/catalog-product/cp_intro_5.webp" data-fancybox="autoCardSlider" data-thumb="img/catalog-product/cp_intro_5.webp"><img loading="lazy" src="img/catalog-product/cp_intro_5.webp" alt="">
+                              <div class="swiper-lazy-preloader"></div></a></div>
+                        </div>
+                      </div>
+                      <div class="auto-card__thumbs" data-js="autoCardThumbs">
+                        <div class="swiper-wrapper">
+                          <div class="swiper-slide auto-card__thumb"><img src="img/catalog-product/cp_intro_1.webp" alt=""></div>
+                          <div class="swiper-slide auto-card__thumb"><img src="img/catalog-product/cp_intro_2.webp" alt=""></div>
+                          <div class="swiper-slide auto-card__thumb"><img src="img/catalog-product/cp_intro_3.webp" alt=""></div>
+                          <div class="swiper-slide auto-card__thumb"><img src="img/catalog-product/cp_intro_4.webp" alt=""></div>
+                          <div class="swiper-slide auto-card__thumb"><img src="img/catalog-product/cp_intro_5.webp" alt=""></div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
+                      <div class="chat">
+                        <div class="chat__content"></div>
+                        <form class="form chat__form" action="#" data-validate novalidate>
+                          <div class="field" data-js="formField">
+                            <label>
+                              <input class="field__input" type="text" placeholder="" required=""><span class="field__placeholder">Написать сообщение</span>
+                            </label>
+                          </div>
+                              <button class="btn form__submit manual-adding__submit btn--accent btn--full" type="submit"><span class="btn__text">Сохранить</span>
+                              </button>
+                        </form>
+                      </div>
                 </div>
               </div>
             </section>

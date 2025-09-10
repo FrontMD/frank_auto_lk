@@ -1,0 +1,97 @@
+.slider-controls {
+    display: flex;
+    align-items: stretch;
+    gap: 8px;
+}
+
+.slider-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 59px;
+    height: 59px;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(40px);
+    border-radius: 16px;
+    color: $c-accent;
+    transition: all $tr-time linear;
+    cursor: pointer;
+
+    &.swiper-button-disabled {
+        opacity: 0.5;
+        pointer-events: none;
+    }
+
+    @include max(tablet) {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+    }
+
+    svg {
+        width: 20px;
+        height: 20px;
+
+        @include max(tablet) {
+            width: 14px;
+            height: 14px;
+        }
+    }
+
+    &:hover {
+        background-color: $c-accent-hover;
+        color: $c-white;
+    }
+
+    &--scroll {
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        z-index: 3;
+        transition: all $tr-time linear;
+
+        @include max(tablet) {
+            width: 32px;
+            height: 32px;
+        }
+
+        &.active {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    &--scroll.slider-control--prev {
+        left: 32px;
+
+        @include max(tablet) {
+            left: 20px;
+        }
+
+        @include max(mobile) {
+            left: 15px;
+        }
+    }
+
+    &--scroll.slider-control--next {
+        right: 32px;
+
+        @include max(tablet) {
+            right: 20px;
+        }
+
+        @include max(mobile) {
+            right: 15px;
+        }
+    }
+
+    &--scroll svg {
+        width: 24px;
+        height: 24px;
+
+        @include max(tablet) {
+            width: 16px;
+            height: 16px;
+        }
+    }
+}

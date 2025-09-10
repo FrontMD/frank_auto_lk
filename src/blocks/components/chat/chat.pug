@@ -1,0 +1,28 @@
+-
+    const defaultChatProps = {
+        classes: '',
+    }
+
+mixin chat(props= defaultChatProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultChatProps.classes,
+        }
+
+    .chat(class= checkProps.classes)&attributes(attributes)
+        .chat__content
+
+        form.form.chat__form(action="#" data-validate novalidate)
+            .field(data-js="formField")
+                label
+                    input.field__input(type="text" placeholder="" required="")
+                    span.field__placeholder Написать сообщение
+
+            +btn({
+                classes: 'form__submit manual-adding__submit',
+                type: 'button',
+                buttonType: 'submit',
+                name: 'Сохранить',
+                cMode: 'accent',
+                sMode: 'full'
+            })

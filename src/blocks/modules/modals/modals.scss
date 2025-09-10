@@ -49,6 +49,54 @@
     }
 }
 
+.ma-modal {
+    &__title {
+        text-align: center;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 150%;
+        letter-spacing: 0;
+    }
+
+    &__btns {
+        display: flex;
+        gap: 16px;
+        margin-top: 32px;
+    }
+}
+
+.ca-modal {
+    &__image {
+        width: 64px;
+        height: 64px;
+
+        svg {
+            width: 64px;
+            height: 64px;
+        }
+    }
+
+
+    &__title {
+        margin: 12px auto 0;
+        text-align: center;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 150%;
+        letter-spacing: 0;
+        max-width: 330px;
+    }
+
+    &__btns {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        margin-top: 32px;
+    }
+
+
+}
+
 .modal-slides {
     .checkboxes-flex {
         margin-bottom: 40px;
