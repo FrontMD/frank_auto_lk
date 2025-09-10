@@ -102,6 +102,7 @@
         transition: all $tr-time linear;
 
         @include max(mobile) {
+            font-size: 14px;
             padding: 12px;
         }
     }

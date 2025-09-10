@@ -25,7 +25,7 @@ function defaultAfterSubmit(form, doReset) {
         form.style.minHeight = form.offsetHeight + 'px'
         form.classList.add("form--sent")
     } else {
-        thanksMessageShow();
+        thanksMessageShow(form);
     }
 
     toggleLoading(form, false)
@@ -91,7 +91,7 @@ function validation() {
                                 if (valueField.length === 11) {
                                     error(input).remove()
                                 } else {
-                                    error(input, 'Необходимо ввести корректный номер телефона').set()
+                                    error(input, 'Некорректное количество знаков').set()
                                 }
                                 break
                             case 'kpp':
@@ -100,7 +100,7 @@ function validation() {
                                 if (valueField.length === 9) {
                                     error(input).remove()
                                 } else {
-                                    error(input, 'Необходимо ввести корректный КПП').set()
+                                    error(input, 'Некорректное количество знаков').set()
                                 }
                                 break
                             case 'inn':
@@ -109,7 +109,16 @@ function validation() {
                                 if (valueField.length === 10 || valueField.length === 12) {
                                     error(input).remove()
                                 } else {
-                                    error(input, 'Необходимо ввести корректный ИНН').set()
+                                    error(input, 'Некорректное количество знаков').set()
+                                }
+                                break
+                            case 'vin':
+                                valueField = valueField.replace(/\D/g, "")
+
+                                if (valueField.length === 17) {
+                                    error(input).remove()
+                                } else {
+                                    error(input, 'Некорректное количество знаков').set()
                                 }
                                 break
                             case 'checkbox':
@@ -174,7 +183,7 @@ function validation() {
                 // тут отправляем данные
                 if (errors === 0) {
                     
-                    var submitFunctionKey = form.getAttribute('data-submit-function');
+                    /* submitFunctionKey = form.getAttribute('data-submit-function');
                     if (typeof (submitFunctionKey) === 'string' && submitFunctionKey.length > 0) {
                         try {
                             window.formsProcessors[submitFunctionKey](form);
@@ -184,10 +193,10 @@ function validation() {
                         }
                     } else {
                         alert('Обработчик формы не указан');
-                    }
+                    }*/
 
-                    //toggleLoading(form, true)
-                    //defaultAfterSubmit(form, true)
+                    toggleLoading(form, true)
+                    defaultAfterSubmit(form, true)
                 }
             }
 
@@ -221,11 +230,12 @@ function inputMasksInit(form) {
         dates.forEach(date => {
             const dateMaskFormat =  '99.99.9999';
             const today = new Date()
+            const position = date.dataset.position === 'top' ? 'top left' : 'bottom left'
 
             new AirDatepicker(date, {
                 dateFormat: 'dd.MM.yyyy',
                 minDate: '',
-                position: 'top left'
+                position: position
             })
     
             Inputmask({
@@ -371,9 +381,8 @@ function formReset(form) {
     }
 }
 
-function thanksMessageShow() {
-    modals.open("#thanksModal")
-    setTimeout(() => {
-        modals.close()
-    }, 5000)
+function thanksMessageShow(form) {
+    if(form.dataset.thanks) {
+        modals.open(form.dataset.thanks)
+    }
 }

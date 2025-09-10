@@ -1,0 +1,15 @@
+extends ../layouts/default
+
+block variables
+	- const title = "Личные данные"
+	- const footerType = 'supplier'
+	- const headerType = 'supplier'
+
+block content
+	.page-layout(data-js="pageLayout")
+
+		section.section.section--bc
+			.section__container.section__content
+				+breadcrumbs
+
+		+personal-data

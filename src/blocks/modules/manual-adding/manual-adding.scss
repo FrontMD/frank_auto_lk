@@ -1,0 +1,34 @@
+.manual-adding {
+    &__content {
+        margin: 0 auto;
+        width: 82%;
+
+        @include max(laptop) {
+            width: 100%;
+            max-width: 1086px;
+        }
+    }
+
+    &__title {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 150%;
+        letter-spacing: 0;
+
+        @include max(mobile) {
+            line-height: 120%;
+        }
+    }
+
+    &__subtitle {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 150%;
+        letter-spacing: 0;
+        color: #9CA3AF;
+    }
+
+    &__form {
+        margin-top: 20px;
+    }
+}

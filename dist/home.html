@@ -214,9 +214,7 @@
                               </label><span class="form-privacy__text">Согласен на обработку моих персональных данных в соответствии с <a href="#" target="_blank">Политикой в отношении обработки персональных данных</a></span>
                             </div><span class="field__error" data-js="fieldError"></span>
                           </div>
-                          <div class="form__subtitle title title--24">Нет аккаунта?</div>
-                              <button class="btn form__submit btn--light-accent btn--full" type="submit" data-modal="#signInModal"><span class="btn__text">Подать заявку на регистрацию</span>
-                              </button>
+                          <div class="form__subtitle title title--24">Нет аккаунта?</div><a class="btn form__submit btn--light-accent btn--full" href="javascript:void(0)" data-modal="#signInModal"><span class="btn__text">Подать заявку на регистрацию</span></a>
                         </div>
                       </form>
                     </div>
@@ -240,7 +238,7 @@
                               </div>
                         </div>
                         <div class="modal-slides__item active" data-js="modalSlide" data-index="0">
-                          <form class="form form--modal" action="#" data-validate novalidate>
+                          <form class="form form--modal" action="#" data-validate novalidate data-thanks="#thanksModal">
                             <div class="form__content" data-js="form-content">
                               <div class="form__title title title--30">Регистрация</div>
                               <div class="radios-row">
@@ -355,7 +353,7 @@
                           </form>
                         </div>
                         <div class="modal-slides__item" data-js="modalSlide" data-index="1">
-                          <form class="form form--modal" action="#" data-validate novalidate>
+                          <form class="form form--modal" action="#" data-validate novalidate data-thanks="#thanksModal">
                             <div class="form__content" data-js="form-content">
                               <div class="form__title title title--30">Регистрация</div>
                               <div class="radios-row">
@@ -453,7 +451,7 @@
      
     " data-js="formField">
                                         <label>
-                                          <input class="field__input" type="text" placeholder="" required="" data-v-name="date" data-type="date"><span class="field__placeholder">Дата выдачи</span>
+                                          <input class="field__input" type="text" placeholder="" required="" data-v-name="date" data-type="date" data-position="top"><span class="field__placeholder">Дата выдачи</span>
                                           <div class="field__icon">
                                             <svg>
                                               <use xlink:href="img/sprites/sprite.svg#calendar"></use>
@@ -475,7 +473,7 @@
      
     " data-js="formField">
                                       <label>
-                                        <input class="field__input" type="text" placeholder="" required="" data-v-name="date" data-type="date"><span class="field__placeholder">Дата рождения</span>
+                                        <input class="field__input" type="text" placeholder="" required="" data-v-name="date" data-type="date" data-position="top"><span class="field__placeholder">Дата рождения</span>
                                         <div class="field__icon">
                                           <svg>
                                             <use xlink:href="img/sprites/sprite.svg#calendar"></use>

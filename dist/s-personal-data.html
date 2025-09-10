@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Поставщик разводящая</title>
+    <title>Личные данные</title>
     <meta name="theme-color" content="#fff">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -186,109 +186,183 @@
         </header>
     <main class="site-main">
       <div class="page-layout" data-js="pageLayout">
-            <section class="section common-list common-list--3">
+        <section class="section section--bc">
+          <div class="section__container section__content">
+                <div class="breadcrumbs  breadcrumbs--dark">
+                  <div class="custom-scrollbar breadcrumbs__scroll" data-js="customScrollbar">
+                    <ul class="breadcrumbs__list">
+                      <li class="breadcrumbs__item"><a href="javascript:void(0);">Личный кабинет</a><span class="breadcrumbs__separator">
+                          <svg>
+                            <use xlink:href="img/sprites/sprite.svg#arrow_angle_right"></use>
+                          </svg></span>
+                      </li>
+                      <li class="breadcrumbs__item breadcrumbs__item--current"><span>Личные данные</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+          </div>
+        </section>
+            <section class="section personal-data">
               <div class="section__container">
-                <div class="section-block common-list__block">
-                  <div class="title title--24 common-list__title"><h1>Личный кабинет</h1></div>
-                  <div class="common-list__list">
-                    <div class="common-list__card">
-                      <div class="common-list__info">
-                        <div class="common-list__subtitle title">Личные данные</div>
-                        <div class="common-list__btns"><a class="btn common-list__btn btn--light-accent btn--content" href="javascript:void(0)"><span class="btn__text">Перейти</span>
-                                <svg class="btn__arrow">
-                                  <use xlink:href="img/sprites/sprite.svg#arrow_classic"></use>
-                                </svg></a>
+                <div class="section-block personal-data__block">
+                  <div class="personal-data__content">
+                    <div class="personal-data__section">
+                      <form class="form" action="#" data-validate novalidate>
+                        <div class="form__content" data-js="form-content">
+                          <div class="title personal-data__title">Контактные лица</div>
+                          <div class="personal-data__contacts" data-js="pdContacts">
+                            <div class="personal-data__clist" data-js="pdContactsList">
+                              <div class="pd-contact" data-js="pdContactsItem">
+                                <div class="pd-contact__header">
+                                  <div class="pd-contact__name" data-js="pdContactName">Контактное лицо №1</div>
+                                  <button class="pd-contact__remove" data-js="pdContactsRemove">
+                                    <svg>
+                                      <use xlink:href="img/sprites/sprite.svg#urn"></use>
+                                    </svg>
+                                  </button>
+                                </div>
+                                <div class="pd-contact__fields">
+                                      <div class="field  
+     
+     
+    " data-js="formField">
+                                        <label>
+                                          <input class="field__input" type="text" placeholder="" required="" data-type="letters" value="Вариев"><span class="field__placeholder">Фамилия</span><span class="field__error" data-js="fieldError"></span>
+                                        </label>
+                                      </div>
+                                      <div class="field  
+     
+     
+    " data-js="formField">
+                                        <label>
+                                          <input class="field__input" type="text" placeholder="" required="" data-type="letters" value="Андрей"><span class="field__placeholder">Имя</span><span class="field__error" data-js="fieldError"></span>
+                                        </label>
+                                      </div>
+                                      <div class="field  
+     
+     
+    " data-js="formField">
+                                        <label>
+                                          <input class="field__input" type="text" placeholder="" data-type="letters" value="Васильевич"><span class="field__placeholder">Отчество</span><span class="field__error" data-js="fieldError"></span>
+                                        </label>
+                                      </div>
+                                      <div class="field  
+     
+     
+    " data-js="formField">
+                                        <label>
+                                          <input class="field__input" type="text" placeholder="" required="" data-v-name="phone" data-type="phoneNumber" value="+7 (888) 888-88-88"><span class="field__placeholder">Номер телефона</span><span class="field__error" data-js="fieldError"></span>
+                                        </label>
+                                      </div>
+                                </div>
+                              </div>
+                            </div><a class="btn personal-data__add btn--light-accent btn--full" href="javascript:void(0)" data-js="pdContactsAdd">
+                                  <svg>
+                                    <use xlink:href="img/sprites/sprite.svg#plus"></use>
+                                  </svg><span class="btn__text">Добавить еще одно контактное лицо</span></a>
+                          </div>
+                          <div class="title personal-data__title">Реквизиты компании</div>
+                          <div class="form__fields">
+                                <div class="field  
+     
+     
+    " data-js="formField">
+                                  <label>
+                                    <select class="field__select" data-placeholder="Тип организации" data-js="formSelect" required="">
+                                      <option label=" "></option>
+                                      <option value="ИП">ИП</option>
+                                      <option value="ООО">ООО</option>
+                                      <option value="АО">АО</option>
+                                    </select><span class="field__error" data-js="fieldError"></span>
+                                  </label>
+                                </div>
+                                <div class="field  
+     
+     
+    " data-js="formField">
+                                  <label>
+                                    <input class="field__input" type="text" placeholder="" required="" data-type="number" data-v-name="inn"><span class="field__placeholder">ИНН</span><span class="field__error" data-js="fieldError"></span>
+                                  </label>
+                                </div>
+                                <div class="field  
+     
+     
+    " data-js="formField">
+                                  <label>
+                                    <input class="field__input" type="text" placeholder="" required="" data-type="number" data-v-name="kpp"><span class="field__placeholder">КПП</span><span class="field__error" data-js="fieldError"></span>
+                                  </label>
+                                </div>
+                                <div class="field  
+     
+     
+    " data-js="formField">
+                                  <label>
+                                    <input class="field__input" type="text" placeholder="" required=""><span class="field__placeholder">Название юр.лица</span><span class="field__error" data-js="fieldError"></span>
+                                  </label>
+                                </div>
+                                <div class="field  
+     
+     
+    " data-js="formField">
+                                  <label>
+                                    <input class="field__input" type="text" placeholder="" required=""><span class="field__placeholder">Компания</span><span class="field__error" data-js="fieldError"></span>
+                                  </label>
+                                </div>
+                                <div class="field  
+     
+     
+    " data-js="formField">
+                                  <label>
+                                    <select class="field__select" data-placeholder="Выбрать основное контактное лицо" data-js="formSelect" required="">
+                                      <option label=" "></option>
+                                      <option value="Контактное лицо №1">Контактное лицо №1</option>
+                                      <option value="Контактное лицо №2">Контактное лицо №2</option>
+                                    </select><span class="field__error" data-js="fieldError"></span>
+                                  </label>
+                                </div>
+                          </div>
+                              <button class="btn form__submit btn--accent btn--full" type="submit"><span class="btn__text">Сохранить</span>
+                              </button>
                         </div>
-                      </div>
-                      <div class="common-list__img"><img src="img/link-cards/card_1.webp" alt=""></div>
+                      </form>
                     </div>
-                    <div class="common-list__card">
-                      <div class="common-list__info">
-                        <div class="common-list__subtitle title">Ручное добавление автомобиля</div>
-                        <div class="common-list__btns"><a class="btn common-list__btn btn--light-accent btn--content" href="javascript:void(0)"><span class="btn__text">Перейти</span>
-                                <svg class="btn__arrow">
-                                  <use xlink:href="img/sprites/sprite.svg#arrow_classic"></use>
-                                </svg></a>
+                    <div class="personal-data__section">
+                      <div class="title personal-data__title">Сменить пароль</div>
+                      <form class="form" action="#" data-validate novalidate>
+                        <div class="form__content" data-js="form-content">
+                          <div class="form__fields">
+                                <div class="field  
+     
+     
+    " data-js="formField">
+                                  <label>
+                                    <input class="field__input" type="password" placeholder="" required=""><span class="field__placeholder">Новый пароль</span>
+                                    <div class="field__icon">
+                                      <svg>
+                                        <use xlink:href="img/sprites/sprite.svg#eye"></use>
+                                      </svg>
+                                    </div><span class="field__error" data-js="fieldError"></span>
+                                  </label>
+                                </div>
+                                <div class="field  
+     
+     
+    " data-js="formField">
+                                  <label>
+                                    <input class="field__input" type="password" placeholder="" required=""><span class="field__placeholder">Новый пароль еще раз</span>
+                                    <div class="field__icon">
+                                      <svg>
+                                        <use xlink:href="img/sprites/sprite.svg#eye"></use>
+                                      </svg>
+                                    </div><span class="field__error" data-js="fieldError"></span>
+                                  </label>
+                                </div>
+                          </div>
+                              <button class="btn form__submit btn--accent btn--full" type="submit"><span class="btn__text">Сменить пароль</span>
+                              </button>
                         </div>
-                      </div>
-                      <div class="common-list__img"><img src="img/link-cards/card_2.webp" alt=""></div>
-                    </div>
-                    <div class="common-list__card">
-                      <div class="common-list__info">
-                        <div class="common-list__subtitle title">Загрузить базу автомобилей (xml / xls)</div>
-                        <div class="common-list__btns"><a class="btn common-list__btn btn--light-accent btn--content" href="javascript:void(0)"><span class="btn__text">Перейти</span>
-                                <svg class="btn__arrow">
-                                  <use xlink:href="img/sprites/sprite.svg#arrow_classic"></use>
-                                </svg></a>
-                        </div>
-                      </div>
-                      <div class="common-list__img"><img src="img/link-cards/card_3.webp" alt=""></div>
-                    </div>
-                    <div class="common-list__card">
-                      <div class="common-list__info">
-                        <div class="common-list__subtitle title">Аналитика</div>
-                        <div class="common-list__btns"><a class="btn common-list__btn btn--light-accent btn--content" href="javascript:void(0)"><span class="btn__text">Перейти</span>
-                                <svg class="btn__arrow">
-                                  <use xlink:href="img/sprites/sprite.svg#arrow_classic"></use>
-                                </svg></a>
-                        </div>
-                      </div>
-                      <div class="common-list__img"><img src="img/link-cards/card_4.webp" alt=""></div>
-                    </div>
-                    <div class="common-list__card">
-                      <div class="common-list__info">
-                        <div class="common-list__subtitle title">Запросы на покупку</div>
-                        <div class="common-list__btns"><a class="btn common-list__btn btn--light-accent btn--content" href="javascript:void(0)"><span class="btn__text">Перейти</span>
-                                <svg class="btn__arrow">
-                                  <use xlink:href="img/sprites/sprite.svg#arrow_classic"></use>
-                                </svg></a>
-                        </div>
-                      </div>
-                      <div class="common-list__img"><img src="img/link-cards/card_5.webp" alt=""></div>
-                    </div>
-                    <div class="common-list__card">
-                      <div class="common-list__info">
-                        <div class="common-list__subtitle title">Проблемные автомобили</div>
-                        <div class="common-list__btns"><a class="btn common-list__btn btn--light-accent btn--content" href="javascript:void(0)"><span class="btn__text">Перейти</span>
-                                <svg class="btn__arrow">
-                                  <use xlink:href="img/sprites/sprite.svg#arrow_classic"></use>
-                                </svg></a>
-                        </div>
-                      </div>
-                      <div class="common-list__img"><img src="img/link-cards/card_6.webp" alt=""></div>
-                    </div>
-                    <div class="common-list__card">
-                      <div class="common-list__info">
-                        <div class="common-list__subtitle title">Мои автомобили</div>
-                        <div class="common-list__btns"><a class="btn common-list__btn btn--light-accent btn--content" href="javascript:void(0)"><span class="btn__text">Перейти</span>
-                                <svg class="btn__arrow">
-                                  <use xlink:href="img/sprites/sprite.svg#arrow_classic"></use>
-                                </svg></a>
-                        </div>
-                      </div>
-                      <div class="common-list__img"><img src="img/link-cards/card_7.webp" alt=""></div>
-                    </div>
-                    <div class="common-list__card">
-                      <div class="common-list__info">
-                        <div class="common-list__subtitle title">Архивные автомобили</div>
-                        <div class="common-list__btns"><a class="btn common-list__btn btn--light-accent btn--content" href="javascript:void(0)"><span class="btn__text">Перейти</span>
-                                <svg class="btn__arrow">
-                                  <use xlink:href="img/sprites/sprite.svg#arrow_classic"></use>
-                                </svg></a>
-                        </div>
-                      </div>
-                      <div class="common-list__img"><img src="img/link-cards/card_8.webp" alt=""></div>
-                    </div>
-                    <div class="common-list__card">
-                      <div class="common-list__info">
-                        <div class="common-list__subtitle title">Проданные автомобили</div>
-                        <div class="common-list__btns"><a class="btn common-list__btn btn--light-accent btn--content" href="javascript:void(0)"><span class="btn__text">Перейти</span>
-                                <svg class="btn__arrow">
-                                  <use xlink:href="img/sprites/sprite.svg#arrow_classic"></use>
-                                </svg></a>
-                        </div>
-                      </div>
-                      <div class="common-list__img"><img src="img/link-cards/card_9.webp" alt=""></div>
+                      </form>
                     </div>
                   </div>
                 </div>

@@ -1,0 +1,169 @@
+-
+    const defaultPersonalDataProps = {
+        classes: '',
+    }
+
+mixin personal-data(props= defaultPersonalDataProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultPersonalDataProps.classes,
+        }
+
+    section.section.personal-data(class= checkProps.classes)&attributes(attributes)
+        .section__container
+            .section-block.personal-data__block
+                .personal-data__content
+                    .personal-data__section
+                        form.form(action="#" data-validate novalidate)
+                            .form__content(data-js='form-content')
+                                .title.personal-data__title Контактные лица
+                                .personal-data__contacts(data-js="pdContacts")
+                                    .personal-data__clist(data-js="pdContactsList")
+                                        .pd-contact(data-js="pdContactsItem")
+                                            .pd-contact__header
+                                                .pd-contact__name(data-js="pdContactName") Контактное лицо №1
+                                                button.pd-contact__remove(data-js="pdContactsRemove")
+                                                    svg
+                                                        use(xlink:href=`img/sprites/sprite.svg#urn`)
+                                            .pd-contact__fields
+                                                +field({
+                                                    placeholder: 'Фамилия',
+                                                    inputAttr: {
+                                                        'required': '',
+                                                        'data-type': 'letters',
+                                                        'value': 'Вариев'  
+                                                    },
+                                                })
+                                                +field({
+                                                    placeholder: 'Имя',
+                                                    inputAttr: {
+                                                        'required': '',
+                                                        'data-type': 'letters',
+                                                        'value': 'Андрей'
+                                                    },
+                                                })
+                                                +field({
+                                                    placeholder: 'Отчество',
+                                                    inputAttr: {
+                                                        'data-type': 'letters',
+                                                        'value': 'Васильевич'
+                                                    },
+                                                })
+                                                +field({
+                                                    placeholder: 'Номер телефона',
+                                                    inputAttr: {
+                                                        'required': '',
+                                                        'data-v-name': 'phone',
+                                                        'data-type': 'phoneNumber',
+                                                        'value': '+7 (888) 888-88-88'
+                                                    },
+                                                })
+
+                                    +btn({
+                                        classes: 'personal-data__add',
+                                        name: 'Добавить еще одно контактное лицо',
+                                        icon: 'plus',
+                                        sMode: 'full',
+                                        cMode: 'light-accent'
+                                    })(data-js="pdContactsAdd")
+
+
+
+                                .title.personal-data__title Реквизиты компании
+                                .form__fields
+                                    +field({
+                                        classes: '',
+                                        tag: 'select',
+                                        placeholder: 'Тип организации',
+                                        selectOptions: [
+                                            "",
+                                            "ИП",
+                                            "ООО",
+                                            "АО",
+                                        ],
+                                        inputAttr: {
+                                            'required': '',
+                                        },
+                                    })
+                                    +field({
+                                        placeholder: 'ИНН',
+                                        inputAttr: {
+                                            'required': '',
+                                            'data-type': 'number',
+                                            'data-v-name': 'inn'
+                                        },
+                                    })
+                                    +field({
+                                        placeholder: 'КПП',
+                                        inputAttr: {
+                                            'required': '',
+                                            'data-type': 'number',
+                                            'data-v-name': 'kpp'
+                                        },
+                                    })
+                                    +field({
+                                        placeholder: 'Название юр.лица',
+                                        inputAttr: {
+                                            'required': '',
+                                        },
+                                    })
+                                    +field({
+                                        placeholder: 'Компания',
+                                        inputAttr: {
+                                            'required': '',
+                                        },
+                                    })
+                                    +field({
+                                        classes: '',
+                                        tag: 'select',
+                                        placeholder: 'Выбрать основное контактное лицо',
+                                        selectOptions: [
+                                            "",
+                                            "Контактное лицо №1",
+                                            "Контактное лицо №2",
+                                        ],
+                                        inputAttr: {
+                                            'required': '',
+                                        },
+                                    })
+
+                                +btn({
+                                    classes: 'form__submit',
+                                    type: 'button',
+                                    buttonType: 'submit',
+                                    name: 'Сохранить',
+                                    cMode: 'accent',
+                                    sMode: 'full'
+                                })
+
+                    .personal-data__section
+                        .title.personal-data__title Сменить пароль
+                        form.form(action="#" data-validate novalidate)
+                            .form__content(data-js='form-content')
+                                .form__fields
+                                    +field({
+                                        placeholder: 'Новый пароль',
+                                        type: 'password',
+                                        icon: 'eye',
+                                        inputAttr: {
+                                            required: ''
+                                        },
+                                    })
+                                    +field({
+                                        placeholder: 'Новый пароль еще раз',
+                                        type: 'password',
+                                        icon: 'eye',
+                                        inputAttr: {
+                                            required: ''
+                                        },
+                                    })
+
+                                +btn({
+                                    classes: 'form__submit',
+                                    type: 'button',
+                                    buttonType: 'submit',
+                                    name: 'Сменить пароль',
+                                    cMode: 'accent',
+                                    sMode: 'full'
+                                })
+

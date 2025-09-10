@@ -65,8 +65,6 @@ noindex
 
                     +btn({
                         classes: 'form__submit',
-                        type: 'button',
-                        buttonType: 'submit',
                         name: 'Подать заявку на регистрацию',
                         cMode: 'light-accent',
                         sMode: 'full'
@@ -89,7 +87,7 @@ noindex
                         type: 'fake'
                     })
                 .modal-slides__item.active(data-js="modalSlide" data-index='0')
-                    form.form.form--modal(action="#" data-validate novalidate)
+                    form.form.form--modal(action="#" data-validate novalidate data-thanks="#thanksModal")
                         .form__content(data-js='form-content')
 
                             .form__title.title.title--30 Регистрация
@@ -202,7 +200,7 @@ noindex
                                 span.field__error(data-js='fieldError')
 
                 .modal-slides__item(data-js="modalSlide" data-index='1')
-                    form.form.form--modal(action="#" data-validate novalidate)
+                    form.form.form--modal(action="#" data-validate novalidate data-thanks="#thanksModal")
                         .form__content(data-js='form-content')
                             .form__title.title.title--30 Регистрация
 
@@ -292,6 +290,7 @@ noindex
                                             'required': '',
                                             'data-v-name': 'date',
                                             'data-type': 'date',
+                                            'data-position': 'top'
                                         },
                                     })
                                     +field({
@@ -307,6 +306,7 @@ noindex
                                         'required': '',
                                         'data-v-name': 'date',
                                         'data-type': 'date',
+                                        'data-position': 'top'
                                     },
                                 })
 

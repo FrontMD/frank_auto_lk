@@ -1,0 +1,330 @@
+-
+    const defaultManualAddingProps = {
+        classes: '',
+    }
+
+mixin manual-adding(props= defaultManualAddingProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultManualAddingProps.classes,
+        }
+
+    section.section.manual-adding(class= checkProps.classes)&attributes(attributes)
+        .section__container
+            .section-block.manual-adding__block
+                .manual-adding__content
+                    .title.manual-adding__title 
+                        h1 Ручное добавление автомобиля
+                    .manual-adding__subtitle Основная информация
+
+                    form.form.manual-adding__form(action="#" data-validate novalidate)
+                        .form__content(data-js='form-content')
+                            .form__fields
+                                .form__flex
+                                    +field({
+                                        placeholder: 'Дата предложения',
+                                        icon: 'calendar',
+                                        inputAttr: {
+                                            'required': '',
+                                            'data-v-name': 'date',
+                                            'data-type': 'date',
+                                        },
+                                    })
+                                    +field({
+                                        placeholder: 'VIN',
+                                        inputAttr: {
+                                            'required': '',
+                                            'data-v-name': 'vin'
+                                        },
+                                    })
+                                .form__flex
+                                    +field({
+                                        classes: '',
+                                        tag: 'select',
+                                        placeholder: 'Бренд',
+                                        selectOptions: [
+                                            "",
+                                            "LiXiang",
+                                            "Voyah",
+                                            "AITO",
+                                            "Chery",
+                                            "Zeekr",
+                                            "Audi",
+                                            "Tank",
+                                            "Rox Motor Tech",
+                                        ],
+                                        inputAttr: {
+                                            'required': '',
+                                        },
+                                    })
+                                    +field({
+                                        classes: '',
+                                        tag: 'select',
+                                        placeholder: 'ДВС',
+                                        selectOptions: [
+                                            "",
+                                            "Бензиновый",
+                                            "Дизельный",
+                                        ],
+                                        inputAttr: {
+                                            'required': '',
+                                        },
+                                    })
+                                .form__flex
+                                    +field({
+                                        classes: '',
+                                        tag: 'select',
+                                        placeholder: 'Модель',
+                                        selectOptions: [
+                                            "",
+                                            "LiXiang L6",
+                                            "LiXiang L7",
+                                            "LiXiang L9",
+                                            "LiXiang L9",
+                                            "LiXiang Mega",
+                                            "LiXiang One"
+                                        ],
+                                        inputAttr: {
+                                            'required': '',
+                                        },
+                                    })
+                                    +field({
+                                        classes: '',
+                                        tag: 'select',
+                                        placeholder: 'КПП',
+                                        selectOptions: [
+                                            "",
+                                            "Механическая",
+                                            "Автоматическая",
+                                            "Вариатор",
+                                            "Роботизированная",
+                                        ],
+                                        inputAttr: {
+                                            'required': '',
+                                        },
+                                    })
+
+                                .form__flex
+                                    +field({
+                                        classes: '',
+                                        tag: 'select',
+                                        placeholder: 'Комплектация',
+                                        selectOptions: [
+                                            "",
+                                            "Base",
+                                            "Comfort",
+                                            "Sport",
+                                            "Luxe",
+                                        ],
+                                        inputAttr: {
+                                            'required': '',
+                                        },
+                                    })
+
+                                    +field({
+                                        classes: '',
+                                        tag: 'select',
+                                        placeholder: 'Привод',
+                                        selectOptions: [
+                                            "",
+                                            "Передний",
+                                            "Задний",
+                                            "Полный",
+                                        ],
+                                        inputAttr: {
+                                            'required': '',
+                                        },
+                                    })
+
+                                .form__flex
+                                    +field({
+                                        classes: '',
+                                        tag: 'select',
+                                        placeholder: 'Год выпуска',
+                                        selectOptions: [
+                                            "",
+                                            "2020",
+                                            "2021",
+                                            "2022",
+                                            "2023",
+                                            "2024",
+                                            "2025",
+                                        ],
+                                        inputAttr: {
+                                            'required': '',
+                                        },
+                                    })
+
+                                    +field({
+                                        classes: '',
+                                        tag: 'select',
+                                        placeholder: 'Цвет кузова',
+                                        selectOptions: [
+                                            "",
+                                            "Чёрный",
+                                            "Белый",
+                                        ],
+                                        inputAttr: {
+                                            'required': '',
+                                        },
+                                    })
+
+                                .form__flex
+                                    +field({
+                                        classes: '',
+                                        tag: 'select',
+                                        placeholder: 'Объем ДВС в литрах',
+                                        selectOptions: [
+                                            "",
+                                            "1.5 л",
+                                            "1.6 л",
+                                            "1.8 л",
+                                            "2.0 л"
+                                        ],
+                                        inputAttr: {
+                                            'required': '',
+                                        },
+                                    })
+
+                                    +field({
+                                        classes: '',
+                                        tag: 'select',
+                                        placeholder: 'Цвет салона',
+                                        selectOptions: [
+                                            "",
+                                            "Чёрный",
+                                            "Белый",
+                                        ],
+                                        inputAttr: {
+                                            'required': '',
+                                        },
+                                    })
+
+                                .form__flex
+                                    +field({
+                                        placeholder: 'Лошадиные силы по ЭПТС',
+                                        inputAttr: {
+                                            'required': '',
+                                        },
+                                    })
+
+                                    +field({
+                                        classes: '',
+                                        tag: 'select',
+                                        placeholder: 'Страна происхождения',
+                                        selectOptions: [
+                                            "",
+                                            "Германия",
+                                            "Китай",
+                                            "Россия",
+                                            "США",
+                                            "Франция",
+                                            "Южная Корея",
+                                            "Япония",
+                                        ],
+                                        inputAttr: {
+                                            'required': '',
+                                        },
+                                    })
+
+                                .form__flex
+                                    +field({
+                                        classes: '',
+                                        tag: 'select',
+                                        placeholder: 'ЭПТС',
+                                        selectOptions: [
+                                            "",
+                                            "Пункт 1",
+                                            "Пункт 2",
+                                            "Пункт 3",
+                                        ],
+                                        inputAttr: {
+                                            'required': '',
+                                        },
+                                    })
+
+                                    +field({
+                                        placeholder: 'Срок поставки с учетом получения ЭПТС, дни',
+                                        inputAttr: {
+                                            'required': '',
+                                            "data-type": "number"
+                                        },
+                                    })
+
+                                .form__flex
+                                    +field({
+                                        placeholder: 'Пробег',
+                                        inputAttr: {
+                                            'required': ''
+                                        },
+                                    })
+                                    +field({
+                                        classes: '',
+                                        tag: 'select',
+                                        placeholder: 'Учет ГИБДД',
+                                        selectOptions: [
+                                            "",
+                                            "есть",
+                                            "нет",
+                                        ],
+                                        inputAttr: {
+                                            'required': '',
+                                        },
+                                    })
+
+                                .form__flex
+                                    +field({
+                                        placeholder: 'Предоплата, %',
+                                        inputAttr: {
+                                            'required': '',
+                                            "data-type": "number"
+                                        },
+                                    })
+                                    +field({
+                                        classes: '',
+                                        tag: 'select',
+                                        placeholder: 'НДС',
+                                        selectOptions: [
+                                            "",
+                                            "20%",
+                                            "10%",
+                                            "0%",
+                                        ],
+                                        inputAttr: {
+                                            'required': '',
+                                        },
+                                    })
+
+                                .form__flex
+                                    +field({
+                                        classes: '',
+                                        tag: 'select',
+                                        placeholder: 'Постоплата',
+                                        selectOptions: [
+                                            "",
+                                            "да",
+                                            "нет",
+                                        ],
+                                        inputAttr: {
+                                            'required': '',
+                                        },
+                                    })
+                                    +field({
+                                        placeholder: 'Цена закупки под ключ в руб.',
+                                        inputAttr: {
+                                            'required': '',
+                                            "data-type": "number"
+                                        },
+                                    })
+
+
+
+                            +btn({
+                                classes: 'form__submit manual-adding__submit',
+                                type: 'button',
+                                buttonType: 'submit',
+                                name: 'Сохранить',
+                                cMode: 'accent',
+                                sMode: 'full'
+                            })
+
