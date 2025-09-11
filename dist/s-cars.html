@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Страницы</title>
+    <title>Карточка авто</title>
     <meta name="theme-color" content="#fff">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -185,137 +185,164 @@
           </div>
         </header>
     <main class="site-main">
-      <style type="text/css">
-        .pages-list__links {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            grid-gap: 20px;
-            margin-top: 30px;
-        }
-        
-        .pages-list__subtitle {
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
-        
-        .pages-list__link {
-            position: relative;
-            font-size: 22px;
-            text-decoration: none;
-            color: var(--c-text);
-            transition: color 0.3s linear;
-            line-height: 1.02em;
-            min-height: 3.06em;
-            padding-right: 160px;
-        
-            span {
-                font-size: 0.7em;
-                opacity: 0.7;
-            }
-        }
-        
-        .pages-list__link:after {
-            content: '';
-            position: absolute;
-            right: 0;
-            top: 0;
-            font-size: 14px;
-            line-height: 1.02em;
-            padding: 5px 10px;
-            border-radius: 3px;
-            width: fit-content;
-        }
-        
-        .pages-list__link--check {
-            padding-right: 155px;
-        }
-        
-        .pages-list__link--check:after {
-            content: "проверка / правки";
-            background-color: #ffffcc;
-            color: #ff6a00;
-        }
-        
-        
-        .pages-list__link--postponed:after {
-            content: "отложено / очередь";
-            background-color: #dedede;
-            color: #212121;
-        }
-        
-        .pages-list__link--work {
-            padding-right: 85px;
-        }
-        
-        .pages-list__link--work:after {
-            content: "в работе";
-            background-color: #9FC5F8;
-            color: #000044;
-        }
-        
-        .pages-list__link--ready {
-            padding-right: 85px;
-        }
-        
-        .pages-list__link--ready:after {
-            content: "натяжка";
-            background-color: #93C47D;
-            color: #04412B;
-        }
-        
-        .pages-list__link:hover {
-            color: var(--c-accent);
-        }
-        
-        @media (max-width: 600px) {
-            .pages-list__link {
-                padding-right: 0;
-                padding-top: 30px;
-            }
-        
-            .pages-list__link:after {
-                left: 0;
-                right: auto;
-            }
-        }
-        
-        @media (max-width: 1340px) {
-        
-            .pages-list__links {
-                grid-gap: 15px;
-                margin-top: 40px;
-            }
-        
-            .pages-list__link {
-                font-size: 20px;
-            }
-        }
-        
-        @media (max-width: 1023px) {
-        
-            .pages-list__links {
-                grid-template-columns: 1fr;
-                grid-gap: 20px;
-                margin-top: 40px;
-            }
-        
-            .pages-list__link {
-                min-height: auto;
-            }
-        }
-        
-      </style>
-      <div class="page-layout">
-        <section class="section pages-list">
-          <div class="section__container">
-            <h1 class="title title--64 pages-list__title">Страницы</h1>
-            <div class="pages-list__links"><a class="pages-list__link pages-list__link--check" href="home.html" target="_blank">Вход (на макете - "Поставщикам")</a></div>
-            <div class="title title--36 pages-list__subtitle">Личный кабинет поставщика</div>
-            <div class="pages-list__links"><a class="pages-list__link pages-list__link--check" href="supplier.html" target="_blank">Поставщик разводящая</a><a class="pages-list__link pages-list__link--check" href="s-personal-data.html" target="_blank">Личные данные</a><a class="pages-list__link pages-list__link--check" href="s-manual-adding.html" target="_blank">Ручное добавление автомобиля</a><a class="pages-list__link pages-list__link--check" href="s-view-card.html" target="_blank">Просмотр карточки</a><a class="pages-list__link pages-list__link--check" href="s-upload-db.html" target="_blank">Загрузить базу автомобилей</a><a class="pages-list__link pages-list__link--work" href="s-cars.html" target="_blank">Мои автомобили</a></div>
-            <div class="title title--36 pages-list__subtitle">Личный кабинет сотрудника</div>
-            <div class="pages-list__links"><a class="pages-list__link pages-list__link--check" href="employee.html" target="_blank">Сотрудник разводящая</a><a class="pages-list__link pages-list__link--check" href="e-view-card.html" target="_blank">Просмотр карточки</a></div>
+      <div class="page-layout" data-js="pageLayout">
+        <section class="section section--bc">
+          <div class="section__container section__content">
+                <div class="breadcrumbs  breadcrumbs--dark">
+                  <div class="custom-scrollbar breadcrumbs__scroll" data-js="customScrollbar">
+                    <ul class="breadcrumbs__list">
+                      <li class="breadcrumbs__item"><a href="javascript:void(0);">Личный кабинет</a><span class="breadcrumbs__separator">
+                          <svg>
+                            <use xlink:href="img/sprites/sprite.svg#arrow_angle_right"></use>
+                          </svg></span>
+                      </li>
+                      <li class="breadcrumbs__item"><a href="javascript:void(0);">Каталог</a><span class="breadcrumbs__separator">
+                          <svg>
+                            <use xlink:href="img/sprites/sprite.svg#arrow_angle_right"></use>
+                          </svg></span>
+                      </li>
+                      <li class="breadcrumbs__item breadcrumbs__item--current"><span>Карточка авто</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
           </div>
         </section>
+            <section class="section s-cars">
+              <div class="section__container">
+                <div class="section-block s-cars__block">
+                  <div class="s-cars__header">
+                    <div class="title title--24 s-cars__title"><h1>Мои автомобили</h1></div>
+                  </div>
+                  <div class="s-cars__list">
+                    <div class="s-cars__card s-car">
+                      <div class="s-car__img"><img src="img/link-cards/card_1.webp" alt=""></div>
+                      <div class="s-car__info">
+                        <div class="s-car__subtitle title">Lixiang L7 Pro 449 л.с. Hybrid Turbo 4WD</div>
+                        <div class="s-car__bottom">
+                          <div class="s-car__price s-car__price--down">
+                            <div class="current">15 000 000 ₽
+                              <svg></svg>
+                            </div>
+                            <div class="old">18 000 000 ₽</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="s-car__btns"><a class="btn  btn--accent btn--content" href="javascript:void(0)">
+                              <svg>
+                                <use xlink:href="img/sprites/sprite.svg#pencil"></use>
+                              </svg><span class="btn__text">Изменить</span></a><a class="btn  btn--light--accent btn--content" href="javascript:void(0)">
+                              <svg>
+                                <use xlink:href="img/sprites/sprite.svg#urn"></use>
+                              </svg><span class="btn__text">Удалить из базы</span></a>
+                      </div>
+                    </div>
+                    <div class="s-cars__card s-car">
+                      <div class="s-car__img"><img src="img/link-cards/card_1.webp" alt=""></div>
+                      <div class="s-car__info">
+                        <div class="s-car__subtitle title">Lixiang L7 Pro 449 л.с. Hybrid Turbo 4WD</div>
+                        <div class="s-car__bottom">
+                          <div class="s-car__price s-car__price--up">
+                            <div class="current">15 000 000 ₽
+                              <svg></svg>
+                            </div>
+                            <div class="old">10 000 000 ₽</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="s-car__btns"><a class="btn  btn--accent btn--content" href="javascript:void(0)">
+                              <svg>
+                                <use xlink:href="img/sprites/sprite.svg#pencil"></use>
+                              </svg><span class="btn__text">Изменить</span></a><a class="btn  btn--light--accent btn--content" href="javascript:void(0)">
+                              <svg>
+                                <use xlink:href="img/sprites/sprite.svg#urn"></use>
+                              </svg><span class="btn__text">Удалить из базы</span></a>
+                      </div>
+                    </div>
+                    <div class="s-cars__card s-car">
+                      <div class="s-car__img"><img src="img/link-cards/card_1.webp" alt=""></div>
+                      <div class="s-car__info">
+                        <div class="s-car__subtitle title">Lixiang L7 Pro 449 л.с. Hybrid Turbo 4WD</div>
+                        <div class="s-car__bottom">
+                          <div class="s-car__price">
+                            <div class="current">15 000 000 ₽
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="s-car__btns"><a class="btn  btn--accent btn--content" href="javascript:void(0)">
+                              <svg>
+                                <use xlink:href="img/sprites/sprite.svg#pencil"></use>
+                              </svg><span class="btn__text">Изменить</span></a><a class="btn  btn--light--accent btn--content" href="javascript:void(0)">
+                              <svg>
+                                <use xlink:href="img/sprites/sprite.svg#urn"></use>
+                              </svg><span class="btn__text">Удалить из базы</span></a>
+                      </div>
+                    </div>
+                    <div class="s-cars__card s-car">
+                      <div class="s-car__img"><img src="img/link-cards/card_1.webp" alt=""></div>
+                      <div class="s-car__info">
+                        <div class="s-car__subtitle title">Lixiang L7 Pro 449 л.с. Hybrid Turbo 4WD</div>
+                        <div class="s-car__bottom">
+                          <div class="s-car__price">
+                            <div class="current">15 000 000 ₽
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="s-car__btns"><a class="btn  btn--accent btn--content" href="javascript:void(0)">
+                              <svg>
+                                <use xlink:href="img/sprites/sprite.svg#pencil"></use>
+                              </svg><span class="btn__text">Изменить</span></a><a class="btn  btn--light--accent btn--content" href="javascript:void(0)">
+                              <svg>
+                                <use xlink:href="img/sprites/sprite.svg#urn"></use>
+                              </svg><span class="btn__text">Удалить из базы</span></a>
+                      </div>
+                    </div>
+                    <div class="s-cars__card s-car">
+                      <div class="s-car__img"><img src="img/link-cards/card_1.webp" alt=""></div>
+                      <div class="s-car__info">
+                        <div class="s-car__subtitle title">Lixiang L7 Pro 449 л.с. Hybrid Turbo 4WD</div>
+                        <div class="s-car__bottom">
+                          <div class="s-car__price">
+                            <div class="current">15 000 000 ₽
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="s-car__btns"><a class="btn  btn--accent btn--content" href="javascript:void(0)">
+                              <svg>
+                                <use xlink:href="img/sprites/sprite.svg#pencil"></use>
+                              </svg><span class="btn__text">Изменить</span></a><a class="btn  btn--light--accent btn--content" href="javascript:void(0)">
+                              <svg>
+                                <use xlink:href="img/sprites/sprite.svg#urn"></use>
+                              </svg><span class="btn__text">Удалить из базы</span></a>
+                      </div>
+                    </div>
+                    <div class="s-cars__card s-car">
+                      <div class="s-car__img"><img src="img/link-cards/card_1.webp" alt=""></div>
+                      <div class="s-car__info">
+                        <div class="s-car__subtitle title">Lixiang L7 Pro 449 л.с. Hybrid Turbo 4WD</div>
+                        <div class="s-car__bottom">
+                          <div class="s-car__price">
+                            <div class="current">15 000 000 ₽
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="s-car__btns"><a class="btn  btn--accent btn--content" href="javascript:void(0)">
+                              <svg>
+                                <use xlink:href="img/sprites/sprite.svg#pencil"></use>
+                              </svg><span class="btn__text">Изменить</span></a><a class="btn  btn--light--accent btn--content" href="javascript:void(0)">
+                              <svg>
+                                <use xlink:href="img/sprites/sprite.svg#urn"></use>
+                              </svg><span class="btn__text">Удалить из базы</span></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
       </div>
     </main>
         <footer class="site-footer site-footer--supplier">

@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
-    /*$('[data-js="customScrollbar"]').each((index, el) => {
+    $('[data-js="customScrollbar"]').each((index, el) => {
         new SimpleBar(el, { autoHide: false });
-    })*/
-    //fancyboxInit();
+    })
+    fancyboxInit();
 })
 
 // Блокировка скролла при открытии модалок
@@ -39,7 +39,7 @@ function getScrollbarWidth() {
 }
 
 // инициализация фансибокса
-/*function fancyboxInit() {
+function fancyboxInit() {
     if (typeof window.distPath == 'undefined') {
         window.distPath = '';
     }
@@ -97,4 +97,4 @@ function getScrollbarWidth() {
         },
 
     });
-}*/
+}

@@ -8,7 +8,8 @@
         link: 'javascript:void(0)',
         buttonType: 'button',
         icon: '', 
-        hasArrow: false
+        hasArrow: false,
+        hasRightTopArrow: false
     }
 
 mixin btn(props = defaultBtnProps)
@@ -22,7 +23,8 @@ mixin btn(props = defaultBtnProps)
             link: props.link ? props.link : defaultBtnProps.link,
             buttonType: props.buttonType ? props.buttonType : defaultBtnProps.buttonType,
             icon: props.icon ? props.icon : defaultBtnProps.icon,
-            hasArrow: props.hasArrow ? props.hasArrow : defaultBtnProps.hasArrow
+            hasArrow: props.hasArrow ? props.hasArrow : defaultBtnProps.hasArrow,
+            hasRightTopArrow: props.hasRightTopArrow ? props.hasRightTopArrow : defaultBtnProps.hasRightTopArrow
         }
 
         let colorClass = ` btn--${checkProps.cMode}`
@@ -38,6 +40,9 @@ mixin btn(props = defaultBtnProps)
             -if(checkProps.hasArrow === true)
                 svg.btn__arrow
                     use(xlink:href=`img/sprites/sprite.svg#arrow_classic`)
+            -if(checkProps.hasRightTopArrow === true)
+                svg.btn__arrow
+                    use(xlink:href=`img/sprites/sprite.svg#arrow_right_top`)
     - else if(checkProps.type == 'button')
         button.btn(class=checkProps.classes + colorClass + sizeClass type= checkProps.buttonType)&attributes(attributes)
             -if(checkProps.icon.length > 0)
@@ -48,6 +53,9 @@ mixin btn(props = defaultBtnProps)
             -if(checkProps.hasArrow === true)
                 svg.btn__arrow
                     use(xlink:href=`img/sprites/sprite.svg#arrow_classic`)
+            -if(checkProps.hasRightTopArrow === true)
+                svg.btn__arrow
+                    use(xlink:href=`img/sprites/sprite.svg#arrow_right_top`)
     - else if(checkProps.type == 'fake')
         .btn.btn--fake(class=checkProps.classes + colorClass + sizeClass)&attributes(attributes)
             -if(checkProps.icon.length > 0)
@@ -55,4 +63,10 @@ mixin btn(props = defaultBtnProps)
                     use(xlink:href=`img/sprites/sprite.svg#${checkProps.icon}`)
             -if(checkProps.sMode !== 'icon')
                 span.btn__text!= checkProps.name
+            -if(checkProps.hasArrow === true)
+                svg.btn__arrow
+                    use(xlink:href=`img/sprites/sprite.svg#arrow_classic`)
+            -if(checkProps.hasRightTopArrow === true)
+                svg.btn__arrow
+                    use(xlink:href=`img/sprites/sprite.svg#arrow_right_top`)
 

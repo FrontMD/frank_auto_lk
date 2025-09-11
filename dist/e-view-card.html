@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Страницы</title>
+    <title>Карточка авто</title>
     <meta name="theme-color" content="#fff">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -185,137 +185,165 @@
           </div>
         </header>
     <main class="site-main">
-      <style type="text/css">
-        .pages-list__links {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            grid-gap: 20px;
-            margin-top: 30px;
-        }
-        
-        .pages-list__subtitle {
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
-        
-        .pages-list__link {
-            position: relative;
-            font-size: 22px;
-            text-decoration: none;
-            color: var(--c-text);
-            transition: color 0.3s linear;
-            line-height: 1.02em;
-            min-height: 3.06em;
-            padding-right: 160px;
-        
-            span {
-                font-size: 0.7em;
-                opacity: 0.7;
-            }
-        }
-        
-        .pages-list__link:after {
-            content: '';
-            position: absolute;
-            right: 0;
-            top: 0;
-            font-size: 14px;
-            line-height: 1.02em;
-            padding: 5px 10px;
-            border-radius: 3px;
-            width: fit-content;
-        }
-        
-        .pages-list__link--check {
-            padding-right: 155px;
-        }
-        
-        .pages-list__link--check:after {
-            content: "проверка / правки";
-            background-color: #ffffcc;
-            color: #ff6a00;
-        }
-        
-        
-        .pages-list__link--postponed:after {
-            content: "отложено / очередь";
-            background-color: #dedede;
-            color: #212121;
-        }
-        
-        .pages-list__link--work {
-            padding-right: 85px;
-        }
-        
-        .pages-list__link--work:after {
-            content: "в работе";
-            background-color: #9FC5F8;
-            color: #000044;
-        }
-        
-        .pages-list__link--ready {
-            padding-right: 85px;
-        }
-        
-        .pages-list__link--ready:after {
-            content: "натяжка";
-            background-color: #93C47D;
-            color: #04412B;
-        }
-        
-        .pages-list__link:hover {
-            color: var(--c-accent);
-        }
-        
-        @media (max-width: 600px) {
-            .pages-list__link {
-                padding-right: 0;
-                padding-top: 30px;
-            }
-        
-            .pages-list__link:after {
-                left: 0;
-                right: auto;
-            }
-        }
-        
-        @media (max-width: 1340px) {
-        
-            .pages-list__links {
-                grid-gap: 15px;
-                margin-top: 40px;
-            }
-        
-            .pages-list__link {
-                font-size: 20px;
-            }
-        }
-        
-        @media (max-width: 1023px) {
-        
-            .pages-list__links {
-                grid-template-columns: 1fr;
-                grid-gap: 20px;
-                margin-top: 40px;
-            }
-        
-            .pages-list__link {
-                min-height: auto;
-            }
-        }
-        
-      </style>
-      <div class="page-layout">
-        <section class="section pages-list">
-          <div class="section__container">
-            <h1 class="title title--64 pages-list__title">Страницы</h1>
-            <div class="pages-list__links"><a class="pages-list__link pages-list__link--check" href="home.html" target="_blank">Вход (на макете - "Поставщикам")</a></div>
-            <div class="title title--36 pages-list__subtitle">Личный кабинет поставщика</div>
-            <div class="pages-list__links"><a class="pages-list__link pages-list__link--check" href="supplier.html" target="_blank">Поставщик разводящая</a><a class="pages-list__link pages-list__link--check" href="s-personal-data.html" target="_blank">Личные данные</a><a class="pages-list__link pages-list__link--check" href="s-manual-adding.html" target="_blank">Ручное добавление автомобиля</a><a class="pages-list__link pages-list__link--check" href="s-view-card.html" target="_blank">Просмотр карточки</a><a class="pages-list__link pages-list__link--check" href="s-upload-db.html" target="_blank">Загрузить базу автомобилей</a><a class="pages-list__link pages-list__link--work" href="s-cars.html" target="_blank">Мои автомобили</a></div>
-            <div class="title title--36 pages-list__subtitle">Личный кабинет сотрудника</div>
-            <div class="pages-list__links"><a class="pages-list__link pages-list__link--check" href="employee.html" target="_blank">Сотрудник разводящая</a><a class="pages-list__link pages-list__link--check" href="e-view-card.html" target="_blank">Просмотр карточки</a></div>
+      <div class="page-layout" data-js="pageLayout">
+        <section class="section section--bc">
+          <div class="section__container section__content">
+                <div class="breadcrumbs  breadcrumbs--dark">
+                  <div class="custom-scrollbar breadcrumbs__scroll" data-js="customScrollbar">
+                    <ul class="breadcrumbs__list">
+                      <li class="breadcrumbs__item"><a href="javascript:void(0);">Личный кабинет</a><span class="breadcrumbs__separator">
+                          <svg>
+                            <use xlink:href="img/sprites/sprite.svg#arrow_angle_right"></use>
+                          </svg></span>
+                      </li>
+                      <li class="breadcrumbs__item"><a href="javascript:void(0);">Заявки на выкуп автомобиля</a><span class="breadcrumbs__separator">
+                          <svg>
+                            <use xlink:href="img/sprites/sprite.svg#arrow_angle_right"></use>
+                          </svg></span>
+                      </li>
+                      <li class="breadcrumbs__item breadcrumbs__item--current"><span>Карточка авто</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
           </div>
         </section>
+            <section class="section auto-card" data-js="autoCard">
+              <div class="section__container">
+                <div class="section-block">
+                  <div class="auto-card__block">
+                    <div class="auto-card__left">
+                      <div class="title title--36 auto-card__title">Lixiang L7 Pro 449 л.с. Hybrid Turbo 4WD Белый</div>
+                      <div class="auto-card__params ac-table" data-js="acTable" data-rows="8">
+                        <div class="ac-table__rows" data-js="acTableRows">
+                          <div class="ac-table__row" data-js="acTableRow">
+                            <div class="ac-table__param">Год выпуска:</div>
+                            <div class="ac-table__value">2025</div>
+                          </div>
+                          <div class="ac-table__row" data-js="acTableRow">
+                            <div class="ac-table__param">Кузов:</div>
+                            <div class="ac-table__value">Минивэн</div>
+                          </div>
+                          <div class="ac-table__row" data-js="acTableRow">
+                            <div class="ac-table__param">Двигатель:</div>
+                            <div class="ac-table__value">1.6 л. / 112 л.с. / Бензин</div>
+                          </div>
+                          <div class="ac-table__row" data-js="acTableRow">
+                            <div class="ac-table__param">Привод:</div>
+                            <div class="ac-table__value">Автоматический</div>
+                          </div>
+                          <div class="ac-table__row" data-js="acTableRow">
+                            <div class="ac-table__param">Цвет:</div>
+                            <div class="ac-table__value">Белый</div>
+                          </div>
+                          <div class="ac-table__row" data-js="acTableRow">
+                            <div class="ac-table__param">Адрес:</div>
+                            <div class="ac-table__value">Новорижское ш., 17й км, с3</div>
+                          </div>
+                          <div class="ac-table__row" data-js="acTableRow">
+                            <div class="ac-table__param">Срок доставки:</div>
+                            <div class="ac-table__value">15 дней</div>
+                          </div>
+                          <div class="ac-table__row" data-js="acTableRow">
+                            <div class="ac-table__param">Дата доставки:</div>
+                            <div class="ac-table__value">05.08.2025</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="auto-card__btns"><a class="btn  btn--light-accent btn--full" href="javascript:void(0)"><span class="btn__text">Скачать ПТС</span>
+                              <svg class="btn__arrow">
+                                <use xlink:href="img/sprites/sprite.svg#arrow_right_top"></use>
+                              </svg></a><a class="btn  btn--light-accent btn--full" href="javascript:void(0)"><span class="btn__text">Скачать документы в PDF</span>
+                              <svg class="btn__arrow">
+                                <use xlink:href="img/sprites/sprite.svg#arrow_right_top"></use>
+                              </svg></a>
+                      </div>
+                      <div class="auto-card__controls"><a class="btn  btn--accent btn--full" href="javascript:void(0)"><span class="btn__text">Сохранить и отправить заявку на выкуп</span></a>
+                        <div class="auto-card__flex"><a class="btn  btn--accent btn--full" href="javascript:void(0)" data-modal="#rejectModal"><span class="btn__text">Отклонить</span></a><a class="btn  btn--accent btn--full" href="javascript:void(0)" data-modal="#archiveModal"><span class="btn__text">Отправить в архив</span></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="auto-card__right">
+                      <div class="auto-card__slider" data-js="autoCardSlider">
+                            <div class="slider-controls">
+                              <button class="slider-control slider-control--prev" type="button" data-js="sliderPrev">
+                                <svg>
+                                  <use xlink:href="img/sprites/sprite.svg#arrow_slider_left"></use>
+                                </svg>
+                              </button>
+                              <button class="slider-control slider-control--next" type="button" data-js="sliderNext">
+                                <svg>
+                                  <use xlink:href="img/sprites/sprite.svg#arrow_slider_right"></use>
+                                </svg>
+                              </button>
+                            </div>
+                        <div class="swiper-wrapper">
+                          <div class="swiper-slide auto-card__slide"><a href="img/catalog-product/cp_intro_1.webp" data-fancybox="autoCardSlider" data-thumb="img/catalog-product/cp_intro_1.webp"><img src="img/catalog-product/cp_intro_1.webp" alt=""></a></div>
+                          <div class="swiper-slide auto-card__slide"><a href="img/catalog-product/cp_intro_2.webp" data-fancybox="autoCardSlider" data-thumb="img/catalog-product/cp_intro_2.webp"><img loading="lazy" src="img/catalog-product/cp_intro_2.webp" alt="">
+                              <div class="swiper-lazy-preloader"></div></a></div>
+                          <div class="swiper-slide auto-card__slide"><a href="img/catalog-product/cp_intro_3.webp" data-fancybox="autoCardSlider" data-thumb="img/catalog-product/cp_intro_3.webp"><img loading="lazy" src="img/catalog-product/cp_intro_3.webp" alt="">
+                              <div class="swiper-lazy-preloader"></div></a></div>
+                          <div class="swiper-slide auto-card__slide"><a href="img/catalog-product/cp_intro_4.webp" data-fancybox="autoCardSlider" data-thumb="img/catalog-product/cp_intro_4.webp"><img loading="lazy" src="img/catalog-product/cp_intro_4.webp" alt="">
+                              <div class="swiper-lazy-preloader"></div></a></div>
+                          <div class="swiper-slide auto-card__slide"><a href="img/catalog-product/cp_intro_5.webp" data-fancybox="autoCardSlider" data-thumb="img/catalog-product/cp_intro_5.webp"><img loading="lazy" src="img/catalog-product/cp_intro_5.webp" alt="">
+                              <div class="swiper-lazy-preloader"></div></a></div>
+                        </div>
+                      </div>
+                      <div class="auto-card__thumbs" data-js="autoCardThumbs">
+                        <div class="swiper-wrapper">
+                          <div class="swiper-slide auto-card__thumb"><img src="img/catalog-product/cp_intro_1.webp" alt=""></div>
+                          <div class="swiper-slide auto-card__thumb"><img src="img/catalog-product/cp_intro_2.webp" alt=""></div>
+                          <div class="swiper-slide auto-card__thumb"><img src="img/catalog-product/cp_intro_3.webp" alt=""></div>
+                          <div class="swiper-slide auto-card__thumb"><img src="img/catalog-product/cp_intro_4.webp" alt=""></div>
+                          <div class="swiper-slide auto-card__thumb"><img src="img/catalog-product/cp_intro_5.webp" alt=""></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                      <div class="chat">
+                        <div class="chat__body">
+                          <div class="custom-scrollbar chat__scroll" data-js="customScrollbar">
+                            <div class="chat__content">
+                              <div class="chat-message chat-message--my">
+                                <div class="chat-message__header">
+                                  <div class="chat-message__name">Вы</div>
+                                  <div class="chat-message__date">19.08.2025</div>
+                                </div>
+                                <div class="chat-message__body">Неправильно заполнили КПП, машину снимаем с выкупа. Пожалуйста поправьте</div>
+                              </div>
+                              <div class="chat-message">
+                                <div class="chat-message__header">
+                                  <div class="chat-message__name">Вариев Андрей Васильевич (ООО Рога и Копыта)</div>
+                                  <div class="chat-message__date">19.08.2025</div>
+                                </div>
+                                <div class="chat-message__body">Внес правки. Сейчас правильно?</div>
+                              </div>
+                              <div class="chat-message chat-message--my">
+                                <div class="chat-message__header">
+                                  <div class="chat-message__name">Вы</div>
+                                  <div class="chat-message__date">19.08.2025</div>
+                                </div>
+                                <div class="chat-message__body">Да</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <form class="form chat__form" action="#" data-validate novalidate>
+                          <div class="field" data-js="formField">
+                            <label>
+                              <textarea class="field__textarea" rows="1" placeholder="" required=""></textarea><span class="field__placeholder">Написать сообщение</span>
+                            </label>
+                          </div>
+                              <button class="btn form__submit chat__submit btn--accent btn--narrow" type="submit">
+                                <svg>
+                                  <use xlink:href="img/sprites/sprite.svg#message"></use>
+                                </svg><span class="btn__text">Отправить</span>
+                              </button>
+                        </form>
+                      </div>
+                </div>
+              </div>
+            </section>
       </div>
     </main>
         <footer class="site-footer site-footer--supplier">

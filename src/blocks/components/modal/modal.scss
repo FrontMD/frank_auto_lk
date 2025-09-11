@@ -132,3 +132,46 @@
         }
     }
 }
+
+.modal.hystmodal.center-big-modal {
+    .modal__content {
+        max-width: 800px;
+        min-width: 800px;
+
+        @include max(tablet-small) {
+            max-width: 700px;
+            min-width: 700px;
+        }
+
+        @include max(mobile) {
+            min-width: 100vw;
+        }
+    }
+
+    .form__submit.btn {
+        max-width: 450px;
+    }
+
+    .form__content {
+        max-height: calc(95vh - 80px);
+        overflow: hidden;
+
+        @include max(mobile) {
+            max-height: calc(100vh - 50px);
+            max-height: calc(100dvh - 50px);
+        }
+    }
+
+    .form__fields {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .form__scroll {
+        width: 100%;
+        flex-shrink: 1;
+        overflow: auto;
+        padding-right: 5px;
+        margin: 16px 0;
+    }
+}

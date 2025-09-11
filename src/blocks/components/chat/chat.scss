@@ -1,1 +1,109 @@
-.chat {}
+.chat {
+    padding-top: 32px;
+
+    &__body {
+        width: 100%;
+    }
+
+    &__scroll {
+        max-height: 40vh;
+        min-height: 200px;
+        overflow: auto;
+    }
+
+    &__content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        @include max(mobile) {
+            gap: 6px;
+        }
+
+    }
+
+    &__form {
+        margin-top: 32px;
+
+        @include max(mobile) {
+            margin-top: 24px;
+        }
+    }
+
+    &__submit.btn {
+        margin-top: 20px;
+
+        @include max(mobile) {
+            margin-top: 10px;
+        }
+    }
+}
+
+.chat-message {
+    width: max-content;
+    max-width: 100%;
+    background-color: #DBEAFE;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1), 0px 1px 2px 0px rgba(0, 0, 0, 0.06);
+    border: 1px solid $c-accent;
+    border-radius: 16px;
+    padding: 16px 20px;
+
+    @include max(mobile) {
+        border-radius: 8px;
+        padding: 8px 10px;
+    }
+
+    &--my {
+        background-color: $c-white;
+        border-color: #E5E7EB;
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    &__name {
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 150%;
+        letter-spacing: 0;
+        color: $c-accent;
+
+        @include max(mobile) {
+            font-size: 12px;
+        }
+    }
+
+    &--my &__name {
+        color: $c-text;
+
+    }
+
+    &__date {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 150%;
+        letter-spacing: 0;
+        color: #9ca3af;
+        flex-shrink: 0;
+
+        @include max(mobile) {
+            font-size: 12px;
+        }
+    }
+
+    &__body {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        letter-spacing: 0;
+        color: #455A64;
+
+        @include max(mobile) {
+            font-size: 14px;
+        }
+    }
+}

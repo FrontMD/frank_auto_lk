@@ -4,7 +4,7 @@ noindex
 
         //- Войти
         +modal({modalId:"loginModal", modalTitle:"", classes:"right-modal"})
-            form.form.form--modal(action="#" data-validate novalidate)
+            form.form.form--modal(action="#" data-validate novalidate data-auth='true')
                 .form__content(data-js='form-content')
                     .checkboxes-flex
                         +field({
@@ -87,7 +87,7 @@ noindex
                         type: 'fake'
                     })
                 .modal-slides__item.active(data-js="modalSlide" data-index='0')
-                    form.form.form--modal(action="#" data-validate novalidate data-thanks="#thanksModal")
+                    form.form.form--modal(action="#" data-validate novalidate data-thanks="#thanksModal" data-auth='true')
                         .form__content(data-js='form-content')
 
                             .form__title.title.title--30 Регистрация
@@ -200,7 +200,7 @@ noindex
                                 span.field__error(data-js='fieldError')
 
                 .modal-slides__item(data-js="modalSlide" data-index='1')
-                    form.form.form--modal(action="#" data-validate novalidate data-thanks="#thanksModal")
+                    form.form.form--modal(action="#" data-validate novalidate data-thanks="#thanksModal" data-auth='true')
                         .form__content(data-js='form-content')
                             .form__title.title.title--30 Регистрация
 
@@ -330,63 +330,119 @@ noindex
                                     span.form-privacy__text Согласен на обработку моих персональных данных в соответствии с <a href="#" target="_blank">Политикой в отношении обработки персональных данных</a>
                                 span.field__error(data-js='fieldError')
 
-        //- Забронировать автомобиль
-        //-+modal({modalId:"reserveModal", modalTitle:"", classes:"form-modal"})
-            +form({
-                classes: 'form--modal',
-                title: 'Забронировать автомобиль LIXIANG L6 MAX',
-                text: '',
-                btnText: 'Отправить',
-                successTitle: 'Подписка оформлена',
-                successTitle: 'Ваша заявка отправлена',
-                successText: 'Менеджер свяжется с&nbsp;вами в&nbsp;ближайшее время',
-                successBtn: true
-            })
-                +field({
-                    placeholder: 'Имя',
-                    inputAttr: {
-                        'required': '',
-                        'data-type': 'letters'
-                    },
-                })
-                +field({
-                    placeholder: 'Номер телефона',
-                    inputAttr: {
-                        'required': '',
-                        'data-v-name': 'phone',
-                        'data-type': 'phoneNumber'
-                    },
-                })
-                +field({
-                    placeholder: 'Электронная почта',
-                    inputAttr: {
-                        'required': '',
-                        'data-v-name': 'email'
-                    },
-                })
-                +field({
-                    classes: '',
-                    tag: 'select',
-                    placeholder: 'Адрес салона',
-                    inputAttr: {
-                    'required': '',
-                    },
-                    selectOptions: [
-                        "",
-                        "Москва, Новорижское шоссе, 17-й км., строение 3",
-                        "Москва, МКАД, 85-й километр, вл3с2",
-                        "Москва, Можайское шоссе, вл. 165 Б",
-                    ],
-                })
-                +field({
-                    classes: '',
-                    placeholder: 'Дата визита в салон',
-                    inputAttr: {
-                        'required': '',
-                        'data-v-name': 'date',
-                        'data-type': 'date',
-                    },
-                })
+        //- Отправить в архив
+        +modal({modalId:"archiveModal", modalTitle:"", classes:"center-big-modal"})
+            form.form.form--modal(action="#" data-validate novalidate)
+                .form__content(data-js='form-content')
+
+                    .form__title.title.title--24 Отправка в архив
+                    .custom-scrollbar.form__scroll(data-js="customScrollbar")
+                        .form__fields
+                            +field({
+                                placeholder: 'Причина отправки в архив',
+                                inputAttr: {
+                                    required: ''
+                                },
+                            })
+                            +field({
+                                placeholder: 'Комментарий',
+                                tag: 'textarea',
+                            })
+
+                    +btn({
+                        classes: 'form__submit',
+                        type: 'button',
+                        buttonType: 'submit',
+                        name: 'Отправить в архив',
+                        cMode: 'accent',
+                        sMode: 'full'
+                    })
+
+        //- Отклонить автомобиль
+        +modal({modalId:"rejectModal", modalTitle:"", classes:"center-big-modal"})
+            form.form.form--modal(action="#" data-validate novalidate)
+                .form__content(data-js='form-content')
+
+                    .form__title.title.title--24 Отклонение автомобиля
+
+                    .custom-scrollbar.form__scroll(data-js="customScrollbar")
+                        .form__fields
+                            +field({
+                                placeholder: 'Причина отказа',
+                                inputAttr: {
+                                    required: ''
+                                },
+                            })
+                            +field({
+                                placeholder: 'Комментарий',
+                                tag: 'textarea',
+                            })
+
+                            .form__flex.form__flex--checkbox
+                                +field({
+                                    type: 'checkbox',
+                                    radioCheckboxText: 'Количество владельцев'
+                                })
+                                +field({
+                                    placeholder: 'Комментарий',
+                                })
+                            .form__flex.form__flex--checkbox
+                                +field({
+                                    type: 'checkbox',
+                                    radioCheckboxText: 'Привод'
+                                })
+                                +field({
+                                    placeholder: 'Комментарий',
+                                })
+                            .form__flex.form__flex--checkbox
+                                +field({
+                                    type: 'checkbox',
+                                    radioCheckboxText: 'Двигатель'
+                                })
+                                +field({
+                                    placeholder: 'Комментарий',
+                                })
+                            .form__flex.form__flex--checkbox
+                                +field({
+                                    type: 'checkbox',
+                                    radioCheckboxText: 'Кузов'
+                                })
+                                +field({
+                                    placeholder: 'Комментарий',
+                                })
+                            .form__flex.form__flex--checkbox
+                                +field({
+                                    type: 'checkbox',
+                                    radioCheckboxText: 'Год выпуска'
+                                })
+                                +field({
+                                    placeholder: 'Комментарий',
+                                })
+                            .form__flex.form__flex--checkbox
+                                +field({
+                                    type: 'checkbox',
+                                    radioCheckboxText: 'Цвет'
+                                })
+                                +field({
+                                    placeholder: 'Комментарий',
+                                })
+                            .form__flex.form__flex--checkbox
+                                +field({
+                                    type: 'checkbox',
+                                    radioCheckboxText: 'Технический паспорт'
+                                })
+                                +field({
+                                    placeholder: 'Комментарий',
+                                })
+
+                    +btn({
+                        classes: 'form__submit',
+                        type: 'button',
+                        buttonType: 'submit',
+                        name: 'Отклонить',
+                        cMode: 'accent',
+                        sMode: 'full'
+                    })
 
         //- Окно благодарности регистрации
         +modal({modalId:"thanksModal", modalTitle:"", classes:"right-modal"})

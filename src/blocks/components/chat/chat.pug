@@ -1,28 +1,75 @@
 -
     const defaultChatProps = {
         classes: '',
+        isEmployee: false
     }
 
 mixin chat(props= defaultChatProps)
     -
         const checkProps = {
             classes: props.classes ? props.classes : defaultChatProps.classes,
+            isEmployee: props.isEmployee ? props.isEmployee : defaultChatProps.isEmployee
         }
 
     .chat(class= checkProps.classes)&attributes(attributes)
-        .chat__content
+        .chat__body
+            .custom-scrollbar.chat__scroll(data-js="customScrollbar")
+                .chat__content
+                    - if(checkProps.isEmployee === true)
+                        .chat-message.chat-message--my
+                            .chat-message__header
+                                .chat-message__name Вы
+                                .chat-message__date 19.08.2025
+                            .chat-message__body
+                                | Неправильно заполнили КПП, машину снимаем с выкупа. Пожалуйста поправьте
+
+                        .chat-message
+                            .chat-message__header
+                                .chat-message__name Вариев Андрей Васильевич (ООО Рога и Копыта)
+                                .chat-message__date 19.08.2025
+                            .chat-message__body
+                                | Внес правки. Сейчас правильно?
+
+                        .chat-message.chat-message--my
+                            .chat-message__header
+                                .chat-message__name Вы
+                                .chat-message__date 19.08.2025
+                            .chat-message__body
+                                | Да
+                    - else
+                        .chat-message
+                            .chat-message__header
+                                .chat-message__name Менеджер Frank Auto:
+                                .chat-message__date 19.08.2025
+                            .chat-message__body
+                                | Неправильно заполнили КПП, машину снимаем с выкупа. Пожалуйста поправьте
+
+                        .chat-message.chat-message--my
+                            .chat-message__header
+                                .chat-message__name Вы
+                                .chat-message__date 19.08.2025
+                            .chat-message__body
+                                | Внес правки. Сейчас правильно?
+
+                        .chat-message
+                            .chat-message__header
+                                .chat-message__name Менеджер Frank Auto:
+                                .chat-message__date 19.08.2025
+                            .chat-message__body
+                                | Да
 
         form.form.chat__form(action="#" data-validate novalidate)
             .field(data-js="formField")
                 label
-                    input.field__input(type="text" placeholder="" required="")
+                    textarea.field__textarea(rows="1" placeholder="" required="")
                     span.field__placeholder Написать сообщение
 
             +btn({
-                classes: 'form__submit manual-adding__submit',
+                classes: 'form__submit chat__submit',
                 type: 'button',
                 buttonType: 'submit',
-                name: 'Сохранить',
+                name: 'Отправить',
                 cMode: 'accent',
-                sMode: 'full'
+                sMode: 'narrow',
+                icon: 'message'
             })

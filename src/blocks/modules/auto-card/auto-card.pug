@@ -43,14 +43,12 @@ mixin auto-card(props= defaultAutoCardProps)
     -
         const checkProps = {
             classes: props.classes ? props.classes : defaultAutoCardProps.classes,
-            usedPage: props.usedPage ? props.usedPage : defaultAutoCardProps.usedPage,
+            employeePage: props.employeePage ? props.employeePage : defaultAutoCardProps.employeePage,
             title: props.title ? props.title : defaultAutoCardProps.title,
             params: props.params ? props.params : defaultAutoCardProps.params,
         }
 
-        const pageClass = checkProps.usedPage === true ? ' cp-intro--used' : ''
-
-    section.section.auto-card(class= checkProps.classes + pageClass data-js="autoCard")&attributes(attributes)
+    section.section.auto-card(class= checkProps.classes data-js="autoCard")&attributes(attributes)
         .section__container
             .section-block
                 .auto-card__block
@@ -80,7 +78,24 @@ mixin auto-card(props= defaultAutoCardProps)
                                 hasRightTopArrow: true
                             })
 
-                            - if(checkProps.employeePage === true)
+                        - if(checkProps.employeePage === true)
+                            .auto-card__controls
+                                +btn({
+                                    name: 'Сохранить и отправить заявку на выкуп',
+                                    cMode: 'accent',
+                                    sMode: 'full'
+                                })
+                                .auto-card__flex
+                                    +btn({
+                                        name: 'Отклонить',
+                                        cMode: 'accent',
+                                        sMode: 'full'
+                                    })(data-modal="#rejectModal")
+                                    +btn({
+                                        name: 'Отправить в архив',
+                                        cMode: 'accent',
+                                        sMode: 'full'
+                                    })(data-modal="#archiveModal")
 
                     .auto-card__right
                         .auto-card__slider(data-js="autoCardSlider")
@@ -119,4 +134,9 @@ mixin auto-card(props= defaultAutoCardProps)
                                 .swiper-slide.auto-card__thumb
                                     img(src="img/catalog-product/cp_intro_5.webp" alt="")
 
-                +chat
+                - if(checkProps.employeePage === true)
+                    +chat({
+                        isEmployee: true
+                    })
+                - else
+                    +chat

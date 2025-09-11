@@ -31,14 +31,16 @@
     }*/
 
     &__input:focus~&__placeholder,
-    &__input:not(:placeholder-shown)~&__placeholder {
+    &__input:not(:placeholder-shown)~&__placeholder,
+    &__textarea:focus~&__placeholder,
+    &__textarea:not(:placeholder-shown)~&__placeholder {
         font-size: 12px;
-        top: 7px;
+        top: 6px;
         transform: translateY(0);
 
         @include max(mobile) {
             font-size: 10px;
-            top: 4px;
+            top: 3px;
         }
     }
 
@@ -61,6 +63,15 @@
         }
     }
 
+    &__textarea~&__placeholder {
+        top: 16px;
+        transform: translateY(0);
+
+        @include max(mobile) {
+            top: 11px;
+        }
+    }
+
     &__icon {
         position: absolute;
         top: 50%;
@@ -77,20 +88,22 @@
     }
 
     &__input:focus,
-    &__input:not(:placeholder-shown) {
-        padding-top: 25px;
-        padding-bottom: 7px;
+    &__input:not(:placeholder-shown),
+    &__textarea:focus,
+    &__textarea:not(:placeholder-shown) {
+        padding-top: 24px;
+        padding-bottom: 6px;
 
         @include max(mobile) {
-            padding-top: 20px;
-            padding-bottom: 4px;
+            padding-top: 19px;
+            padding-bottom: 3px;
         }
     }
 
     &__input,
     &__textarea {
         width: 100%;
-        padding: 16px;
+        padding: 15px;
         font-family: $ff-inter;
         font-size: 16px;
         line-height: 1.5em;
@@ -99,11 +112,12 @@
         color: $c-text;
         background-color: $c-bg-input;
         border-radius: $br-btn-input;
+        border: 1px solid $c-bg-input;
         transition: all $tr-time linear;
 
         @include max(mobile) {
             font-size: 14px;
-            padding: 12px;
+            padding: 11px;
         }
     }
 
@@ -596,6 +610,7 @@
     width: 100% !important;
     border-radius: $br-btn-input;
     background-color: $c-bg-input;
+    border: 1px solid $c-bg-input;
 
     @include max(mobile) {
         border-radius: 10px;

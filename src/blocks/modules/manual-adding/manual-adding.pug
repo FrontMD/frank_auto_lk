@@ -317,6 +317,11 @@ mixin manual-adding(props= defaultManualAddingProps)
                                         },
                                     })
 
+                                +field({
+                                    tag: 'textarea',
+                                    placeholder: 'Дополнительная информация',
+                                })
+
                             +btn({
                                 classes: 'form__submit manual-adding__submit',
                                 type: 'button',

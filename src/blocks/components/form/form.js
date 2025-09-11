@@ -182,18 +182,23 @@ function validation() {
 
                 // тут отправляем данные
                 if (errors === 0) {
-                    
-                    submitFunctionKey = form.getAttribute('data-submit-function');
-                    if (typeof (submitFunctionKey) === 'string' && submitFunctionKey.length > 0) {
-                        try {
-                            window.formsProcessors[submitFunctionKey](form);
 
-                        } catch (e) {
-                            alert('Обработчик формы не обнаружен');
-                        }
+                    if(form.getAttribute('data-auth') && form.getAttribute('data-auth') == 'true') {
+                        form.submit()
                     } else {
-                        alert('Обработчик формы не указан');
+                        submitFunctionKey = form.getAttribute('data-submit-function');
+                        if (typeof (submitFunctionKey) === 'string' && submitFunctionKey.length > 0) {
+                            try {
+                                window.formsProcessors[submitFunctionKey](form);
+    
+                            } catch (e) {
+                                alert('Обработчик формы не обнаружен');
+                            }
+                        } else {
+                            alert('Обработчик формы не указан');
+                        }
                     }
+                    
 
                     //toggleLoading(form, true)
                     //defaultAfterSubmit(form, true)

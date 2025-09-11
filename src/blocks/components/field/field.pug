@@ -4,7 +4,7 @@
         tag: 'input',
         type: 'text',
         title: '',
-        textareaRows: '8',
+        textareaRows: '5',
         placeholder: '',
         isTab: false,
         icon: '',
@@ -90,7 +90,8 @@ mixin field(props = defaultFieldProps)
                     span.field__error(data-js='fieldError')
 
             - if(checkProps.tag === 'textarea')
-                textarea.field__textarea(rows=checkProps.textareaRows placeholder=checkProps.placeholder)&attributes(checkProps.inputAttr)
+                textarea.field__textarea(rows=checkProps.textareaRows placeholder='')&attributes(checkProps.inputAttr)
+                span.field__placeholder!= checkProps.placeholder
                 span.field__error(data-js='fieldError')
 
             - if(checkProps.tag === 'select')

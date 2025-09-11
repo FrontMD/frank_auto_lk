@@ -11,7 +11,7 @@
     letter-spacing: 0;
     padding: 15px 52px;
     gap: 10px;
-    border-radius: $br-btn-input;
+    border-radius: 16px;
     cursor: pointer;
 
     @include max(mobile) {
@@ -49,7 +49,6 @@
         background-color: $c-bg-main;
         border: 1px solid $c-accent;
         transition: all $tr-time;
-        border-radius: $br-btn-input;
 
         svg {
             color: $c-accent;
@@ -71,7 +70,6 @@
         color: $c-accent;
         background-color: #E9EEFC;
         transition: all $tr-time;
-        border-radius: $br-btn-input;
 
         svg {
             color: $c-accent;

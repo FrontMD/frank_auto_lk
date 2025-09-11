@@ -602,7 +602,7 @@ html.hystmodal__opened {
 		margin-top: 50px;
 	}
 
-}
+}*/
 
 .custom-scrollbar {
 	&::-webkit-scrollbar {
@@ -616,13 +616,12 @@ html.hystmodal__opened {
 	}
 
 	.simplebar-track {
-		background-color: $c-bg-main;
-		opacity: 0.5;
+		background-color: #E5EAED;
 
 	}
 
 	.simplebar-scrollbar {
-		background-color: $c-text-light;
+		background-color: $c-accent;
 	}
 
 	.simplebar-track.simplebar-vertical {
@@ -639,9 +638,9 @@ html.hystmodal__opened {
 		width: initial;
 		height: initial;
 	}
-}*/
+}
 
-/*.my-fancybox {
+.my-fancybox {
 	.fancybox__viewport {
 		.fancybox__slide {
 			padding-left: 40px;
@@ -853,7 +852,7 @@ html.hystmodal__opened {
 
 		}
 	}
-}*/
+}
 
 .air-datepicker {
 	-moz-user-select: none;

@@ -1,0 +1,32 @@
+extends ../layouts/default
+
+block variables
+	- const title = "Карточка авто"
+	- const footerType = 'supplier'
+	- const headerType = 'supplier'
+
+block content
+	.page-layout(data-js="pageLayout")
+
+		section.section.section--bc
+			.section__container.section__content
+				+breadcrumbs({
+					items: [
+						{
+							name: 'Личный кабинет',
+							link: 'javascript:void(0);'
+						},
+						{
+							name: 'Заявки на выкуп автомобиля',
+							link: 'javascript:void(0);'
+						},
+						{
+							name: 'Карточка авто',
+							link: 'javascript:void(0);'
+						}
+					],
+				})
+
+		+auto-card({
+			employeePage: true,
+		})
