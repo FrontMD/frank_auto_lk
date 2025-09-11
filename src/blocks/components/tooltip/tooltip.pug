@@ -1,0 +1,27 @@
+-
+    const defaultTooltipProps = {
+        classes: '',
+        title: 'Честная цена',
+        text: 'Краткое описание, что такое честная цена',
+        icon: 'tooltip'
+    }
+
+mixin tooltip(props= defaultTooltipProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultTooltipProps.classes,
+            title: props.title ? props.title : defaultTooltipProps.title,
+            text: props.text ? props.text : defaultTooltipProps.text,
+            icon: props.icon ? props.icon : defaultTooltipProps.icon
+        }
+
+    .tooltip(class= checkProps.classes)&attributes(attributes)
+        .tooltip__header
+            .tooltip__title!= checkProps.title
+            .tooltip__icon
+                svg
+                    use(xlink:href=`img/sprites/sprite.svg#${checkProps.icon}`)
+        .tooltip__tooltip!= checkProps.text
+
+
+

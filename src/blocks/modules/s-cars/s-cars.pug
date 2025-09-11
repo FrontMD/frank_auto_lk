@@ -5,7 +5,7 @@
         hasDLBtn: false,
         cards: [
             {
-                img: 'img/link-cards/card_1.webp',
+                img: 'img/catalog-product/cp_intro_1.webp',
                 title: 'Lixiang L7 Pro 449 л.с. Hybrid Turbo 4WD',
                 price: {
                     current: '15 000 000 ₽',
@@ -25,7 +25,7 @@
                 }
             },
             {
-                img: 'img/link-cards/card_1.webp',
+                img: 'img/catalog-product/cp_intro_1.webp',
                 title: 'Lixiang L7 Pro 449 л.с. Hybrid Turbo 4WD',
                 price: {
                     current: '15 000 000 ₽',
@@ -45,7 +45,7 @@
                 }
             },
             {
-                img: 'img/link-cards/card_1.webp',
+                img: 'img/catalog-product/cp_intro_1.webp',
                 title: 'Lixiang L7 Pro 449 л.с. Hybrid Turbo 4WD',
                 price: {
                     current: '15 000 000 ₽',
@@ -65,7 +65,7 @@
                 }
             },
             {
-                img: 'img/link-cards/card_1.webp',
+                img: 'img/catalog-product/cp_intro_1.webp',
                 title: 'Lixiang L7 Pro 449 л.с. Hybrid Turbo 4WD',
                 price: {
                     current: '15 000 000 ₽',
@@ -85,7 +85,7 @@
                 }
             },
             {
-                img: 'img/link-cards/card_1.webp',
+                img: 'img/catalog-product/cp_intro_1.webp',
                 title: 'Lixiang L7 Pro 449 л.с. Hybrid Turbo 4WD',
                 price: {
                     current: '15 000 000 ₽',
@@ -105,7 +105,7 @@
                 }
             },
             {
-                img: 'img/link-cards/card_1.webp',
+                img: 'img/catalog-product/cp_intro_1.webp',
                 title: 'Lixiang L7 Pro 449 л.с. Hybrid Turbo 4WD',
                 price: {
                     current: '15 000 000 ₽',
@@ -156,15 +156,19 @@ mixin s-cars(props= defaultSCarsProps)
                             .s-car__img
                                 img(src=card.img, alt="")
                             .s-car__info
-                                .s-car__subtitle.title!= card.title
+                                .s-car__title.title!= card.title
                                 .s-car__bottom
                                     - let priceDirection = card.price.direction.length > 0 ? `s-car__price--${card.price.direction}` : ''  
                                     .s-car__price(class=priceDirection)
                                         .current!= card.price.current
                                             - if(card.price.direction.length > 0)
                                                 svg
+                                                    use(xlink:href=`img/sprites/sprite.svg#arrow_dir`)
                                         - if(card.price.old.length > 0)
                                             .old!= card.price.old
+                                    .s-car__status(class=`s-car__status--${card.tag.status}`)!= card.tag.text
+                                    - if(card.isFairPrice === true)
+                                        +tooltip
 
                             - if(checkProps.hasDLBtn === true)
                                 +btn({
@@ -178,7 +182,7 @@ mixin s-cars(props= defaultSCarsProps)
                                 +btn({
                                     name: 'Удалить из базы',
                                     sMode: 'content',
-                                    cMode: 'light--accent',
+                                    cMode: 'light-accent',
                                     icon: 'urn'
                                 })
 
