@@ -1,0 +1,64 @@
+.pagination {
+    width: fit-content;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    margin: 32px auto 0;
+
+    @include max(mobile) {
+        justify-content: center;
+        gap: 5px;
+    }
+
+    &__btn,
+    &__page {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: $c-white;
+        border: 1px solid $c-white;
+        border-radius: 8px;
+        color: $c-text;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 100%;
+        letter-spacing: 0;
+        transition: all $tr-time linear;
+        text-decoration: none;
+        margin: 0;
+        padding: 0;
+
+        &:hover {
+            background-color: $c-bg-main;
+            border-color: $c-accent;
+        }
+    }
+
+    &__page {
+        &.active {
+            background-color: $c-accent;
+            border-color: $c-accent;
+            pointer-events: none;
+            color: $c-white;
+        }
+    }
+
+    &__btn {
+        color: $c-accent;
+
+        svg {
+            width: 20px;
+            height: 20px;
+
+            @include max(mobile) {
+                width: 16px;
+                height: 16px;
+            }
+        }
+    }
+
+}

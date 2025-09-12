@@ -98,65 +98,63 @@ mixin e-suppliers(props= defaultESuppliersProps)
                         hasResetBtn: true,
                         btnText: 'Показать 73'
                     })
-
-                        +field({
-                            placeholder: 'Дата добавления в каталог',
-                            icon: 'calendar',
-                            inputAttr: {
-                                'data-v-name': 'date',
-                                'data-type': 'date',
-                            },
-                        })
-                        +field({
-                            classes: '',
-                            tag: 'select',
-                            placeholder: 'В базе от',
-                            placeholder2: 'до',
-                            selectOptions: [
-                                "",
-                                "0",
-                                "10",
-                                "20",
-                                "30",
-                                "50",
-                                "100",
-                            ],
-                            selectOptions2: [
-                                "",
-                                "10",
-                                "20",
-                                "30",
-                                "50",
-                                "100",
-                            ],
-                            isDouble: true,
-                        })
-
-                        +field({
-                            classes: '',
-                            tag: 'select',
-                            placeholder: 'Продаж от',
-                            placeholder2: 'до',
-                            selectOptions: [
-                                "",
-                                "0",
-                                "10",
-                                "20",
-                                "30",
-                                "50",
-                                "100",
-                            ],
-                            selectOptions2: [
-                                "",
-                                "10",
-                                "20",
-                                "30",
-                                "50",
-                                "100",
-                            ],
-                            isDouble: true,
-                        })
-
+                        <div class="field" data-js="formField">
+                            <label>
+                                <input class="field__input" type="text" placeholder="" data-v-name="date" data-type="date">
+                                <span class="field__placeholder">Дата добавления в каталог</span>
+                                <span class="field__icon">
+                                    <svg>
+                                        <use xlink:href="img/sprites/sprite.svg#calendar"></use>
+                                    </svg>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="field field--double" data-js="formField">
+                            <label>
+                                <select class="field__select" data-placeholder="В базе от" data-js="formSelect">
+                                    <option label=" "></option>
+                                    <option value="0">0</option>
+                                    <option value="10">10</option>
+                                    <option value="20">20</option>
+                                    <option value="30">30</option>
+                                    <option value="50">50</option>
+                                    <option value="100">100</option>
+                                </select>
+                            </label>
+                            <label>
+                                <select class="field__select field__select--second" data-placeholder="до" data-js="formSelect">
+                                    <option label=" "></option>
+                                    <option value="10">10</option>
+                                    <option value="20">20</option>
+                                    <option value="30">30</option>
+                                    <option value="50">50</option>
+                                    <option value="100">100</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div class="field field--double" data-js="formField">
+                            <label>
+                                <select class="field__select" data-placeholder="Продаж от" data-js="formSelect">
+                                    <option label=" " data-select2-id="9"></option>
+                                    <option value="0">0</option>
+                                    <option value="10">10</option>
+                                    <option value="20">20</option>
+                                    <option value="30">30</option>
+                                    <option value="50">50</option>
+                                    <option value="100">100</option>
+                                </select>
+                            </label>
+                            <label>
+                                <select class="field__select field__select--second" data-placeholder="до" data-js="formSelect">
+                                    <option label=" "></option>
+                                    <option value="10">10</option>
+                                    <option value="20">20</option>
+                                    <option value="30">30</option>
+                                    <option value="50">50</option>
+                                    <option value="100">100</option>
+                                </select>
+                            </label>
+                        </div>
 
                 .e-suppliers__list
                     - let cardsCount = 0

@@ -1,0 +1,33 @@
+-
+    const defaultPaginationProps = {
+        classes: '',
+        count: 6,
+        separator: false
+    }
+
+mixin pagination(props = defaultPaginationProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultPaginationProps.classes,
+            count: props.count ? props.count : defaultPaginationProps.count,
+            separator: props.separator ? props.separator : defaultPaginationProps.separator
+        }
+    .pagination(class= checkProps.classes)
+        a.pagination__btn.pagination__btn--prev(href="javascript:void(0);")
+            svg
+                use(xlink:href=`img/sprites/sprite.svg#arrow_slider_left`)
+        - let i = 1
+            -if(checkProps.separator === true)
+                while i <= checkProps.count
+                    -if(i < 4 || i == checkProps.count)
+                        a.pagination__page(href="javascript:void(0);" class= i===1 ? "active" : "")= i
+                    -if(i == 4)
+                        .pagination__separator ...
+                    - i++
+            - else
+                while i <= checkProps.count
+                    a.pagination__page(href="javascript:void(0);" class= i===1 ? "active" : "")= i
+                    - i++
+        a.pagination__btn.pagination__btn--next(href="javascript:void(0);")
+            svg
+                use(xlink:href=`img/sprites/sprite.svg#arrow_slider_right`)

@@ -342,13 +342,12 @@ function formSpoilerController(form) {
         return
     }
 
-    const visibleFields = 8
-    const oneField = spoiler.querySelector('[data-js="formField"]')
-    const fieldHeight = oneField.offsetHeight
+    const visibleRows = 2
+    const oneRow = spoiler.querySelector('[data-js="formSpoilerRow"]')
+    const rowHeight = oneRow.offsetHeight
     const gap = parseInt(window.getComputedStyle(spoiler).rowGap)
-    const fieldsInRow = Math.floor(spoiler.offsetWidth / oneField.offsetWidth)
-    const visibleRows = Math.ceil(visibleFields / fieldsInRow)
-    const minHeight = fieldHeight * visibleRows + (visibleRows - 1) * gap
+
+    const minHeight = rowHeight * visibleRows + (visibleRows - 1) * gap
     const maxHeight = spoiler.scrollHeight
 
     spoiler.style.maxHeight = minHeight + 'px'

@@ -6,11 +6,11 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     fieldsController();
-    formFilterController();
     selects();
     spoilers()
 })
 
-window.onload = function() { 
+window.addEventListener('load', function() { 
+    formFilterController();
     validation();
-};
+});

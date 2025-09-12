@@ -222,4 +222,20 @@
         padding: 0 8px;
         border-radius: 8px;
     }
+
+    &__icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 16px;
+        height: 16px;
+        background-color: $c-accent;
+        color: $c-white;
+        border-radius: 100%;
+
+        svg {
+            width: 14px;
+            height: 14px;
+        }
+    }
 }
