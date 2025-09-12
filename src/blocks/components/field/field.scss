@@ -114,10 +114,12 @@
         border-radius: $br-btn-input;
         border: 1px solid $c-bg-input;
         transition: all $tr-time linear;
+        min-height: 56px;
 
         @include max(mobile) {
             font-size: 14px;
             padding: 11px;
+            min-height: 48px;
         }
     }
 
@@ -152,6 +154,43 @@
         pointer-events: none;
     }
 
+}
+
+.field {
+    &--search &__input {
+        padding-right: 55px;
+
+        @include max(mobile) {
+            padding-right: 42px;
+        }
+    }
+
+    &--search &__icon {
+        width: 28px;
+        height: 28px;
+        color: #6B7280;
+        transition: all $tr-time linear;
+        cursor: pointer;
+
+        @include max(mobile) {
+            width: 20px;
+            height: 20px;
+        }
+
+        &:hover {
+            color: $c-accent;
+        }
+
+        svg {
+            width: 28px;
+            height: 28px;
+
+            @include max(mobile) {
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
 }
 
 
@@ -560,7 +599,7 @@
     }*/
 }
 
-/*.field {
+.field {
     &--double {
         display: flex;
         align-items: stretch;
@@ -580,13 +619,21 @@
 
     &--double &__input {
         flex: 0 0 50%;
-        padding: 22.5px 16px 22.5px 20px;
+        padding: 15px;
         border-radius: $br-btn-input 0 0 $br-btn-input;
+
+        @include max(mobile) {
+            padding: 11px;
+        }
     }
 
     &--double &__input--second {
-        padding: 22.5px 20px 22.5px 16px;
+        padding: 15px;
         border-radius: 0 $br-btn-input $br-btn-input 0;
+
+        @include max(mobile) {
+            padding: 11px;
+        }
     }
 
     &--double .select2.select2-container--default {
@@ -599,10 +646,14 @@
 
     &--double .select2.select2-container--default .select2-selection--single,
     &--double .select2.select2-container--default .select2-selection--multiple {
-        padding: 22px 16px 22px 20px;
+        padding: 15px;
+
+        @include max(mobile) {
+            padding: 11px;
+        }
     }
 
-}*/
+}
 
 .select2 {
     display: flex;
@@ -838,11 +889,11 @@
     }
 }
 
-.field {
+/*.field {
 
     &--white &__input,
     &--white &__textarea,
     &--white .select2 {
         background-color: $c-white;
     }
-}
+}*/

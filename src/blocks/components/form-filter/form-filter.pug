@@ -30,14 +30,6 @@ mixin form-filter(props = defaultFormFilterProps)
             - if(checkProps.hasResetBtn === true)
                 .form-filter__flex
                     +btn({
-                        classes: 'form-filter__reset',
-                        type: 'button',
-                        buttonType: 'button',
-                        name: 'Сбросить',
-                        cMode: 'light-accent',
-                        sMode: 'full'
-                    })(data-js="formResetBtn")
-                    +btn({
                         classes: 'form-filter__submit',
                         type: 'button',
                         buttonType: 'submit',
@@ -45,6 +37,15 @@ mixin form-filter(props = defaultFormFilterProps)
                         cMode: 'accent',
                         sMode: 'full'
                     })
+                    +btn({
+                        classes: 'form-filter__reset',
+                        type: 'button',
+                        buttonType: 'button',
+                        name: 'Сбросить',
+                        cMode: 'light-accent',
+                        sMode: 'full',
+                        icon: 'close'
+                    })(data-js="formResetBtn")
             - else
                 +btn({
                     classes: 'form-filter__submit',

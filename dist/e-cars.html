@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Сотрудник разводящая</title>
+    <title>Каталог автомобилей</title>
     <meta name="theme-color" content="#fff">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -128,54 +128,62 @@
         </header>
     <main class="site-main">
       <div class="page-layout" data-js="pageLayout">
-            <section class="section common-list common-list--2">
+        <section class="section section--bc">
+          <div class="section__container section__content">
+                <div class="breadcrumbs  breadcrumbs--dark">
+                  <div class="custom-scrollbar breadcrumbs__scroll" data-js="customScrollbar">
+                    <ul class="breadcrumbs__list">
+                      <li class="breadcrumbs__item"><a href="javascript:void(0);">Личный кабинет</a><span class="breadcrumbs__separator">
+                          <svg>
+                            <use xlink:href="img/sprites/sprite.svg#arrow_angle_right"></use>
+                          </svg></span>
+                      </li>
+                      <li class="breadcrumbs__item breadcrumbs__item--current"><span>Каталог автомобилей</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+          </div>
+        </section>
+            <section class="section e-cars">
               <div class="section__container">
-                <div class="section-block common-list__block">
-                  <div class="title title--24 common-list__title"><h1>Личный кабинет</h1></div>
-                  <div class="common-list__list">
-                    <div class="common-list__card">
-                      <div class="common-list__info">
-                        <div class="common-list__subtitle title">Каталог автомобилей</div>
-                        <div class="common-list__btns"><a class="btn common-list__btn btn--light-accent btn--content" href="javascript:void(0)"><span class="btn__text">Перейти</span>
-                                <svg class="btn__arrow">
-                                  <use xlink:href="img/sprites/sprite.svg#arrow_classic"></use>
-                                </svg></a>
+                <div class="section-block e-cars__block">
+                  <div class="title title--24 e-cars__title"><h1>Каталог автомобилей</h1></div>
+                  <div class="e-cars__filter"></div>
+                  <div class="e-cars__list">
+                    <div class="e-cars__card e-car">
+                      <div class="e-car__img"><img src="img/catalog-product/cp_intro_1.webp" alt=""></div>
+                      <div class="e-car__info">
+                        <div class="e-car__title title">Lixiang L7 Pro 449 л.с. Hybrid Turbo 4WD</div>
+                        <div class="e-car__bottom">
+                          <div class="e-car__price s-car__price--down">
+                            <div class="current">15 000 000 ₽
+                              <svg>
+                                <use xlink:href="img/sprites/sprite.svg#arrow_dir"></use>
+                              </svg>
+                                  <div class="tooltip tooltip--small">
+                                    <div class="tooltip__header">
+                                      <div class="tooltip__icon">
+                                        <svg>
+                                          <use xlink:href="img/sprites/sprite.svg#tooltip"></use>
+                                        </svg>
+                                      </div>
+                                    </div>
+                                    <div class="tooltip__tooltip">Краткая информация о цене</div>
+                                  </div>
+                            </div>
+                            <div class="old">18 000 000 ₽</div>
+                          </div>
                         </div>
                       </div>
-                      <div class="common-list__img"><img src="img/link-cards/card_3.webp" alt=""></div>
-                    </div>
-                    <div class="common-list__card">
-                      <div class="common-list__info">
-                        <div class="common-list__subtitle title">База поставщиков</div>
-                        <div class="common-list__btns"><a class="btn common-list__btn btn--light-accent btn--content" href="javascript:void(0)"><span class="btn__text">Перейти</span>
-                                <svg class="btn__arrow">
-                                  <use xlink:href="img/sprites/sprite.svg#arrow_classic"></use>
-                                </svg></a>
+                      <div class="e-car__delivery"></div>
+                      <div class="e-car__right"><a class="btn s-car__detail btn--light-accent btn--mini" href="javascript:void(0)"><span class="btn__text">Подробнее</span></a>
+                        <div class="e-car__btns"><a class="btn  btn--accent btn--mini" href="javascript:void(0)">
+                                <svg>
+                                  <use xlink:href="img/sprites/sprite.svg#close_p0"></use>
+                                </svg><span class="btn__text">Отклонить</span></a><a class="btn  btn--accent btn--mini" href="javascript:void(0)"><span class="btn__text">Выкупить</span></a>
                         </div>
                       </div>
-                      <div class="common-list__img"><img src="img/link-cards/card_7.webp" alt=""></div>
-                    </div>
-                    <div class="common-list__card">
-                      <div class="common-list__info">
-                        <div class="common-list__subtitle title">Заявки на регистрацию аккаунта</div>
-                        <div class="common-list__btns"><a class="btn common-list__btn btn--light-accent btn--content" href="javascript:void(0)"><span class="btn__text">Перейти</span>
-                                <svg class="btn__arrow">
-                                  <use xlink:href="img/sprites/sprite.svg#arrow_classic"></use>
-                                </svg></a>
-                        </div>
-                      </div>
-                      <div class="common-list__img"><img src="img/link-cards/card_10.webp" alt=""></div>
-                    </div>
-                    <div class="common-list__card">
-                      <div class="common-list__info">
-                        <div class="common-list__subtitle title">Заявки на выкуп автомобиля</div>
-                        <div class="common-list__btns"><a class="btn common-list__btn btn--light-accent btn--content" href="javascript:void(0)"><span class="btn__text">Перейти</span>
-                                <svg class="btn__arrow">
-                                  <use xlink:href="img/sprites/sprite.svg#arrow_classic"></use>
-                                </svg></a>
-                        </div>
-                      </div>
-                      <div class="common-list__img"><img src="img/link-cards/card_5.webp" alt=""></div>
                     </div>
                   </div>
                 </div>

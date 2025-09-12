@@ -168,7 +168,9 @@ mixin s-cars(props= defaultSCarsProps)
                                             .old!= card.price.old
                                     .s-car__status(class=`s-car__status--${card.tag.status}`)!= card.tag.text
                                     - if(card.isFairPrice === true)
-                                        +tooltip
+                                        +tooltip({
+                                            title: 'Честная цена'
+                                        })
 
                             .s-car__right
                                 - if(checkProps.hasDLBtn === true)

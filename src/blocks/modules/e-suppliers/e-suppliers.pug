@@ -1,192 +1,218 @@
 -
-    const defaultSCarsProps = {
+    const defaultESuppliersProps = {
         classes: '',
-        title: '<h1>Мои автомобили</h1>',
-        hasDLBtn: false,
+        title: '<h1>База поставщиков</h1>',
         cards: [
             {
-                img: 'img/catalog-product/cp_intro_1.webp',
-                title: 'Lixiang L7 Pro 449 л.с. Hybrid Turbo 4WD',
-                price: {
-                    current: '15 000 000 ₽',
-                    old: '18 000 000 ₽',
-                    direction: 'down'
-                },
-                tag: {
-                    text: 'Выкуплен',
+                title: 'ООО Рога и Копыта',
+                dateOfReg: {
+                    date: '29.08.2025',
+                    days: '1 день',
                     status: 'green'
                 },
-                isFairPrice: true,
-                btn: {
-                    name: 'Изменить',
-                    cMode: 'accent',
-                    sMode: "small",
-                    icon: 'pencil'
-                }
+                rejected: '120',
+                changes: {
+                    date: '29.08.2025',
+                    days: '1 день',
+                    status: 'green'
+                },
+                sold: '110 шт.',
+                catalog: '28 шт.',
             },
             {
-                img: 'img/catalog-product/cp_intro_1.webp',
-                title: 'Lixiang L7 Pro 449 л.с. Hybrid Turbo 4WD',
-                price: {
-                    current: '15 000 000 ₽',
-                    old: '10 000 000 ₽',
-                    direction: 'up'
-                },
-                tag: {
-                    text: 'Не выкуплен',
-                    status: 'blue'
-                },
-                isFairPrice: false,
-                btn: {
-                    name: 'Изменить',
-                    cMode: 'accent',
-                    sMode: "small",
-                    icon: 'pencil'
-                }
-            },
-            {
-                img: 'img/catalog-product/cp_intro_1.webp',
-                title: 'Lixiang L7 Pro 449 л.с. Hybrid Turbo 4WD',
-                price: {
-                    current: '15 000 000 ₽',
-                    old: '',
-                    direction: ''
-                },
-                tag: {
-                    text: 'Проблема',
-                    status: 'red'
-                },
-                isFairPrice: false,
-                btn: {
-                    name: 'Изменить',
-                    cMode: 'accent',
-                    sMode: "small",
-                    icon: 'pencil'
-                }
-            },
-            {
-                img: 'img/catalog-product/cp_intro_1.webp',
-                title: 'Lixiang L7 Pro 449 л.с. Hybrid Turbo 4WD',
-                price: {
-                    current: '15 000 000 ₽',
-                    old: '',
-                    direction: ''
-                },
-                tag: {
-                    text: 'Запрос на выкуп',
+                title: 'ООО Ромашка',
+                dateOfReg: {
+                    date: '29.08.2025',
+                    days: '2 дня',
                     status: 'yellow'
                 },
-                isFairPrice: false,
-                btn: {
-                    name: 'Изменить',
-                    cMode: 'accent',
-                    sMode: "small",
-                    icon: 'pencil'
-                }
+                rejected: '0',
+                changes: {
+                    date: '29.08.2025',
+                    days: '1 день',
+                    status: 'green'
+                },
+                sold: '4210 шт.',
+                catalog: '2888 шт.',
             },
             {
-                img: 'img/catalog-product/cp_intro_1.webp',
-                title: 'Lixiang L7 Pro 449 л.с. Hybrid Turbo 4WD',
-                price: {
-                    current: '15 000 000 ₽',
-                    old: '',
-                    direction: ''
+                title: 'ООО Василек',
+                dateOfReg: {
+                    date: '29.08.2025',
+                    days: '49 дней',
+                    status: 'red'
                 },
-                tag: {
-                    text: 'Не выкуплен',
-                    status: 'blue'
+                rejected: '120',
+                changes: {
+                    date: '29.08.2025',
+                    days: '1 день',
+                    status: 'green'
                 },
-                isFairPrice: false,
-                btn: {
-                    name: 'Изменить',
-                    cMode: 'accent',
-                    sMode: "small",
-                    icon: 'pencil'
-                }
+                sold: '110 шт.',
+                catalog: '28 шт.',
             },
             {
-                img: 'img/catalog-product/cp_intro_1.webp',
-                title: 'Lixiang L7 Pro 449 л.с. Hybrid Turbo 4WD',
-                price: {
-                    current: '15 000 000 ₽',
-                    old: '',
-                    direction: ''
+                title: 'ООО Василек',
+                dateOfReg: {
+                    date: '29.08.2025',
+                    days: '49 дней',
+                    status: 'red'
                 },
-                tag: {
-                    text: 'Не выкуплен',
-                    status: 'blue'
+                rejected: '120',
+                changes: {
+                    date: '29.08.2025',
+                    days: '2 дня',
+                    status: 'yellow'
                 },
-                isFairPrice: false,
-                btn: {
-                    name: 'Изменить',
-                    cMode: 'accent',
-                    sMode: "small",
-                    icon: 'pencil'
-                }
+                sold: '110 шт.',
+                catalog: '28 шт.',
             },
         ],
     }
 
-mixin s-cars(props= defaultSCarsProps)
+mixin e-suppliers(props= defaultESuppliersProps)
     -
         const checkProps = {
-            classes: props.classes ? props.classes : defaultSCarsProps.classes,
-            title: props.title ? props.title : defaultSCarsProps.title,
-            hasDLBtn: props.hasDLBtn ? props.hasDLBtn : defaultSCarsProps.hasDLBtn,
-            cards: props.cards ? props.cards : defaultSCarsProps.cards,
+            classes: props.classes ? props.classes : defaultESuppliersProps.classes,
+            title: props.title ? props.title : defaultESuppliersProps.title,
+            cards: props.cards ? props.cards : defaultESuppliersProps.cards,
         }
 
-    section.section.s-cars(class= checkProps.classes)&attributes(attributes)
+    section.section.e-suppliers(class= checkProps.classes)&attributes(attributes)
         .section__container
-            .section-block.s-cars__block
-                .s-cars__header
-                    .title.title--24.s-cars__title!= checkProps.title
-                    if(checkProps.hasDLBtn)
-                        +btn({
-                            name: 'Выгрузить сток в фид',
-                            sMode: 'small',
-                            cMode: 'accent',
-                            icon: 'upload'
+            .section-block.e-suppliers__block
+                .title.title--24.e-suppliers__title!= checkProps.title
+                .e-suppliers__controls
+                    form(action="#").e-suppliers__search
+                        .field.field--search(data-js="formField")
+                            label
+                                input.field__input(type="text" placeholder="")
+                                span.field__placeholder Поиск по ИНН / КПП /
+                                button.field__icon(type="submit")
+                                    svg
+                                        use(xlink:href="img/sprites/sprite.svg#search")
+
+
+                    +form-filter({
+                        classes: 'e-suppliers__filter',
+                        hasResetBtn: true,
+                        btnText: 'Показать 73'
+                    })
+
+                        +field({
+                            placeholder: 'Дата добавления в каталог',
+                            icon: 'calendar',
+                            inputAttr: {
+                                'data-v-name': 'date',
+                                'data-type': 'date',
+                            },
                         })
-                .s-cars__list
+                        +field({
+                            classes: '',
+                            tag: 'select',
+                            placeholder: 'В базе от',
+                            placeholder2: 'до',
+                            selectOptions: [
+                                "",
+                                "0",
+                                "10",
+                                "20",
+                                "30",
+                                "50",
+                                "100",
+                            ],
+                            selectOptions2: [
+                                "",
+                                "10",
+                                "20",
+                                "30",
+                                "50",
+                                "100",
+                            ],
+                            isDouble: true,
+                        })
+
+                        +field({
+                            classes: '',
+                            tag: 'select',
+                            placeholder: 'Продаж от',
+                            placeholder2: 'до',
+                            selectOptions: [
+                                "",
+                                "0",
+                                "10",
+                                "20",
+                                "30",
+                                "50",
+                                "100",
+                            ],
+                            selectOptions2: [
+                                "",
+                                "10",
+                                "20",
+                                "30",
+                                "50",
+                                "100",
+                            ],
+                            isDouble: true,
+                        })
+
+
+                .e-suppliers__list
                     - let cardsCount = 0
                     -while(cardsCount < checkProps.cards.length)
                         - let card = checkProps.cards[cardsCount]
-                        .s-cars__card.s-car
-                            .s-car__img
-                                img(src=card.img, alt="")
-                            .s-car__info
-                                .s-car__title.title!= card.title
-                                .s-car__bottom
-                                    - let priceDirection = card.price.direction.length > 0 ? `s-car__price--${card.price.direction}` : ''  
-                                    .s-car__price(class=priceDirection)
-                                        .current!= card.price.current
-                                            - if(card.price.direction.length > 0)
-                                                svg
-                                                    use(xlink:href=`img/sprites/sprite.svg#arrow_dir`)
-                                        - if(card.price.old.length > 0)
-                                            .old!= card.price.old
-                                    .s-car__status(class=`s-car__status--${card.tag.status}`)!= card.tag.text
-                                    - if(card.isFairPrice === true)
-                                        +tooltip
-
-                            .s-car__right
-                                - if(checkProps.hasDLBtn === true)
-                                    +btn({
-                                        classes: 's-car__detail',
-                                        name: 'Подробнее',
-                                        sMode: 'small',
-                                        cMode: 'light-accent'
+                        .e-suppliers__card.e-supplier
+                            .e-supplier__info
+                                .e-supplier__title.title!= card.title
+                                .e-supplier__inn
+                                    span ИНН 7724564269
+                                    +tooltip({
+                                        classes: 'tooltip--small',
+                                        title: '',
+                                        text: 'ИНН 7724564269'
                                     })
+                                a.e-supplier__phone(href="tel:+79996660201") +7 (999) 666-02-01
 
-                                .s-car__btns
-                                    +btn(card.btn)
-                                    +btn({
-                                        name: 'Удалить из базы',
-                                        sMode: 'small',
-                                        cMode: 'light-accent',
-                                        icon: 'urn'
-                                    })
+                            .e-supplier__block
+                                .e-supplier__row.info-row
+                                    .info-row__title Дата регистрации:
+                                    .info-row__value!= card.dateOfReg.date
+                                        .info-row__number(class=`info-row__number--${card.dateOfReg.status}`)!= card.dateOfReg.days
+
+                                .e-supplier__row.info-row
+                                    .info-row__title Отклонено запросов на выкуп:
+                                    .info-row__value
+                                        .info-row__number(class= `${card.rejected !== '0' ? 'info-row__number--blue' : ''}`)!= card.rejected
+
+                            .e-supplier__block
+                                .e-supplier__row.info-row
+                                    .info-row__title Каталог изменен:
+                                    .info-row__value!= card.changes.date
+                                        .info-row__number(class=`info-row__number--${card.changes.status}`)!= card.changes.days
+
+                                .e-supplier__flex
+                                    .e-supplier__row.info-row
+                                        .info-row__title Продано:
+                                        .info-row__value
+                                            .info-row__number!= card.sold
+                                    .e-supplier__row.info-row
+                                        .info-row__title В каталоге:
+                                        .info-row__value
+                                            .info-row__number!= card.catalog
+
+                            .e-supplier__btns
+                                +btn({
+                                    name: 'Просмотр каталога',
+                                    sMode: 'mini',
+                                    cMode: 'accent',
+                                })
+                                +btn({
+                                    name: 'Заблокировать',
+                                    sMode: 'mini',
+                                    cMode: 'light-accent',
+                                    icon: 'cancel'
+                                })
 
 
 

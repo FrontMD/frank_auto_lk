@@ -1,0 +1,26 @@
+extends ../layouts/default
+
+block variables
+    - const title = "Каталог автомобилей"
+    - const footerType = 'employee'
+    - const headerType = 'employee'
+
+block content
+    .page-layout(data-js="pageLayout")
+
+        section.section.section--bc
+            .section__container.section__content
+                +breadcrumbs({
+                    items: [
+                        {
+                            name: 'Личный кабинет',
+                            link: 'javascript:void(0);'
+                        },
+                        {
+                            name: 'Каталог автомобилей',
+                            link: 'javascript:void(0);'
+                        }
+                    ],
+                })
+
+        +e-cars

@@ -1,0 +1,86 @@
+-
+    const defaultECarsProps = {
+        classes: '',
+        title: '<h1>Каталог автомобилей</h1>',
+        cards: [
+            {
+                img: 'img/catalog-product/cp_intro_1.webp',
+                title: 'Lixiang L7 Pro 449 л.с. Hybrid Turbo 4WD',
+                price: {
+                    current: '15 000 000 ₽',
+                    old: '18 000 000 ₽',
+                    direction: 'down'
+                },
+                btn: {
+                    name: 'Изменить',
+                    cMode: 'accent',
+                    sMode: "small",
+                    icon: 'pencil'
+                }
+            },
+        ],
+    }
+
+mixin e-cars(props= defaultECarsProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultECarsProps.classes,
+            title: props.title ? props.title : defaultECarsProps.title,
+            cards: props.cards ? props.cards : defaultECarsProps.cards,
+        }
+
+    section.section.e-cars(class= checkProps.classes)&attributes(attributes)
+        .section__container
+            .section-block.e-cars__block
+                .title.title--24.e-cars__title!= checkProps.title
+                .e-cars__filter
+                .e-cars__list
+                    - let cardsCount = 0
+                    -while(cardsCount < checkProps.cards.length)
+                        - let card = checkProps.cards[cardsCount]
+                        .e-cars__card.e-car
+                            .e-car__img
+                                img(src=card.img, alt="")
+                            .e-car__info
+                                .e-car__title.title!= card.title
+                                .e-car__bottom
+                                    - let priceDirection = card.price.direction.length > 0 ? `s-car__price--${card.price.direction}` : ''  
+                                    .e-car__price(class=priceDirection)
+                                        .current!= card.price.current
+                                            - if(card.price.direction.length > 0)
+                                                svg
+                                                    use(xlink:href=`img/sprites/sprite.svg#arrow_dir`)
+                                            +tooltip({
+                                                classes: 'tooltip--small',
+                                                title: '',
+                                                text: 'Краткая информация о цене'
+                                            })
+                                        - if(card.price.old.length > 0)
+                                            .old!= card.price.old
+
+                            .e-car__delivery
+
+                            .e-car__right
+                                +btn({
+                                    classes: 's-car__detail',
+                                    name: 'Подробнее',
+                                    sMode: 'mini',
+                                    cMode: 'light-accent'
+                                })
+
+                                .e-car__btns
+                                    +btn({
+                                        name: 'Отклонить',
+                                        sMode: 'mini',
+                                        cMode: 'accent',
+                                        icon: 'close_p0'
+                                    })
+                                    +btn({
+                                        name: 'Выкупить',
+                                        sMode: 'mini',
+                                        cMode: 'accent',
+                                    })
+
+
+
+                        - cardsCount++

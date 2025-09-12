@@ -25,6 +25,7 @@
     img {
         width: 16px;
         height: 16px;
+        flex-shrink: 0;
     }
 
     img {
@@ -213,6 +214,27 @@
         svg {
             width: 18px;
             height: 18px;
+        }
+    }
+
+    &--mini {
+        width: fit-content;
+        padding: 7px 12px;
+        font-size: 14px;
+        gap: 6px;
+        border-radius: 16px;
+        min-height: 38px;
+
+        @include max(mobile) {
+            padding: 7px 12px;
+            font-size: 14px;
+            border-radius: 16px;
+            min-height: 38px;
+        }
+
+        svg {
+            width: 16px;
+            height: 16px;
         }
     }
 
