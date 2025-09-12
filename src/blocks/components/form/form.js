@@ -42,6 +42,11 @@ function validation() {
         inputMasksInit(form);
 
         form.addEventListener('submit', event => {
+
+            if(form.getAttribute('data-valid') == 'true') {
+                return
+            }
+
             event.preventDefault()
 
             const inputFields = form.querySelectorAll('[data-js="formField"]');
@@ -182,9 +187,11 @@ function validation() {
 
                 // тут отправляем данные
                 if (errors === 0) {
-
                     if(form.getAttribute('data-auth') && form.getAttribute('data-auth') == 'true') {
-                        form.submit()
+                        form.setAttribute('data-valid', 'true')
+                        let event = new Event("submit");
+                        form.dispatchEvent(event);
+                        
                     } else {
                         submitFunctionKey = form.getAttribute('data-submit-function');
                         if (typeof (submitFunctionKey) === 'string' && submitFunctionKey.length > 0) {

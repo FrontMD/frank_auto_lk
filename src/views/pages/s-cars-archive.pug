@@ -1,0 +1,149 @@
+extends ../layouts/default
+
+block variables
+    - const title = "Архивные автомобили"
+    - const footerType = 'supplier'
+    - const headerType = 'supplier'
+
+block content
+    .page-layout(data-js="pageLayout")
+
+        section.section.section--bc
+            .section__container.section__content
+                +breadcrumbs({
+                    items: [
+                        {
+                            name: 'Личный кабинет',
+                            link: 'javascript:void(0);'
+                        },
+                        {
+                            name: 'Каталог',
+                            link: 'javascript:void(0);'
+                        },
+                        {
+                            name: 'Архивные автомобили',
+                            link: 'javascript:void(0);'
+                        }
+                    ],
+                })
+
+        +s-cars({
+            title: '<h1>Архивные автомобили</h1>',
+            hasDLBtn: true,
+            cards: [
+                {
+                    img: 'img/catalog-product/cp_intro_1.webp',
+                    title: 'Lixiang L7 Pro 449 л.с. Hybrid Turbo 4WD',
+                    price: {
+                        current: '15 000 000 ₽',
+                        old: '18 000 000 ₽',
+                        direction: 'down'
+                    },
+                    tag: {
+                        text: 'Выкуплен',
+                        status: 'green'
+                    },
+                    isFairPrice: true,
+                    btn: {
+                        name: 'Вернуть в каталог',
+                        cMode: 'accent',
+                        sMode: "small",
+                    }
+                },
+                {
+                    img: 'img/catalog-product/cp_intro_1.webp',
+                    title: 'Lixiang L7 Pro 449 л.с. Hybrid Turbo 4WD',
+                    price: {
+                        current: '15 000 000 ₽',
+                        old: '10 000 000 ₽',
+                        direction: 'up'
+                    },
+                    tag: {
+                        text: 'Не выкуплен',
+                        status: 'blue'
+                    },
+                    isFairPrice: false,
+                    btn: {
+                        name: 'Вернуть в каталог',
+                        cMode: 'accent',
+                        sMode: "small",
+                    }
+                },
+                {
+                    img: 'img/catalog-product/cp_intro_1.webp',
+                    title: 'Lixiang L7 Pro 449 л.с. Hybrid Turbo 4WD',
+                    price: {
+                        current: '15 000 000 ₽',
+                        old: '',
+                        direction: ''
+                    },
+                    tag: {
+                        text: 'Проблема',
+                        status: 'red'
+                    },
+                    isFairPrice: false,
+                    btn: {
+                        name: 'Вернуть в каталог',
+                        cMode: 'accent',
+                        sMode: "small",
+                    }
+                },
+                {
+                    img: 'img/catalog-product/cp_intro_1.webp',
+                    title: 'Lixiang L7 Pro 449 л.с. Hybrid Turbo 4WD',
+                    price: {
+                        current: '15 000 000 ₽',
+                        old: '',
+                        direction: ''
+                    },
+                    tag: {
+                        text: 'Запрос на выкуп',
+                        status: 'yellow'
+                    },
+                    isFairPrice: false,
+                    btn: {
+                        name: 'Вернуть в каталог',
+                        cMode: 'accent',
+                        sMode: "small",
+                    }
+                },
+                {
+                    img: 'img/catalog-product/cp_intro_1.webp',
+                    title: 'Lixiang L7 Pro 449 л.с. Hybrid Turbo 4WD',
+                    price: {
+                        current: '15 000 000 ₽',
+                        old: '',
+                        direction: ''
+                    },
+                    tag: {
+                        text: 'Не выкуплен',
+                        status: 'blue'
+                    },
+                    isFairPrice: false,
+                    btn: {
+                        name: 'Вернуть в каталог',
+                        cMode: 'accent',
+                        sMode: "small",
+                    }
+                },
+                {
+                    img: 'img/catalog-product/cp_intro_1.webp',
+                    title: 'Lixiang L7 Pro 449 л.с. Hybrid Turbo 4WD',
+                    price: {
+                        current: '15 000 000 ₽',
+                        old: '',
+                        direction: ''
+                    },
+                    tag: {
+                        text: 'Не выкуплен',
+                        status: 'blue'
+                    },
+                    isFairPrice: false,
+                    btn: {
+                        name: 'Вернуть в каталог',
+                        cMode: 'accent',
+                        sMode: "small",
+                    }
+                },
+            ],
+        })

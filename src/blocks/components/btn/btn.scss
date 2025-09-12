@@ -199,24 +199,22 @@
         min-width: 165px;
         padding-left: 20px;
         padding-right: 20px;
-    }
+    }*/
 
-    
+
     &--small {
-        padding: 10px 15px 10px 10px;
-        font-size: 12px;
-        gap: 5px;
-        border-radius: 14px;
-        
-        @include max(mobile) {
-            border-radius: 10px;
-            }
-            
-            svg {
-                width: 15px;
-                height: 15px;
-                }
-                }*/
+        width: fit-content;
+        padding: 10px 48px;
+        font-size: 14px;
+        gap: 6px;
+        border-radius: 16px;
+        min-height: 48px;
+
+        svg {
+            width: 18px;
+            height: 18px;
+        }
+    }
 
     &--full {
         width: 100%;
