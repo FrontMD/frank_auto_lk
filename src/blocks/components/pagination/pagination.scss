@@ -10,6 +10,7 @@
     @include max(mobile) {
         justify-content: center;
         gap: 5px;
+        margin: 20px auto 0;
     }
 
     &__btn,
@@ -31,6 +32,11 @@
         text-decoration: none;
         margin: 0;
         padding: 0;
+
+        @include max(mobile) {
+            width: 32px;
+            height: 32px;
+        }
 
         &:hover {
             background-color: $c-bg-main;

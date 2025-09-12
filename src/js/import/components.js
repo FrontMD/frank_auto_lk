@@ -7,7 +7,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     fieldsController();
     selects();
-    spoilers()
+    spoilers();
+    catalogFilter()
 })
 
 window.addEventListener('load', function() { 

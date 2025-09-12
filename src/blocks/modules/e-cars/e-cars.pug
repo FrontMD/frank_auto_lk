@@ -168,7 +168,7 @@ mixin e-cars(props= defaultECarsProps)
         .section__container
             .section-block.e-cars__block
                 .title.title--24.e-cars__title!= checkProps.title
-                .e-cars__filter.catalog-filter
+                .e-cars__filter.catalog-filter(data-js="catalogFilter")
                     form.catalog-filter__form.spoiler-form(action="#" data-js="formFilter")
                         .catalog-filter__close(data-js="catalogFilterClose")
                             svg
@@ -397,6 +397,10 @@ mixin e-cars(props= defaultECarsProps)
                         cMode: "accent",
                         sMode: 'content'
                     })
+
+                    button.e-cars__filter-btn(type="button" data-js="catalogFilterOpen")
+                        svg
+                            use(xlink:href=`img/sprites/sprite.svg#filter`)
 
                 .e-cars__list
                     - let cardsCount = 0
