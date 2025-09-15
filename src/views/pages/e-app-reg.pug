@@ -1,0 +1,26 @@
+extends ../layouts/default
+
+block variables
+    - const title = "Заявки на регистрацию аккаунта"
+    - const footerType = 'employee'
+    - const headerType = 'employee'
+
+block content
+    .page-layout(data-js="pageLayout")
+
+        section.section.section--bc
+            .section__container.section__content
+                +breadcrumbs({
+                    items: [
+                        {
+                            name: 'Личный кабинет',
+                            link: 'javascript:void(0);'
+                        },
+                        {
+                            name: 'Заявки на регистрацию аккаунта',
+                            link: 'javascript:void(0);'
+                        }
+                    ],
+                })
+
+        +e-app-reg

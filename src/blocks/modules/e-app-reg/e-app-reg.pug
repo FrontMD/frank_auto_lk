@@ -1,0 +1,134 @@
+-
+    const defaultEAppRegProps = {
+        classes: '',
+        title: '<h1>Ожидают проверки на регистрацию</h1>',
+        cards: [
+            {
+                title: 'ООО Ромашка',
+                dateOfReg: {
+                    date: '29.08.2025',
+                    days: '1 день',
+                    status: 'green'
+                },
+            },
+            {
+                title: 'ООО Ромашка',
+                dateOfReg: {
+                    date: '29.08.2025',
+                    days: '1 день',
+                    status: 'green'
+                },
+            },
+            {
+                title: 'ООО Ромашка',
+                dateOfReg: {
+                    date: '29.08.2025',
+                    days: '49 дней',
+                    status: 'red'
+                },
+            },
+            {
+                title: 'ООО Ромашка',
+                dateOfReg: {
+                    date: '29.08.2025',
+                    days: '49 дней',
+                    status: 'red'
+                },
+            },
+            {
+                title: 'ООО Ромашка',
+                dateOfReg: {
+                    date: '29.08.2025',
+                    days: '1 день',
+                    status: 'green'
+                },
+            },
+            {
+                title: 'ООО Ромашка',
+                dateOfReg: {
+                    date: '29.08.2025',
+                    days: '1 день',
+                    status: 'green'
+                },
+            },
+        ],
+    }
+
+mixin e-app-reg(props= defaultEAppRegProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultEAppRegProps.classes,
+            title: props.title ? props.title : defaultEAppRegProps.title,
+            cards: props.cards ? props.cards : defaultEAppRegProps.cards,
+        }
+
+    section.section.e-app-reg(class= checkProps.classes)&attributes(attributes)
+        .section__container
+            .section-block.e-app-reg__block
+                .title.title--24.e-app-reg__title!= checkProps.title
+                .e-app-reg__list
+                    - let cardsCount = 0
+                    -while(cardsCount < checkProps.cards.length)
+                        - let card = checkProps.cards[cardsCount]
+                        .e-app-reg__card.ar-card
+                            .ar-card__title.title!= card.title
+
+                            .ar-card__inn
+                                span ИНН 7724564269
+                                +tooltip({
+                                    classes: 'tooltip--small',
+                                    title: '',
+                                    text: `
+                                        <div class="tooltip-table">
+                                            <div class="tooltip-table__row">
+                                                <div class="tooltip-table__param">ИНН</div>
+                                                <div class="tooltip-table__value">7724564269</div>
+                                            </div>    
+                                            <div class="tooltip-table__row">
+                                                <div class="tooltip-table__param">КПП</div>
+                                                <div class="tooltip-table__value">7724564269</div>
+                                            </div>    
+                                            <div class="tooltip-table__row">
+                                                <div class="tooltip-table__param">ФИО контактного лица</div>
+                                                <div class="tooltip-table__value">Вариев Андрей Васильевич</div>
+                                            </div>
+                                            <div class="tooltip-table__row">
+                                                <div class="tooltip-table__param">Почта компании</div>
+                                                <div class="tooltip-table__value">test@test.ru</div>
+                                            </div>    
+                                            <div class="tooltip-table__row">
+                                                <div class="tooltip-table__param">Телефон</div> 
+                                                <div class="tooltip-table__value">8 (999) 999-99-99</div>
+                                            </div>    
+                                        </div>
+                                    `
+                                })
+
+                            .ar-card__row.info-row
+                                .info-row__title Дата регистрации:
+                                .info-row__value!= card.dateOfReg.date
+                                    .info-row__number(class=`info-row__number--${card.dateOfReg.status}`)!= card.dateOfReg.days
+
+                            .ar-card__right
+                                +btn({
+                                    name: 'Отправить в 1С',
+                                    sMode: 'mini',
+                                    cMode: 'light-accent'
+                                })
+                                .ar-card__btns
+                                    +btn({
+                                        name: 'Отклонить',
+                                        sMode: 'mini',
+                                        cMode: 'accent',
+                                        icon: 'close'
+                                    })
+                                    +btn({
+                                        name: 'Принять',
+                                        sMode: 'mini',
+                                        cMode: 'accent',
+                                        icon: 'check'
+                                    })
+
+
+
+                        - cardsCount++

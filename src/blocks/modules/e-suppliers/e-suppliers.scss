@@ -3,6 +3,10 @@
         margin-top: 20px;
     }
 
+    &__block {
+        overflow: visible;
+    }
+
     &__search {
         width: 50%;
         padding-right: 7px;
