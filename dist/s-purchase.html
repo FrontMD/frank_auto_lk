@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Сотрудник разводящая</title>
+    <title>Запросы на покупку</title>
     <meta name="theme-color" content="#fff">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -39,16 +39,37 @@
                       <div class="header-menu__header"><a class="header-menu__link" href="javascript:void(0);">Личный кабинет</a></div>
                     </div>
                     <div class="header-menu__item">
-                      <div class="header-menu__header"><a class="header-menu__link" href="javascript:void(0);">Каталог автомобилей</a></div>
+                      <div class="header-menu__header"><a class="header-menu__link" href="javascript:void(0);">Добавление авто</a>
+                        <div class="header-menu__icon">
+                          <svg>
+                            <use xlink:href="img/sprites/sprite.svg#arrow_angle_down"></use>
+                          </svg>
+                        </div>
+                      </div>
+                      <div class="header-menu__submenu">
+                        <div class="header-menu__list"><a class="header-menu__link" href="javascript:void(0);">Пункт 1</a><a class="header-menu__link" href="javascript:void(0);">Пункт 2</a><a class="header-menu__link" href="javascript:void(0);">Пункт 3</a><a class="header-menu__link" href="javascript:void(0);">Пункт 4</a></div>
+                      </div>
                     </div>
                     <div class="header-menu__item">
-                      <div class="header-menu__header"><a class="header-menu__link" href="javascript:void(0);">Поставщики</a></div>
+                      <div class="header-menu__header"><a class="header-menu__link" href="javascript:void(0);">Каталог</a>
+                        <div class="header-menu__icon">
+                          <svg>
+                            <use xlink:href="img/sprites/sprite.svg#arrow_angle_down"></use>
+                          </svg>
+                        </div>
+                      </div>
+                      <div class="header-menu__submenu">
+                        <div class="header-menu__list"><a class="header-menu__link" href="javascript:void(0);">Мои автомобили</a><a class="header-menu__link" href="javascript:void(0);">Проблемные авто</a><a class="header-menu__link" href="javascript:void(0);">Архивные автомобили</a><a class="header-menu__link" href="javascript:void(0);">Проданные автомобили</a></div>
+                      </div>
                     </div>
                     <div class="header-menu__item">
-                      <div class="header-menu__header"><a class="header-menu__link" href="javascript:void(0);">Заявки на регистрацию аккаунта <span>12</span></a></div>
+                      <div class="header-menu__header"><a class="header-menu__link" href="javascript:void(0);">Аналитика</a></div>
                     </div>
                     <div class="header-menu__item">
-                      <div class="header-menu__header"><a class="header-menu__link" href="javascript:void(0);">Заявки на покупку</a></div>
+                      <div class="header-menu__header"><a class="header-menu__link" href="javascript:void(0);">Запросы на покупку</a></div>
+                    </div>
+                    <div class="header-menu__item">
+                      <div class="header-menu__header"><a class="header-menu__link" href="javascript:void(0);">Заявки на регистрацию</a></div>
                     </div>
                   </nav>
                 </div>
@@ -71,6 +92,9 @@
                     </div>
                   </div>
                   <div class="lk-btn__content"><a class="lk-btn__link" href="javascript:void(0);">
+                      <svg>
+                        <use xlink:href="img/sprites/sprite.svg#settings"></use>
+                      </svg>Личные данные</a><a class="lk-btn__link" href="javascript:void(0);">
                       <svg>
                         <use xlink:href="img/sprites/sprite.svg#entry"></use>
                       </svg>Выйти</a></div>
@@ -95,21 +119,55 @@
                           <div class="header-menu__header"><a class="header-menu__link" href="javascript:void(0);">Личный кабинет</a></div>
                         </div>
                         <div class="header-menu__item header-menu__item--mob" data-js="headerMenuItem">
-                          <div class="header-menu__header"><a class="header-menu__link" href="javascript:void(0);">Каталог автомобилей</a></div>
+                          <div class="header-menu__header"><a class="header-menu__link" href="javascript:void(0);">Добавление авто</a>
+                            <div class="header-menu__icon header-menu__icon--open" data-js="headerMenuItemOpen">
+                              <svg>
+                                <use xlink:href="img/sprites/sprite.svg#burger_chevron"></use>
+                              </svg>
+                            </div>
+                            <div class="header-menu__icon header-menu__icon--close" data-js="headerMenuItemClose">
+                              <svg>
+                                <use xlink:href="img/sprites/sprite.svg#burger_close"></use>
+                              </svg>
+                            </div>
+                          </div>
+                          <div class="header-menu__submenu" data-js="headerMenuItemSubmenu">
+                            <div class="header-menu__list"><a class="header-menu__link" href="javascript:void(0);">Пункт 1</a><a class="header-menu__link" href="javascript:void(0);">Пункт 2</a><a class="header-menu__link" href="javascript:void(0);">Пункт 3</a><a class="header-menu__link" href="javascript:void(0);">Пункт 4</a></div>
+                          </div>
                         </div>
                         <div class="header-menu__item header-menu__item--mob" data-js="headerMenuItem">
-                          <div class="header-menu__header"><a class="header-menu__link" href="javascript:void(0);">Поставщики</a></div>
+                          <div class="header-menu__header"><a class="header-menu__link" href="javascript:void(0);">Каталог</a>
+                            <div class="header-menu__icon header-menu__icon--open" data-js="headerMenuItemOpen">
+                              <svg>
+                                <use xlink:href="img/sprites/sprite.svg#burger_chevron"></use>
+                              </svg>
+                            </div>
+                            <div class="header-menu__icon header-menu__icon--close" data-js="headerMenuItemClose">
+                              <svg>
+                                <use xlink:href="img/sprites/sprite.svg#burger_close"></use>
+                              </svg>
+                            </div>
+                          </div>
+                          <div class="header-menu__submenu" data-js="headerMenuItemSubmenu">
+                            <div class="header-menu__list"><a class="header-menu__link" href="javascript:void(0);">Мои автомобили</a><a class="header-menu__link" href="javascript:void(0);">Проблемные авто</a><a class="header-menu__link" href="javascript:void(0);">Архивные автомобили</a><a class="header-menu__link" href="javascript:void(0);">Проданные автомобили</a></div>
+                          </div>
                         </div>
                         <div class="header-menu__item header-menu__item--mob">
-                          <div class="header-menu__header"><a class="header-menu__link" href="javascript:void(0);">Заявки на регистрацию аккаунта <span>12</span></a></div>
+                          <div class="header-menu__header"><a class="header-menu__link" href="javascript:void(0);">Аналитика</a></div>
                         </div>
                         <div class="header-menu__item header-menu__item--mob">
-                          <div class="header-menu__header"><a class="header-menu__link" href="javascript:void(0);">Заявки на покупку</a></div>
+                          <div class="header-menu__header"><a class="header-menu__link" href="javascript:void(0);">Запросы на покупку</a></div>
+                        </div>
+                        <div class="header-menu__item header-menu__item--mob" data-js="headerMenuItem">
+                          <div class="header-menu__header"><a class="header-menu__link" href="javascript:void(0);">Заявки на регистрацию</a></div>
                         </div>
                       </div>
                     </div>
                     <div class="header-burger__block">
                       <div class="header-burger__links"><a class="header-burger__link" href="javascript:void(0);">
+                          <svg>
+                            <use xlink:href="img/sprites/sprite.svg#settings"></use>
+                          </svg>Личные данные</a><a class="header-burger__link" href="javascript:void(0);">
                           <svg>
                             <use xlink:href="img/sprites/sprite.svg#notifications"></use>
                           </svg>Уведомления <span>22</span></a></div>
@@ -128,54 +186,278 @@
         </header>
     <main class="site-main">
       <div class="page-layout" data-js="pageLayout">
-            <section class="section common-list common-list--2">
+        <section class="section section--bc">
+          <div class="section__container section__content">
+                <div class="breadcrumbs  breadcrumbs--dark">
+                  <div class="custom-scrollbar breadcrumbs__scroll" data-js="customScrollbar">
+                    <ul class="breadcrumbs__list">
+                      <li class="breadcrumbs__item"><a href="javascript:void(0);">Личный кабинет</a><span class="breadcrumbs__separator">
+                          <svg>
+                            <use xlink:href="img/sprites/sprite.svg#arrow_angle_right"></use>
+                          </svg></span>
+                      </li>
+                      <li class="breadcrumbs__item breadcrumbs__item--current"><span>Запросы на покупку</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+          </div>
+        </section>
+            <section class="section s-cars">
               <div class="section__container">
-                <div class="section-block common-list__block">
-                  <div class="title title--24 common-list__title"><h1>Личный кабинет</h1></div>
-                  <div class="common-list__list">
-                    <div class="common-list__card">
-                      <div class="common-list__info">
-                        <div class="common-list__subtitle title">Каталог автомобилей</div>
-                        <div class="common-list__btns"><a class="btn common-list__btn btn--light-accent btn--content" href="javascript:void(0)"><span class="btn__text">Перейти</span>
-                                <svg class="btn__arrow">
-                                  <use xlink:href="img/sprites/sprite.svg#arrow_classic"></use>
-                                </svg></a>
+                <div class="section-block s-cars__block">
+                  <div class="s-cars__header">
+                    <div class="title title--24 s-cars__title"><h1>Запросы на покупку</h1></div>
+                  </div>
+                  <div class="e-cars__tabs">
+                    <div class="e-cars__subtitle">Фильтровать по дате добавления:</div>
+                    <form class="e-cars__statuses" action="#">
+                          <div class="field e-cars__status field--green 
+     
+    
+    field--tab" data-js="formField">
+                            <label>
+                              <input class="field__input" type="checkbox" placeholder=""><span class="fake-checkbox"><span class="fake-checkbox__text">1 день</span></span><span class="field__error" data-js="fieldError"></span>
+                            </label>
+                          </div>
+                          <div class="field e-cars__status field--yellow 
+     
+    
+    field--tab" data-js="formField">
+                            <label>
+                              <input class="field__input" type="checkbox" placeholder=""><span class="fake-checkbox"><span class="fake-checkbox__text">2-4 дня</span></span><span class="field__error" data-js="fieldError"></span>
+                            </label>
+                          </div>
+                          <div class="field e-cars__status field--red 
+     
+    
+    field--tab" data-js="formField">
+                            <label>
+                              <input class="field__input" type="checkbox" placeholder=""><span class="fake-checkbox"><span class="fake-checkbox__text">5+ дней</span></span><span class="field__error" data-js="fieldError"></span>
+                            </label>
+                          </div>
+                    </form>
+                  </div>
+                  <div class="s-cars__list">
+                    <div class="e-cars__card e-car e-car--supplier">
+                      <div class="e-car__img"><img src="img/catalog-product/cp_intro_1.webp" alt=""></div>
+                      <div class="e-car__info">
+                        <div class="e-car__title title">Lixiang L7 Pro 449 л.с. Hybrid Turbo 4WD</div>
+                        <div class="e-car__bottom">
+                          <div class="e-car__price">
+                            <div class="current">15 000 000 ₽
+                            </div>
+                          </div>
                         </div>
                       </div>
-                      <div class="common-list__img"><img src="img/link-cards/card_3.webp" alt=""></div>
+                      <div class="e-car__block">
+                        <div class="e-car__row info-row">
+                          <div class="info-row__title">Дата добавления:</div>
+                          <div class="info-row__value">29.08.2025
+                            <div class="info-row__number info-row__number--green">1 день</div>
+                          </div>
+                        </div>
+                        <div class="e-car__row info-row">
+                          <div class="info-row__title">VIN:</div>
+                          <div class="info-row__value">YV1 S W 53 C 2 1 1 123456</div>
+                        </div>
+                        <div class="e-car__flex">
+                          <div class="e-car__row info-row">
+                            <div class="info-row__title">Салон:</div>
+                            <div class="info-row__value">Коричневый</div>
+                          </div>
+                          <div class="e-car__row info-row">
+                            <div class="info-row__title">Кузов:</div>
+                            <div class="info-row__value">Коричневый</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="e-car__right"><a class="btn e-car__detail btn--light-accent btn--mini" href="javascript:void(0)"><span class="btn__text">Подробнее</span></a>
+                        <div class="e-car__btns"><a class="btn  btn--accent btn--mini" href="javascript:void(0)">
+                                <svg>
+                                  <use xlink:href="img/sprites/sprite.svg#close"></use>
+                                </svg><span class="btn__text">Отклонить</span></a><a class="btn  btn--accent btn--mini" href="javascript:void(0)">
+                                <svg>
+                                  <use xlink:href="img/sprites/sprite.svg#check"></use>
+                                </svg><span class="btn__text">Принять</span></a>
+                        </div>
+                      </div>
                     </div>
-                    <div class="common-list__card">
-                      <div class="common-list__info">
-                        <div class="common-list__subtitle title">База поставщиков</div>
-                        <div class="common-list__btns"><a class="btn common-list__btn btn--light-accent btn--content" href="javascript:void(0)"><span class="btn__text">Перейти</span>
-                                <svg class="btn__arrow">
-                                  <use xlink:href="img/sprites/sprite.svg#arrow_classic"></use>
-                                </svg></a>
+                    <div class="e-cars__card e-car e-car--supplier">
+                      <div class="e-car__img"><img src="img/catalog-product/cp_intro_1.webp" alt=""></div>
+                      <div class="e-car__info">
+                        <div class="e-car__title title">Lixiang L7 Pro 449 л.с. Hybrid Turbo 4WD</div>
+                        <div class="e-car__bottom">
+                          <div class="e-car__price">
+                            <div class="current">15 000 000 ₽
+                            </div>
+                          </div>
                         </div>
                       </div>
-                      <div class="common-list__img"><img src="img/link-cards/card_7.webp" alt=""></div>
+                      <div class="e-car__block">
+                        <div class="e-car__row info-row">
+                          <div class="info-row__title">Дата добавления:</div>
+                          <div class="info-row__value">29.08.2025
+                            <div class="info-row__number info-row__number--yellow">2 дня</div>
+                          </div>
+                        </div>
+                        <div class="e-car__row info-row">
+                          <div class="info-row__title">VIN:</div>
+                          <div class="info-row__value">YV1 S W 53 C 2 1 1 123456</div>
+                        </div>
+                        <div class="e-car__flex">
+                          <div class="e-car__row info-row">
+                            <div class="info-row__title">Салон:</div>
+                            <div class="info-row__value">Коричневый</div>
+                          </div>
+                          <div class="e-car__row info-row">
+                            <div class="info-row__title">Кузов:</div>
+                            <div class="info-row__value">Коричневый</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="e-car__right"><a class="btn e-car__detail btn--light-accent btn--mini" href="javascript:void(0)"><span class="btn__text">Подробнее</span></a>
+                        <div class="e-car__btns"><a class="btn  btn--accent btn--mini" href="javascript:void(0)">
+                                <svg>
+                                  <use xlink:href="img/sprites/sprite.svg#close"></use>
+                                </svg><span class="btn__text">Отклонить</span></a><a class="btn  btn--accent btn--mini" href="javascript:void(0)">
+                                <svg>
+                                  <use xlink:href="img/sprites/sprite.svg#check"></use>
+                                </svg><span class="btn__text">Принять</span></a>
+                        </div>
+                      </div>
                     </div>
-                    <div class="common-list__card">
-                      <div class="common-list__info">
-                        <div class="common-list__subtitle title">Заявки на регистрацию аккаунта</div>
-                        <div class="common-list__btns"><a class="btn common-list__btn btn--light-accent btn--content" href="javascript:void(0)"><span class="btn__text">Перейти</span>
-                                <svg class="btn__arrow">
-                                  <use xlink:href="img/sprites/sprite.svg#arrow_classic"></use>
-                                </svg></a>
+                    <div class="e-cars__card e-car e-car--supplier">
+                      <div class="e-car__img"><img src="img/catalog-product/cp_intro_1.webp" alt=""></div>
+                      <div class="e-car__info">
+                        <div class="e-car__title title">Lixiang L7 Pro 449 л.с. Hybrid Turbo 4WD</div>
+                        <div class="e-car__bottom">
+                          <div class="e-car__price">
+                            <div class="current">15 000 000 ₽
+                            </div>
+                          </div>
                         </div>
                       </div>
-                      <div class="common-list__img"><img src="img/link-cards/card_10.webp" alt=""></div>
+                      <div class="e-car__block">
+                        <div class="e-car__row info-row">
+                          <div class="info-row__title">Дата добавления:</div>
+                          <div class="info-row__value">29.08.2025
+                            <div class="info-row__number info-row__number--yellow">2 дня</div>
+                          </div>
+                        </div>
+                        <div class="e-car__row info-row">
+                          <div class="info-row__title">VIN:</div>
+                          <div class="info-row__value">YV1 S W 53 C 2 1 1 123456</div>
+                        </div>
+                        <div class="e-car__flex">
+                          <div class="e-car__row info-row">
+                            <div class="info-row__title">Салон:</div>
+                            <div class="info-row__value">Коричневый</div>
+                          </div>
+                          <div class="e-car__row info-row">
+                            <div class="info-row__title">Кузов:</div>
+                            <div class="info-row__value">Коричневый</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="e-car__right"><a class="btn e-car__detail btn--light-accent btn--mini" href="javascript:void(0)"><span class="btn__text">Подробнее</span></a>
+                        <div class="e-car__btns"><a class="btn  btn--accent btn--mini" href="javascript:void(0)">
+                                <svg>
+                                  <use xlink:href="img/sprites/sprite.svg#close"></use>
+                                </svg><span class="btn__text">Отклонить</span></a><a class="btn  btn--accent btn--mini" href="javascript:void(0)">
+                                <svg>
+                                  <use xlink:href="img/sprites/sprite.svg#check"></use>
+                                </svg><span class="btn__text">Принять</span></a>
+                        </div>
+                      </div>
                     </div>
-                    <div class="common-list__card">
-                      <div class="common-list__info">
-                        <div class="common-list__subtitle title">Заявки на выкуп автомобиля</div>
-                        <div class="common-list__btns"><a class="btn common-list__btn btn--light-accent btn--content" href="javascript:void(0)"><span class="btn__text">Перейти</span>
-                                <svg class="btn__arrow">
-                                  <use xlink:href="img/sprites/sprite.svg#arrow_classic"></use>
-                                </svg></a>
+                    <div class="e-cars__card e-car e-car--supplier">
+                      <div class="e-car__img"><img src="img/catalog-product/cp_intro_1.webp" alt=""></div>
+                      <div class="e-car__info">
+                        <div class="e-car__title title">Lixiang L7 Pro 449 л.с. Hybrid Turbo 4WD</div>
+                        <div class="e-car__bottom">
+                          <div class="e-car__price">
+                            <div class="current">15 000 000 ₽
+                            </div>
+                          </div>
                         </div>
                       </div>
-                      <div class="common-list__img"><img src="img/link-cards/card_5.webp" alt=""></div>
+                      <div class="e-car__block">
+                        <div class="e-car__row info-row">
+                          <div class="info-row__title">Дата добавления:</div>
+                          <div class="info-row__value">29.08.2025
+                            <div class="info-row__number info-row__number--yellow">2 дня</div>
+                          </div>
+                        </div>
+                        <div class="e-car__row info-row">
+                          <div class="info-row__title">VIN:</div>
+                          <div class="info-row__value">YV1 S W 53 C 2 1 1 123456</div>
+                        </div>
+                        <div class="e-car__flex">
+                          <div class="e-car__row info-row">
+                            <div class="info-row__title">Салон:</div>
+                            <div class="info-row__value">Коричневый</div>
+                          </div>
+                          <div class="e-car__row info-row">
+                            <div class="info-row__title">Кузов:</div>
+                            <div class="info-row__value">Коричневый</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="e-car__right"><a class="btn e-car__detail btn--light-accent btn--mini" href="javascript:void(0)"><span class="btn__text">Подробнее</span></a>
+                        <div class="e-car__btns"><a class="btn  btn--accent btn--mini" href="javascript:void(0)">
+                                <svg>
+                                  <use xlink:href="img/sprites/sprite.svg#close"></use>
+                                </svg><span class="btn__text">Отклонить</span></a><a class="btn  btn--accent btn--mini" href="javascript:void(0)">
+                                <svg>
+                                  <use xlink:href="img/sprites/sprite.svg#check"></use>
+                                </svg><span class="btn__text">Принять</span></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="e-cars__card e-car e-car--supplier">
+                      <div class="e-car__img"><img src="img/catalog-product/cp_intro_1.webp" alt=""></div>
+                      <div class="e-car__info">
+                        <div class="e-car__title title">Lixiang L7 Pro 449 л.с. Hybrid Turbo 4WD</div>
+                        <div class="e-car__bottom">
+                          <div class="e-car__price">
+                            <div class="current">15 000 000 ₽
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="e-car__block">
+                        <div class="e-car__row info-row">
+                          <div class="info-row__title">Дата добавления:</div>
+                          <div class="info-row__value">29.08.2025
+                            <div class="info-row__number info-row__number--red">6 дней</div>
+                          </div>
+                        </div>
+                        <div class="e-car__row info-row">
+                          <div class="info-row__title">VIN:</div>
+                          <div class="info-row__value">YV1 S W 53 C 2 1 1 123456</div>
+                        </div>
+                        <div class="e-car__flex">
+                          <div class="e-car__row info-row">
+                            <div class="info-row__title">Салон:</div>
+                            <div class="info-row__value">Коричневый</div>
+                          </div>
+                          <div class="e-car__row info-row">
+                            <div class="info-row__title">Кузов:</div>
+                            <div class="info-row__value">Коричневый</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="e-car__right"><a class="btn e-car__detail btn--light-accent btn--mini" href="javascript:void(0)"><span class="btn__text">Подробнее</span></a>
+                        <div class="e-car__btns"><a class="btn  btn--accent btn--mini" href="javascript:void(0)">
+                                <svg>
+                                  <use xlink:href="img/sprites/sprite.svg#close"></use>
+                                </svg><span class="btn__text">Отклонить</span></a><a class="btn  btn--accent btn--mini" href="javascript:void(0)">
+                                <svg>
+                                  <use xlink:href="img/sprites/sprite.svg#check"></use>
+                                </svg><span class="btn__text">Принять</span></a>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -183,7 +465,7 @@
             </section>
       </div>
     </main>
-        <footer class="site-footer site-footer--employee">
+        <footer class="site-footer site-footer--supplier">
           <div class="section site-footer__section">
             <div class="section__container">
               <div class="site-footer__block">
@@ -194,17 +476,6 @@
                   </div>
                 </div>
                 <div class="site-footer__row site-footer__middle">
-                  <div class="site-footer__list site-footer__list--lk">
-                    <div class="site-footer__title">Личный кабинет</div>
-                    <div class="site-footer__links"><a class="site-footer__link" href="javascript:void(0);">Заявки на выкуп автомобиля</a><a class="site-footer__link" href="javascript:void(0);">Каталог автомобилей</a><a class="site-footer__link" href="javascript:void(0);">Заявки на регистрацию аккаунта</a><a class="site-footer__link" href="javascript:void(0);">База поставщиков</a></div>
-                        <div class="socials site-footer__socials"><a class="socials__item" href="javascript:void(0);">
-                            <svg> 
-                              <use xlink:href="img/sprites/sprite.svg#telegram"></use>
-                            </svg></a><a class="socials__item" href="javascript:void(0);">
-                            <svg> 
-                              <use xlink:href="img/sprites/sprite.svg#vk"></use>
-                            </svg></a></div>
-                  </div>
                   <div class="site-footer__list site-footer__list--contacts">
                     <div class="site-footer__title">Контакты</div>
                     <div class="site-footer__contacts">
@@ -239,6 +510,13 @@
                         </div>
                       </div>
                     </div>
+                        <div class="socials site-footer__socials"><a class="socials__item" href="javascript:void(0);">
+                            <svg> 
+                              <use xlink:href="img/sprites/sprite.svg#telegram"></use>
+                            </svg></a><a class="socials__item" href="javascript:void(0);">
+                            <svg> 
+                              <use xlink:href="img/sprites/sprite.svg#vk"></use>
+                            </svg></a></div>
                   </div>
                 </div>
                 <div class="site-footer__row site-footer__bottom">

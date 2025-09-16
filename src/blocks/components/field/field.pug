@@ -49,8 +49,8 @@ mixin field(props = defaultFieldProps)
 
     .field(class= `${checkProps.classes} 
     ${checkProps.isDouble ? "field--double" : ""} 
-    ${checkProps.type === 'radio' && checkProps.isTab === true ? 'field--tab' : checkProps.type === 'radio' ? 'field--radio' : ''} 
-    ${checkProps.type === 'checkbox' ? 'field--checkbox' : ''}` 
+    ${checkProps.type === 'radio' && checkProps.isTab === true ? 'field--tab' : checkProps.type === 'radio' ? 'field--radio' : ''}
+    ${checkProps.type === 'checkbox' && checkProps.isTab === true ? 'field--tab' : checkProps.type === 'checkbox' ? 'field--checkbox' : ''}` 
     data-js='formField')&attributes(attributes)
         label
             - if(checkProps.tag === 'input')
@@ -70,11 +70,16 @@ mixin field(props = defaultFieldProps)
 
                 - else if(checkProps.type === 'checkbox')
                     - if (checkProps.radioCheckboxText.length > 0)
-                        span.fake-checkbox.fake-checkbox--text
-                            span.fake-checkbox__square
-                                svg
-                                    use(xlink:href=`img/sprites/sprite.svg#check`)
-                            span.fake-checkbox__text!= checkProps.radioCheckboxText
+                        - let isTab = checkProps.isTab
+                        - if(isTab === true)
+                            span.fake-checkbox
+                                span.fake-checkbox__text!= checkProps.radioCheckboxText
+                        - else
+                            span.fake-checkbox.fake-checkbox--text
+                                span.fake-checkbox__square
+                                    svg
+                                        use(xlink:href=`img/sprites/sprite.svg#check`)
+                                span.fake-checkbox__text!= checkProps.radioCheckboxText
                     - else
                         - if(checkProps.title.length > 0)
                             span.field__title!= checkProps.title

@@ -1,9 +1,9 @@
 extends ../layouts/default
 
 block variables
-    - const title = "Заявки на покупку автомобилей"
-    - const footerType = 'employee'
-    - const headerType = 'employee'
+    - const title = "Запросы на покупку"
+    - const footerType = 'supplier'
+    - const headerType = 'supplier'
 
 block content
     .page-layout(data-js="pageLayout")
@@ -17,15 +17,15 @@ block content
                             link: 'javascript:void(0);'
                         },
                         {
-                            name: 'Заявки на покупку автомобилей',
+                            name: 'Запросы на покупку',
                             link: 'javascript:void(0);'
                         }
                     ],
                 })
 
-        +e-cars({
-            title: '<h1>Заявки на покупку автомобилей</h1>',
-            isBuyback: true,
+        +s-cars({
+            title: '<h1>Запросы на покупку</h1>',
+            isPurchase: true,
             cards: [
                 {
                     img: 'img/catalog-product/cp_intro_1.webp',
@@ -33,18 +33,12 @@ block content
                     price: {
                         current: '15 000 000 ₽',
                         old: '',
-                        direction: '',
-                        tooltip: false
+                        direction: ''
                     },
                     dateAdded: {
                         date: '29.08.2025',
                         days: '1 день',
                         status: 'green',
-                        supplier: 'ИП Иванов Виктор Алексеевич'
-                    },
-                    sticker: {
-                        text: 'Выкуплен',
-                        color: 'green'
                     }
                 },
                 {
@@ -53,18 +47,40 @@ block content
                     price: {
                         current: '15 000 000 ₽',
                         old: '',
-                        direction: '',
-                        tooltip: false
+                        direction: ''
                     },
                     dateAdded: {
                         date: '29.08.2025',
-                        days: '1 день',
-                        status: 'green',
-                        supplier: 'ООО Рога и Копыта'
+                        days: '2 дня',
+                        status: 'yellow',
                     },
-                    sticker: {
-                        text: 'Не выкуплен',
-                        color: 'blue'
+                },
+                {
+                    img: 'img/catalog-product/cp_intro_1.webp',
+                    title: 'Lixiang L7 Pro 449 л.с. Hybrid Turbo 4WD',
+                    price: {
+                        current: '15 000 000 ₽',
+                        old: '',
+                        direction: ''
+                    },
+                    dateAdded: {
+                        date: '29.08.2025',
+                        days: '2 дня',
+                        status: 'yellow',
+                    },
+                },
+                {
+                    img: 'img/catalog-product/cp_intro_1.webp',
+                    title: 'Lixiang L7 Pro 449 л.с. Hybrid Turbo 4WD',
+                    price: {
+                        current: '15 000 000 ₽',
+                        old: '',
+                        direction: ''
+                    },
+                    dateAdded: {
+                        date: '29.08.2025',
+                        days: '2 дня',
+                        status: 'yellow',
                     }
                 },
                 {
@@ -73,39 +89,14 @@ block content
                     price: {
                         current: '15 000 000 ₽',
                         old: '',
-                        direction: '',
-                        tooltip: false
+                        direction: ''
                     },
                     dateAdded: {
                         date: '29.08.2025',
-                        days: '1 день',
-                        status: 'green',
-                        supplier: 'ИП Иванов Виктор Алексеевич'
+                        days: '6 дней',
+                        status: 'red',
                     },
-                    sticker: {
-                        text: 'Заявка отправлена',
-                        color: 'yellow'
-                    }
                 },
-                {
-                    img: 'img/catalog-product/cp_intro_1.webp',
-                    title: 'Lixiang L7 Pro 449 л.с. Hybrid Turbo 4WD',
-                    price: {
-                        current: '15 000 000 ₽',
-                        old: '',
-                        direction: '',
-                        tooltip: false
-                    },
-                    dateAdded: {
-                        date: '29.08.2025',
-                        days: '1 день',
-                        status: 'green',
-                        supplier: 'ООО Рога и Копыта'
-                    },
-                    sticker: {
-                        text: 'Заявка отклонена',
-                        color: 'red'
-                    }
-                },
+
             ],
         })

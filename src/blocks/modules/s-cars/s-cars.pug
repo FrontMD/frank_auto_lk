@@ -3,6 +3,8 @@
         classes: '',
         title: '<h1>Мои автомобили</h1>',
         hasDLBtn: false,
+        isPurchase: false,
+        isProblem: false,
         cards: [
             {
                 img: 'img/catalog-product/cp_intro_1.webp',
@@ -133,6 +135,8 @@ mixin s-cars(props= defaultSCarsProps)
             classes: props.classes ? props.classes : defaultSCarsProps.classes,
             title: props.title ? props.title : defaultSCarsProps.title,
             hasDLBtn: props.hasDLBtn ? props.hasDLBtn : defaultSCarsProps.hasDLBtn,
+            isPurchase: props.isPurchase ? props.isPurchase : defaultSCarsProps.isPurchase,
+            isProblem: props.isProblem ? props.isProblem : defaultSCarsProps.isProblem,
             cards: props.cards ? props.cards : defaultSCarsProps.cards,
         }
 
@@ -141,55 +145,191 @@ mixin s-cars(props= defaultSCarsProps)
             .section-block.s-cars__block
                 .s-cars__header
                     .title.title--24.s-cars__title!= checkProps.title
-                    if(checkProps.hasDLBtn)
+                    - if(checkProps.hasDLBtn)
                         +btn({
                             name: 'Выгрузить сток в фид',
                             sMode: 'small',
                             cMode: 'accent',
                             icon: 'upload'
                         })
+
+                - if(checkProps.isPurchase === true)
+                    .e-cars__tabs
+                        .e-cars__subtitle Фильтровать по дате добавления:
+                        form.e-cars__statuses(action="#")
+                            +field({
+                                classes: 'e-cars__status field--green',
+                                type: 'checkbox',
+                                isTab: true,
+                                radioCheckboxText: '1 день'
+                            })
+                            +field({
+                                classes: 'e-cars__status field--yellow',
+                                type: 'checkbox',
+                                isTab: true,
+                                radioCheckboxText: '2-4 дня'
+
+                            })
+                            +field({
+                                classes: 'e-cars__status field--red',
+                                type: 'checkbox',
+                                isTab: true,
+                                radioCheckboxText: '5+ дней'
+                            })
                 .s-cars__list
                     - let cardsCount = 0
                     -while(cardsCount < checkProps.cards.length)
                         - let card = checkProps.cards[cardsCount]
-                        .s-cars__card.s-car
-                            .s-car__img
-                                img(src=card.img, alt="")
-                            .s-car__info
-                                .s-car__title.title!= card.title
-                                .s-car__bottom
-                                    - let priceDirection = card.price.direction.length > 0 ? `s-car__price--${card.price.direction}` : ''  
-                                    .s-car__price(class=priceDirection)
-                                        .current!= card.price.current
-                                            - if(card.price.direction.length > 0)
-                                                svg
-                                                    use(xlink:href=`img/sprites/sprite.svg#arrow_dir`)
-                                        - if(card.price.old.length > 0)
-                                            .old!= card.price.old
-                                    .s-car__status(class=`s-car__status--${card.tag.status}`)!= card.tag.text
-                                    - if(card.isFairPrice === true)
-                                        +tooltip({
-                                            title: 'Честная цена'
+
+                        - if(checkProps.isPurchase === true)
+                            .e-cars__card.e-car.e-car--supplier
+                                .e-car__img
+                                    img(src=card.img, alt="")
+                                .e-car__info
+                                    .e-car__title.title!= card.title
+                                    .e-car__bottom
+                                        - let priceDirection = card.price.direction.length > 0 ? `e-car__price--${card.price.direction}` : ''  
+                                        .e-car__price(class=priceDirection)
+                                            .current!= card.price.current
+                                                - if(card.price.direction.length > 0)
+                                                    svg
+                                                        use(xlink:href=`img/sprites/sprite.svg#arrow_dir`)
+                                                - if(card.price.tooltip === true)
+                                                    +tooltip({
+                                                        classes: 'tooltip--small',
+                                                        title: '',
+                                                        text: 'Краткая информация о цене'
+                                                    })
+                                            - if(card.price.old.length > 0)
+                                                .old!= card.price.old
+
+                                .e-car__block
+                                    .e-car__row.info-row
+                                        .info-row__title Дата добавления:
+                                        .info-row__value!= card.dateAdded.date
+                                            .info-row__number(class=`info-row__number--${card.dateAdded.status}`)!= card.dateAdded.days
+
+                                    .e-car__row.info-row
+                                        .info-row__title VIN:
+                                        .info-row__value YV1 S W 53 C 2 1 1 123456
+
+                                    .e-car__flex
+                                        .e-car__row.info-row
+                                            .info-row__title Салон:
+                                            .info-row__value Коричневый
+                                        .e-car__row.info-row
+                                            .info-row__title Кузов:
+                                            .info-row__value Коричневый
+
+
+                                .e-car__right
+                                    +btn({
+                                        classes: 'e-car__detail',
+                                        name: 'Подробнее',
+                                        sMode: 'mini',
+                                        cMode: 'light-accent',
+                                    })
+                                    .e-car__btns
+                                        +btn({
+                                            name: 'Отклонить',
+                                            sMode: 'mini',
+                                            cMode: 'accent',
+                                            icon: 'close'
                                         })
 
-                            .s-car__right
-                                - if(checkProps.hasDLBtn === true)
-                                    +btn({
-                                        classes: 's-car__detail',
-                                        name: 'Подробнее',
-                                        sMode: 'small',
-                                        cMode: 'light-accent'
-                                    })
+                                        +btn({
+                                            name: 'Принять',
+                                            sMode: 'mini',
+                                            cMode: 'accent',
+                                            icon: 'check'
+                                        })
 
-                                .s-car__btns
-                                    +btn(card.btn)
-                                    +btn({
-                                        name: 'Удалить из базы',
-                                        sMode: 'small',
-                                        cMode: 'light-accent',
-                                        icon: 'urn'
-                                    })
+                        - else if(checkProps.isProblem === true)
+                            .e-cars__card.e-car.e-car--problem
+                                .e-car__img
+                                    img(src=card.img, alt="")
+                                .e-car__info
+                                    .e-car__title.title!= card.title
+                                    .e-car__bottom
+                                        - let priceDirection = card.price.direction.length > 0 ? `e-car__price--${card.price.direction}` : ''  
+                                        .e-car__price(class=priceDirection)
+                                            .current!= card.price.current
+                                                - if(card.price.direction.length > 0)
+                                                    svg
+                                                        use(xlink:href=`img/sprites/sprite.svg#arrow_dir`)
+                                                - if(card.price.tooltip === true)
+                                                    +tooltip({
+                                                        classes: 'tooltip--small',
+                                                        title: '',
+                                                        text: 'Краткая информация о цене'
+                                                    })
+                                            - if(card.price.old.length > 0)
+                                                .old!= card.price.old
+
+                                        .e-car__row.info-row
+                                            .info-row__title Дата добавления:
+                                            .info-row__value!= card.dateAdded.date
+                                                .info-row__number(class=`info-row__number--${card.dateAdded.status}`)!= card.dateAdded.days
+
+                                    .e-car__note
+                                        svg
+                                            use(xlink:href=`img/sprites/sprite.svg#note`)
+                                        | Неправильно заполнено КПП
 
 
+                                .e-car__right
+                                    .e-car__btns
+                                        +btn({
+                                            name: 'Изменить',
+                                            sMode: 'mini',
+                                            cMode: 'accent',
+                                            icon: 'pencil'
+                                        })
+
+                                        +btn({
+                                            name: 'Удалить из базы',
+                                            sMode: 'mini',
+                                            cMode: 'light-accent',
+                                            icon: 'urn'
+                                        })
+
+                        - else
+                            .s-cars__card.s-car
+                                .s-car__img
+                                    img(src=card.img, alt="")
+                                .s-car__info
+                                    .s-car__title.title!= card.title
+                                    .s-car__bottom
+                                        - let priceDirection = card.price.direction.length > 0 ? `s-car__price--${card.price.direction}` : ''  
+                                        .s-car__price(class=priceDirection)
+                                            .current!= card.price.current
+                                                - if(card.price.direction.length > 0)
+                                                    svg
+                                                        use(xlink:href=`img/sprites/sprite.svg#arrow_dir`)
+                                            - if(card.price.old.length > 0)
+                                                .old!= card.price.old
+                                        .s-car__status(class=`s-car__status--${card.tag.status}`)!= card.tag.text
+                                        - if(card.isFairPrice === true)
+                                            +tooltip({
+                                                title: 'Честная цена'
+                                            })
+
+                                .s-car__right
+                                    - if(checkProps.hasDLBtn === true)
+                                        +btn({
+                                            classes: 's-car__detail',
+                                            name: 'Подробнее',
+                                            sMode: 'small',
+                                            cMode: 'light-accent'
+                                        })
+
+                                    .s-car__btns
+                                        +btn(card.btn)
+                                        +btn({
+                                            name: 'Удалить из базы',
+                                            sMode: 'small',
+                                            cMode: 'light-accent',
+                                            icon: 'urn'
+                                        })
 
                         - cardsCount++

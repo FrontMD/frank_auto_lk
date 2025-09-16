@@ -149,145 +149,121 @@
               <div class="section__container">
                 <div class="section-block e-cars__block">
                   <div class="title title--24 e-cars__title"><h1>Заявки на покупку автомобилей</h1></div>
-                  <div class="e-cars__statuses"></div>
+                  <div class="e-cars__tabs">
+                    <div class="e-cars__subtitle">Фильтровать по статусу:</div>
+                    <form class="e-cars__statuses" action="#">
+                          <div class="field e-cars__status 
+     
+    
+    field--tab" data-js="formField">
+                            <label>
+                              <input class="field__input" type="checkbox" placeholder=""><span class="fake-checkbox"><span class="fake-checkbox__text">Выкуплен</span></span><span class="field__error" data-js="fieldError"></span>
+                            </label>
+                          </div>
+                          <div class="field e-cars__status 
+     
+    
+    field--tab" data-js="formField">
+                            <label>
+                              <input class="field__input" type="checkbox" placeholder=""><span class="fake-checkbox"><span class="fake-checkbox__text">Не выкуплен</span></span><span class="field__error" data-js="fieldError"></span>
+                            </label>
+                          </div>
+                          <div class="field e-cars__status 
+     
+    
+    field--tab" data-js="formField">
+                            <label>
+                              <input class="field__input" type="checkbox" placeholder=""><span class="fake-checkbox"><span class="fake-checkbox__text">Заявка отправлена</span></span><span class="field__error" data-js="fieldError"></span>
+                            </label>
+                          </div>
+                          <div class="field e-cars__status 
+     
+    
+    field--tab" data-js="formField">
+                            <label>
+                              <input class="field__input" type="checkbox" placeholder=""><span class="fake-checkbox"><span class="fake-checkbox__text">Заявка отклонена</span></span><span class="field__error" data-js="fieldError"></span>
+                            </label>
+                          </div>
+                    </form>
+                  </div>
                   <div class="e-cars__list">
-                    <div class="e-cars__card e-car">
+                    <div class="e-cars__card e-car e-car--buyback">
                       <div class="e-car__img"><img src="img/catalog-product/cp_intro_1.webp" alt=""></div>
                       <div class="e-car__info">
                         <div class="e-car__title title">Lixiang L7 Pro 449 л.с. Hybrid Turbo 4WD</div>
                         <div class="e-car__bottom">
-                          <div class="e-car__price e-car__price--down">
+                          <div class="e-car__price">
                             <div class="current">15 000 000 ₽
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="e-car__block">
+                        <div class="e-car__row info-row">
+                          <div class="info-row__title">Дата добавления:</div>
+                          <div class="info-row__value">29.08.2025
+                            <div class="info-row__number info-row__number--green">1 день</div>
+                          </div>
+                        </div>
+                        <div class="e-car__row info-row">
+                          <div class="info-row__title">Поставщик:</div>
+                          <div class="info-row__value">ИП Иванов Виктор Алексеевич
+                            <div class="info-row__icon">
                               <svg>
-                                <use xlink:href="img/sprites/sprite.svg#arrow_dir"></use>
+                                <use xlink:href="img/sprites/sprite.svg#check"></use>
                               </svg>
-                                  <div class="tooltip tooltip--small">
-                                    <div class="tooltip__header">
-                                      <div class="tooltip__icon">
-                                        <svg>
-                                          <use xlink:href="img/sprites/sprite.svg#tooltip"></use>
-                                        </svg>
-                                      </div>
-                                    </div>
-                                    <div class="tooltip__tooltip">Краткая информация о цене</div>
-                                  </div>
-                            </div>
-                            <div class="old">18 000 000 ₽</div>
-                          </div>
-                          <div class="e-car__block">
-                            <div class="e-car__row info-row">
-                              <div class="info-row__title">Дата добавления:</div>
-                              <div class="info-row__value">29.08.2025
-                                <div class="info-row__number info-row__number--green">1 день</div>
-                              </div>
-                            </div>
-                            <div class="e-car__row info-row">
-                              <div class="info-row__title">Поставщик:</div>
-                              <div class="info-row__value">ИП Иванов Виктор Алексеевич
-                                <div class="info-row__icon">
-                                  <svg>
-                                    <use xlink:href="img/sprites/sprite.svg#check"></use>
-                                  </svg>
-                                </div>
-                              </div>
                             </div>
                           </div>
                         </div>
+                        <div class="e-car__status e-car__status--green">Выкуплен</div>
                       </div>
-                      <div class="e-car__block">
-                        <div class="e-car__sticker e-car__sticker--blue">В наличии</div>
-                        <div class="e-car__row info-row">
-                          <div class="info-row__title">Дата доставки:</div>
-                          <div class="info-row__value">15.08.2025</div>
-                        </div>
-                        <div class="e-car__flex">
-                          <div class="e-car__row info-row">
-                            <div class="info-row__title">Город:</div>
-                            <div class="info-row__value">Владивосток</div>
-                          </div>
-                          <div class="e-car__row info-row">
-                            <div class="info-row__title">Срок:</div>
-                            <div class="info-row__value">5 дней</div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="e-car__right"><a class="btn e-car__detail btn--light-accent btn--mini" href="javascript:void(0)"><span class="btn__text">Подробнее</span></a>
-                        <div class="e-car__btns"><a class="btn  btn--accent btn--mini" href="javascript:void(0)">
-                                <svg>
-                                  <use xlink:href="img/sprites/sprite.svg#close"></use>
-                                </svg><span class="btn__text">Отклонить</span></a><a class="btn  btn--accent btn--mini" href="javascript:void(0)"><span class="btn__text">Выкупить</span></a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="e-cars__card e-car">
-                      <div class="e-car__img"><img src="img/catalog-product/cp_intro_1.webp" alt=""></div>
-                      <div class="e-car__info">
-                        <div class="e-car__title title">Lixiang L7 Pro 449 л.с. Hybrid Turbo 4WD</div>
-                        <div class="e-car__bottom">
-                          <div class="e-car__price e-car__price--up">
-                            <div class="current">15 000 000 ₽
+                      <div class="e-car__right">
+                        <div class="e-car__btns"><a class="btn  btn--accent btn--mini" href="javascript:void(0)"><span class="btn__text">Подтвердить</span></a><a class="btn  btn--accent btn--mini" href="javascript:void(0)"><span class="btn__text">Подробнее</span></a>
+                        </div><a class="btn e-car__detail btn--light-accent btn--mini" href="javascript:void(0)">
                               <svg>
-                                <use xlink:href="img/sprites/sprite.svg#arrow_dir"></use>
+                                <use xlink:href="img/sprites/sprite.svg#close"></use>
+                              </svg><span class="btn__text">Отменить</span></a>
+                      </div>
+                    </div>
+                    <div class="e-cars__card e-car e-car--buyback">
+                      <div class="e-car__img"><img src="img/catalog-product/cp_intro_1.webp" alt=""></div>
+                      <div class="e-car__info">
+                        <div class="e-car__title title">Lixiang L7 Pro 449 л.с. Hybrid Turbo 4WD</div>
+                        <div class="e-car__bottom">
+                          <div class="e-car__price">
+                            <div class="current">15 000 000 ₽
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="e-car__block">
+                        <div class="e-car__row info-row">
+                          <div class="info-row__title">Дата добавления:</div>
+                          <div class="info-row__value">29.08.2025
+                            <div class="info-row__number info-row__number--green">1 день</div>
+                          </div>
+                        </div>
+                        <div class="e-car__row info-row">
+                          <div class="info-row__title">Поставщик:</div>
+                          <div class="info-row__value">ООО Рога и Копыта
+                            <div class="info-row__icon">
+                              <svg>
+                                <use xlink:href="img/sprites/sprite.svg#check"></use>
                               </svg>
-                                  <div class="tooltip tooltip--small">
-                                    <div class="tooltip__header">
-                                      <div class="tooltip__icon">
-                                        <svg>
-                                          <use xlink:href="img/sprites/sprite.svg#tooltip"></use>
-                                        </svg>
-                                      </div>
-                                    </div>
-                                    <div class="tooltip__tooltip">Краткая информация о цене</div>
-                                  </div>
-                            </div>
-                            <div class="old">10 000 000 ₽</div>
-                          </div>
-                          <div class="e-car__block">
-                            <div class="e-car__row info-row">
-                              <div class="info-row__title">Дата добавления:</div>
-                              <div class="info-row__value">29.08.2025
-                                <div class="info-row__number info-row__number--green">1 день</div>
-                              </div>
-                            </div>
-                            <div class="e-car__row info-row">
-                              <div class="info-row__title">Поставщик:</div>
-                              <div class="info-row__value">ООО Рога и Копыта
-                                <div class="info-row__icon">
-                                  <svg>
-                                    <use xlink:href="img/sprites/sprite.svg#check"></use>
-                                  </svg>
-                                </div>
-                              </div>
                             </div>
                           </div>
                         </div>
+                        <div class="e-car__status e-car__status--blue">Не выкуплен</div>
                       </div>
-                      <div class="e-car__block">
-                        <div class="e-car__sticker e-car__sticker--red">Нет в наличии</div>
-                        <div class="e-car__row info-row">
-                          <div class="info-row__title">Дата доставки:</div>
-                          <div class="info-row__value">15.08.2025</div>
-                        </div>
-                        <div class="e-car__flex">
-                          <div class="e-car__row info-row">
-                            <div class="info-row__title">Город:</div>
-                            <div class="info-row__value">Владивосток</div>
-                          </div>
-                          <div class="e-car__row info-row">
-                            <div class="info-row__title">Срок:</div>
-                            <div class="info-row__value">5 дней</div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="e-car__right"><a class="btn e-car__detail btn--light-accent btn--mini" href="javascript:void(0)"><span class="btn__text">Подробнее</span></a>
-                        <div class="e-car__btns"><a class="btn  btn--accent btn--mini" href="javascript:void(0)">
-                                <svg>
-                                  <use xlink:href="img/sprites/sprite.svg#close"></use>
-                                </svg><span class="btn__text">Отклонить</span></a><a class="btn  btn--accent btn--mini" href="javascript:void(0)"><span class="btn__text">Выкупить</span></a>
-                        </div>
+                      <div class="e-car__right">
+                        <div class="e-car__btns"><a class="btn  btn--accent btn--mini" href="javascript:void(0)"><span class="btn__text">Подтвердить</span></a><a class="btn  btn--accent btn--mini" href="javascript:void(0)"><span class="btn__text">Подробнее</span></a>
+                        </div><a class="btn e-car__detail btn--light-accent btn--mini" href="javascript:void(0)">
+                              <svg>
+                                <use xlink:href="img/sprites/sprite.svg#close"></use>
+                              </svg><span class="btn__text">Отменить</span></a>
                       </div>
                     </div>
-                    <div class="e-cars__card e-car">
+                    <div class="e-cars__card e-car e-car--buyback">
                       <div class="e-car__img"><img src="img/catalog-product/cp_intro_1.webp" alt=""></div>
                       <div class="e-car__info">
                         <div class="e-car__title title">Lixiang L7 Pro 449 л.с. Hybrid Turbo 4WD</div>
@@ -296,180 +272,36 @@
                             <div class="current">15 000 000 ₽
                             </div>
                           </div>
-                          <div class="e-car__block">
-                            <div class="e-car__row info-row">
-                              <div class="info-row__title">Дата добавления:</div>
-                              <div class="info-row__value">29.08.2025
-                                <div class="info-row__number info-row__number--green">1 день</div>
-                              </div>
-                            </div>
-                            <div class="e-car__row info-row">
-                              <div class="info-row__title">Поставщик:</div>
-                              <div class="info-row__value">ИП Иванов Виктор Алексеевич
-                                <div class="info-row__icon">
-                                  <svg>
-                                    <use xlink:href="img/sprites/sprite.svg#check"></use>
-                                  </svg>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
                         </div>
                       </div>
                       <div class="e-car__block">
-                        <div class="e-car__sticker e-car__sticker--red">Нет в наличии</div>
                         <div class="e-car__row info-row">
-                          <div class="info-row__title">Дата доставки:</div>
-                          <div class="info-row__value">15.08.2025</div>
-                        </div>
-                        <div class="e-car__flex">
-                          <div class="e-car__row info-row">
-                            <div class="info-row__title">Город:</div>
-                            <div class="info-row__value">Владивосток</div>
-                          </div>
-                          <div class="e-car__row info-row">
-                            <div class="info-row__title">Срок:</div>
-                            <div class="info-row__value">5 дней</div>
+                          <div class="info-row__title">Дата добавления:</div>
+                          <div class="info-row__value">29.08.2025
+                            <div class="info-row__number info-row__number--green">1 день</div>
                           </div>
                         </div>
+                        <div class="e-car__row info-row">
+                          <div class="info-row__title">Поставщик:</div>
+                          <div class="info-row__value">ИП Иванов Виктор Алексеевич
+                            <div class="info-row__icon">
+                              <svg>
+                                <use xlink:href="img/sprites/sprite.svg#check"></use>
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="e-car__status e-car__status--yellow">Заявка отправлена</div>
                       </div>
-                      <div class="e-car__right"><a class="btn e-car__detail btn--light-accent btn--mini" href="javascript:void(0)"><span class="btn__text">Подробнее</span></a>
-                        <div class="e-car__btns"><a class="btn  btn--accent btn--mini" href="javascript:void(0)">
-                                <svg>
-                                  <use xlink:href="img/sprites/sprite.svg#close"></use>
-                                </svg><span class="btn__text">Отклонить</span></a><a class="btn  btn--accent btn--mini" href="javascript:void(0)"><span class="btn__text">Выкупить</span></a>
-                        </div>
+                      <div class="e-car__right">
+                        <div class="e-car__btns"><a class="btn  btn--accent btn--mini" href="javascript:void(0)"><span class="btn__text">Подтвердить</span></a><a class="btn  btn--accent btn--mini" href="javascript:void(0)"><span class="btn__text">Подробнее</span></a>
+                        </div><a class="btn e-car__detail btn--light-accent btn--mini" href="javascript:void(0)">
+                              <svg>
+                                <use xlink:href="img/sprites/sprite.svg#close"></use>
+                              </svg><span class="btn__text">Отменить</span></a>
                       </div>
                     </div>
-                    <div class="e-cars__card e-car">
-                      <div class="e-car__img"><img src="img/catalog-product/cp_intro_1.webp" alt=""></div>
-                      <div class="e-car__info">
-                        <div class="e-car__title title">Lixiang L7 Pro 449 л.с. Hybrid Turbo 4WD</div>
-                        <div class="e-car__bottom">
-                          <div class="e-car__price">
-                            <div class="current">15 000 000 ₽
-                                  <div class="tooltip tooltip--small">
-                                    <div class="tooltip__header">
-                                      <div class="tooltip__icon">
-                                        <svg>
-                                          <use xlink:href="img/sprites/sprite.svg#tooltip"></use>
-                                        </svg>
-                                      </div>
-                                    </div>
-                                    <div class="tooltip__tooltip">Краткая информация о цене</div>
-                                  </div>
-                            </div>
-                          </div>
-                          <div class="e-car__block">
-                            <div class="e-car__row info-row">
-                              <div class="info-row__title">Дата добавления:</div>
-                              <div class="info-row__value">29.08.2025
-                                <div class="info-row__number info-row__number--green">1 день</div>
-                              </div>
-                            </div>
-                            <div class="e-car__row info-row">
-                              <div class="info-row__title">Поставщик:</div>
-                              <div class="info-row__value">ООО Рога и Копыта
-                                <div class="info-row__icon">
-                                  <svg>
-                                    <use xlink:href="img/sprites/sprite.svg#check"></use>
-                                  </svg>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="e-car__block">
-                        <div class="e-car__sticker e-car__sticker--blue">В наличии</div>
-                        <div class="e-car__row info-row">
-                          <div class="info-row__title">Дата доставки:</div>
-                          <div class="info-row__value">15.08.2025</div>
-                        </div>
-                        <div class="e-car__flex">
-                          <div class="e-car__row info-row">
-                            <div class="info-row__title">Город:</div>
-                            <div class="info-row__value">Владивосток</div>
-                          </div>
-                          <div class="e-car__row info-row">
-                            <div class="info-row__title">Срок:</div>
-                            <div class="info-row__value">5 дней</div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="e-car__right"><a class="btn e-car__detail btn--light-accent btn--mini" href="javascript:void(0)"><span class="btn__text">Подробнее</span></a>
-                        <div class="e-car__btns"><a class="btn  btn--accent btn--mini" href="javascript:void(0)">
-                                <svg>
-                                  <use xlink:href="img/sprites/sprite.svg#close"></use>
-                                </svg><span class="btn__text">Отклонить</span></a><a class="btn  btn--accent btn--mini" href="javascript:void(0)"><span class="btn__text">Выкупить</span></a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="e-cars__card e-car">
-                      <div class="e-car__img"><img src="img/catalog-product/cp_intro_1.webp" alt=""></div>
-                      <div class="e-car__info">
-                        <div class="e-car__title title">Lixiang L7 Pro 449 л.с. Hybrid Turbo 4WD</div>
-                        <div class="e-car__bottom">
-                          <div class="e-car__price">
-                            <div class="current">15 000 000 ₽
-                                  <div class="tooltip tooltip--small">
-                                    <div class="tooltip__header">
-                                      <div class="tooltip__icon">
-                                        <svg>
-                                          <use xlink:href="img/sprites/sprite.svg#tooltip"></use>
-                                        </svg>
-                                      </div>
-                                    </div>
-                                    <div class="tooltip__tooltip">Краткая информация о цене</div>
-                                  </div>
-                            </div>
-                          </div>
-                          <div class="e-car__block">
-                            <div class="e-car__row info-row">
-                              <div class="info-row__title">Дата добавления:</div>
-                              <div class="info-row__value">29.08.2025
-                                <div class="info-row__number info-row__number--green">1 день</div>
-                              </div>
-                            </div>
-                            <div class="e-car__row info-row">
-                              <div class="info-row__title">Поставщик:</div>
-                              <div class="info-row__value">ИП Иванов Виктор Алексеевич
-                                <div class="info-row__icon">
-                                  <svg>
-                                    <use xlink:href="img/sprites/sprite.svg#check"></use>
-                                  </svg>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="e-car__block">
-                        <div class="e-car__sticker e-car__sticker--blue">В наличии</div>
-                        <div class="e-car__row info-row">
-                          <div class="info-row__title">Дата доставки:</div>
-                          <div class="info-row__value">15.08.2025</div>
-                        </div>
-                        <div class="e-car__flex">
-                          <div class="e-car__row info-row">
-                            <div class="info-row__title">Город:</div>
-                            <div class="info-row__value">Владивосток</div>
-                          </div>
-                          <div class="e-car__row info-row">
-                            <div class="info-row__title">Срок:</div>
-                            <div class="info-row__value">5 дней</div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="e-car__right"><a class="btn e-car__detail btn--light-accent btn--mini" href="javascript:void(0)"><span class="btn__text">Подробнее</span></a>
-                        <div class="e-car__btns"><a class="btn  btn--accent btn--mini" href="javascript:void(0)">
-                                <svg>
-                                  <use xlink:href="img/sprites/sprite.svg#close"></use>
-                                </svg><span class="btn__text">Отклонить</span></a><a class="btn  btn--accent btn--mini" href="javascript:void(0)"><span class="btn__text">Выкупить</span></a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="e-cars__card e-car">
+                    <div class="e-cars__card e-car e-car--buyback">
                       <div class="e-car__img"><img src="img/catalog-product/cp_intro_1.webp" alt=""></div>
                       <div class="e-car__info">
                         <div class="e-car__title title">Lixiang L7 Pro 449 л.с. Hybrid Turbo 4WD</div>
@@ -478,49 +310,33 @@
                             <div class="current">15 000 000 ₽
                             </div>
                           </div>
-                          <div class="e-car__block">
-                            <div class="e-car__row info-row">
-                              <div class="info-row__title">Дата добавления:</div>
-                              <div class="info-row__value">29.08.2025
-                                <div class="info-row__number info-row__number--green">1 день</div>
-                              </div>
-                            </div>
-                            <div class="e-car__row info-row">
-                              <div class="info-row__title">Поставщик:</div>
-                              <div class="info-row__value">ООО Ромашка
-                                <div class="info-row__icon">
-                                  <svg>
-                                    <use xlink:href="img/sprites/sprite.svg#check"></use>
-                                  </svg>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
                         </div>
                       </div>
                       <div class="e-car__block">
-                        <div class="e-car__sticker e-car__sticker--red">Нет в наличии</div>
                         <div class="e-car__row info-row">
-                          <div class="info-row__title">Дата доставки:</div>
-                          <div class="info-row__value">15.08.2025</div>
-                        </div>
-                        <div class="e-car__flex">
-                          <div class="e-car__row info-row">
-                            <div class="info-row__title">Город:</div>
-                            <div class="info-row__value">Владивосток</div>
-                          </div>
-                          <div class="e-car__row info-row">
-                            <div class="info-row__title">Срок:</div>
-                            <div class="info-row__value">5 дней</div>
+                          <div class="info-row__title">Дата добавления:</div>
+                          <div class="info-row__value">29.08.2025
+                            <div class="info-row__number info-row__number--green">1 день</div>
                           </div>
                         </div>
+                        <div class="e-car__row info-row">
+                          <div class="info-row__title">Поставщик:</div>
+                          <div class="info-row__value">ООО Рога и Копыта
+                            <div class="info-row__icon">
+                              <svg>
+                                <use xlink:href="img/sprites/sprite.svg#check"></use>
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="e-car__status e-car__status--red">Заявка отклонена</div>
                       </div>
-                      <div class="e-car__right"><a class="btn e-car__detail btn--light-accent btn--mini" href="javascript:void(0)"><span class="btn__text">Подробнее</span></a>
-                        <div class="e-car__btns"><a class="btn  btn--accent btn--mini" href="javascript:void(0)">
-                                <svg>
-                                  <use xlink:href="img/sprites/sprite.svg#close"></use>
-                                </svg><span class="btn__text">Отклонить</span></a><a class="btn  btn--accent btn--mini" href="javascript:void(0)"><span class="btn__text">Выкупить</span></a>
-                        </div>
+                      <div class="e-car__right">
+                        <div class="e-car__btns"><a class="btn  btn--accent btn--mini" href="javascript:void(0)"><span class="btn__text">Подтвердить</span></a><a class="btn  btn--accent btn--mini" href="javascript:void(0)"><span class="btn__text">Подробнее</span></a>
+                        </div><a class="btn e-car__detail btn--light-accent btn--mini" href="javascript:void(0)">
+                              <svg>
+                                <use xlink:href="img/sprites/sprite.svg#close"></use>
+                              </svg><span class="btn__text">Отменить</span></a>
                       </div>
                     </div>
                   </div>
@@ -622,7 +438,7 @@
                           <div class="checkboxes-flex">
                                 <div class="field  
      
-    field--tab 
+    field--tab
     " data-js="formField">
                                   <label>
                                     <input class="field__input" type="radio" placeholder="" checked="" name="user-role"><span class="fake-radio"><span class="fake-radio__text">Войти как поставщик</span></span>
@@ -630,7 +446,7 @@
                                 </div>
                                 <div class="field  
      
-    field--tab 
+    field--tab
     " data-js="formField">
                                   <label>
                                     <input class="field__input" type="radio" placeholder="" name="user-role"><span class="fake-radio"><span class="fake-radio__text">Войти как сотрудник Frank Auto</span></span>
@@ -641,7 +457,7 @@
                           <div class="form__fields">
                                 <div class="field  
      
-     
+    
     " data-js="formField">
                                   <label>
                                     <input class="field__input" type="text" placeholder="" required=""><span class="field__placeholder">Логин</span><span class="field__error" data-js="fieldError"></span>
@@ -649,7 +465,7 @@
                                 </div>
                                 <div class="field  
      
-     
+    
     " data-js="formField">
                                   <label>
                                     <input class="field__input" type="password" placeholder="" required=""><span class="field__placeholder">Пароль</span><span class="field__error" data-js="fieldError"></span>
@@ -701,7 +517,7 @@
                                   <div class="modal-slides__tab" data-js="modalSlidesTab" data-id="0">
                                         <div class="field  
      
-    field--radio 
+    field--radio
     " data-js="formField">
                                           <label>
                                             <input class="field__input" type="radio" placeholder="" checked="" name="userType"><span class="fake-radio"><span class="fake-radio__input"></span><span class="fake-radio__text">Юр. лицо</span></span>
@@ -711,7 +527,7 @@
                                   <div class="modal-slides__tab" data-js="modalSlidesTab" data-id="1">
                                         <div class="field  
      
-    field--radio 
+    field--radio
     " data-js="formField">
                                           <label>
                                             <input class="field__input" type="radio" placeholder="" name="userType"><span class="fake-radio"><span class="fake-radio__input"></span><span class="fake-radio__text">Физ. лицо</span></span>
@@ -723,7 +539,7 @@
                               <div class="form__fields">
                                     <div class="field  
      
-     
+    
     " data-js="formField">
                                       <label>
                                         <select class="field__select" data-placeholder="Тип организации" data-js="formSelect" required="">
@@ -736,7 +552,7 @@
                                     </div>
                                     <div class="field  
      
-     
+    
     " data-js="formField">
                                       <label>
                                         <input class="field__input" type="text" placeholder="" required="" data-type="number" data-v-name="inn"><span class="field__placeholder">ИНН</span><span class="field__error" data-js="fieldError"></span>
@@ -744,7 +560,7 @@
                                     </div>
                                     <div class="field  
      
-     
+    
     " data-js="formField">
                                       <label>
                                         <input class="field__input" type="text" placeholder="" required="" data-type="number" data-v-name="kpp"><span class="field__placeholder">КПП</span><span class="field__error" data-js="fieldError"></span>
@@ -752,7 +568,7 @@
                                     </div>
                                     <div class="field  
      
-     
+    
     " data-js="formField">
                                       <label>
                                         <input class="field__input" type="text" placeholder="" required=""><span class="field__placeholder">Название юр.лица</span><span class="field__error" data-js="fieldError"></span>
@@ -760,7 +576,7 @@
                                     </div>
                                     <div class="field  
      
-     
+    
     " data-js="formField">
                                       <label>
                                         <input class="field__input" type="text" placeholder="" required=""><span class="field__placeholder">Компания</span><span class="field__error" data-js="fieldError"></span>
@@ -768,7 +584,7 @@
                                     </div>
                                     <div class="field  
      
-     
+    
     " data-js="formField">
                                       <label>
                                         <input class="field__input" type="text" placeholder="" required="" data-type="letters"><span class="field__placeholder">Контактное лицо</span><span class="field__error" data-js="fieldError"></span>
@@ -776,7 +592,7 @@
                                     </div>
                                     <div class="field  
      
-     
+    
     " data-js="formField">
                                       <label>
                                         <input class="field__input" type="text" placeholder="" required="" data-v-name="email"><span class="field__placeholder">Email для получения учетных данных</span><span class="field__error" data-js="fieldError"></span>
@@ -784,7 +600,7 @@
                                     </div>
                                     <div class="field  
      
-     
+    
     " data-js="formField">
                                       <label>
                                         <input class="field__input" type="text" placeholder="" required="" data-v-name="phone" data-type="phoneNumber"><span class="field__placeholder">Номер телефона</span><span class="field__error" data-js="fieldError"></span>
@@ -815,7 +631,7 @@
                                   <div class="modal-slides__tab" data-js="modalSlidesTab" data-id="0">
                                         <div class="field  
      
-    field--radio 
+    field--radio
     " data-js="formField">
                                           <label>
                                             <input class="field__input" type="radio" placeholder="" name="userType"><span class="fake-radio"><span class="fake-radio__input"></span><span class="fake-radio__text">Юр. лицо</span></span>
@@ -825,7 +641,7 @@
                                   <div class="modal-slides__tab" data-js="modalSlidesTab" data-id="1">
                                         <div class="field  
      
-    field--radio 
+    field--radio
     " data-js="formField">
                                           <label>
                                             <input class="field__input" type="radio" placeholder="" checked="" name="userType"><span class="fake-radio"><span class="fake-radio__input"></span><span class="fake-radio__text">Физ. лицо</span></span>
@@ -837,7 +653,7 @@
                               <div class="form__fields">
                                     <div class="field  
      
-     
+    
     " data-js="formField">
                                       <label>
                                         <input class="field__input" type="text" placeholder="" required="" data-type="letters"><span class="field__placeholder">Фамилия</span><span class="field__error" data-js="fieldError"></span>
@@ -846,7 +662,7 @@
                                 <div class="form__flex">
                                       <div class="field  
      
-     
+    
     " data-js="formField">
                                         <label>
                                           <input class="field__input" type="text" placeholder="" required="" data-type="letters"><span class="field__placeholder">Имя</span><span class="field__error" data-js="fieldError"></span>
@@ -854,7 +670,7 @@
                                       </div>
                                       <div class="field  
      
-     
+    
     " data-js="formField">
                                         <label>
                                           <input class="field__input" type="text" placeholder="" data-type="letters"><span class="field__placeholder">Отчество (при наличии)</span><span class="field__error" data-js="fieldError"></span>
@@ -863,7 +679,7 @@
                                 </div>
                                     <div class="field  
      
-     
+    
     " data-js="formField">
                                       <label>
                                         <input class="field__input" type="text" placeholder="" required="" data-v-name="email"><span class="field__placeholder">Email для получения учетных данных</span><span class="field__error" data-js="fieldError"></span>
@@ -871,7 +687,7 @@
                                     </div>
                                     <div class="field  
      
-     
+    
     " data-js="formField">
                                       <label>
                                         <input class="field__input" type="text" placeholder="" required="" data-v-name="phone" data-type="phoneNumber"><span class="field__placeholder">Номер телефона</span><span class="field__error" data-js="fieldError"></span>
@@ -879,7 +695,7 @@
                                     </div>
                                     <div class="field  
      
-     
+    
     " data-js="formField">
                                       <label>
                                         <select class="field__select" data-placeholder="Страна гражданства" data-js="formSelect" required="">
@@ -892,7 +708,7 @@
                                     </div>
                                     <div class="field  
      
-     
+    
     " data-js="formField">
                                       <label>
                                         <input class="field__input" type="text" placeholder="" required=""><span class="field__placeholder">Серия и номер паспорта</span><span class="field__error" data-js="fieldError"></span>
@@ -901,7 +717,7 @@
                                 <div class="form__flex">
                                       <div class="field  
      
-     
+    
     " data-js="formField">
                                         <label>
                                           <input class="field__input" type="text" placeholder="" required="" data-v-name="date" data-type="date" data-position="top"><span class="field__placeholder">Дата выдачи</span><span class="field__icon">
@@ -912,7 +728,7 @@
                                       </div>
                                       <div class="field  
      
-     
+    
     " data-js="formField">
                                         <label>
                                           <input class="field__input" type="text" placeholder="" required=""><span class="field__placeholder">Код подразделения</span><span class="field__error" data-js="fieldError"></span>
@@ -921,7 +737,7 @@
                                 </div>
                                     <div class="field  
      
-     
+    
     " data-js="formField">
                                       <label>
                                         <input class="field__input" type="text" placeholder="" required="" data-v-name="date" data-type="date" data-position="top"><span class="field__placeholder">Дата рождения</span><span class="field__icon">
@@ -968,7 +784,7 @@
                             <div class="form__fields">
                                   <div class="field  
      
-     
+    
     " data-js="formField">
                                     <label>
                                       <input class="field__input" type="text" placeholder="" required=""><span class="field__placeholder">Причина отправки в архив</span><span class="field__error" data-js="fieldError"></span>
@@ -976,7 +792,7 @@
                                   </div>
                                   <div class="field  
      
-     
+    
     " data-js="formField">
                                     <label>
                                       <textarea class="field__textarea" rows="5" placeholder=""></textarea><span class="field__placeholder">Комментарий</span><span class="field__error" data-js="fieldError"></span>
@@ -1010,7 +826,7 @@
                             <div class="form__fields">
                                   <div class="field  
      
-     
+    
     " data-js="formField">
                                     <label>
                                       <input class="field__input" type="text" placeholder="" required=""><span class="field__placeholder">Причина отказа</span><span class="field__error" data-js="fieldError"></span>
@@ -1018,7 +834,7 @@
                                   </div>
                                   <div class="field  
      
-     
+    
     " data-js="formField">
                                     <label>
                                       <textarea class="field__textarea" rows="5" placeholder=""></textarea><span class="field__placeholder">Комментарий</span><span class="field__error" data-js="fieldError"></span>
@@ -1027,7 +843,7 @@
                               <div class="form__flex form__flex--checkbox">
                                     <div class="field  
      
-     
+    
     field--checkbox" data-js="formField">
                                       <label>
                                         <input class="field__input" type="checkbox" placeholder=""><span class="fake-checkbox fake-checkbox--text"><span class="fake-checkbox__square">
@@ -1038,7 +854,7 @@
                                     </div>
                                     <div class="field  
      
-     
+    
     " data-js="formField">
                                       <label>
                                         <input class="field__input" type="text" placeholder=""><span class="field__placeholder">Комментарий</span><span class="field__error" data-js="fieldError"></span>
@@ -1048,7 +864,7 @@
                               <div class="form__flex form__flex--checkbox">
                                     <div class="field  
      
-     
+    
     field--checkbox" data-js="formField">
                                       <label>
                                         <input class="field__input" type="checkbox" placeholder=""><span class="fake-checkbox fake-checkbox--text"><span class="fake-checkbox__square">
@@ -1059,7 +875,7 @@
                                     </div>
                                     <div class="field  
      
-     
+    
     " data-js="formField">
                                       <label>
                                         <input class="field__input" type="text" placeholder=""><span class="field__placeholder">Комментарий</span><span class="field__error" data-js="fieldError"></span>
@@ -1069,7 +885,7 @@
                               <div class="form__flex form__flex--checkbox">
                                     <div class="field  
      
-     
+    
     field--checkbox" data-js="formField">
                                       <label>
                                         <input class="field__input" type="checkbox" placeholder=""><span class="fake-checkbox fake-checkbox--text"><span class="fake-checkbox__square">
@@ -1080,7 +896,7 @@
                                     </div>
                                     <div class="field  
      
-     
+    
     " data-js="formField">
                                       <label>
                                         <input class="field__input" type="text" placeholder=""><span class="field__placeholder">Комментарий</span><span class="field__error" data-js="fieldError"></span>
@@ -1090,7 +906,7 @@
                               <div class="form__flex form__flex--checkbox">
                                     <div class="field  
      
-     
+    
     field--checkbox" data-js="formField">
                                       <label>
                                         <input class="field__input" type="checkbox" placeholder=""><span class="fake-checkbox fake-checkbox--text"><span class="fake-checkbox__square">
@@ -1101,7 +917,7 @@
                                     </div>
                                     <div class="field  
      
-     
+    
     " data-js="formField">
                                       <label>
                                         <input class="field__input" type="text" placeholder=""><span class="field__placeholder">Комментарий</span><span class="field__error" data-js="fieldError"></span>
@@ -1111,7 +927,7 @@
                               <div class="form__flex form__flex--checkbox">
                                     <div class="field  
      
-     
+    
     field--checkbox" data-js="formField">
                                       <label>
                                         <input class="field__input" type="checkbox" placeholder=""><span class="fake-checkbox fake-checkbox--text"><span class="fake-checkbox__square">
@@ -1122,7 +938,7 @@
                                     </div>
                                     <div class="field  
      
-     
+    
     " data-js="formField">
                                       <label>
                                         <input class="field__input" type="text" placeholder=""><span class="field__placeholder">Комментарий</span><span class="field__error" data-js="fieldError"></span>
@@ -1132,7 +948,7 @@
                               <div class="form__flex form__flex--checkbox">
                                     <div class="field  
      
-     
+    
     field--checkbox" data-js="formField">
                                       <label>
                                         <input class="field__input" type="checkbox" placeholder=""><span class="fake-checkbox fake-checkbox--text"><span class="fake-checkbox__square">
@@ -1143,7 +959,7 @@
                                     </div>
                                     <div class="field  
      
-     
+    
     " data-js="formField">
                                       <label>
                                         <input class="field__input" type="text" placeholder=""><span class="field__placeholder">Комментарий</span><span class="field__error" data-js="fieldError"></span>
@@ -1153,7 +969,7 @@
                               <div class="form__flex form__flex--checkbox">
                                     <div class="field  
      
-     
+    
     field--checkbox" data-js="formField">
                                       <label>
                                         <input class="field__input" type="checkbox" placeholder=""><span class="fake-checkbox fake-checkbox--text"><span class="fake-checkbox__square">
@@ -1164,7 +980,7 @@
                                     </div>
                                     <div class="field  
      
-     
+    
     " data-js="formField">
                                       <label>
                                         <input class="field__input" type="text" placeholder=""><span class="field__placeholder">Комментарий</span><span class="field__error" data-js="fieldError"></span>

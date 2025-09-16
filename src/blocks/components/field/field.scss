@@ -391,153 +391,6 @@
     &--radio input:checked+.fake-radio .fake-radio__input::after {
         opacity: 1;
     }
-
-    /*&--radio .fake-radio {
-        &--img {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: auto;
-            height: auto;
-            background-color: $c-bg-input;
-            border: 2px solid $c-bg-input;
-            flex: 0 0 auto;
-            transition: all $tr-time linear;
-            border-radius: $br-section;
-            padding: 10px 20px;
-            min-height: 60px;
-
-            @include max(laptop-small) {
-                min-height: 50px;
-                padding: 8px 20px;
-            }
-        }
-
-        &--img img {
-            opacity: 0.5;
-            max-width: 150px;
-            max-height: 28px;
-            object-fit: contain;
-
-            @include max(laptop-small) {
-                max-width: 125px;
-                max-height: 23px;
-            }
-        }
-
-        &--img::after {
-            content: none;
-        }
-    }
-
-    &--radio input:checked+.fake-radio--img {
-
-        background-color: $c-white;
-        border-color: $c-accent-2;
-
-        img {
-            opacity: 1;
-        }
-
-    }
-
-    &--radio .fake-radio {
-        &--img2 {
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: transparent;
-            border: none;
-            flex: 0 0 auto;
-            transition: all $tr-time linear;
-            border-radius: 0;
-            padding: 0;
-
-            @include max(tablet) {
-                width: 70px;
-                height: 70px;
-            }
-        }
-
-
-        &--img2 img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        &--img2::after {
-            content: none;
-        }
-
-        &--img2 .fake-radio__check {
-            position: absolute;
-            top: -3px;
-            right: -3px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: all $tr-time linear;
-            width: 26px;
-            height: 26px;
-            background-color: $c-accent-2;
-            border-radius: 100%;
-
-            svg {
-                width: 20px;
-                height: 20px;
-                color: $c-white;
-            }
-        }
-    }
-
-    &--radio input:checked+.fake-radio--img2 {
-        background-color: transparent;
-
-        .fake-radio__check {
-            opacity: 1;
-        }
-    }
-
-    &--radio .fake-radio {
-        &--color {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 30px;
-            height: 30px;
-            flex: 0 0 auto;
-            transition: all $tr-time linear;
-            border-radius: 5px;
-            padding: 0;
-            border: 1px solid transparent;
-
-            @include max(tablet) {
-                width: 60px;
-                height: 35px;
-            }
-        }
-
-        &--color svg {
-            width: 20px;
-            height: 20px;
-            opacity: 0;
-        }
-
-        &--color::after {
-            content: none;
-        }
-    }
-
-    &--radio input:checked+.fake-radio--color {
-        svg {
-            opacity: 1;
-        }
-    }*/
 }
 
 .field {
@@ -587,12 +440,24 @@
             font-size: 14px;
             min-height: 48px;
         }
+    }
 
-        /*svg {
-            display: none;
-            width: 24px;
-            height: 24px;
-        }*/
+    &--tab.field--green .fake-checkbox,
+    &--tab.field--green .fake-radio {
+        background-color: $c-status-lgreen;
+        color: $c-status-green;
+    }
+
+    &--tab.field--yellow .fake-checkbox,
+    &--tab.field--yellow .fake-radio {
+        background-color: $c-status-lyellow;
+        color: $c-status-yellow;
+    }
+
+    &--tab.field--red .fake-checkbox,
+    &--tab.field--red .fake-radio {
+        background-color: $c-status-lred;
+        color: $c-status-red;
     }
 
     &--tab .fake-checkbox__input,
@@ -613,9 +478,27 @@
         color: $c-white;
     }
 
-    /*&--tab input:checked+.fake-checkbox svg {
-        display: block;
-    }*/
+    &--tab.field--green input:checked+.fake-checkbox,
+    &--tab.field--green label:hover .fake-checkbox,
+    &--tab.field--green input:checked+.fake-radio,
+    &--tab.field--green label:hover .fake-radio {
+        background-color: $c-status-green;
+    }
+
+    &--tab.field--yellow input:checked+.fake-checkbox,
+    &--tab.field--yellow label:hover .fake-checkbox,
+    &--tab.field--yellow input:checked+.fake-radio,
+    &--tab.field--yellow label:hover .fake-radio {
+        background-color: $c-status-yellow;
+    }
+
+    &--tab.field--red input:checked+.fake-checkbox,
+    &--tab.field--red label:hover .fake-checkbox,
+    &--tab.field--red input:checked+.fake-radio,
+    &--tab.field--red label:hover .fake-radio {
+        background-color: $c-status-red;
+    }
+
 }
 
 .field {

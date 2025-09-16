@@ -174,7 +174,34 @@ mixin e-cars(props= defaultECarsProps)
                 .title.title--24.e-cars__title!= checkProps.title
 
                 - if(checkProps.isBuyback === true)
-                    .e-cars__statuses
+                    .e-cars__tabs
+                        .e-cars__subtitle Фильтровать по статусу:
+                        form.e-cars__statuses(action="#")
+                            +field({
+                                classes: 'e-cars__status',
+                                type: 'checkbox',
+                                isTab: true,
+                                radioCheckboxText: 'Выкуплен'
+                            })
+                            +field({
+                                classes: 'e-cars__status',
+                                type: 'checkbox',
+                                isTab: true,
+                                radioCheckboxText: 'Не выкуплен'
+
+                            })
+                            +field({
+                                classes: 'e-cars__status',
+                                type: 'checkbox',
+                                isTab: true,
+                                radioCheckboxText: 'Заявка отправлена'
+                            })
+                            +field({
+                                classes: 'e-cars__status',
+                                type: 'checkbox',
+                                isTab: true,
+                                radioCheckboxText: 'Заявка отклонена'
+                            })
                 - else
                     .e-cars__filter.catalog-filter(data-js="catalogFilter")
                         form.catalog-filter__form.spoiler-form(action="#" data-js="formFilter")
@@ -437,7 +464,7 @@ mixin e-cars(props= defaultECarsProps)
                     -while(cardsCount < checkProps.cards.length)
                         - let card = checkProps.cards[cardsCount]
 
-                        - if(checkProps.isSupplier == true)
+                        - if(checkProps.isSupplier === true)
                             .e-cars__card.e-car.e-car--supplier
                                 <div class="field e-cars__checkbox field--checkbox">
                                     <label>
@@ -510,6 +537,66 @@ mixin e-cars(props= defaultECarsProps)
                                             name: 'Выкупить',
                                             sMode: 'mini',
                                             cMode: 'accent',
+                                        })
+
+                        - else if(checkProps.isBuyback === true)
+                            .e-cars__card.e-car.e-car--buyback
+                                .e-car__img
+                                    img(src=card.img, alt="")
+                                .e-car__info
+                                    .e-car__title.title!= card.title
+                                    .e-car__bottom
+                                        - let priceDirection = card.price.direction.length > 0 ? `e-car__price--${card.price.direction}` : ''  
+                                        .e-car__price(class=priceDirection)
+                                            .current!= card.price.current
+                                                - if(card.price.direction.length > 0)
+                                                    svg
+                                                        use(xlink:href=`img/sprites/sprite.svg#arrow_dir`)
+                                                - if(card.price.tooltip === true)
+                                                    +tooltip({
+                                                        classes: 'tooltip--small',
+                                                        title: '',
+                                                        text: 'Краткая информация о цене'
+                                                    })
+                                            - if(card.price.old.length > 0)
+                                                .old!= card.price.old
+
+                                .e-car__block
+                                    .e-car__row.info-row
+                                        .info-row__title Дата добавления:
+                                        .info-row__value!= card.dateAdded.date
+                                            .info-row__number(class=`info-row__number--${card.dateAdded.status}`)!= card.dateAdded.days
+
+                                    .e-car__row.info-row
+                                        .info-row__title Поставщик:
+                                        .info-row__value!= card.dateAdded.supplier
+                                            .info-row__icon
+                                                svg
+                                                    use(xlink:href=`img/sprites/sprite.svg#check`)
+
+                                    .e-car__status(class=`e-car__status--${card.sticker.color}`)!= card.sticker.text
+
+                                .e-car__right
+                                    .e-car__btns
+
+                                        +btn({
+                                            name: 'Подтвердить',
+                                            sMode: 'mini',
+                                            cMode: 'accent',
+                                        })
+
+                                        +btn({
+                                            name: 'Подробнее',
+                                            sMode: 'mini',
+                                            cMode: 'accent'
+                                        })
+
+                                    +btn({
+                                        classes: 'e-car__detail',
+                                        name: 'Отменить',
+                                        sMode: 'mini',
+                                        cMode: 'light-accent',
+                                        icon: 'close'
                                         })
 
                         - else
