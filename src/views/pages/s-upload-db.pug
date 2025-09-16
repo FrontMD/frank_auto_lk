@@ -8,6 +8,21 @@ block variables
 block content
 	.page-layout(data-js="pageLayout")
 
+		section.section.section--bc
+			.section__container.section__content
+				+breadcrumbs({
+					items: [
+						{
+							name: 'Личный кабинет',
+							link: 'javascript:void(0);'
+						},
+						{
+							name: 'Загрузить базу автомобилей (xml / xls)',
+							link: 'javascript:void(0);'
+						},
+					],
+				})
+
 		+common-list({
 			title: 'Загрузить базу автомобилей (xml / xls)',
 			columns: '2',

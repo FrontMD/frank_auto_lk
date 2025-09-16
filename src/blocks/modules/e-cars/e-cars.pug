@@ -2,6 +2,8 @@
     const defaultECarsProps = {
         classes: '',
         title: '<h1>Каталог автомобилей</h1>',
+        isSupplier: false,
+        isBuyback: false,
         cards: [
             {
                 img: 'img/catalog-product/cp_intro_1.webp',
@@ -161,6 +163,8 @@ mixin e-cars(props= defaultECarsProps)
         const checkProps = {
             classes: props.classes ? props.classes : defaultECarsProps.classes,
             title: props.title ? props.title : defaultECarsProps.title,
+            isSupplier: props.isSupplier ? props.isSupplier : defaultECarsProps.isSupplier,
+            isBuyback: props.isBuyback ? props.isBuyback : defaultECarsProps.isBuyback,
             cards: props.cards ? props.cards : defaultECarsProps.cards,
         }
 
@@ -168,315 +172,416 @@ mixin e-cars(props= defaultECarsProps)
         .section__container
             .section-block.e-cars__block
                 .title.title--24.e-cars__title!= checkProps.title
-                .e-cars__filter.catalog-filter(data-js="catalogFilter")
-                    form.catalog-filter__form.spoiler-form(action="#" data-js="formFilter")
-                        .catalog-filter__close(data-js="catalogFilterClose")
+
+                - if(checkProps.isBuyback === true)
+                    .e-cars__statuses
+                - else
+                    .e-cars__filter.catalog-filter(data-js="catalogFilter")
+                        form.catalog-filter__form.spoiler-form(action="#" data-js="formFilter")
+                            .catalog-filter__close(data-js="catalogFilterClose")
+                                svg
+                                    use(xlink:href=`img/sprites/sprite.svg#close`)
+                            .spoiler-form__fields.scrollbar.scrollbar--small(data-js="formSpoilerContent")
+                                .spoiler-form__row(data-js="formSpoilerRow")
+                                    <div class="field" data-js="formField">
+                                        <label>
+                                            <select class="field__select" data-placeholder="Марка" data-js="formSelect">
+                                                <option label=" "></option>
+                                                <option value="LiXiang">LiXiang</option>
+                                                <option value="Voyah">Voyah</option>
+                                                <option value="AITO">AITO</option>
+                                                <option value="Chery">Chery</option>
+                                                <option value="Zeekr">Zeekr</option>
+                                                <option value="Audi">Audi</option>
+                                                <option value="Tank">Tank</option>
+                                                <option value="Rox Motor Tech">Rox Motor Tech</option>
+                                            </select>
+                                        </label>
+                                    </div>
+                                    <div class="field disabled" data-js="formField">
+                                        <label>
+                                            <select class="field__select" data-placeholder="Модель" data-js="formSelect">
+                                                <option label=" "></option>
+                                                <option value="LiXiang L6">LiXiang L6</option>
+                                                <option value="LiXiang L7">LiXiang L7</option>
+                                                <option value="LiXiang L9">LiXiang L9</option>
+                                                <option value="LiXiang L9">LiXiang L9</option>
+                                                <option value="LiXiang Mega">LiXiang Mega</option>
+                                                <option value="LiXiang One">LiXiang One</option>
+                                            </select>
+                                        </label>
+                                    </div>
+                                    <div class="field field--double" data-js="formField">
+                                        <label>
+                                            <select class="field__select" data-placeholder="Год от" data-js="formSelect">
+                                                <option label=" "></option>
+                                                <option value="2020">2020</option>
+                                                <option value="2021">2021</option>
+                                                <option value="2022">2022</option>
+                                                <option value="2023">2023</option>
+                                                <option value="2024">2024</option>
+                                                <option value="2025">2025</option>
+                                            </select>
+                                        </label>
+                                        <label>
+                                            <select class="field__select field__select--second" data-placeholder="до" data-js="formSelect">
+                                                <option label=" "></option>
+                                                <option value="2021">2021</option>
+                                                <option value="2022">2022</option>
+                                                <option value="2023">2023</option>
+                                                <option value="2024">2024</option>
+                                                <option value="2025">2025</option>
+                                            </select>
+                                        </label>
+                                    </div>
+                                    <div class="field" data-js="formField">
+                                        <label>
+                                            <select class="field__select" data-placeholder="Цвет" data-js="formSelect">
+                                                <option label=" "></option>
+                                                <option value="Красный">Красный</option>
+                                                <option value="Зелёный">Зелёный</option>
+                                                <option value="Синий">Синий</option>
+                                                <option value="Белый">Белый</option>
+                                                <option value="Чёрный">Чёрный</option>
+                                            </select>
+                                        </label>
+                                    </div>
+                                .spoiler-form__row.spoiler-form__row--5(data-js="formSpoilerRow")
+                                    <div class="field" data-js="formField">
+                                        <label>
+                                            <select class="field__select" data-placeholder="Коробка передач" data-js="formSelect">
+                                                <option label=" "></option>
+                                                <option value="Механическая">Механическая</option>
+                                                <option value="Автоматическая">Автоматическая</option>
+                                                <option value="Вариатор">Вариатор</option>
+                                                <option value="Роботизированная">Роботизированная</option>
+                                            </select>
+                                        </label>
+                                    </div>
+                                    <div class="field" data-js="formField">
+                                        <label>
+                                            <select class="field__select" data-placeholder="Состояние" data-js="formSelect">
+                                                <option label=" "></option>
+                                                <option value="Новые">Новые</option>
+                                                <option value="С пробегом">С пробегом</option>
+                                            </select>
+                                        </label>
+                                    </div>
+                                    <div class="field" data-js="formField">
+                                        <label>
+                                            <select class="field__select" data-placeholder="Комплектация" data-js="formSelect">
+                                                <option label=" "></option>
+                                                <option value="Base">Base</option>
+                                                <option value="Comfort">Comfort</option>
+                                                <option value="Sport">Sport</option>
+                                                <option value="Luxe">Luxe</option>
+                                            </select>
+                                        </label>
+                                    </div>
+                                    <div class="field" data-js="formField">
+                                        <label>
+                                            <select class="field__select" data-placeholder="Цвет салона" data-js="formSelect">
+                                                <option label=" "></option>
+                                                <option value="Красный">Красный</option>
+                                                <option value="Зелёный">Зелёный</option>
+                                                <option value="Синий">Синий</option>
+                                                <option value="Белый">Белый</option>
+                                                <option value="Чёрный">Чёрный</option>
+                                            </select>
+                                        </label>
+                                    </div>
+                                    <div class="field" data-js="formField">
+                                        <label>
+                                        <input class="field__input" type="text" placeholder="" data-v-name="date" data-type="date">
+                                        <span class="field__placeholder">Дата предложения</span>
+                                        <span class="field__icon">
+                                        <svg>
+                                        <use xlink:href="img/sprites/sprite.svg#calendar"></use>
+                                        </svg>
+                                        </span>
+                                        </label>
+                                    </div>
+                                .spoiler-form__row(data-js="formSpoilerRow")
+                                    <div class="field" data-js="formField">
+                                        <label>
+                                            <select class="field__select" data-placeholder="Тип двигателя" data-js="formSelect">
+                                                <option label=" "></option>
+                                                <option value="Бензиновый">Бензиновый</option>
+                                                <option value="Дизельный">Дизельный</option>
+                                                <option value="Электрический">Электрический</option>
+                                            </select>
+                                        </label>
+                                    </div>
+                                    <div class="field" data-js="formField">
+                                        <label>
+                                            <select class="field__select" data-placeholder="Тип привода" data-js="formSelect">
+                                                <option label=" "></option>
+                                                <option value="Передний">Передний</option>
+                                                <option value="Задний">Задний</option>
+                                                <option value="Полный">Полный</option>
+                                            </select>
+                                        </label>
+                                    </div>
+                                    <div class="field" data-js="formField">
+                                        <label>
+                                            <select class="field__select" data-placeholder="Класс" data-js="formSelect">
+                                                <option label=" "></option>
+                                                <option value="A">A</option>
+                                                <option value="B">B</option>
+                                                <option value="C">C</option>
+                                                <option value="D">D</option>
+                                                <option value="E">E</option>
+                                                <option value="F">F</option>
+                                                <option value="J">J</option>
+                                                <option value="M">M</option>
+                                                <option value="S">S</option>
+                                            </select>
+                                        </label>
+                                    </div>
+                                    <div class="field" data-js="formField">
+                                        <label>
+                                            <select class="field__select" data-placeholder="Количество владельцев" data-js="formSelect">
+                                                <option label=" "></option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4+">4+</option>
+                                            </select>
+                                        </label>
+                                    </div>
+
+                            .spoiler-form__btns
+                                +btn({
+                                    classes: 'spoiler-form__toggle btn--toggle',
+                                    type: 'button',
+                                    name: '<span class="show">Все параметры</span><span class="hide">Скрыть параметры</span>',
+                                    cMode: 'light-accent',
+                                    sMode: 'small',
+                                    icon: 'filter'
+                                })(data-js="formSpoilerToggle")
+
+                                +btn({
+                                    classes: '',
+                                    type: 'button',
+                                    name: 'Сбросить',
+                                    cMode: 'light-accent',
+                                    sMode: 'small',
+                                    icon: 'close'
+                                })(data-js="formResetBtn")
+
+                                +btn({
+                                    classes: '',
+                                    type: 'button',
+                                    buttonType: 'submit',
+                                    name: 'Показать 73',
+                                    cMode: 'accent',
+                                    sMode: 'small',
+                                })
+
+                    .e-cars__sorts
+                        form.e-cars__sort.form-filter(action="#" data-js="formFilter")
+                            .form-filter__content
+                                <div class="field field--sort" data-js="formField">
+                                    <label>
+                                        <select class="field__select" data-placeholder="Сортировать по цене" data-js="formSelect">
+                                            <option value="Цена по увозрастанию" selected>Цена по возрастанию</option>
+                                            <option value="Цена по убыванию">Цена по убыванию</option>
+                                        </select>
+                                    </label>
+                                </div>
+                                <div class="field field--sort" data-js="formField">
+                                    <label>
+                                        <select class="field__select" data-placeholder="По дате предложения" data-js="formSelect">
+                                            <option value="Сначала новые" selected>Сначала новые</option>
+                                            <option value="Сначала старые">Сначала старые</option>
+                                        </select>
+                                    </label>
+                                </div>
+
+                        +btn({
+                            name: 'Выгрузить в XLS',
+                            icon: 'download',
+                            cMode: "accent",
+                            sMode: 'content'
+                        })
+
+                        button.e-cars__filter-btn(type="button" data-js="catalogFilterOpen")
                             svg
-                                use(xlink:href=`img/sprites/sprite.svg#close`)
-                        .spoiler-form__fields.scrollbar.scrollbar--small(data-js="formSpoilerContent")
-                            .spoiler-form__row(data-js="formSpoilerRow")
-                                <div class="field" data-js="formField">
-                                    <label>
-                                        <select class="field__select" data-placeholder="Марка" data-js="formSelect">
-                                            <option label=" "></option>
-                                            <option value="LiXiang">LiXiang</option>
-                                            <option value="Voyah">Voyah</option>
-                                            <option value="AITO">AITO</option>
-                                            <option value="Chery">Chery</option>
-                                            <option value="Zeekr">Zeekr</option>
-                                            <option value="Audi">Audi</option>
-                                            <option value="Tank">Tank</option>
-                                            <option value="Rox Motor Tech">Rox Motor Tech</option>
-                                        </select>
-                                    </label>
-                                </div>
-                                <div class="field disabled" data-js="formField">
-                                    <label>
-                                        <select class="field__select" data-placeholder="Модель" data-js="formSelect">
-                                            <option label=" "></option>
-                                            <option value="LiXiang L6">LiXiang L6</option>
-                                            <option value="LiXiang L7">LiXiang L7</option>
-                                            <option value="LiXiang L9">LiXiang L9</option>
-                                            <option value="LiXiang L9">LiXiang L9</option>
-                                            <option value="LiXiang Mega">LiXiang Mega</option>
-                                            <option value="LiXiang One">LiXiang One</option>
-                                        </select>
-                                    </label>
-                                </div>
-                                <div class="field field--double" data-js="formField">
-                                    <label>
-                                        <select class="field__select" data-placeholder="Год от" data-js="formSelect">
-                                            <option label=" "></option>
-                                            <option value="2020">2020</option>
-                                            <option value="2021">2021</option>
-                                            <option value="2022">2022</option>
-                                            <option value="2023">2023</option>
-                                            <option value="2024">2024</option>
-                                            <option value="2025">2025</option>
-                                        </select>
-                                    </label>
-                                    <label>
-                                        <select class="field__select field__select--second" data-placeholder="до" data-js="formSelect">
-                                            <option label=" "></option>
-                                            <option value="2021">2021</option>
-                                            <option value="2022">2022</option>
-                                            <option value="2023">2023</option>
-                                            <option value="2024">2024</option>
-                                            <option value="2025">2025</option>
-                                        </select>
-                                    </label>
-                                </div>
-                                <div class="field" data-js="formField">
-                                    <label>
-                                        <select class="field__select" data-placeholder="Цвет" data-js="formSelect">
-                                            <option label=" "></option>
-                                            <option value="Красный">Красный</option>
-                                            <option value="Зелёный">Зелёный</option>
-                                            <option value="Синий">Синий</option>
-                                            <option value="Белый">Белый</option>
-                                            <option value="Чёрный">Чёрный</option>
-                                        </select>
-                                    </label>
-                                </div>
-                            .spoiler-form__row.spoiler-form__row--5(data-js="formSpoilerRow")
-                                <div class="field" data-js="formField">
-                                    <label>
-                                        <select class="field__select" data-placeholder="Коробка передач" data-js="formSelect">
-                                            <option label=" "></option>
-                                            <option value="Механическая">Механическая</option>
-                                            <option value="Автоматическая">Автоматическая</option>
-                                            <option value="Вариатор">Вариатор</option>
-                                            <option value="Роботизированная">Роботизированная</option>
-                                        </select>
-                                    </label>
-                                </div>
-                                <div class="field" data-js="formField">
-                                    <label>
-                                        <select class="field__select" data-placeholder="Состояние" data-js="formSelect">
-                                            <option label=" "></option>
-                                            <option value="Новые">Новые</option>
-                                            <option value="С пробегом">С пробегом</option>
-                                        </select>
-                                    </label>
-                                </div>
-                                <div class="field" data-js="formField">
-                                    <label>
-                                        <select class="field__select" data-placeholder="Комплектация" data-js="formSelect">
-                                            <option label=" "></option>
-                                            <option value="Base">Base</option>
-                                            <option value="Comfort">Comfort</option>
-                                            <option value="Sport">Sport</option>
-                                            <option value="Luxe">Luxe</option>
-                                        </select>
-                                    </label>
-                                </div>
-                                <div class="field" data-js="formField">
-                                    <label>
-                                        <select class="field__select" data-placeholder="Цвет салона" data-js="formSelect">
-                                            <option label=" "></option>
-                                            <option value="Красный">Красный</option>
-                                            <option value="Зелёный">Зелёный</option>
-                                            <option value="Синий">Синий</option>
-                                            <option value="Белый">Белый</option>
-                                            <option value="Чёрный">Чёрный</option>
-                                        </select>
-                                    </label>
-                                </div>
-                                <div class="field" data-js="formField">
-                                    <label>
-                                    <input class="field__input" type="text" placeholder="" data-v-name="date" data-type="date">
-                                    <span class="field__placeholder">Дата предложения</span>
-                                    <span class="field__icon">
-                                    <svg>
-                                    <use xlink:href="img/sprites/sprite.svg#calendar"></use>
-                                    </svg>
+                                use(xlink:href=`img/sprites/sprite.svg#filter`)
+
+                - if(checkProps.isSupplier == true)    
+                    .e-cars__selects(data-js="eCarsSelects")
+                        <div class="field e-cars__checkbox field--checkbox" data-js="eCarsCheckbox">
+                            <label>
+                                <input class="field__input" type="checkbox" placeholder="" data-js="eCarsCheckboxInput">
+                                <span class="fake-checkbox fake-checkbox--text">
+                                    <span class="fake-checkbox__square">
+                                        <svg>
+                                        <use xlink:href="img/sprites/sprite.svg#check"></use>
+                                        </svg>
                                     </span>
-                                    </label>
-                                </div>
-                            .spoiler-form__row(data-js="formSpoilerRow")
-                                <div class="field" data-js="formField">
-                                    <label>
-                                        <select class="field__select" data-placeholder="Тип двигателя" data-js="formSelect">
-                                            <option label=" "></option>
-                                            <option value="Бензиновый">Бензиновый</option>
-                                            <option value="Дизельный">Дизельный</option>
-                                            <option value="Электрический">Электрический</option>
-                                        </select>
-                                    </label>
-                                </div>
-                                <div class="field" data-js="formField">
-                                    <label>
-                                        <select class="field__select" data-placeholder="Тип привода" data-js="formSelect">
-                                            <option label=" "></option>
-                                            <option value="Передний">Передний</option>
-                                            <option value="Задний">Задний</option>
-                                            <option value="Полный">Полный</option>
-                                        </select>
-                                    </label>
-                                </div>
-                                <div class="field" data-js="formField">
-                                    <label>
-                                        <select class="field__select" data-placeholder="Класс" data-js="formSelect">
-                                            <option label=" "></option>
-                                            <option value="A">A</option>
-                                            <option value="B">B</option>
-                                            <option value="C">C</option>
-                                            <option value="D">D</option>
-                                            <option value="E">E</option>
-                                            <option value="F">F</option>
-                                            <option value="J">J</option>
-                                            <option value="M">M</option>
-                                            <option value="S">S</option>
-                                        </select>
-                                    </label>
-                                </div>
-                                <div class="field" data-js="formField">
-                                    <label>
-                                        <select class="field__select" data-placeholder="Количество владельцев" data-js="formSelect">
-                                            <option label=" "></option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4+">4+</option>
-                                        </select>
-                                    </label>
-                                </div>
+                                    <span class="fake-checkbox__text" data-js="eCarsCheckboxText">Выбрано 0</span>
+                                </span>
+                            </label>
+                        </div>
 
-                        .spoiler-form__btns
-
-                            +btn({
-                                classes: 'spoiler-form__toggle btn--toggle',
-                                type: 'button',
-                                name: '<span class="show">Все параметры</span><span class="hide">Скрыть параметры</span>',
-                                cMode: 'light-accent',
-                                sMode: 'small',
-                                icon: 'filter'
-                            })(data-js="formSpoilerToggle")
-
-                            +btn({
-                                classes: '',
-                                type: 'button',
-                                name: 'Сбросить',
-                                cMode: 'light-accent',
-                                sMode: 'small',
-                                icon: 'close'
-                            })(data-js="formResetBtn")
-
-                            +btn({
-                                classes: '',
-                                type: 'button',
-                                buttonType: 'submit',
-                                name: 'Показать 73',
-                                cMode: 'accent',
-                                sMode: 'small',
-                            })
-
-                .e-cars__sorts
-                    form.e-cars__sort.form-filter(action="#" data-js="formFilter")
-                        .form-filter__content
-                            <div class="field field--sort" data-js="formField">
-                                <label>
-                                    <select class="field__select" data-placeholder="Сортировать по цене" data-js="formSelect">
-                                        <option value="Цена по увозрастанию" selected>Цена по возрастанию</option>
-                                        <option value="Цена по убыванию">Цена по убыванию</option>
-                                    </select>
-                                </label>
-                            </div>
-                            <div class="field field--sort" data-js="formField">
-                                <label>
-                                    <select class="field__select" data-placeholder="По дате предложения" data-js="formSelect">
-                                        <option value="Сначала новые" selected>Сначала новые</option>
-                                        <option value="Сначала старые">Сначала старые</option>
-                                    </select>
-                                </label>
-                            </div>
-
-                    +btn({
-                        name: 'Выгрузить в XLS',
-                        icon: 'download',
-                        cMode: "accent",
-                        sMode: 'content'
-                    })
-
-                    button.e-cars__filter-btn(type="button" data-js="catalogFilterOpen")
-                        svg
-                            use(xlink:href=`img/sprites/sprite.svg#filter`)
+                        +btn({
+                            name: 'Отклонить выбранные',
+                            sMode: 'mini',
+                            cMode: 'accent',
+                            icon: 'close'
+                        })
 
                 .e-cars__list
                     - let cardsCount = 0
                     -while(cardsCount < checkProps.cards.length)
                         - let card = checkProps.cards[cardsCount]
-                        .e-cars__card.e-car
-                            .e-car__img
-                                img(src=card.img, alt="")
-                            .e-car__info
-                                .e-car__title.title!= card.title
-                                .e-car__bottom
-                                    - let priceDirection = card.price.direction.length > 0 ? `e-car__price--${card.price.direction}` : ''  
-                                    .e-car__price(class=priceDirection)
-                                        .current!= card.price.current
-                                            - if(card.price.direction.length > 0)
-                                                svg
-                                                    use(xlink:href=`img/sprites/sprite.svg#arrow_dir`)
-                                            - if(card.price.tooltip === true)
-                                                +tooltip({
-                                                    classes: 'tooltip--small',
-                                                    title: '',
-                                                    text: 'Краткая информация о цене'
-                                                })
-                                        - if(card.price.old.length > 0)
-                                            .old!= card.price.old
 
-                                    .e-car__block
-                                        .e-car__row.info-row
-                                            .info-row__title Дата добавления:
-                                            .info-row__value!= card.dateAdded.date
-                                                .info-row__number(class=`info-row__number--${card.dateAdded.status}`)!= card.dateAdded.days
-
-                                        .e-car__row.info-row
-                                            .info-row__title Поставщик:
-                                            .info-row__value!= card.dateAdded.supplier
-                                                .info-row__icon
+                        - if(checkProps.isSupplier == true)
+                            .e-cars__card.e-car.e-car--supplier
+                                <div class="field e-cars__checkbox field--checkbox">
+                                    <label>
+                                        <input class="field__input" type="checkbox" placeholder="" data-js="eCarCheckbox">
+                                        <span class="fake-checkbox fake-checkbox--text">
+                                            <span class="fake-checkbox__square">
+                                                <svg>
+                                                    <use xlink:href="img/sprites/sprite.svg#check"></use>
+                                                </svg>
+                                            </span>
+                                        </span>
+                                    </label>
+                                </div>
+                                .e-car__img
+                                    img(src=card.img, alt="")
+                                .e-car__info
+                                    .e-car__title.title!= card.title
+                                    .e-car__bottom
+                                        - let priceDirection = card.price.direction.length > 0 ? `e-car__price--${card.price.direction}` : ''  
+                                        .e-car__price(class=priceDirection)
+                                            .current!= card.price.current
+                                                - if(card.price.direction.length > 0)
                                                     svg
-                                                        use(xlink:href=`img/sprites/sprite.svg#check`)
+                                                        use(xlink:href=`img/sprites/sprite.svg#arrow_dir`)
+                                                - if(card.price.tooltip === true)
+                                                    +tooltip({
+                                                        classes: 'tooltip--small',
+                                                        title: '',
+                                                        text: 'Краткая информация о цене'
+                                                    })
+                                            - if(card.price.old.length > 0)
+                                                .old!= card.price.old
 
-                            .e-car__block
-                                .e-car__sticker(class=`e-car__sticker--${card.sticker.color}`)!= card.sticker.text
-                                .e-car__row.info-row
-                                    .info-row__title Дата доставки:
-                                    .info-row__value!= card.delivery.date
+                                        .e-car__sticker(class=`e-car__sticker--${card.sticker.color}`)!= card.sticker.text
 
-                                .e-car__flex
+                                .e-car__block
                                     .e-car__row.info-row
-                                        .info-row__title Город:
-                                        .info-row__value!= card.delivery.city
-
+                                        .info-row__title Дата добавления:
+                                        .info-row__value!= card.dateAdded.date
+                                            .info-row__number(class=`info-row__number--${card.dateAdded.status}`)!= card.dateAdded.days
                                     .e-car__row.info-row
-                                        .info-row__title Срок:
-                                        .info-row__value!= card.delivery.term
+                                        .info-row__title Дата доставки:
+                                        .info-row__value!= card.delivery.date
 
-                            .e-car__right
-                                +btn({
-                                    classes: 'e-car__detail',
-                                    name: 'Подробнее',
-                                    sMode: 'mini',
-                                    cMode: 'light-accent'
-                                })
+                                    .e-car__flex
+                                        .e-car__row.info-row
+                                            .info-row__title Город:
+                                            .info-row__value!= card.delivery.city
 
-                                .e-car__btns
+                                        .e-car__row.info-row
+                                            .info-row__title Срок:
+                                            .info-row__value!= card.delivery.term
+
+                                .e-car__right
                                     +btn({
-                                        name: 'Отклонить',
+                                        classes: 'e-car__detail',
+                                        name: 'Подробнее',
                                         sMode: 'mini',
-                                        cMode: 'accent',
-                                        icon: 'close'
-                                    })
-                                    +btn({
-                                        name: 'Выкупить',
-                                        sMode: 'mini',
-                                        cMode: 'accent',
+                                        cMode: 'light-accent'
                                     })
 
+                                    .e-car__btns
+                                        +btn({
+                                            name: 'Отклонить',
+                                            sMode: 'mini',
+                                            cMode: 'accent',
+                                            icon: 'close'
+                                        })
+                                        +btn({
+                                            name: 'Выкупить',
+                                            sMode: 'mini',
+                                            cMode: 'accent',
+                                        })
 
+                        - else
+                            .e-cars__card.e-car
+                                .e-car__img
+                                    img(src=card.img, alt="")
+                                .e-car__info
+                                    .e-car__title.title!= card.title
+                                    .e-car__bottom
+                                        - let priceDirection = card.price.direction.length > 0 ? `e-car__price--${card.price.direction}` : ''  
+                                        .e-car__price(class=priceDirection)
+                                            .current!= card.price.current
+                                                - if(card.price.direction.length > 0)
+                                                    svg
+                                                        use(xlink:href=`img/sprites/sprite.svg#arrow_dir`)
+                                                - if(card.price.tooltip === true)
+                                                    +tooltip({
+                                                        classes: 'tooltip--small',
+                                                        title: '',
+                                                        text: 'Краткая информация о цене'
+                                                    })
+                                            - if(card.price.old.length > 0)
+                                                .old!= card.price.old
+
+                                        .e-car__block
+                                            .e-car__row.info-row
+                                                .info-row__title Дата добавления:
+                                                .info-row__value!= card.dateAdded.date
+                                                    .info-row__number(class=`info-row__number--${card.dateAdded.status}`)!= card.dateAdded.days
+
+                                            .e-car__row.info-row
+                                                .info-row__title Поставщик:
+                                                .info-row__value!= card.dateAdded.supplier
+                                                    .info-row__icon
+                                                        svg
+                                                            use(xlink:href=`img/sprites/sprite.svg#check`)
+
+                                .e-car__block
+                                    .e-car__sticker(class=`e-car__sticker--${card.sticker.color}`)!= card.sticker.text
+                                    .e-car__row.info-row
+                                        .info-row__title Дата доставки:
+                                        .info-row__value!= card.delivery.date
+
+                                    .e-car__flex
+                                        .e-car__row.info-row
+                                            .info-row__title Город:
+                                            .info-row__value!= card.delivery.city
+
+                                        .e-car__row.info-row
+                                            .info-row__title Срок:
+                                            .info-row__value!= card.delivery.term
+
+                                .e-car__right
+                                    +btn({
+                                        classes: 'e-car__detail',
+                                        name: 'Подробнее',
+                                        sMode: 'mini',
+                                        cMode: 'light-accent'
+                                    })
+
+                                    .e-car__btns
+                                        +btn({
+                                            name: 'Отклонить',
+                                            sMode: 'mini',
+                                            cMode: 'accent',
+                                            icon: 'close'
+                                        })
+                                        +btn({
+                                            name: 'Выкупить',
+                                            sMode: 'mini',
+                                            cMode: 'accent',
+                                        })
 
                         - cardsCount++
 

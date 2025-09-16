@@ -1,0 +1,11 @@
+extends ../layouts/default
+
+block variables
+	- const title = "Аналитика"
+	- const footerType = 'supplier'
+	- const headerType = 'supplier'
+
+block content
+	.page-layout(data-js="pageLayout")
+
+		+analytics-list

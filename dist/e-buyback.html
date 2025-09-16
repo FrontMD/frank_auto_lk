@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Каталог автомобилей поставщика</title>
+    <title>Заявки на покупку автомобилей</title>
     <meta name="theme-color" content="#fff">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -138,291 +138,64 @@
                             <use xlink:href="img/sprites/sprite.svg#arrow_angle_right"></use>
                           </svg></span>
                       </li>
-                      <li class="breadcrumbs__item"><a href="javascript:void(0);">База поставщиков</a><span class="breadcrumbs__separator">
-                          <svg>
-                            <use xlink:href="img/sprites/sprite.svg#arrow_angle_right"></use>
-                          </svg></span>
-                      </li>
-                      <li class="breadcrumbs__item breadcrumbs__item--current"><span>Каталог поставщика ООО Рога и Копыта</span>
+                      <li class="breadcrumbs__item breadcrumbs__item--current"><span>Заявки на покупку автомобилей</span>
                       </li>
                     </ul>
                   </div>
                 </div>
           </div>
         </section>
-            <section class="section e-cars" data-js="eCars">
+            <section class="section e-cars">
               <div class="section__container">
                 <div class="section-block e-cars__block">
-                  <div class="title title--24 e-cars__title"><h1>Каталог поставщика ООО Рога и Копыта</h1> <div class="info-row__icon"><svg><use xlink:href="img/sprites/sprite.svg#check"></use></svg></div></div>
-                  <div class="e-cars__filter catalog-filter" data-js="catalogFilter">
-                    <form class="catalog-filter__form spoiler-form" action="#" data-js="formFilter">
-                      <div class="catalog-filter__close" data-js="catalogFilterClose">
-                        <svg>
-                          <use xlink:href="img/sprites/sprite.svg#close"></use>
-                        </svg>
-                      </div>
-                      <div class="spoiler-form__fields scrollbar scrollbar--small" data-js="formSpoilerContent">
-                        <div class="spoiler-form__row" data-js="formSpoilerRow"><div class="field" data-js="formField">
-<label>
-<select class="field__select" data-placeholder="Марка" data-js="formSelect">
-<option label=" "></option>
-<option value="LiXiang">LiXiang</option>
-<option value="Voyah">Voyah</option>
-<option value="AITO">AITO</option>
-<option value="Chery">Chery</option>
-<option value="Zeekr">Zeekr</option>
-<option value="Audi">Audi</option>
-<option value="Tank">Tank</option>
-<option value="Rox Motor Tech">Rox Motor Tech</option>
-</select>
-</label>
-</div>
-<div class="field disabled" data-js="formField">
-<label>
-<select class="field__select" data-placeholder="Модель" data-js="formSelect">
-<option label=" "></option>
-<option value="LiXiang L6">LiXiang L6</option>
-<option value="LiXiang L7">LiXiang L7</option>
-<option value="LiXiang L9">LiXiang L9</option>
-<option value="LiXiang L9">LiXiang L9</option>
-<option value="LiXiang Mega">LiXiang Mega</option>
-<option value="LiXiang One">LiXiang One</option>
-</select>
-</label>
-</div>
-<div class="field field--double" data-js="formField">
-<label>
-<select class="field__select" data-placeholder="Год от" data-js="formSelect">
-<option label=" "></option>
-<option value="2020">2020</option>
-<option value="2021">2021</option>
-<option value="2022">2022</option>
-<option value="2023">2023</option>
-<option value="2024">2024</option>
-<option value="2025">2025</option>
-</select>
-</label>
-<label>
-<select class="field__select field__select--second" data-placeholder="до" data-js="formSelect">
-<option label=" "></option>
-<option value="2021">2021</option>
-<option value="2022">2022</option>
-<option value="2023">2023</option>
-<option value="2024">2024</option>
-<option value="2025">2025</option>
-</select>
-</label>
-</div>
-<div class="field" data-js="formField">
-<label>
-<select class="field__select" data-placeholder="Цвет" data-js="formSelect">
-<option label=" "></option>
-<option value="Красный">Красный</option>
-<option value="Зелёный">Зелёный</option>
-<option value="Синий">Синий</option>
-<option value="Белый">Белый</option>
-<option value="Чёрный">Чёрный</option>
-</select>
-</label>
-</div>
-                        </div>
-                        <div class="spoiler-form__row spoiler-form__row--5" data-js="formSpoilerRow"><div class="field" data-js="formField">
-<label>
-<select class="field__select" data-placeholder="Коробка передач" data-js="formSelect">
-<option label=" "></option>
-<option value="Механическая">Механическая</option>
-<option value="Автоматическая">Автоматическая</option>
-<option value="Вариатор">Вариатор</option>
-<option value="Роботизированная">Роботизированная</option>
-</select>
-</label>
-</div>
-<div class="field" data-js="formField">
-<label>
-<select class="field__select" data-placeholder="Состояние" data-js="formSelect">
-<option label=" "></option>
-<option value="Новые">Новые</option>
-<option value="С пробегом">С пробегом</option>
-</select>
-</label>
-</div>
-<div class="field" data-js="formField">
-<label>
-<select class="field__select" data-placeholder="Комплектация" data-js="formSelect">
-<option label=" "></option>
-<option value="Base">Base</option>
-<option value="Comfort">Comfort</option>
-<option value="Sport">Sport</option>
-<option value="Luxe">Luxe</option>
-</select>
-</label>
-</div>
-<div class="field" data-js="formField">
-<label>
-<select class="field__select" data-placeholder="Цвет салона" data-js="formSelect">
-<option label=" "></option>
-<option value="Красный">Красный</option>
-<option value="Зелёный">Зелёный</option>
-<option value="Синий">Синий</option>
-<option value="Белый">Белый</option>
-<option value="Чёрный">Чёрный</option>
-</select>
-</label>
-</div>
-<div class="field" data-js="formField">
-<label>
-<input class="field__input" type="text" placeholder="" data-v-name="date" data-type="date">
-<span class="field__placeholder">Дата предложения</span>
-<span class="field__icon">
-<svg>
-<use xlink:href="img/sprites/sprite.svg#calendar"></use>
-</svg>
-</span>
-</label>
-</div>
-                        </div>
-                        <div class="spoiler-form__row" data-js="formSpoilerRow"><div class="field" data-js="formField">
-<label>
-<select class="field__select" data-placeholder="Тип двигателя" data-js="formSelect">
-<option label=" "></option>
-<option value="Бензиновый">Бензиновый</option>
-<option value="Дизельный">Дизельный</option>
-<option value="Электрический">Электрический</option>
-</select>
-</label>
-</div>
-<div class="field" data-js="formField">
-<label>
-<select class="field__select" data-placeholder="Тип привода" data-js="formSelect">
-<option label=" "></option>
-<option value="Передний">Передний</option>
-<option value="Задний">Задний</option>
-<option value="Полный">Полный</option>
-</select>
-</label>
-</div>
-<div class="field" data-js="formField">
-<label>
-<select class="field__select" data-placeholder="Класс" data-js="formSelect">
-<option label=" "></option>
-<option value="A">A</option>
-<option value="B">B</option>
-<option value="C">C</option>
-<option value="D">D</option>
-<option value="E">E</option>
-<option value="F">F</option>
-<option value="J">J</option>
-<option value="M">M</option>
-<option value="S">S</option>
-</select>
-</label>
-</div>
-<div class="field" data-js="formField">
-<label>
-<select class="field__select" data-placeholder="Количество владельцев" data-js="formSelect">
-<option label=" "></option>
-<option value="1">1</option>
-<option value="2">2</option>
-<option value="3">3</option>
-<option value="4+">4+</option>
-</select>
-</label>
-</div>
-                        </div>
-                      </div>
-                      <div class="spoiler-form__btns">
-                            <button class="btn spoiler-form__toggle btn--toggle btn--light-accent btn--small" type="button" data-js="formSpoilerToggle">
-                              <svg>
-                                <use xlink:href="img/sprites/sprite.svg#filter"></use>
-                              </svg><span class="btn__text"><span class="show">Все параметры</span><span class="hide">Скрыть параметры</span></span>
-                            </button>
-                            <button class="btn  btn--light-accent btn--small" type="button" data-js="formResetBtn">
-                              <svg>
-                                <use xlink:href="img/sprites/sprite.svg#close"></use>
-                              </svg><span class="btn__text">Сбросить</span>
-                            </button>
-                            <button class="btn  btn--accent btn--small" type="submit"><span class="btn__text">Показать 73</span>
-                            </button>
-                      </div>
-                    </form>
-                  </div>
-                  <div class="e-cars__sorts">
-                    <form class="e-cars__sort form-filter" action="#" data-js="formFilter">
-                      <div class="form-filter__content"><div class="field field--sort" data-js="formField">
-<label>
-<select class="field__select" data-placeholder="Сортировать по цене" data-js="formSelect">
-<option value="Цена по увозрастанию" selected>Цена по возрастанию</option>
-<option value="Цена по убыванию">Цена по убыванию</option>
-</select>
-</label>
-</div>
-<div class="field field--sort" data-js="formField">
-<label>
-<select class="field__select" data-placeholder="По дате предложения" data-js="formSelect">
-<option value="Сначала новые" selected>Сначала новые</option>
-<option value="Сначала старые">Сначала старые</option>
-</select>
-</label>
-</div>
-                      </div>
-                    </form><a class="btn  btn--accent btn--content" href="javascript:void(0)">
-                          <svg>
-                            <use xlink:href="img/sprites/sprite.svg#download"></use>
-                          </svg><span class="btn__text">Выгрузить в XLS</span></a>
-                    <button class="e-cars__filter-btn" type="button" data-js="catalogFilterOpen">
-                      <svg>
-                        <use xlink:href="img/sprites/sprite.svg#filter"></use>
-                      </svg>
-                    </button>
-                  </div>
-                  <div class="e-cars__selects" data-js="eCarsSelects"><div class="field e-cars__checkbox field--checkbox" data-js="eCarsCheckbox">
-<label>
-<input class="field__input" type="checkbox" placeholder="" data-js="eCarsCheckboxInput">
-<span class="fake-checkbox fake-checkbox--text">
-<span class="fake-checkbox__square">
-<svg>
-<use xlink:href="img/sprites/sprite.svg#check"></use>
-</svg>
-</span>
-<span class="fake-checkbox__text" data-js="eCarsCheckboxText">Выбрано 0</span>
-</span>
-</label>
-</div><a class="btn  btn--accent btn--mini" href="javascript:void(0)">
-                          <svg>
-                            <use xlink:href="img/sprites/sprite.svg#close"></use>
-                          </svg><span class="btn__text">Отклонить выбранные</span></a>
-                  </div>
+                  <div class="title title--24 e-cars__title"><h1>Заявки на покупку автомобилей</h1></div>
+                  <div class="e-cars__statuses"></div>
                   <div class="e-cars__list">
-                    <div class="e-cars__card e-car e-car--supplier"><div class="field e-cars__checkbox field--checkbox">
-<label>
-<input class="field__input" type="checkbox" placeholder="" data-js="eCarCheckbox">
-<span class="fake-checkbox fake-checkbox--text">
-<span class="fake-checkbox__square">
-<svg>
-<use xlink:href="img/sprites/sprite.svg#check"></use>
-</svg>
-</span>
-</span>
-</label>
-</div>
+                    <div class="e-cars__card e-car">
                       <div class="e-car__img"><img src="img/catalog-product/cp_intro_1.webp" alt=""></div>
                       <div class="e-car__info">
                         <div class="e-car__title title">Lixiang L7 Pro 449 л.с. Hybrid Turbo 4WD</div>
                         <div class="e-car__bottom">
-                          <div class="e-car__price">
+                          <div class="e-car__price e-car__price--down">
                             <div class="current">15 000 000 ₽
+                              <svg>
+                                <use xlink:href="img/sprites/sprite.svg#arrow_dir"></use>
+                              </svg>
+                                  <div class="tooltip tooltip--small">
+                                    <div class="tooltip__header">
+                                      <div class="tooltip__icon">
+                                        <svg>
+                                          <use xlink:href="img/sprites/sprite.svg#tooltip"></use>
+                                        </svg>
+                                      </div>
+                                    </div>
+                                    <div class="tooltip__tooltip">Краткая информация о цене</div>
+                                  </div>
+                            </div>
+                            <div class="old">18 000 000 ₽</div>
+                          </div>
+                          <div class="e-car__block">
+                            <div class="e-car__row info-row">
+                              <div class="info-row__title">Дата добавления:</div>
+                              <div class="info-row__value">29.08.2025
+                                <div class="info-row__number info-row__number--green">1 день</div>
+                              </div>
+                            </div>
+                            <div class="e-car__row info-row">
+                              <div class="info-row__title">Поставщик:</div>
+                              <div class="info-row__value">ИП Иванов Виктор Алексеевич
+                                <div class="info-row__icon">
+                                  <svg>
+                                    <use xlink:href="img/sprites/sprite.svg#check"></use>
+                                  </svg>
+                                </div>
+                              </div>
                             </div>
                           </div>
-                          <div class="e-car__sticker e-car__sticker--blue">В наличии</div>
                         </div>
                       </div>
                       <div class="e-car__block">
-                        <div class="e-car__row info-row">
-                          <div class="info-row__title">Дата добавления:</div>
-                          <div class="info-row__value">29.08.2025
-                            <div class="info-row__number info-row__number--green">1 день</div>
-                          </div>
-                        </div>
+                        <div class="e-car__sticker e-car__sticker--blue">В наличии</div>
                         <div class="e-car__row info-row">
                           <div class="info-row__title">Дата доставки:</div>
                           <div class="info-row__value">15.08.2025</div>
@@ -446,36 +219,51 @@
                         </div>
                       </div>
                     </div>
-                    <div class="e-cars__card e-car e-car--supplier"><div class="field e-cars__checkbox field--checkbox">
-<label>
-<input class="field__input" type="checkbox" placeholder="" data-js="eCarCheckbox">
-<span class="fake-checkbox fake-checkbox--text">
-<span class="fake-checkbox__square">
-<svg>
-<use xlink:href="img/sprites/sprite.svg#check"></use>
-</svg>
-</span>
-</span>
-</label>
-</div>
+                    <div class="e-cars__card e-car">
                       <div class="e-car__img"><img src="img/catalog-product/cp_intro_1.webp" alt=""></div>
                       <div class="e-car__info">
                         <div class="e-car__title title">Lixiang L7 Pro 449 л.с. Hybrid Turbo 4WD</div>
                         <div class="e-car__bottom">
-                          <div class="e-car__price">
+                          <div class="e-car__price e-car__price--up">
                             <div class="current">15 000 000 ₽
+                              <svg>
+                                <use xlink:href="img/sprites/sprite.svg#arrow_dir"></use>
+                              </svg>
+                                  <div class="tooltip tooltip--small">
+                                    <div class="tooltip__header">
+                                      <div class="tooltip__icon">
+                                        <svg>
+                                          <use xlink:href="img/sprites/sprite.svg#tooltip"></use>
+                                        </svg>
+                                      </div>
+                                    </div>
+                                    <div class="tooltip__tooltip">Краткая информация о цене</div>
+                                  </div>
+                            </div>
+                            <div class="old">10 000 000 ₽</div>
+                          </div>
+                          <div class="e-car__block">
+                            <div class="e-car__row info-row">
+                              <div class="info-row__title">Дата добавления:</div>
+                              <div class="info-row__value">29.08.2025
+                                <div class="info-row__number info-row__number--green">1 день</div>
+                              </div>
+                            </div>
+                            <div class="e-car__row info-row">
+                              <div class="info-row__title">Поставщик:</div>
+                              <div class="info-row__value">ООО Рога и Копыта
+                                <div class="info-row__icon">
+                                  <svg>
+                                    <use xlink:href="img/sprites/sprite.svg#check"></use>
+                                  </svg>
+                                </div>
+                              </div>
                             </div>
                           </div>
-                          <div class="e-car__sticker e-car__sticker--blue">В наличии</div>
                         </div>
                       </div>
                       <div class="e-car__block">
-                        <div class="e-car__row info-row">
-                          <div class="info-row__title">Дата добавления:</div>
-                          <div class="info-row__value">29.08.2025
-                            <div class="info-row__number info-row__number--green">1 день</div>
-                          </div>
-                        </div>
+                        <div class="e-car__sticker e-car__sticker--red">Нет в наличии</div>
                         <div class="e-car__row info-row">
                           <div class="info-row__title">Дата доставки:</div>
                           <div class="info-row__value">15.08.2025</div>
@@ -499,18 +287,7 @@
                         </div>
                       </div>
                     </div>
-                    <div class="e-cars__card e-car e-car--supplier"><div class="field e-cars__checkbox field--checkbox">
-<label>
-<input class="field__input" type="checkbox" placeholder="" data-js="eCarCheckbox">
-<span class="fake-checkbox fake-checkbox--text">
-<span class="fake-checkbox__square">
-<svg>
-<use xlink:href="img/sprites/sprite.svg#check"></use>
-</svg>
-</span>
-</span>
-</label>
-</div>
+                    <div class="e-cars__card e-car">
                       <div class="e-car__img"><img src="img/catalog-product/cp_intro_1.webp" alt=""></div>
                       <div class="e-car__info">
                         <div class="e-car__title title">Lixiang L7 Pro 449 л.с. Hybrid Turbo 4WD</div>
@@ -519,16 +296,28 @@
                             <div class="current">15 000 000 ₽
                             </div>
                           </div>
-                          <div class="e-car__sticker e-car__sticker--blue">В наличии</div>
+                          <div class="e-car__block">
+                            <div class="e-car__row info-row">
+                              <div class="info-row__title">Дата добавления:</div>
+                              <div class="info-row__value">29.08.2025
+                                <div class="info-row__number info-row__number--green">1 день</div>
+                              </div>
+                            </div>
+                            <div class="e-car__row info-row">
+                              <div class="info-row__title">Поставщик:</div>
+                              <div class="info-row__value">ИП Иванов Виктор Алексеевич
+                                <div class="info-row__icon">
+                                  <svg>
+                                    <use xlink:href="img/sprites/sprite.svg#check"></use>
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                       <div class="e-car__block">
-                        <div class="e-car__row info-row">
-                          <div class="info-row__title">Дата добавления:</div>
-                          <div class="info-row__value">29.08.2025
-                            <div class="info-row__number info-row__number--green">1 день</div>
-                          </div>
-                        </div>
+                        <div class="e-car__sticker e-car__sticker--red">Нет в наличии</div>
                         <div class="e-car__row info-row">
                           <div class="info-row__title">Дата доставки:</div>
                           <div class="info-row__value">15.08.2025</div>
@@ -552,36 +341,47 @@
                         </div>
                       </div>
                     </div>
-                    <div class="e-cars__card e-car e-car--supplier"><div class="field e-cars__checkbox field--checkbox">
-<label>
-<input class="field__input" type="checkbox" placeholder="" data-js="eCarCheckbox">
-<span class="fake-checkbox fake-checkbox--text">
-<span class="fake-checkbox__square">
-<svg>
-<use xlink:href="img/sprites/sprite.svg#check"></use>
-</svg>
-</span>
-</span>
-</label>
-</div>
+                    <div class="e-cars__card e-car">
                       <div class="e-car__img"><img src="img/catalog-product/cp_intro_1.webp" alt=""></div>
                       <div class="e-car__info">
                         <div class="e-car__title title">Lixiang L7 Pro 449 л.с. Hybrid Turbo 4WD</div>
                         <div class="e-car__bottom">
                           <div class="e-car__price">
                             <div class="current">15 000 000 ₽
+                                  <div class="tooltip tooltip--small">
+                                    <div class="tooltip__header">
+                                      <div class="tooltip__icon">
+                                        <svg>
+                                          <use xlink:href="img/sprites/sprite.svg#tooltip"></use>
+                                        </svg>
+                                      </div>
+                                    </div>
+                                    <div class="tooltip__tooltip">Краткая информация о цене</div>
+                                  </div>
                             </div>
                           </div>
-                          <div class="e-car__sticker e-car__sticker--blue">В наличии</div>
+                          <div class="e-car__block">
+                            <div class="e-car__row info-row">
+                              <div class="info-row__title">Дата добавления:</div>
+                              <div class="info-row__value">29.08.2025
+                                <div class="info-row__number info-row__number--green">1 день</div>
+                              </div>
+                            </div>
+                            <div class="e-car__row info-row">
+                              <div class="info-row__title">Поставщик:</div>
+                              <div class="info-row__value">ООО Рога и Копыта
+                                <div class="info-row__icon">
+                                  <svg>
+                                    <use xlink:href="img/sprites/sprite.svg#check"></use>
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                       <div class="e-car__block">
-                        <div class="e-car__row info-row">
-                          <div class="info-row__title">Дата добавления:</div>
-                          <div class="info-row__value">29.08.2025
-                            <div class="info-row__number info-row__number--green">1 день</div>
-                          </div>
-                        </div>
+                        <div class="e-car__sticker e-car__sticker--blue">В наличии</div>
                         <div class="e-car__row info-row">
                           <div class="info-row__title">Дата доставки:</div>
                           <div class="info-row__value">15.08.2025</div>
@@ -605,36 +405,47 @@
                         </div>
                       </div>
                     </div>
-                    <div class="e-cars__card e-car e-car--supplier"><div class="field e-cars__checkbox field--checkbox">
-<label>
-<input class="field__input" type="checkbox" placeholder="" data-js="eCarCheckbox">
-<span class="fake-checkbox fake-checkbox--text">
-<span class="fake-checkbox__square">
-<svg>
-<use xlink:href="img/sprites/sprite.svg#check"></use>
-</svg>
-</span>
-</span>
-</label>
-</div>
+                    <div class="e-cars__card e-car">
                       <div class="e-car__img"><img src="img/catalog-product/cp_intro_1.webp" alt=""></div>
                       <div class="e-car__info">
                         <div class="e-car__title title">Lixiang L7 Pro 449 л.с. Hybrid Turbo 4WD</div>
                         <div class="e-car__bottom">
                           <div class="e-car__price">
                             <div class="current">15 000 000 ₽
+                                  <div class="tooltip tooltip--small">
+                                    <div class="tooltip__header">
+                                      <div class="tooltip__icon">
+                                        <svg>
+                                          <use xlink:href="img/sprites/sprite.svg#tooltip"></use>
+                                        </svg>
+                                      </div>
+                                    </div>
+                                    <div class="tooltip__tooltip">Краткая информация о цене</div>
+                                  </div>
                             </div>
                           </div>
-                          <div class="e-car__sticker e-car__sticker--blue">В наличии</div>
+                          <div class="e-car__block">
+                            <div class="e-car__row info-row">
+                              <div class="info-row__title">Дата добавления:</div>
+                              <div class="info-row__value">29.08.2025
+                                <div class="info-row__number info-row__number--green">1 день</div>
+                              </div>
+                            </div>
+                            <div class="e-car__row info-row">
+                              <div class="info-row__title">Поставщик:</div>
+                              <div class="info-row__value">ИП Иванов Виктор Алексеевич
+                                <div class="info-row__icon">
+                                  <svg>
+                                    <use xlink:href="img/sprites/sprite.svg#check"></use>
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                       <div class="e-car__block">
-                        <div class="e-car__row info-row">
-                          <div class="info-row__title">Дата добавления:</div>
-                          <div class="info-row__value">29.08.2025
-                            <div class="info-row__number info-row__number--green">1 день</div>
-                          </div>
-                        </div>
+                        <div class="e-car__sticker e-car__sticker--blue">В наличии</div>
                         <div class="e-car__row info-row">
                           <div class="info-row__title">Дата доставки:</div>
                           <div class="info-row__value">15.08.2025</div>
@@ -658,18 +469,7 @@
                         </div>
                       </div>
                     </div>
-                    <div class="e-cars__card e-car e-car--supplier"><div class="field e-cars__checkbox field--checkbox">
-<label>
-<input class="field__input" type="checkbox" placeholder="" data-js="eCarCheckbox">
-<span class="fake-checkbox fake-checkbox--text">
-<span class="fake-checkbox__square">
-<svg>
-<use xlink:href="img/sprites/sprite.svg#check"></use>
-</svg>
-</span>
-</span>
-</label>
-</div>
+                    <div class="e-cars__card e-car">
                       <div class="e-car__img"><img src="img/catalog-product/cp_intro_1.webp" alt=""></div>
                       <div class="e-car__info">
                         <div class="e-car__title title">Lixiang L7 Pro 449 л.с. Hybrid Turbo 4WD</div>
@@ -678,16 +478,28 @@
                             <div class="current">15 000 000 ₽
                             </div>
                           </div>
-                          <div class="e-car__sticker e-car__sticker--blue">В наличии</div>
+                          <div class="e-car__block">
+                            <div class="e-car__row info-row">
+                              <div class="info-row__title">Дата добавления:</div>
+                              <div class="info-row__value">29.08.2025
+                                <div class="info-row__number info-row__number--green">1 день</div>
+                              </div>
+                            </div>
+                            <div class="e-car__row info-row">
+                              <div class="info-row__title">Поставщик:</div>
+                              <div class="info-row__value">ООО Ромашка
+                                <div class="info-row__icon">
+                                  <svg>
+                                    <use xlink:href="img/sprites/sprite.svg#check"></use>
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                       <div class="e-car__block">
-                        <div class="e-car__row info-row">
-                          <div class="info-row__title">Дата добавления:</div>
-                          <div class="info-row__value">29.08.2025
-                            <div class="info-row__number info-row__number--green">1 день</div>
-                          </div>
-                        </div>
+                        <div class="e-car__sticker e-car__sticker--red">Нет в наличии</div>
                         <div class="e-car__row info-row">
                           <div class="info-row__title">Дата доставки:</div>
                           <div class="info-row__value">15.08.2025</div>

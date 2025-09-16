@@ -1,0 +1,105 @@
+.analytics-list {
+
+    &__list {
+        margin-top: 22px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    &__card {
+        flex: 1 1 auto;
+        width: 100%;
+        max-width: calc((100% - 12px) / 2);
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        background-color: $c-white;
+        border-radius: 16px;
+        overflow: hidden;
+        padding: 20px;
+        box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1), 0px 1px 2px 0px rgba(0, 0, 0, 0.06);
+        border: 1px solid #E4E4E7;
+
+        @include max(tablet-small) {
+            padding: 10px;
+            border-radius: 8px;
+            gap: 10px;
+        }
+
+        @include max(mobile) {
+            max-width: 100%;
+        }
+
+        &--small {
+            @include min(tablet) {
+                max-width: calc((100% - 24px) / 3);
+            }
+        }
+    }
+
+    &__img {
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 64px;
+        height: 64px;
+        background-color: #EFF6FF;
+        border-radius: 100%;
+
+        @include max(tablet-small) {
+            width: 50px;
+            height: 50px;
+        }
+
+        img {
+            width: 50%;
+            height: 50%;
+            object-fit: contain;
+        }
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+        margin-top: 16px;
+        margin-bottom: 16px;
+
+        @include max(tablet) {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+    }
+
+    &__subtitle {
+        font-family: $ff-inter;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 150%;
+        letter-spacing: 0;
+        color: $c-text;
+
+        @include max(laptop-small) {
+            font-size: 18px;
+        }
+
+        @include max(mobile) {
+            font-size: 16px;
+        }
+    }
+
+    &__text {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 150%;
+        letter-spacing: 0;
+        color: #6B7280;
+
+        @include max(mobile) {
+            font-size: 14px;
+        }
+    }
+}

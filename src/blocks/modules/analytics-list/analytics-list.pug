@@ -1,0 +1,63 @@
+-
+    const defaultAnalyticsListProps = {
+        classes: '',
+        title: '<h1>Аналитика</h1>',
+        cards: [
+            {
+                title: 'Lixiang L7 Pro 449 л.с. Hybrid Turbo 4WD',
+                text: 'Последняя продажа',
+                icon: 'img/analytics/card_1.svg',
+                size: ''
+            },
+            {
+                title: 'Lixiang',
+                text: 'Чаще продаете',
+                icon: 'img/analytics/card_2.svg',
+                size: ''
+            },
+            {
+                title: '1 136 000 000 ₽',
+                text: 'Сумма продаж',
+                icon: 'img/analytics/card_3.svg',
+                size: 'small'
+            },
+            {
+                title: '36 000 000 ₽',
+                text: 'Самая дорогая сделка',
+                icon: 'img/analytics/card_4.svg',
+                size: 'small'
+            },
+            {
+                title: '366',
+                text: 'Всего продано автомобилей',
+                icon: 'img/analytics/card_5.svg',
+                size: 'small'
+            },
+        ],
+    }
+
+mixin analytics-list(props= defaultAnalyticsListProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultAnalyticsListProps.classes,
+            title: props.title ? props.title : defaultAnalyticsListProps.title,
+            cards: props.cards ? props.cards : defaultCommonListProps.cards,
+        }
+
+    section.section.analytics-list(class= checkProps.classes)&attributes(attributes)
+        .section__container
+            .section-block.analytics-list__block
+                .title.title--24.analytics-list__title!= checkProps.title
+                .analytics-list__list
+                    - let cardsCount = 0
+                    -while(cardsCount < checkProps.cards.length)
+                        - let card = checkProps.cards[cardsCount]
+                        - let sizeClass = card.size.length > 0 ? `analytics-list__card--${card.size}` : ''
+                        .analytics-list__card(class= sizeClass)
+                            .analytics-list__img
+                                img(src=card.icon alt="")
+                            .analytics-list__info
+                                .analytics-list__text!= card.text
+                                .analytics-list__subtitle.title!= card.title
+
+                        - cardsCount++

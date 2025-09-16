@@ -1,0 +1,30 @@
+extends ../layouts/default
+
+block variables
+    - const title = "Заявки на покупку автомобилей"
+    - const footerType = 'employee'
+    - const headerType = 'employee'
+
+block content
+    .page-layout(data-js="pageLayout")
+
+        section.section.section--bc
+            .section__container.section__content
+                +breadcrumbs({
+                    items: [
+                        {
+                            name: 'Личный кабинет',
+                            link: 'javascript:void(0);'
+                        },
+                        {
+                            name: 'Заявки на покупку автомобилей',
+                            link: 'javascript:void(0);'
+                        }
+                    ],
+                })
+
+        +e-cars({
+            title: '<h1>Заявки на покупку автомобилей</h1>',
+            isBuyback: true,
+
+        })
