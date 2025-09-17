@@ -87,28 +87,6 @@
         }
     }
 
-    /*&--bordered {
-        color: $c-accent;
-        background-color: transparent;
-        border: 1px solid $c-accent;
-        transition: all $tr-time;
-        border-radius: $br-btn-input;
-
-        svg {
-            color: $c-accent;
-            transition: all $tr-time;
-        }
-
-        &:hover {
-            border-color: $c-accent-hover;
-            color: $c-accent-hover;
-
-            svg {
-                color: $c-accent-hover;
-            }
-        }
-    }*/
-
     &--grey {
         color: $c-white;
         background-color: $c-grey;
@@ -119,89 +97,6 @@
             color: $c-white;
         }
     }
-
-    /*&--noborder {
-        border: none;
-        transition: color $tr-time linear;
-
-        svg {
-            color: #4e4e4e;
-            transition: color $tr-time linear;
-            margin-bottom: 3px;
-        }
-
-        &:hover {
-            color: $c-accent-hover;
-
-            svg {
-                color: $c-accent-hover;
-            }
-        }
-    }
-
-    &--link {
-        width: fit-content;
-        padding: 0;
-        color: $c-text;
-        font-weight: 400;
-        font-size: 13px;
-        line-height: 1em;
-        gap: 10px;
-
-        .btn__text {
-            white-space: nowrap;
-        }
-
-        svg {
-            width: 20px;
-            height: 20px;
-        }
-    }
-
-
-    &--share {
-        border: none;
-        transition: color $tr-time linear;
-        color: $c-accent;
-        font-size: 16px;
-
-        svg {
-            color: $c-accent;
-            transition: color $tr-time linear;
-            width: 24px;
-            height: 24px;
-        }
-
-        &:hover {
-            color: $c-accent-hover;
-
-            svg {
-                color: $c-accent-hover;
-            }
-        }
-    }
-
-    &--238 {
-        width: fit-content;
-        min-width: 238px;
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
-    &--155 {
-        width: fit-content;
-        min-width: 155px;
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
-    &--165 {
-        width: fit-content;
-        min-width: 165px;
-        padding-left: 20px;
-        padding-right: 20px;
-    }*/
-
 
     &--small {
         width: fit-content;

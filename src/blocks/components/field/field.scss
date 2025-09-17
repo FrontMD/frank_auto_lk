@@ -21,14 +21,11 @@
         .field__error {
             display: block;
         }
-    }
 
-    /*&__title {
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 1em;
-        color: $c-text;
-    }*/
+        .field__note {
+            margin-top: 12px;
+        }
+    }
 
     &__input:focus~&__placeholder,
     &__input:not(:placeholder-shown)~&__placeholder,
@@ -61,6 +58,15 @@
             font-size: 14px;
             left: 12px;
         }
+    }
+
+    &__note {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 150%;
+        letter-spacing: 0;
+        color: #6B7280;
+        margin-top: 4px;
     }
 
     &__textarea~&__placeholder {
@@ -790,12 +796,3 @@
         }
     }
 }
-
-/*.field {
-
-    &--white &__input,
-    &--white &__textarea,
-    &--white .select2 {
-        background-color: $c-white;
-    }
-}*/

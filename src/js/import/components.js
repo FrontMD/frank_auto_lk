@@ -7,7 +7,6 @@
 @@include("../../blocks/components/spoiler/spoiler.js")
 
 document.addEventListener('DOMContentLoaded', () => {
-    fieldsController();
     selects();
     spoilers();
     catalogFilter();
