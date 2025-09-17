@@ -1,0 +1,82 @@
+.s-problem {
+
+    &__attention {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 16px;
+        background-color: $c-status-lred;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 150%;
+        letter-spacing: 0;
+        color: $c-text;
+        border-radius: 16px;
+
+        svg {
+            width: 20px;
+            height: 20px;
+            color: $c-status-red
+        }
+    }
+
+    &__content {
+        display: flex;
+        align-items: flex-start;
+        gap: 40px;
+        margin-top: 20px;
+
+        @include max(laptop-small) {
+            gap: 24px;
+        }
+
+        @include max(tablet) {
+            flex-direction: column;
+            align-items: stretch;
+        }
+    }
+
+    &__left {
+        flex: 0 0 38.8%;
+        min-width: 360px;
+
+        @include max(mobile) {
+            min-width: auto;
+        }
+    }
+
+    &__right {
+        flex: 1 1 61.2%;
+        padding-top: 32px;
+
+        @include max(tablet) {
+            padding-top: 0;
+        }
+    }
+
+    &__title {
+        font-weight: 700;
+    }
+
+    .form__fields {
+        margin-top: 20px;
+        margin-bottom: 0;
+    }
+
+    &__btns {
+        display: flex;
+        align-items: stretch;
+        gap: 20px;
+        margin-top: 40px;
+
+        @include max(mobile) {
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .btn {
+            flex: 1 1 50%;
+        }
+    }
+}

@@ -132,7 +132,14 @@ function validation() {
                                 } else {
                                     error(input, 'Необходимо ознакомиться и дать согласие').set()
                                 }
-                                break                            
+                                break
+                            case 'file':
+                                if (valueField.length > 0) {
+                                    error(input).remove()
+                                } else {
+                                    error(input, 'Необходимо прикрепить файл').set()
+                                }
+                                break                          
                             default:
                                 if (valueField.length !== 0) {
                                     error(input).remove()

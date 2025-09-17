@@ -1,0 +1,115 @@
+.field-file {
+    position: relative;
+    display: flex;
+    gap: 12px;
+    width: 100%;
+    padding: 0;
+    border: none;
+
+    &.field--invalid {
+        .field-file__fakeinput {
+            border-color: $c-status-red;
+        }
+
+        .field-file__error {
+            display: block;
+        }
+    }
+
+    &--full {
+        .field-file__fakeinput {
+            padding-top: 24px;
+            padding-bottom: 6px;
+
+            @include max(mobile) {
+                padding-top: 19px;
+                padding-bottom: 3px;
+            }
+        }
+
+        .field-file__placeholder {
+            font-size: 12px;
+            top: 6px;
+            transform: translateY(0);
+
+            @include max(mobile) {
+                font-size: 10px;
+                top: 3px;
+            }
+        }
+    }
+
+    &__fakeinput {
+        flex: 1 1 auto;
+        width: 100%;
+        padding: 15px;
+        font-family: $ff-inter;
+        font-size: 16px;
+        line-height: 1.5em;
+        font-weight: 600;
+        outline: none;
+        color: $c-text;
+        background-color: $c-bg-input;
+        border-radius: $br-btn-input;
+        border: 1px solid $c-bg-input;
+        transition: all $tr-time linear;
+        min-height: 56px;
+
+        @include max(mobile) {
+            font-size: 14px;
+            padding: 11px;
+            min-height: 48px;
+        }
+    }
+
+    &__placeholder {
+        position: absolute;
+        top: 50%;
+        left: 17px;
+        transform: translateY(-50%);
+        font-family: $ff-inter;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        letter-spacing: 0;
+        color: $c-input-grey;
+        transition: all 0.2s linear;
+
+        @include max(mobile) {
+            font-size: 14px;
+            left: 12px;
+        }
+    }
+
+    &__error {
+        position: absolute;
+        top: calc(100% + 2px);
+        left: 0;
+        width: 100%;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 1.18em;
+        color: $c-status-red;
+        display: none;
+    }
+
+    &__btn.btn {
+        flex: 0 0 auto;
+
+        @include max(xs) {
+            .btn__text {
+                display: none;
+            }
+        }
+
+    }
+
+    &__input {
+        position: absolute;
+        width: 0;
+        height: 0;
+        overflow: hidden;
+        opacity: 0;
+        z-index: -10;
+    }
+}

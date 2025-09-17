@@ -1,0 +1,68 @@
+-
+    const defaultFieldPhotosProps = {
+        classes: '',
+        title: '',
+        placeholder: '',
+        id: '',
+        inputAttr: ''
+    }
+
+mixin field-photos(props = defaultFieldPhotosProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultFieldPhotosProps.classes,
+            title: props.title ? props.title : defaultFieldPhotosProps.title,
+            placeholder: props.placeholder ? props.placeholder : defaultFieldPhotosProps.placeholder,
+            id: props.id ? props.id : defaultFieldPhotosProps.id,
+            inputAttr: props.inputAttr ? props.inputAttr : defaultFieldPhotosProps.inputAttr,
+        }
+
+    .field-photos(class= checkProps.classes data-js="fieldPhotos")&attributes(attributes)
+
+        .field-photos__item
+            input.field-photos__input(type='file')&attributes(checkProps.inputAttr)
+            .field-photos__img
+                img(src="img/catalog-product/cp_intro_1.webp" alt="")
+            .field-photos__remove(data-js='fieldPhotosRemove')
+                svg
+                    use(xlink:href=`img/sprites/sprite.svg#close`)
+
+        .field-photos__item
+            input.field-photos__input(type='file')&attributes(checkProps.inputAttr)
+            .field-photos__img
+                img(src="img/catalog-product/cp_intro_1.webp" alt="")
+            .field-photos__remove(data-js='fieldPhotosRemove')
+                svg
+                    use(xlink:href=`img/sprites/sprite.svg#close`)
+
+        .field-photos__item
+            input.field-photos__input(type='file')&attributes(checkProps.inputAttr)
+            .field-photos__img
+                img(src="img/catalog-product/cp_intro_1.webp" alt="")
+            .field-photos__remove(data-js='fieldPhotosRemove')
+                svg
+                    use(xlink:href=`img/sprites/sprite.svg#close`)
+
+        .field-photos__item
+            input.field-photos__input(type='file')&attributes(checkProps.inputAttr)
+            .field-photos__img
+                img(src="img/catalog-product/cp_intro_1.webp" alt="")
+            .field-photos__remove(data-js='fieldPhotosRemove')
+                svg
+                    use(xlink:href=`img/sprites/sprite.svg#close`)
+
+        .field-photos__item
+            input.field-photos__input(type='file')&attributes(checkProps.inputAttr)
+            .field-photos__img
+                img(src="img/catalog-product/cp_intro_1.webp" alt="")
+            .field-photos__remove(data-js='fieldPhotosRemove')
+                svg
+                    use(xlink:href=`img/sprites/sprite.svg#close`)
+
+
+        .field-photos__item.field-photos__label(data-js="fieldPhotosLabel")
+            .field-photos__add.btn.btn--accent.btn--small
+                svg
+                    use(xlink:href="img/sprites/sprite.svg#photo")
+                span.btn__text Загрузить фото
+

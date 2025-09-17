@@ -1,0 +1,202 @@
+-
+    const defaultSProblemProps = {
+        classes: '',
+    }
+
+mixin s-problem(props= defaultSProblemProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultSProblemProps.classes,
+        }
+
+    section.section.s-problem(class= checkProps.classes)&attributes(attributes)
+        .section__container
+            .section-block.s-problem__block
+                .s-problem__attention
+                    svg
+                        use(xlink:href=`img/sprites/sprite.svg#attention`)
+                    | Какой-то дополнительный комментарий
+
+                form.form.s-problem__content(action="#" data-validate novalidate)
+                    .s-problem__left
+                        .title.title--36.s-problem__title 
+                            h1 Lixiang L7 Pro
+                        .form__content
+                            .form__fields
+                                .form__flex
+                                    +field({
+                                        classes: '',
+                                        tag: 'select',
+                                        placeholder: 'Бренд',
+                                        selectOptions: [
+                                            "",
+                                            "LiXiang",
+                                            "Voyah",
+                                            "AITO",
+                                            "Chery",
+                                            "Zeekr",
+                                            "Audi",
+                                            "Tank",
+                                            "Rox Motor Tech",
+                                        ],
+                                        inputAttr: {
+                                            'required': '',
+                                        },
+                                    })
+                                    +field({
+                                        classes: '',
+                                        tag: 'select',
+                                        placeholder: 'Модель',
+                                        selectOptions: [
+                                            "",
+                                            "LiXiang L6",
+                                            "LiXiang L7",
+                                            "LiXiang L9",
+                                            "LiXiang L9",
+                                            "LiXiang Mega",
+                                            "LiXiang One"
+                                        ],
+                                        inputAttr: {
+                                            'required': '',
+                                        },
+                                    })
+
+                                +field({
+                                    classes: '',
+                                    tag: 'select',
+                                    placeholder: 'Комплектация',
+                                    selectOptions: [
+                                        "",
+                                        "Base",
+                                        "Comfort",
+                                        "Sport",
+                                        "Luxe",
+                                    ],
+                                    inputAttr: {
+                                        'required': '',
+                                    },
+                                    })
+
+                                +field-file({
+                                    placeholder: 'Документы ТО',
+                                    id: 'ffDocs',
+                                    inputAttr: {
+                                        required: '',
+                                        'data-v-name': 'file',
+                                        'data-size': '10485760',
+                                        'accept': '.pdf'
+                                    }
+                                })
+
+                                +field-file({
+                                    placeholder: 'Технический паспорт',
+                                    id: 'ffPts',
+                                    inputAttr: {
+                                        required: '',
+                                        'data-v-name': 'file',
+                                        'data-size': '10485760',
+                                        'accept': '.pdf'
+                                    }
+                                })
+
+                                +field({
+                                    classes: '',
+                                    tag: 'select',
+                                    placeholder: 'Состояние',
+                                    selectOptions: [
+                                        "",
+                                        "Новые",
+                                        "С пробегом",
+                                    ],
+                                    inputAttr: {
+                                        'required': '',
+                                    },
+                                })
+
+                                +field({
+                                    classes: '',
+                                    tag: 'select',
+                                    placeholder: 'Год выпуска',
+                                    selectOptions: [
+                                        "",
+                                        "2020",
+                                        "2021",
+                                        "2022",
+                                        "2023",
+                                        "2024",
+                                        "2025",
+                                    ],
+                                    inputAttr: {
+                                        'required': '',
+                                    },
+                                })
+
+                                +field({
+                                    classes: '',
+                                    tag: 'select',
+                                    placeholder: 'Количество владельцев',
+                                    selectOptions: [
+                                        "",
+                                        "1",
+                                        "2",
+                                        "3",
+                                        "4+",
+                                    ],
+                                    inputAttr: {
+                                        'required': '',
+                                    },
+                                })
+
+                                +field({
+                                    classes: '',
+                                    tag: 'select',
+                                    placeholder: 'Срок доставки',
+                                    selectOptions: [
+                                        "",
+                                        "1 день",
+                                        "2-5 дней",
+                                        "6-14 дней",
+                                        "15-30 дней",
+                                        "31+ дней",
+                                    ],
+                                    inputAttr: {
+                                        'required': '',
+                                    },
+                                })
+
+                                +field({
+                                    placeholder: 'Дата доставки',
+                                    icon: 'calendar',
+                                    inputAttr: {
+                                        'required': '',
+                                        'data-v-name': 'date',
+                                        'data-type': 'date',
+                                    },
+                                })
+
+                                +field({
+                                    placeholder: 'Цена',
+                                    inputAttr: {
+                                        'required': '',
+                                        "data-type": "number"
+                                    },
+                                })
+
+                    .s-problem__right
+                        +field-photos
+                        .s-problem__btns
+                            +btn({
+                                classes: 's-problem__btn',
+                                type: 'button',
+                                buttonType: 'submit',
+                                name: 'Сохранить изменения',
+                                cMode: 'accent',
+                                sMode: 'full'
+                            })
+                            +btn({
+                                classes: 's-problem__btn',
+                                name: 'Удалить машину из базы',
+                                cMode: 'light-accent',
+                                sMode: 'full',
+                                icon: 'urn'
+                            })

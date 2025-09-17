@@ -1,0 +1,113 @@
+.field-photos {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    padding: 0;
+    border: none;
+
+    @include max(laptop-small) {
+        gap: 10px;
+    }
+
+    &__item {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #DBEAFE;
+        width: 100%;
+        flex: 0 0 calc((100% - 80px) / 5);
+        aspect-ratio: 1 / 0.75;
+        border-radius: 8px;
+        overflow: hidden;
+
+        @include max(full) {
+            flex: 0 0 calc((100% - 60px) / 4);
+        }
+
+        @include max(large) {
+            flex: 0 0 calc((100% - 40px) / 3);
+        }
+
+        @include max(laptop-small) {
+            flex: 0 0 calc((100% - 20px) / 3);
+        }
+
+        @include max(xs) {
+            flex: 0 0 calc((100% - 10px) / 2);
+        }
+    }
+
+    &__label {
+        cursor: pointer;
+    }
+
+    &__label:hover &__add {
+        background-color: $c-accent-hover;
+    }
+
+    &__add.btn {
+        padding-left: 16px;
+        padding-right: 16px;
+
+        @include max(mobile) {
+            font-size: 12px;
+        }
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+    }
+
+    &__remove {
+        position: absolute;
+        right: 5px;
+        bottom: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        background-color: $c-white;
+        z-index: 1;
+        border-radius: 4px;
+        color: $c-text;
+        border: 1px solid #E4E4E7;
+        cursor: pointer;
+        transition: all $tr-time linear;
+
+        &:hover {
+            background-color: $c-accent;
+            color: $c-white;
+            border-color: $c-accent;
+        }
+
+        svg {
+            width: 16px;
+            height: 16px;
+        }
+    }
+
+    &__btn {
+        flex: 0 0 auto;
+    }
+
+    &__input {
+        position: absolute;
+        width: 0;
+        height: 0;
+        overflow: hidden;
+        opacity: 0;
+        z-index: -10;
+    }
+}

@@ -1,0 +1,32 @@
+-
+    const defaultFieldFileProps = {
+        classes: '',
+        title: '',
+        placeholder: '',
+        id: '',
+        inputAttr: ''
+    }
+
+mixin field-file(props = defaultFieldFileProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultFieldFileProps.classes,
+            title: props.title ? props.title : defaultFieldFileProps.title,
+            placeholder: props.placeholder ? props.placeholder : defaultFieldFileProps.placeholder,
+            id: props.id ? props.id : defaultFieldFileProps.id,
+            inputAttr: props.inputAttr ? props.inputAttr : defaultFieldFileProps.inputAttr,
+        }
+
+    .field-file(class= checkProps.classes data-js="formField" data-placeholder= checkProps.placeholder)&attributes(attributes)
+        input.field-file__input(type='file' id=checkProps.id)&attributes(checkProps.inputAttr)
+
+        .field-file__fakeinput
+            .field-file__placeholder!= checkProps.placeholder
+            .field-file__name(data-js='fileName')
+            .field-file__error(data-js='fieldError')
+
+        label(class="btn field-file__btn btn--light-accent btn--narrow" for=checkProps.id)
+            svg
+                use(xlink:href="img/sprites/sprite.svg#upload_2")
+            span.btn__text Загрузить
+
