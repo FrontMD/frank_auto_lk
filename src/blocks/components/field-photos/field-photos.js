@@ -5,6 +5,7 @@ function fieldPhotosController() {
     if(photoBlocks.length < 1) return
     
     const newFieldHtml = `
+                            <input type="hidden">
                             <input class="field-photos__input" type="file" 'accept'=".png, .jpg, .jpeg, .webp">
                             <div class="field-photos__img">
                             <img src="" alt=""></div>
@@ -18,6 +19,10 @@ function fieldPhotosController() {
                             
     photoBlocks.forEach(photoBlock => {
         const label = photoBlock.querySelector('[data-js="fieldPhotosLabel"]')
+        const fieldHidden = photoBlock.dataset.hidden
+        const fieldName = photoBlock.dataset.name
+
+        let inputsCount = 0
 
         label.addEventListener('click', function() {
             const newField = document.createElement('div')
@@ -25,7 +30,11 @@ function fieldPhotosController() {
             newField.setAttribute('data-js',"fieldPhotosItem")
             newField.innerHTML = newFieldHtml
 
-            const newFieldInput = newField.querySelector('input')
+            const newFieldInput = newField.querySelector('input[type="file"]')
+            const newFieldHidden = newField.querySelector('input[type="hidden"]')
+
+            newFieldInput.setAttribute('name', fieldName + inputsCount)
+            newFieldHidden.setAttribute('name', fieldHidden + '[' + inputsCount + ']')
 
             newFieldInput.click()
 
@@ -41,6 +50,7 @@ function fieldPhotosController() {
                     if(result.startsWith('data:image/jpeg') || result.startsWith('data:image/pjpeg') || result.startsWith('data:image/png') || result.startsWith('data:image/webp') ) {
                         targetFieldImg.setAttribute('src', result);
                         newField.classList.add('visible')
+                        inputsCount++
                     } else {
                         newField.remove()
                         label.classList.add('error')
