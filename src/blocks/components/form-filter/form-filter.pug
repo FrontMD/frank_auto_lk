@@ -39,13 +39,11 @@ mixin form-filter(props = defaultFormFilterProps)
                     })
                     +btn({
                         classes: 'form-filter__reset',
-                        type: 'button',
-                        buttonType: 'button',
                         name: 'Сбросить',
                         cMode: 'light-accent',
                         sMode: 'full',
                         icon: 'close'
-                    })(data-js="formResetBtn")
+                    })
             - else
                 +btn({
                     classes: 'form-filter__submit',
