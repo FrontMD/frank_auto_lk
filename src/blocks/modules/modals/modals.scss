@@ -58,6 +58,40 @@
         letter-spacing: 0;
     }
 
+    &__text {
+        margin-top: 20px;
+        font-family: "Inter", Arial, Helvetica, sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.5em;
+        letter-spacing: 0;
+        color: $c-text;
+    }
+
+    &__text+&__text {
+        margin-top: 5px;
+    }
+
+    &__info {
+        font-family: "Inter", Arial, Helvetica, sans-serif;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 1.5em;
+        letter-spacing: 0;
+        color: $c-input-grey;
+        margin-top: 50px;
+
+        a {
+            color: $c-input-grey;
+            transition: all $tr-time linear;
+        }
+
+        a:hover {
+            color: $c-accent;
+        }
+    }
+
+
     &__btns {
         display: flex;
         gap: 16px;

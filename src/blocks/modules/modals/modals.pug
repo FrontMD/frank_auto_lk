@@ -51,16 +51,6 @@ noindex
                         sMode: 'full'
                     })
 
-                    .form__privacy.form-privacy(data-js="formField")
-                        .form-privacy__flex
-                            label
-                                input(type="checkbox" data-v-name='checkbox' required)
-                                span.form-privacy__fake
-                                    svg
-                                        use(xlink:href=`img/sprites/sprite.svg#check`)
-                            span.form-privacy__text Согласен на обработку моих персональных данных в соответствии с <a href="#" target="_blank">Политикой в отношении обработки персональных данных</a>
-                        span.field__error(data-js='fieldError')
-
                     .form__subtitle.title.title--24 Нет аккаунта?
 
                     +btn({
@@ -139,7 +129,6 @@ noindex
                                 +field({
                                     placeholder: 'КПП',
                                     inputAttr: {
-                                        'required': '',
                                         'data-type': 'number',
                                         'data-v-name': 'kpp'
                                     },
@@ -427,6 +416,37 @@ noindex
                         cMode: 'accent',
                         sMode: 'full'
                     })
+
+        //- Блокировка пользователя
+        +modal({modalId:"supplierBlockingModal", modalTitle:"", classes:"center-modal"})
+            form.form.form--modal(action="#" data-validate novalidate)
+                .form__content(data-js='form-content')
+
+                    .form__title.title.title--24 Причина блокировки
+                    .form__fields
+                        +field({
+                            placeholder: 'Причина блокировки',
+                            inputAttr: {
+                                required: ''
+                            },
+                        })
+
+                    +btn({
+                        classes: 'form__submit',
+                        type: 'button',
+                        buttonType: 'submit',
+                        name: 'Заблокировать',
+                        cMode: 'accent',
+                        sMode: 'full'
+                    })
+
+        //- Предупреждение заблокированного пользователя
+        +modal({modalId:"supplierBlockedModal", modalTitle:"", classes:"center-modal"})
+            .ma-modal
+                .title.ma-modal__title Аккаунт заблокирован
+                .ma-modal__text Причина:
+                .ma-modal__text Тут текст причины блокировки
+                .ma-modal__info Для снятия блокировки обратитесь в техническую поддержку Франк Авто по телефону <a href="tel:+74991165065">+7 (499) 116-50-65</a> или напишите на почту <a href="mailto:marketing@frankauto.ru">marketing@frankauto.ru</a>
 
         //- Окно благодарности регистрации
         +modal({modalId:"thanksModal", modalTitle:"", classes:"right-modal"})

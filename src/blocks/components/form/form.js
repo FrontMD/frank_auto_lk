@@ -62,11 +62,17 @@ function validation() {
                 return {
                     set: () => {
                         el.classList.add("field--invalid")
-                        errorField.innerHTML = errorText
+
+                        if(errorField) {
+                            errorField.innerHTML = errorText
+                        }
                     },
                     remove: () => {
                         el.classList.remove("field--invalid")
-                        errorField.innerHTML = errorText
+
+                        if(errorField) {
+                            errorField.innerHTML = errorText
+                        }
                     },
                 }
             }
@@ -198,7 +204,7 @@ function validation() {
                         form.setAttribute('data-valid', 'true')
                         let event = new Event("submit");
                         form.dispatchEvent(event);
-                        
+                        form.submit()  
                     } else {
                         submitFunctionKey = form.getAttribute('data-submit-function');
                         if (typeof (submitFunctionKey) === 'string' && submitFunctionKey.length > 0) {
@@ -393,7 +399,6 @@ function formReset(form) {
 
     if(selectFields.length > 0) {
         selectFields.forEach(selectField => {
-            console.log($(selectField).select2)
             $(selectField).val("").trigger('change')
         })
     }

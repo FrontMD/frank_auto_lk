@@ -498,16 +498,6 @@
                           </div>
                               <button class="btn form__submit btn--accent btn--full" type="submit"><span class="btn__text">Войти</span>
                               </button>
-                          <div class="form__privacy form-privacy" data-js="formField">
-                            <div class="form-privacy__flex">
-                              <label>
-                                <input type="checkbox" data-v-name="checkbox" required><span class="form-privacy__fake">
-                                  <svg>
-                                    <use xlink:href="img/sprites/sprite.svg#check"></use>
-                                  </svg></span>
-                              </label><span class="form-privacy__text">Согласен на обработку моих персональных данных в соответствии с <a href="#" target="_blank">Политикой в отношении обработки персональных данных</a></span>
-                            </div><span class="field__error" data-js="fieldError"></span>
-                          </div>
                           <div class="form__subtitle title title--24">Нет аккаунта?</div><a class="btn form__submit btn--light-accent btn--full" href="javascript:void(0)" data-modal="#signInModal"><span class="btn__text">Подать заявку на регистрацию</span></a>
                         </div>
                       </form>
@@ -587,7 +577,7 @@
     
     " data-js="formField">
                                       <label>
-                                        <input class="field__input" type="text" placeholder="" required="" data-type="number" data-v-name="kpp"><span class="field__placeholder">КПП</span><span class="field__error" data-js="fieldError"></span>
+                                        <input class="field__input" type="text" placeholder="" data-type="number" data-v-name="kpp"><span class="field__placeholder">КПП</span><span class="field__error" data-js="fieldError"></span>
                                       </label>
                                     </div>
                                     <div class="field  
@@ -1017,6 +1007,59 @@
                               </button>
                         </div>
                       </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal hystmodal center-modal" id="supplierBlockingModal" aria-hidden="true">
+              <div class="hystmodal__wrap">
+                <div class="hystmodal__window" role="dialog" aria-modal="true">
+                  <div class="modal__content scrollbar scrollbar--small">
+                    <div class="modal__close" data-hystclose>
+                      <svg> 
+                        <use xlink:href="./img/sprites/sprite.svg#close"></use>
+                      </svg>
+                    </div>
+                    <div class="modal__inner" data-js="modalInner">
+                      <form class="form form--modal" action="#" data-validate novalidate>
+                        <div class="form__content" data-js="form-content">
+                          <div class="form__title title title--24">Причина блокировки</div>
+                          <div class="form__fields">
+                                <div class="field  
+     
+    
+    " data-js="formField">
+                                  <label>
+                                    <input class="field__input" type="text" placeholder="" required=""><span class="field__placeholder">Причина блокировки</span><span class="field__error" data-js="fieldError"></span>
+                                  </label>
+                                </div>
+                          </div>
+                              <button class="btn form__submit btn--accent btn--full" type="submit"><span class="btn__text">Заблокировать</span>
+                              </button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal hystmodal center-modal" id="supplierBlockedModal" aria-hidden="true">
+              <div class="hystmodal__wrap">
+                <div class="hystmodal__window" role="dialog" aria-modal="true">
+                  <div class="modal__content scrollbar scrollbar--small">
+                    <div class="modal__close" data-hystclose>
+                      <svg> 
+                        <use xlink:href="./img/sprites/sprite.svg#close"></use>
+                      </svg>
+                    </div>
+                    <div class="modal__inner" data-js="modalInner">
+                      <div class="ma-modal">
+                        <div class="title ma-modal__title">Аккаунт заблокирован</div>
+                        <div class="ma-modal__text">Причина:</div>
+                        <div class="ma-modal__text">Тут текст причины блокировки</div>
+                        <div class="ma-modal__info">Для снятия блокировки обратитесь в техническую поддержку Франк Авто по телефону <a href="tel:+74991165065">+7 (499) 116-50-65</a> или напишите на почту <a href="mailto:marketing@frankauto.ru">marketing@frankauto.ru</a></div>
+                      </div>
                     </div>
                   </div>
                 </div>
