@@ -707,8 +707,11 @@
         top: 10px;
 
         .select2-search {
-            //display: none;
+            display: none;
+        }
 
+        .select2-search.active {
+            display: block;
         }
 
         .select2-search__field {
