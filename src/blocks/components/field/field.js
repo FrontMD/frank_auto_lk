@@ -15,8 +15,6 @@ function selects() {
 
 		const field = this.closest('[data-js="formField"]')
 
-		console.log(field)
-
 		if(field.classList.contains('has-search')) {
 			$(".select2-search.select2-search--dropdown").addClass('active')
 		}
