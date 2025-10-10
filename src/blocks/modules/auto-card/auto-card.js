@@ -35,7 +35,7 @@ function autoCardInit() {
 
     const acTables = document.querySelectorAll('[data-js="acTable"]')
 
-    if(acTables.length > 0) {
+    if(acTables.length > 0 && window.innerWidth < 2000) {
         acTables.forEach(table => {
             const minRows = parseInt(table.dataset.rows);
             const rowsBlock = table.querySelector('[data-js="acTableRows"]');

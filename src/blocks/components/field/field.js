@@ -8,6 +8,18 @@ function selects() {
 			placeholder: placeholder,
 			allowClear: true
 		});
+
+
+		const field = formSelect.closest('[data-js="formField"]')
+
+		if(!field.classList.contains('field--sort')) {
+			const placeholderEl = document.createElement('span');
+			placeholderEl.innerHTML = placeholder;
+			placeholderEl.classList.add('field__placeholder', 'field__placeholder--select')
+	
+			formSelect.insertAdjacentElement('afterend', placeholderEl);
+		}
+
 	}) 
 
 	$("[data-js='formSelect']").on('select2:open', function() {
@@ -20,4 +32,9 @@ function selects() {
 		}
 	})
 
+	$("[data-js='formSelect']").on('select2:select', function() {
+		const field = this.closest('[data-js="formField"]')
+		const placeholder = field.querySelector('.field__placeholder.field__placeholder--select')
+		placeholder.classList.add('active')
+	})
 }

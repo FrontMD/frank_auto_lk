@@ -30,7 +30,8 @@
     &__input:focus~&__placeholder,
     &__input:not(:placeholder-shown)~&__placeholder,
     &__textarea:focus~&__placeholder,
-    &__textarea:not(:placeholder-shown)~&__placeholder {
+    &__textarea:not(:placeholder-shown)~&__placeholder,
+    &__select~&__placeholder.active {
         font-size: 12px;
         top: 6px;
         transform: translateY(0);
@@ -39,6 +40,15 @@
             font-size: 10px;
             top: 3px;
         }
+    }
+
+    &__select~&__placeholder {
+        z-index: 5;
+        visibility: hidden;
+    }
+
+    &__select~&__placeholder.active {
+        visibility: visible;
     }
 
     &__placeholder {
@@ -584,6 +594,7 @@
     }
 
     &.select2-container--default {
+
         .select2-search--inline .select2-search__field {
             margin-top: 0;
         }
@@ -631,6 +642,7 @@
                 flex-wrap: wrap;
                 gap: 8px;
                 color: $c-text;
+                position: relative;
             }
 
             .select2-selection__rendered .select2-selection__choice {
@@ -692,6 +704,18 @@
                 }
             }
         }
+    }
+
+    &.select2-container.select2-container--default.select2-container--open {
+        z-index: 1;
+    }
+}
+
+.field__placeholder--select~.select2 .select2-selection__rendered:not(:has(.select2-selection__placeholder)) {
+    top: 9px;
+
+    @include max(mobile) {
+        top: 4px;
     }
 }
 
@@ -780,7 +804,7 @@
     }
 }
 
-.hystmodal__opened .select2-container.select2-container--default.select2-container--open {
+.hystmodal__opened .select2-container.select2-container--default.select2-container--open:not(.select2) {
     z-index: 70;
 }
 

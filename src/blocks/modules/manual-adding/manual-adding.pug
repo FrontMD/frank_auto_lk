@@ -34,7 +34,8 @@ mixin manual-adding(props= defaultManualAddingProps)
                                         placeholder: 'VIN',
                                         inputAttr: {
                                             'required': '',
-                                            'data-v-name': 'vin'
+                                            'data-v-name': 'vin',
+                                            'data-type': 'vin'
                                         },
                                     })
                                 .form__flex
@@ -205,6 +206,7 @@ mixin manual-adding(props= defaultManualAddingProps)
                                         placeholder: 'Лошадиные силы по ЭПТС',
                                         inputAttr: {
                                             'required': '',
+                                            'data-type': "number"
                                         },
                                     })
 

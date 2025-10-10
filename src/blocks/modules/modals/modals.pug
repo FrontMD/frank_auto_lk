@@ -255,12 +255,14 @@ noindex
                                     ],
                                     inputAttr: {
                                         'required': '',
+                                        'data-dependence':'pasport'
                                     },
                                 })
                                 +field({
                                     placeholder: 'Серия и номер паспорта',
                                     inputAttr: {
                                         'required': '',
+                                        'data-type': 'pasport'
                                     },
                                 })
                                 .form__flex
@@ -278,6 +280,7 @@ noindex
                                         placeholder: 'Код подразделения',
                                         inputAttr: {
                                             'required': '',
+                                            'data-type': 'pasportOffice'
                                         },
                                     })
                                 +field({
@@ -285,7 +288,7 @@ noindex
                                     icon: 'calendar',
                                     inputAttr: {
                                         'required': '',
-                                        'data-v-name': 'date',
+                                        'data-v-name': 'age',
                                         'data-type': 'date',
                                         'data-position': 'top'
                                     },
