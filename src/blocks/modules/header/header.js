@@ -4,7 +4,7 @@ function headerController() {
     if(!header) return
 
     // высота по скроллу
-   let lastScroll = window.scrollY ? window.scrollY : 0
+   /*let lastScroll = window.scrollY ? window.scrollY : 0
 
     if(lastScroll > 10) {
         header.classList.add('small')
@@ -22,7 +22,7 @@ function headerController() {
         } else {
             header.classList.add('small')
         }
-    }
+    }*/
 
     // открытие бургера
     const burger = document.querySelector('[data-js="headerBurger"]')
