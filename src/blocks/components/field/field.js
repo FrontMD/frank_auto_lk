@@ -5,11 +5,13 @@ function selects() {
 		let placeholder = $(formSelect).attr('data-placeholder')
 
 		if(formSelect.hasAttribute('data-filterable')) {
+			console.log(formSelect)
 			$(formSelect).select2({
 				placeholder: placeholder,
 				allowClear: true,
 				templateResult: function (data) {
 					if(data.element && $(data.element).hasClass('disabled')) {
+						console.log(data.element)
 						return null;
 					}
 					return data.text;
@@ -49,4 +51,29 @@ function selects() {
 		const placeholder = field.querySelector('.field__placeholder.field__placeholder--select')
 		placeholder.classList.add('active')
 	})
+}
+
+function reloadSelect(formSelect) {
+	if(formSelect) {
+		let placeholder = $(formSelect).attr('data-placeholder')
+		$(formSelect).select2('destroy');
+		if(formSelect.hasAttribute('data-filterable')) {
+			$(formSelect).select2({
+				placeholder: placeholder,
+				allowClear: true,
+				templateResult: function (data) {
+					if(data.element && $(data.element).hasClass('disabled')) {
+						console.log(data.element)
+						return null;
+					}
+					return data.text;
+				}
+			});
+		} else {
+			$(formSelect).select2({
+				placeholder: placeholder,
+				allowClear: true
+			});
+		}
+	}
 }
