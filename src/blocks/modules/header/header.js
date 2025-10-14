@@ -27,10 +27,21 @@ function headerController() {
     // открытие бургера
     const burger = document.querySelector('[data-js="headerBurger"]')
 
+    console.log('init:')
+    console.log(burger)
+
     if(burger) {
+        console.log('hasBurger:')
+        console.log(burger)
         const burgerToggle = burger.querySelector('[data-js="headerBurgerToggle"]')
 
-        burgerToggle.addEventListener('click', () => {
+        console.log('hasToggle:')
+        console.log(burgerToggle)
+
+        burgerToggle.addEventListener('click', (e) => {
+            console.log('clickedToggle:')
+            console.log(e.target)
+
             const ww = window.innerWidth
             if(burger.classList.contains('active')) {
                 burger.classList.remove('active')

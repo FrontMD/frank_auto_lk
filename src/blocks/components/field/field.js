@@ -4,11 +4,23 @@ function selects() {
 	formSelects.forEach(formSelect => {
 		let placeholder = $(formSelect).attr('data-placeholder')
 
-		$(formSelect).select2({
-			placeholder: placeholder,
-			allowClear: true
-		});
-
+		if(formSelect.hasAttribute('data-filterable')) {
+			$(formSelect).select2({
+				placeholder: placeholder,
+				allowClear: true,
+				templateResult: function (data) {
+					if(data.element && $(data.element).hasClass('disabled')) {
+						return null;
+					}
+					return data.text;
+				}
+			});
+		} else {
+			$(formSelect).select2({
+				placeholder: placeholder,
+				allowClear: true
+			});
+		}
 
 		const field = formSelect.closest('[data-js="formField"]')
 
