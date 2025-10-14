@@ -10,7 +10,6 @@ function selects() {
 				allowClear: true,
 				templateResult: function (data) {
 					if(data.element && $(data.element).hasClass('disabled')) {
-						console.log(data.element)
 						return null;
 					}
 					return data.text;
@@ -54,29 +53,20 @@ function selects() {
 
 function reloadSelect(formSelect) {
 	if(formSelect) {
-		console.log("el finded")
-		console.log(formSelect)
 		let placeholder = $(formSelect).attr('data-placeholder')
 		$(formSelect).select2('destroy');
-		console.log("el destroyed")
-		console.log(formSelect.outerHTML)
 		if(formSelect.hasAttribute('data-filterable')) {
-			console.log("el has attr")
-			console.log(formSelect.outerHTML)
 			$(formSelect).select2({
 				placeholder: placeholder,
 				allowClear: true,
 				templateResult: function (data) {
 					if(data.element && $(data.element).hasClass('disabled')) {
-						console.log(data.element)
 						return null;
 					}
 					return data.text;
 				}
 			});
 		} else {
-			console.log("el has not attr")
-			console.log(formSelect)
 			$(formSelect).select2({
 				placeholder: placeholder,
 				allowClear: true
