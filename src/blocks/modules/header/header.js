@@ -27,22 +27,11 @@ function headerController() {
     // открытие бургера
     const burger = document.querySelector('[data-js="headerBurger"]')
 
-    console.log('init:')
-    console.log(burger)
-
     if(burger) {
-        console.log('hasBurger:')
-        console.log(burger)
+
         const burgerToggle = burger.querySelector('[data-js="headerBurgerToggle"]')
 
-        console.log('hasToggle:')
-        console.log(burgerToggle)
-
-        burgerToggle.addEventListener('click', (e) => {
-            console.log('clickedToggle:')
-            console.log(e.target)
-
-            const ww = window.innerWidth
+        burgerToggle.addEventListener('click', () => {
             if(burger.classList.contains('active')) {
                 burger.classList.remove('active')
                 unlockBody()

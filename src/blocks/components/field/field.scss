@@ -711,7 +711,7 @@
     }
 }
 
-.field__placeholder--select~.select2 .select2-selection__rendered:not(:has(.select2-selection__placeholder)) {
+.field:has(.field__placeholder--select.active) .select2 .select2-selection__rendered:not(:has(.select2-selection__placeholder)) {
     top: 9px;
 
     @include max(mobile) {
