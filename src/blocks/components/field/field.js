@@ -4,7 +4,7 @@ function selects() {
 	formSelects.forEach(formSelect => {
 		let placeholder = $(formSelect).attr('data-placeholder')
 
-		if($(formSelect).hasAttribute('data-filterable')) {
+		if(formSelect.hasAttribute('data-filterable')) {
 			$(formSelect).select2({
 				placeholder: placeholder,
 				allowClear: true,
@@ -56,7 +56,7 @@ function reloadSelect(formSelect) {
 	if(formSelect) {
 		let placeholder = $(formSelect).attr('data-placeholder')
 		$(formSelect).select2('destroy');
-		if($(formSelect).hasAttribute('data-filterable')) {
+		if(formSelect.hasAttribute('data-filterable')) {
 			$(formSelect).select2({
 				placeholder: placeholder,
 				allowClear: true,
