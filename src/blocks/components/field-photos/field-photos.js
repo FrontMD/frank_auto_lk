@@ -37,7 +37,7 @@ function fieldPhotosController() {
             const newFieldInput = newField.querySelector('input[type="file"]')
             const newFieldHidden = newField.querySelector('input[type="hidden"]')
 
-            newFieldInput.setAttribute('name', fieldName + inputsCount)
+            newFieldInput.setAttribute('name', fieldName)
             newFieldHidden.setAttribute('name', fieldHidden + '[' + inputsCount + ']')
 
             newFieldInput.click()
