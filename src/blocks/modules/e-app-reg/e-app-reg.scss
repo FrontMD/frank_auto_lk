@@ -38,6 +38,9 @@
         line-height: 150%;
         letter-spacing: 0;
         flex: 0 1 20%;
+        display: flex;
+        align-items: center;
+        gap: 8px;
 
         @include max(laptop-small) {
             flex-basis: 25%;

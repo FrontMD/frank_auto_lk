@@ -162,9 +162,8 @@ mixin e-suppliers(props= defaultESuppliersProps)
                         - let card = checkProps.cards[cardsCount]
                         .e-suppliers__card.e-supplier
                             .e-supplier__info
-                                .e-supplier__title.title!= card.title
-                                .e-supplier__inn
-                                    span ИНН 7724564269
+                                .e-supplier__title.title
+                                    != card.title
                                     +tooltip({
                                         classes: 'tooltip--small',
                                         title: '',
@@ -193,6 +192,8 @@ mixin e-suppliers(props= defaultESuppliersProps)
                                             </div>
                                         `
                                     })
+                                .e-supplier__inn
+                                    span ИНН 7724564269
                                 a.e-supplier__phone(href="tel:+79996660201") +7 (999) 666-02-01
 
                             .e-supplier__block

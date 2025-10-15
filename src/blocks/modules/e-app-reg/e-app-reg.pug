@@ -71,10 +71,8 @@ mixin e-app-reg(props= defaultEAppRegProps)
                     -while(cardsCount < checkProps.cards.length)
                         - let card = checkProps.cards[cardsCount]
                         .e-app-reg__card.ar-card
-                            .ar-card__title.title!= card.title
-
-                            .ar-card__inn
-                                span ИНН 7724564269
+                            .ar-card__title.title
+                                != card.title
                                 +tooltip({
                                     classes: 'tooltip--small',
                                     title: '',
@@ -103,6 +101,9 @@ mixin e-app-reg(props= defaultEAppRegProps)
                                         </div>
                                     `
                                 })
+
+                            .ar-card__inn
+                                span ИНН 7724564269
 
                             .ar-card__row.info-row
                                 .info-row__title Дата регистрации:
