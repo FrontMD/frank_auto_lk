@@ -10,7 +10,7 @@ function fieldPhotosController() {
     
     const newFieldHtml = `
                             <input type="hidden">
-                            <input class="field-photos__input" type="file" 'accept'=".png, .jpg, .jpeg, .webp">
+                            <input class="field-photos__input" type="file" accept=".png, .jpg, .jpeg, .webp">
                             <div class="field-photos__img">
                             <img src="" alt=""></div>
                             <div class="field-photos__remove" data-js="fieldPhotosRemove">
@@ -25,8 +25,34 @@ function fieldPhotosController() {
         const label = photoBlock.querySelector('[data-js="fieldPhotosLabel"]')
         const fieldHidden = photoBlock.dataset.hidden
         const fieldName = photoBlock.dataset.name
+        const startItems = photoBlock.querySelectorAll('[data-js="fieldPhotosItem"]')
+        const isEditPage = photoBlock.getAttribute('data-page') === 'edit' ? true : false
 
         let inputsCount = 0
+
+        if(startItems.length > 0) {
+            startItems.forEach(startItem => {
+                const imgPath = startItem.querySelector('img').getAttribute('src')
+                const imgName = imgPath.substring(imgPath.lastIndexOf('/') + 1);
+                
+                fetch(imgPath)
+                .then(response => response.blob())
+                .then(blob => {
+                    const file = new File([blob], imgName);
+                    const dataTransfer = new DataTransfer();
+                    dataTransfer.items.add(file);
+                    const input = startItem.querySelector('input[type="file"]')
+                    const inputHidden = startItem.querySelector('input[type="hidden"]')
+
+                    input.files = dataTransfer.files;
+
+                    input.setAttribute('name', `${isEditPage ? fieldName : fieldName + inputsCount}`)
+                    inputHidden.setAttribute('name', fieldHidden + '[' + inputsCount + ']')
+
+                    inputsCount++
+                });
+            })
+        }
 
         label.addEventListener('click', function() {
             const newField = document.createElement('div')
@@ -37,7 +63,7 @@ function fieldPhotosController() {
             const newFieldInput = newField.querySelector('input[type="file"]')
             const newFieldHidden = newField.querySelector('input[type="hidden"]')
 
-            newFieldInput.setAttribute('name', fieldName)
+            newFieldInput.setAttribute('name', `${isEditPage ? fieldName : fieldName + inputsCount}`)
             newFieldHidden.setAttribute('name', fieldHidden + '[' + inputsCount + ']')
 
             newFieldInput.click()

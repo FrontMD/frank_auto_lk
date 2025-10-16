@@ -4,7 +4,8 @@
         title: '',
         placeholder: '',
         id: '',
-        inputAttr: ''
+        inputAttr: '',
+        editPage: false 
     }
 
 mixin field-photos(props = defaultFieldPhotosProps)
@@ -15,9 +16,10 @@ mixin field-photos(props = defaultFieldPhotosProps)
             placeholder: props.placeholder ? props.placeholder : defaultFieldPhotosProps.placeholder,
             id: props.id ? props.id : defaultFieldPhotosProps.id,
             inputAttr: props.inputAttr ? props.inputAttr : defaultFieldPhotosProps.inputAttr,
+            editPage: props.editPage ? props.editPage : defaultFieldPhotosProps.editPage,
         }
 
-    .field-photos(class= checkProps.classes data-hidden="PROPERTY[242]" data-name="PROPERTY_FILE_242_" data-js="fieldPhotos")&attributes(attributes)
+    .field-photos(class= checkProps.classes data-hidden="PROPERTY[242]" data-name="PROPERTY_FILE_242_" data-js="fieldPhotos" data-page=`${checkProps.editPage ? 'edit' : ''}`)&attributes(attributes)
 
         .field-photos__item.field-photos__label(data-js="fieldPhotosLabel")
             .field-photos__add.btn.btn--accent.btn--small

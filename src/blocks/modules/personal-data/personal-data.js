@@ -75,7 +75,6 @@ function pdContactsController() {
                     contactsItems.forEach((item, index) => {
                         let name = item.querySelector('[data-js="pdContactName"]')
                         name.innerHTML = nameLayout + (index + 1)
-                        console.log(name)
                     })
                 }
             }

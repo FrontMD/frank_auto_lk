@@ -184,7 +184,9 @@ mixin s-problem(props= defaultSProblemProps)
                                 })
 
                     .s-problem__right
-                        +field-photos
+                        +field-photos({
+                            editPage: true
+                        })
                         .s-problem__btns
                             +btn({
                                 classes: 's-problem__btn',

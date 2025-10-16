@@ -261,9 +261,14 @@
         margin-right: 21px;
         max-width: 525px;
 
+        @include max(large) {
+            margin-right: 0;
+            max-width: 200px;
+        }
+
         @include max(laptop) {
             margin-right: 0;
-            max-width: 400px;
+            max-width: 180px;
         }
 
         @include max(tablet) {
@@ -306,12 +311,25 @@
         display: flex;
         flex-direction: column;
         gap: 4px;
+
+        @include max(laptop-small) {
+            max-width: 245px;
+        }
+
+        @include max(table) {
+            max-width: auto;
+        }
     }
 
     &__flex {
         display: flex;
         align-items: center;
         gap: 16px;
+
+        @include max(laptop-small) {
+            gap: 4px;
+            flex-wrap: wrap;
+        }
     }
 
     &__price {
