@@ -1,0 +1,23 @@
+-
+    const defaultSortControllerProps = {
+        classes: '',
+    }
+
+mixin sort-controller(props = defaultSortControllerProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultSortControllerProps.classes,
+        }
+
+    .sort-controller(class= checkProps.classes data-js='sortController')&attributes(attributes)
+        .sort-controller__header(data-js='sortControllerHeader')
+            .sort-controller__icon
+                svg
+                    use(xlink:href=`img/sprites/sprite.svg#sort`)
+            .sort-controller__title Цена по возрастанию
+            .sort-controller__chevron
+                svg
+                    use(xlink:href=`img/sprites/sprite.svg#arrow_angle_bottom`)
+        .sort-controller__links
+            a(href="javascript:void(0);").sort-controller__link.disabled Цена по возрастанию
+            a(href="javascript:void(0);").sort-controller__link Цена по убыванию

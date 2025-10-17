@@ -340,25 +340,26 @@
                     </form>
                   </div>
                   <div class="e-cars__sorts">
-                    <form class="e-cars__sort form-filter" action="#" data-js="formFilter">
-                      <div class="form-filter__content"><div class="field field--sort" data-js="formField">
-<label>
-<select class="field__select" data-placeholder="Сортировать по цене" data-js="formSelect">
-<option value="Цена по увозрастанию" selected>Цена по возрастанию</option>
-<option value="Цена по убыванию">Цена по убыванию</option>
-</select>
-</label>
-</div>
-<div class="field field--sort" data-js="formField">
-<label>
-<select class="field__select" data-placeholder="По дате предложения" data-js="formSelect">
-<option value="Сначала новые" selected>Сначала новые</option>
-<option value="Сначала старые">Сначала старые</option>
-</select>
-</label>
-</div>
+                    <div class="e-cars__sort form-filter">
+                      <div class="form-filter__content">
+                            <div class="sort-controller" data-js="sortController">
+                              <div class="sort-controller__header" data-js="sortControllerHeader">
+                                <div class="sort-controller__icon">
+                                  <svg>
+                                    <use xlink:href="img/sprites/sprite.svg#sort"></use>
+                                  </svg>
+                                </div>
+                                <div class="sort-controller__title">Цена по возрастанию</div>
+                                <div class="sort-controller__chevron">
+                                  <svg>
+                                    <use xlink:href="img/sprites/sprite.svg#arrow_angle_bottom"></use>
+                                  </svg>
+                                </div>
+                              </div>
+                              <div class="sort-controller__links"><a class="sort-controller__link disabled" href="javascript:void(0);">Цена по возрастанию</a><a class="sort-controller__link" href="javascript:void(0);">Цена по убыванию</a></div>
+                            </div>
                       </div>
-                    </form><a class="btn  btn--accent btn--content" href="javascript:void(0)">
+                    </div><a class="btn  btn--accent btn--content" href="javascript:void(0)">
                           <svg>
                             <use xlink:href="img/sprites/sprite.svg#download"></use>
                           </svg><span class="btn__text">Выгрузить в XLS</span></a>

@@ -5,6 +5,7 @@
 @@include("../../blocks/components/field-file/field-file.js")
 @@include("../../blocks/components/field-photos/field-photos.js")
 @@include("../../blocks/components/spoiler/spoiler.js")
+@@include("../../blocks/components/sort-controller/sort-controller.js")
 
 document.addEventListener('DOMContentLoaded', () => {
     selects();
@@ -12,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     catalogFilter();
     fileFieldInit();
     fieldPhotosController();
+    sortController();
 })
 
 window.addEventListener('load', function() { 

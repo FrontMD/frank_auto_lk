@@ -405,24 +405,27 @@ mixin e-cars(props= defaultECarsProps)
                                 })
 
                     .e-cars__sorts
-                        form.e-cars__sort.form-filter(action="#" data-js="formFilter")
+                        .e-cars__sort.form-filter
                             .form-filter__content
-                                <div class="field field--sort" data-js="formField">
+                                +sort-controller
+
+                                //-</div>
+                                //-<div class="field field--sort" data-js="formField">
                                     <label>
                                         <select class="field__select" data-placeholder="Сортировать по цене" data-js="formSelect">
                                             <option value="Цена по увозрастанию" selected>Цена по возрастанию</option>
                                             <option value="Цена по убыванию">Цена по убыванию</option>
                                         </select>
                                     </label>
-                                </div>
-                                <div class="field field--sort" data-js="formField">
+                                //-</div>
+                                //-<div class="field field--sort" data-js="formField">
                                     <label>
                                         <select class="field__select" data-placeholder="По дате предложения" data-js="formSelect">
                                             <option value="Сначала новые" selected>Сначала новые</option>
                                             <option value="Сначала старые">Сначала старые</option>
                                         </select>
                                     </label>
-                                </div>
+                                //-</div>
 
                         +btn({
                             name: 'Выгрузить в XLS',
