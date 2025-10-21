@@ -55,50 +55,70 @@ function fieldPhotosController() {
         }
 
         label.addEventListener('click', function() {
-            const newField = document.createElement('div')
-            newField.classList.add('field-photos__item')
-            newField.setAttribute('data-js',"fieldPhotosItem")
-            newField.innerHTML = newFieldHtml
 
-            const newFieldInput = newField.querySelector('input[type="file"]')
-            const newFieldHidden = newField.querySelector('input[type="hidden"]')
+            const commonInput = document.createElement('input')
+            setAttributes(commonInput, {
+                class: 'field-photos__common',
+                type: 'file',
+                multiple: '',
+                accept: '.png, .jpg, .jpeg, .webp',
+            });
 
-            newFieldInput.setAttribute('name', `${isEditPage ? fieldName : fieldName + inputsCount}`)
-            newFieldHidden.setAttribute('name', fieldHidden + '[' + inputsCount + ']')
+            commonInput.click()
 
-            newFieldInput.click()
+            commonInput.addEventListener('change', function() {
+                for (const currentFile of commonInput.files) {
+                    const newField = document.createElement('div')
+                    newField.classList.add('field-photos__item')
+                    newField.setAttribute('data-js',"fieldPhotosItem")
+                    newField.innerHTML = newFieldHtml
+        
+                    const newFieldInput = newField.querySelector('input[type="file"]')
+                    const newFieldHidden = newField.querySelector('input[type="hidden"]')
+        
+                    const dataTransfer = new DataTransfer();
+                    dataTransfer.items.add(currentFile);
+                    newFieldInput.files = dataTransfer.files;
+        
+          
+                        
+                        let selectedFile = newFieldInput.files[0];
+                        let reader = new FileReader();
+                        let targetField = newFieldInput.closest('[data-js="fieldPhotosItem"]');
+                        let targetFieldImg = targetField.querySelector("img");
+                        
+                        reader.onload = function (event) {
+                            let result = event.target.result
+        
+                            if(result.startsWith('data:image/jpeg') || result.startsWith('data:image/pjpeg') || result.startsWith('data:image/png') || result.startsWith('data:image/webp') ) {
+                                targetFieldImg.setAttribute('src', result);
+                                newField.classList.add('visible')
+                                 newFieldInput.setAttribute('name', `${isEditPage ? fieldName : fieldName + inputsCount}`)
+                                newFieldHidden.setAttribute('name', fieldHidden + '[' + inputsCount + ']')
+                                inputsCount++
+                            } else {
+                                newField.remove()
+                                label.classList.add('error')
+        
+                                setTimeout(function() {
+                                    label.classList.remove('error')
+                                }, 3000)
+        
+                                return
+                            }
+        
+                        };
 
-            newFieldInput.addEventListener('change', function() {
-                let selectedFile = this.files[0];
-                let reader = new FileReader();
-                let targetField = this.closest('[data-js="fieldPhotosItem"]');
-                let targetFieldImg = targetField.querySelector("img");
-                
-                reader.onload = function (event) {
-                    let result = event.target.result
+                        
+                        reader.readAsDataURL(selectedFile);
+          
+        
+                    photoBlock.insertBefore(newField, label)
+                }
 
-                    if(result.startsWith('data:image/jpeg') || result.startsWith('data:image/pjpeg') || result.startsWith('data:image/png') || result.startsWith('data:image/webp') ) {
-                        targetFieldImg.setAttribute('src', result);
-                        newField.classList.add('visible')
-                        inputsCount++
-                    } else {
-                        newField.remove()
-                        label.classList.add('error')
-
-
-                        setTimeout(function() {
-                            label.classList.remove('error')
-                        }, 3000)
-
-                        return
-                    }
-
-                };
-                
-                reader.readAsDataURL(selectedFile);
+                commonInput.remove()
             })
 
-            photoBlock.insertBefore(newField, label)
         })
 
         photoBlock.addEventListener('click', function(event) {
@@ -111,4 +131,10 @@ function fieldPhotosController() {
         })
     })
     
+}
+
+function setAttributes(el, attrs) {
+  Object.keys(attrs).forEach(key => {
+    el.setAttribute(key, attrs[key]);
+  });
 }

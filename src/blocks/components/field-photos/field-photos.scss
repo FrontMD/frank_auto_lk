@@ -66,6 +66,16 @@
         background-color: $c-accent-hover;
     }
 
+    &__common {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 0;
+        height: 0;
+        overflow: hidden;
+        visibility: hidden;
+    }
+
     &__add.btn {
         padding-left: 16px;
         padding-right: 16px;
