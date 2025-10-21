@@ -31,7 +31,8 @@ mixin personal-data(props= defaultPersonalDataProps)
                                                     inputAttr: {
                                                         'required': '',
                                                         'data-type': 'letters',
-                                                        'value': 'Вариев'  
+                                                        'value': 'Вариев',
+                                                        'name': 'surname'
                                                     },
                                                 })
                                                 +field({
@@ -39,14 +40,16 @@ mixin personal-data(props= defaultPersonalDataProps)
                                                     inputAttr: {
                                                         'required': '',
                                                         'data-type': 'letters',
-                                                        'value': 'Андрей'
+                                                        'value': 'Андрей',
+                                                        'name': 'name'
                                                     },
                                                 })
                                                 +field({
                                                     placeholder: 'Отчество',
                                                     inputAttr: {
                                                         'data-type': 'letters',
-                                                        'value': 'Васильевич'
+                                                        'value': 'Васильевич',
+                                                        'name': 'last_name'
                                                     },
                                                 })
                                                 +field({
@@ -55,7 +58,8 @@ mixin personal-data(props= defaultPersonalDataProps)
                                                         'required': '',
                                                         'data-v-name': 'phone',
                                                         'data-type': 'phoneNumber',
-                                                        'value': '+7 (888) 888-88-88'
+                                                        'value': '+7 (888) 888-88-88',
+                                                        'name': 'phone'
                                                     },
                                                 })
 
